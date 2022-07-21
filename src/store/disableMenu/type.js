@@ -1,0 +1,1 @@
+export const GET_AUTHENTICATE = 'GET_AUTHENTICATE';

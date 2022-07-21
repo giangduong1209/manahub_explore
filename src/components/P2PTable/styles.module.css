@@ -1,0 +1,339 @@
+.transactionWrapper {
+  max-width: 100%;
+  margin: 30px auto !important;
+  text-align: center;
+  /* padding: 0 15px; */
+  flex: 1;
+}
+
+.table :global(table) {
+  background-color: #f3f3f3;
+  /* border-spacing: 0 1rem !important;
+  border-collapse: separate; */
+}
+
+.table :global(table tr td.ant-table-cell:first-child) {
+  /* border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px; */
+}
+
+.table :global(table tr td.ant-table-cell:last-child) {
+  /* border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px; */
+}
+
+.table :global(.ant-table) {
+  overflow-x: auto;
+}
+
+.table :global(.ant-table-thead) {
+  background: transparent;
+}
+
+.table :global(.ant-table-thead .ant-table-cell) {
+  background: #fff;
+  border-top-left-radius: unset;
+  font-weight: 700;
+  color: #000;
+}
+
+.table :global(.ant-table-thead .ant-table-cell::before) {
+  content: unset !important;
+}
+
+.table :global(.ant-table-tbody) {
+  background: #fff;
+}
+
+.table :global(.ant-table-row:hover .ant-table-cell) {
+  background: rgb(240, 240, 240) !important;
+  color: #e85443;
+}
+
+.table :global(.ant-table-cell > *) {
+  color: #000000 !important;
+}
+
+.table :global(.ant-tag) {
+  font-size: 14px;
+  border-radius: 8px;
+  padding: 7px 25px;
+  font-weight: 700;
+  text-transform: lowercase;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.table :global(.ant-tag::first-letter) {
+  text-transform: uppercase;
+}
+
+.table :global(.ant-tag.tag-Buy),
+.table :global(.ant-tag.tag-Sell) {
+  background: -webkit-linear-gradient(#f27252, #e85443);
+  background-color: transparent !important;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 1px solid #f27252;
+}
+
+.table :global(.ant-tag.tag-Waiting) {
+  background: -webkit-linear-gradient(#b5473a, #b5473a);
+  background-color: transparent !important;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 1px solid #b5473a;
+  width: 120px;
+  text-align: center;
+}
+
+.table :global(.ant-tag.tag-Confirmed) {
+  background: -webkit-linear-gradient(#36a920, #36a920);
+  background-color: transparent !important;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 1px solid #36a920;
+  width: 120px;
+  text-align: center;
+}
+
+:global(.ant-input:hover) {
+  border-color: #d9d9d9 !important;
+  box-shadow: none !important;
+}
+
+:global(.ant-input:focus) {
+  border-color: #d9d9d9 !important;
+  box-shadow: none !important;
+}
+
+.statusCol {
+  display: flex;
+}
+
+.resPrice {
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 5;
+}
+
+.btnView {
+  width: 100% !important;
+  margin-top: 0px !important;
+  border-radius: 0.6rem !important;
+  height: 35px !important;
+  background: linear-gradient(to bottom, #f27252, #e85443) !important;
+  border: 1px solid #f27252 !important;
+  font-weight: bold !important;
+  color: #ffffff !important;
+}
+
+.btnView:hover {
+  width: 100%;
+  margin-top: 0px;
+  border-radius: 0.6rem;
+  height: 35px;
+  border: none;
+  border-color: #f27252;
+  font-weight: bold;
+  box-shadow: rgb(4 17 29 / 25%) 0px 0px 10px 0px;
+}
+
+.btnAccept {
+  width: auto !important;
+  margin-top: 0px !important;
+  border-radius: 0.6rem !important;
+  height: 35px !important;
+  background: linear-gradient(to bottom, #f27252, #e85443) !important;
+  border: none !important;
+  font-weight: bold !important;
+  color: #ffffff !important;
+}
+
+.btnAccept:hover {
+  width: auto;
+  margin-top: 0px;
+  border-radius: 0.6rem;
+  height: 35px;
+  font-weight: bold;
+  box-shadow: rgb(4 17 29 / 25%) 0px 0px 10px 0px;
+}
+
+.buttonTransfer {
+  width: auto !important;
+  margin-top: 15px !important;
+  border-radius: 0.6rem !important;
+  height: 35px !important;
+  background: #ffffff !important;
+  font-weight: bold !important;
+  border: 1px solid #f27252 !important;
+  color: #e85443 !important;
+}
+
+.buttonTransfer:hover {
+  width: auto;
+  margin-top: 15px;
+  border-radius: 0.6rem;
+  height: 35px;
+  background: linear-gradient(to bottom, #f27252, #e85443) !important;
+  border: none !important;
+  font-weight: bold;
+  color: #ffffff !important;
+}
+
+.tagStatus {
+  width: 120px !important;
+  background: none;
+  /* color: #fffca5; */
+}
+.tagIn {
+  width: 100%;
+  text-align: center;
+  background: none !important;
+}
+.boxChatMessage {
+  height: 59%;
+}
+
+@media screen and (min-width: 768px) {
+  .resPrice {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .table :global(.ant-table-thead) {
+    display: none;
+  }
+
+  .table :global(.ant-table-cell) {
+    padding: 8px 0 8px 8px !important;
+  }
+
+  .table :global(.ant-card-meta-title) {
+    font-size: 14px;
+    margin-bottom: 5px !important;
+  }
+
+  .table :global(.ant-card-meta-description) {
+    font-size: 12px;
+  }
+
+  .table :global(.ant-tag) {
+    font-size: 10px;
+    padding: 2px 8px;
+    margin-right: 2px;
+  }
+
+  .table :global(.ant-tag.tag-Waiting),
+  .table :global(.ant-tag.tag-Confirmed) {
+    width: 80px;
+  }
+
+  .transactionWrapper {
+    margin: 20px auto !important;
+  }
+  .tagStatus {
+    width: 80px !important;
+    text-align: center !important;
+  }
+}
+
+.btnDelete {
+  cursor: pointer;
+  position: absolute;
+  padding: 5px;
+  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  bottom: 0;
+  right: 0;
+  border-radius: 20px 0;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnDelete :global(.anticon) {
+  color: #fff;
+  font-size: 18px;
+}
+
+.btnDelete:hover {
+  /* background: transparent; */
+  /* border: 1px solid #f27252; */
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 6px;
+}
+
+/* .btnDelete:hover :global(.anticon) {
+  color: #f27252;
+} */
+
+/* new data */
+.rowClassName1 {
+  background-color: rgb(224, 224, 224);
+  border-radius: 10px;
+  /* border: 2px solid red; */
+  border-color: chartreuse;
+  border-width: 3px;
+  border-style: solid;
+}
+
+.rowClassName1 td:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.rowClassName1 td:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.title {
+  font-weight: bold;
+}
+
+/* end new data */
+
+@media screen and (max-width: 992px) {
+  .table :global(.ant-table-row) {
+    border-radius: 8px;
+  }
+  .btnDelete {
+    width: 22px;
+    height: 22px;
+    border-radius: 8px 0;
+  }
+
+  .btnDelete :global(.anticon) {
+    font-size: 14px;
+  }
+
+  .table :global(table tr td.ant-table-cell:first-child) {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background: #fff;
+  }
+
+  .table :global(table tr td.ant-table-cell:last-child) {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background: #fff;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .statusCol {
+    flex-direction: column;
+    float: right;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .table :global(.ant-table-cell) {
+    padding: 8px 0 8px 2px !important;
+  }
+  :global(.ant-card-meta-avatar) {
+    padding-right: 5px !important;
+  }
+}

@@ -1,0 +1,344 @@
+.footer {
+  padding: 0 !important;
+  width: 100%;
+  margin-top: auto;
+}
+
+.topFooter {
+  padding: 100px 20px;
+  background: #333333;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.bottomFooter {
+  max-width: 1200px;
+  margin: auto;
+}
+
+:local .bottomFooter :global(.ant-menu) {
+  background: transparent;
+  justify-content: flex-end;
+}
+
+:local .bottomFooter :global(.ant-menu-title-content) {
+  font-weight: 700;
+  font-size: 20px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+:local .bottomFooter :global(.ant-menu-item-selected) {
+  background-color: transparent !important;
+}
+
+.form {
+  margin-top: 36px !important;
+}
+
+.form :global(.ant-form-item-label label) {
+  color: #fff;
+}
+
+.form :global(.ant-input) {
+  border-radius: 6px !important;
+  background: #66483f;
+  border: 1px solid #836f6d;
+  color: #fff;
+}
+
+.form :global(.ant-input:focus),
+.form :global(.ant-input:hover) {
+  border-color: unset;
+}
+
+.form input[type="text"] {
+  height: 42px !important;
+}
+
+.leftFooterBg {
+  background-size: contain;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 150px 0;
+}
+
+.circle {
+  height: 400px;
+  width: 400px;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle::before {
+  position: absolute;
+  content: "";
+  border: 4px solid rgba(151, 175, 213, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  border-right-color: #fff;
+  border-width: 2px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  animation: rotatecw1 30s linear infinite 0s;
+}
+
+@keyframes rotatecw1 {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.circle::after {
+  position: absolute;
+  content: "";
+  border: 4px solid rgba(151, 175, 213, 0.3);
+  border-radius: 50%;
+  top: 35px;
+  left: 35px;
+  bottom: 35px;
+  right: 35px;
+  border-top-color: #fff;
+  border-bottom-color: #fff;
+  border-width: 2px;
+  animation: rotateacw2 24s linear infinite 0s;
+}
+
+@keyframes rotateacw2 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.listItem :global(.ant-list-item) {
+  font-size: 16px;
+  color: #fff;
+  border-bottom: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.contactIcon:global(.ant-typography) {
+  display: flex;
+  align-items: center;
+  margin-right: 12px;
+  padding: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.exploreBtn:global(.ant-btn) {
+  background: #ffffff;
+  border-radius: 10px;
+  width: 136px;
+  border-color: #f27252;
+}
+
+.exploreBtn:global(.ant-btn:hover),
+.exploreBtn:global(.ant-btn:focus) {
+  color: #ffffff;
+  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  border: none;
+}
+
+.exploreBtn:global(.ant-btn:focus) span,
+.exploreBtn:global(.ant-btn:hover) span {
+  background: -webkit-linear-gradient(#ffffff, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.exploreBtn span {
+  font-weight: 700;
+  background: -webkit-linear-gradient(#f27252, #e85443);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.socialList {
+  position: absolute;
+  bottom: -36px;
+  transform: translate(0, -50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.socialList :global(svg) {
+  color: #fff;
+  font-size: 22px;
+  margin: 0 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.socialList :global(svg:hover) {
+  /* border-radius: 50%; */
+  /* background-color: #fff; */
+  color: #db7759;
+  /* padding: 8px; */
+  transition: all 0.3s ease-in-out;
+}
+
+.container {
+  padding: 50px 20px;
+  background: linear-gradient(180deg, #e85443 0%, #ad3a2c 100%);
+}
+
+.menuWrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 42px;
+}
+
+.menuWrapper :global(a) {
+  padding: 0 20px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.menuWrapper :global(a:hover) {
+  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  color: #fff;
+  border-radius: 10px;
+}
+
+.contacUs {
+  background: #333333;
+}
+
+.menuItems {
+  display: flex;
+  height: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .menuWrapper :global(a) {
+    padding: 0 10px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .bottomFooter {
+    flex-direction: column !important;
+  }
+  .menuWrapper :global(a) {
+    padding: 0;
+  }
+  .menuWrapper {
+    justify-content: flex-start;
+    height: 100%;
+  }
+
+  .menuWrapper div {
+    flex: 1;
+  }
+
+  .bottomFooter {
+    padding: 0px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .footerLogo {
+    margin-bottom: 30px;
+  }
+  .menuItems {
+    flex-direction: column;
+  }
+  .menuItems a {
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+
+  .menuWrapper :global(a:hover) {
+    background: none;
+    color: #fff;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .circle {
+    height: 280px;
+    width: 280px;
+  }
+  .listItem :global(.ant-list-item) {
+    font-size: 10px !important;
+    color: #fff;
+    border-bottom: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .circle {
+    height: 350px;
+    width: 350px;
+  }
+  .socialList :global(svg) {
+    color: #fff;
+    font-size: 15px;
+    margin: 0 12px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  .topFooter {
+    padding: 50px 20px;
+    background: #333333;
+    max-width: 1100px;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .listItem :global(.ant-list-item) {
+    font-size: 10px !important;
+    color: #fff;
+    border-bottom: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .circle {
+    height: 300px;
+    width: 300px;
+  }
+  .topFooter {
+    padding: 50px 20px;
+    background: #333333;
+    max-width: 1100px;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .circle {
+    height: 300px;
+    width: 300px;
+  }
+}

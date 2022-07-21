@@ -1,0 +1,39 @@
+:global(.ant-btn.ant-btn-text).transferBtn {
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 0.6rem;
+  height: 50px;
+  background: linear-gradient(to bottom, #f27252, #e85443);
+  font-weight: bold;
+  color: #ffffff;
+}
+:global(.ant-btn.ant-btn-text).transferBtn:hover {
+  box-shadow: rgb(4 17 29 / 25%) 0px 0px 10px 0px;
+}
+
+:global(.ant-btn).transferBtn:hover:disabled,
+:global(.ant-btn).transferBtn:disabled {
+  background: #e5e5e5;
+  color: #ffffff;
+}
+
+:global(.ant-btn.ant-btn-text).transferBtn2 {
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 0.6rem;
+  height: 50px;
+  background: linear-gradient(to bottom, #f27252, #e85443);
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* :global(.ant-btn.ant-btn-text).transferBtn:hover {
+  box-shadow: rgb(4 17 29 / 25%) 0px 0px 10px 0px;
+} */
+
+:global(.ant-btn).transferBtn2:hover:disabled,
+:global(.ant-btn).transferBtn2:disabled {
+  background: #e5e5e5;
+  color: #ffffff;
+}
+

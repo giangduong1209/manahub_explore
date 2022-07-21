@@ -1,0 +1,1 @@
+export const GET_SEARCH_VALUE = 'GET_SEARCH_VALUE';

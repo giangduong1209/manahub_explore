@@ -1,0 +1,46 @@
+.avatar:global(.ant-avatar) {
+  width: 68px;
+  height: 68px;
+  border-radius: 10px !important;
+}
+
+.transactionRow {
+  display: flex;
+  align-items: center;
+}
+
+.transactionRow::before,
+.transactionRow::after {
+  display: block;
+}
+
+.transactionRow :global(.ant-card-meta) {
+  display: flex;
+  align-items: center;
+}
+
+.transactionRow :global(.ant-card-meta-title) {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+}
+
+.transactionRow :global(.ant-card-meta-description) {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 575px) {
+  .avatar:global(.ant-avatar) {
+    width: 55px;
+    height: 55px;
+  }
+
+  .transactionRow :global(.ant-card-meta-title) {
+    font-size: 14px;
+  }
+  
+  .transactionRow :global(.ant-card-meta-description) {
+    font-size: 13px;
+  }
+}

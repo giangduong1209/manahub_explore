@@ -1,0 +1,534 @@
+.header {
+  padding: 0 !important;
+  width: 100%;
+  height: auto !important;
+}
+
+.topBg {
+  width: 100%;
+  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+}
+
+.bottomBg {
+  width: 100%;
+  background: #333333;
+}
+
+.iconLogo {
+  font-size: 42px;
+}
+
+.topHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  padding: 45px 15px;
+  margin: 0 auto;
+}
+
+.topHeaderMd {
+  padding: 18px 16px;
+}
+
+.topMenuIconDot {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translate(0, -50%);
+}
+
+.topMenuIcon {
+  display: flex;
+  position: relative;
+}
+
+.topMenuWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.topMenuMdWrapper {
+  justify-content: flex-start;
+}
+
+.dropdown {
+  background: #fff !important;
+  height: 42px !important;
+  padding: 10px !important;
+  width: 100% !important;
+  color: #000 !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  border-radius: 10px !important;
+  border: none !important;
+  position: relative !important;
+}
+
+.dropdown:hover {
+  background: #fff;
+  color: #000;
+  border: none;
+}
+
+:local .dropdown :global(.anticon-down) {
+  color: black;
+  position: absolute !important;
+  right: 20px;
+  top: 50%;
+  transform: translate(0, -50%);
+  display: flex !important;
+  font-size: 16px !important;
+}
+
+.bottomHeader {
+  width: 100%;
+  padding: 14px 15px;
+  display: flex;
+  /* flex-wrap: wrap; */
+  align-items: center;
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.2s ease-out;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bottomHeaderClose {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s ease-out;
+  max-height: 0;
+}
+
+.logoHomeWrapper {
+  display: flex !important;
+  /* justify-content: center;
+  flex-direction: column;
+  align-items: center; */
+}
+
+.menuRight {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: 30px;
+  align-items: center;
+}
+
+.menuItems {
+  display: flex;
+  margin-left: 30px;
+  flex: auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input:global(.ant-input-affix-wrapper) {
+  background: transparent !important;
+  border-radius: 6px !important;
+  width: 384px;
+  height: 42px;
+  border-radius: 10px !important;
+}
+
+.input :global(.ant-input) {
+  color: #fff !important;
+}
+
+.input:hover {
+  border-color: #fff !important;
+}
+
+:local .input :global(.ant-input) {
+  background: transparent;
+}
+
+.bottomMenu {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  width: 100%;
+  background-color: transparent !important;
+}
+
+.bottomMenuSm {
+  /* justify-content: flex-end; */
+  margin-right: 20px;
+  line-height: 50px !important;
+}
+
+:local .bottomMenu :global(.ant-menu-item-selected) {
+  background-color: transparent !important;
+  background: -webkit-linear-gradient(#f27252, #e85443);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+:local .bottomMenu :global(.ant-menu-title-content) {
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+}
+
+:local .bottomMenuSm :global(.ant-menu-title-content) {
+  font-size: 14px;
+}
+
+:local .bottomMenu :global(.ant-menu-item) {
+  transition: all 0.3s ease-in-out !important;
+  border-radius: 10px;
+  line-height: unset;
+  max-height: 42px;
+  display: flex !important;
+  align-items: center;
+}
+
+:local .bottomMenuSm :global(.ant-menu-item) {
+  padding: 0 !important;
+  margin: 0 15px 0 0 !important;
+}
+
+:local .bottomMenu :global(.ant-menu-item-active) {
+  background: linear-gradient(180deg, #f27252 0%, #e85443 100%) !important;
+  background-color: unset;
+  background: unset;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+}
+
+.iconBottomWrapper {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hambugerWrapper {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.hambugerWrapper :global(svg) {
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.svgIcon {
+  flex-shrink: 0;
+  margin: auto;
+}
+
+.icon {
+  border-radius: 50%;
+  width: 100px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon:hover {
+  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+}
+
+a.menuLink,
+:global(.ant-menu-item) a.menuLink:hover,
+:global(.ant-menu-horizontal > .ant-menu-item) a.menuLink:hover,
+:global(.ant-menu-horizontal > .ant-menu-item-selected) a.menuLink:hover,
+:global(.ant-menu-horizontal > .ant-menu-item-selected) a.menuLink {
+  color: #fff !important;
+}
+
+.subMenuMobile {
+  background: #333333;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.subMenuMobile a {
+  line-height: normal;
+  margin: 2px 0;
+}
+
+.subMenuMobile img {
+  width: 35px;
+}
+
+.subMenuMobile :global(.ant-space) {
+  line-height: 42px;
+}
+
+.subMenuMobile :global(.ant-space span) {
+  background: linear-gradient(180deg, #fff 0%, #fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.subMenuMobile .mainMenuActive:global(.ant-space span) {
+  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  -webkit-background-clip: text;
+}
+
+.subMenuMobileLink {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.textLink {
+  margin-left: 8px;
+  color: #fff;
+}
+
+.logoActive ~ .textLink {
+  color: #f27251 !important;
+}
+
+.logoMobile {
+  padding: 1px;
+  border-radius: 50%;
+  border: 1px solid #f27251;
+}
+
+.walletInfo {
+  /* min-width: 240px;
+  background: #fff;
+  height: 42px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px; */
+}
+
+.chainWrapper {
+  max-width: 240px;
+  margin-left: auto;
+}
+
+.inputDesktop:global(.ant-input-affix-wrapper) {
+  width: 100%;
+  margin: auto 20px;
+}
+
+.btnCreate:global(.ant-menu-item) {
+  border: 2px solid #f27251 !important;
+  color: #f27251 !important;
+  background: #fff;
+  margin: 0 20px;
+}
+
+.btnCreate:global(.ant-menu-item:hover) {
+  border: 2px solid transparent !important;
+}
+
+.btnCreate:global(.ant-menu-item) .menuLink {
+  color: #f27251 !important;
+}
+
+.dotTransaction {
+  position: absolute;
+  margin-left: -5px;
+  margin-top: 15px;
+}
+
+@media screen and (max-width: 400px) {
+  .topMenuIcon :global(svg) {
+    width: 100%;
+  }
+
+  .topHeader :global(.ant-col:last-child) {
+    width: 100%;
+  }
+
+  .bottomHeader :global(.ant-menu-item) {
+    margin: 0 8px 0 0 !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  .bottomHeader :global(.ant-menu-item span) {
+    font-size: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hambugerWrapper {
+    width: 100%;
+  }
+
+  .hambugerWrapper :global(svg) {
+    margin-right: 0;
+    flex-shrink: 0;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .inputDesktop:global(.ant-input-affix-wrapper) {
+    width: 100% !important;
+    margin-right: 20px !important;
+  }
+  .input:global(.ant-input-affix-wrapper) {
+    width: 200px;
+  }
+  .menuRight {
+    margin-left: 20px;
+  }
+
+  .menuItems {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .input:global(.ant-input-affix-wrapper) {
+    width: 140px;
+    /* height: 34px; */
+  }
+  .iconLogo {
+    font-size: 34px;
+  }
+  .walletInfo {
+    min-width: unset;
+  }
+
+  .bottomMenu :global(.ant-menu-item) {
+    padding: 0 8px !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menuRight {
+    flex-direction: column-reverse;
+    margin-left: 10px;
+  }
+  .input:global(.ant-input-affix-wrapper) {
+    width: 100%;
+  }
+  .menuItems {
+    margin-left: 0;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  .logoHomeWrapper {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logoLink {
+    padding: 1px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+  }
+
+  .logoLink.logoActive {
+    border: 1px solid #f27251;
+  }
+
+  .bottomHeader {
+    align-items: flex-start;
+  }
+  .icon {
+    width: 32px;
+    height: 32px;
+  }
+  .bottomHeader :global(.ant-menu-item) {
+    margin: 0 8px 0 0 !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .bottomHeader :global(.ant-menu-item) {
+    margin: 0 8px 0 0 !important;
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+  }
+
+  .bottomHeader .btnCreate:global(.ant-menu-item) {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+  .bottomHeader {
+    padding: 8px;
+  }
+  .menuRight {
+    margin-left: 8px;
+  }
+  .walletInfo {
+    padding: 0 8px;
+    margin-left: -10px !important;
+  }
+  .bottomHeader :global(.ant-menu-item span) {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .bottomHeader :global(.ant-menu-item span) {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .bottomHeader :global(.ant-menu-item) {
+    margin: 0 2px 0 0 !important;
+  }
+  .bottomHeader :global(.ant-menu-item span) {
+    font-size: 11px;
+  }
+}
+
+
+/* text chain */
+
+@media screen and (max-width: 440px) {
+  .textChain{
+    font-size: 10px !important;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .textChain{
+    font-size: 8px !important;
+  }
+}
+
+@media only screen and (min-width: 760px) and (max-width: 980px) {
+  .textChain{
+    font-size: 11px !important;
+  }
+}
+
+.svgIcon1 {
+  flex-shrink: 0;
+  margin: auto;
+}
+
+.icon1 {
+  border-radius: 50%;
+  width: 90px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  max-width: 42px;
+}
+
+.icon1:hover {
+  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+}

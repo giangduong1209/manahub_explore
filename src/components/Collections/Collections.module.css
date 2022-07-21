@@ -1,0 +1,234 @@
+.wrapper {
+  max-width: 1264px;
+  margin: 60px auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapperInner {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.cardbox {
+  max-width: 282px;
+  padding: 14px;
+  margin: 12px;
+  background: #ffffff;
+  border-radius: 20px;
+  width: auto;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+/* .cardbox:hover {
+  border-color: #f27252;
+  box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%), 0 5px 12px 4px rgb(0 0 0 / 9%);
+} */
+
+.image {
+  position: relative;
+  background: #adadad;
+  border-radius: 10px;
+  width: 254px;
+  height: 254px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: auto;
+  margin-bottom: 8px;
+}
+
+.avatar:global(.ant-avatar) {
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  border: 2px solid #f3f3f3;
+}
+
+.button:global(.ant-btn) {
+  width: 100%;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:global(.ant-btn).btnInfo:focus,
+:global(.ant-btn).btnInfo:active,
+:global(.ant-btn).btnInfo:hover,
+.btnInfo:global(.ant-btn) {
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to bottom, #f27252, #e85443) border-box;
+  border: 1px solid transparent;
+  color: #f27252;
+}
+
+:global(.ant-btn).btnInfo:hover {
+  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  color: white;
+  border: none;
+}
+
+:global(.ant-btn).btnBuy:focus,
+:global(.ant-btn).btnBuy:active,
+:global(.ant-btn).btnBuy:hover,
+.btnBuy:global(.ant-btn) {
+  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  color: white;
+  border: none;
+}
+
+:global(.ant-btn).btnBuy:hover {
+  box-shadow: rgb(4 17 29 / 25%) 0px 0px 10px 0px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.id {
+  font-size: 16px;
+  color: #adadad;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f27252;
+}
+
+.byAuthor span {
+  color: #f27252;
+}
+
+.description {
+  font-size: 16px;
+}
+
+.pagination:global(.ant-pagination) :global(.ant-pagination-item) {
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to bottom, #f27252, #e85443) border-box;
+  border-radius: 50%;
+  border: 1px solid transparent;
+}
+
+.pagination:global(.ant-pagination) :global(.ant-pagination-item a) {
+  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 18px;
+}
+
+.pagination:global(.ant-pagination) :global(.ant-pagination-item:hover),
+.pagination:global(.ant-pagination) :global(.ant-pagination-item-active) {
+  background: linear-gradient(to bottom, #f27252, #e85443) border-box;
+}
+
+.pagination:global(.ant-pagination) :global(.ant-pagination-item:hover a),
+.pagination:global(.ant-pagination) :global(.ant-pagination-item-active a) {
+  background: linear-gradient(180deg, white 0%, white 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg {
+  position: relative;
+  height: 200px;
+  width: 100%;
+  background: gray;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bannerContent {
+  background: #f3f3f3;
+  padding-top: 80px;
+  text-align: center;
+}
+.bannerTitle {
+  font-size: 48px;
+  color: #000000;
+  font-weight: 700;
+}
+
+.createdBy {
+  font-size: 18px;
+  color: #000000;
+}
+.createdBy span {
+  background: -webkit-linear-gradient(180deg, #f27252, #e85443 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.number {
+  font-size: 30px;
+  font-weight: 700;
+}
+.attr {
+  font-size: 18px;
+}
+.statics {
+  display: flex;
+  justify-content: center;
+}
+.statics :global(.ant-row) {
+  padding: 10px 20px;
+  border: 1px solid #adadad;
+  border-radius: 10px;
+  margin: 16px;
+}
+.desc {
+  font-size: 20px;
+  color: #000000;
+}
+
+.icon {
+  font-size: 25px;
+  color: #f27252 !important;
+}
+/* responsive */
+@media screen and (max-width: 1200px) {
+  .wrapperInner {
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .number {
+    font-size: 18px;
+  }
+  .attr {
+    font-size: 16px;
+  }
+  .icon {
+    font-size: 16px;
+  }
+  .statics :global(.ant-row) {
+    padding: 10px;
+  }
+  .wrapperInner {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .wrapperInner {
+    grid-template-columns: auto;
+  }
+}
+

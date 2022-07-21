@@ -1,0 +1,218 @@
+.wrapper {
+  max-width: 1264px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapperInner {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.headerTitle {
+  font-size: 36px;
+  font-weight: 700;
+  color: #f27252;
+}
+
+.cardbox {
+  max-width: 282px;
+  padding: 14px;
+  margin: 12px;
+  background: #ffffff;
+  border-radius: 20px;
+  width: auto;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.cardbox:hover {
+  border-color: #f27252;
+  box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%), 0 5px 12px 4px rgb(0 0 0 / 9%);
+}
+
+.image {
+  position: relative;
+  background: #adadad;
+  border-radius: 10px;
+  width: 254px;
+  height: 254px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: auto;
+  margin-bottom: 8px;
+}
+
+.avatar:global(.ant-avatar) {
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  border: 2px solid #f3f3f3;
+}
+
+.button:global(.ant-btn) {
+  width: 100%;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* btn info */
+:global(.ant-btn).btnInfo:focus,
+:global(.ant-btn).btnInfo:active,
+.btnInfo:global(.ant-btn) {
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to bottom, #f27252, #e85443) border-box;
+  border: 1px solid transparent;
+  color: #f27252;
+}
+
+:global(.ant-btn).btnInfo:hover {
+  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  color: white;
+  border: none;
+}
+/* btn buy */
+:global(.ant-btn).btnBuy:focus,
+:global(.ant-btn).btnBuy:active,
+:global(.ant-btn).btnBuy:hover,
+.btnBuy:global(.ant-btn) {
+  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  color: white;
+  border: none;
+  
+}
+
+:global(.ant-btn).btnBuy:hover {
+  box-shadow: rgb(4 17 29 / 25%) 0px 0px 10px 0px;
+}
+/* btn auction */
+:global(.ant-btn).btnAution:focus,
+:global(.ant-btn).btnAution:active,
+:global(.ant-btn).btnAution:hover,
+.btnAution:global(.ant-btn) {
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  width: auto;
+  height: auto;
+
+  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  color: white;
+  border: none;
+  
+}
+
+:global(.ant-btn).btnAution:hover {
+  box-shadow: rgb(4 17 29 / 25%) 0px 0px 10px 0px;
+}
+/* btn cancel */
+:global(.ant-btn).btnCancel:focus,
+:global(.ant-btn).btnCancel:active,
+.btnCancel:global(.ant-btn) {
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  width: auto;
+  height: auto;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to bottom, #f27252, #e85443) border-box;
+  border: 1px solid transparent;
+  color: #f27252;
+  
+}
+
+:global(.ant-btn).btnCancel:hover {
+  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  color: white;
+  border-color:#f27252;
+
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.id {
+  font-size: 16px;
+  color: #adadad;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f27252;
+}
+
+.byAuthor span {
+  color: #f27252;
+}
+
+.description {
+  font-size: 16px;
+}
+
+.pagination:global(.ant-pagination) :global(.ant-pagination-item) {
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to bottom, #f27252, #e85443) border-box;
+  border-radius: 50%;
+  border: 1px solid transparent;
+}
+
+.pagination:global(.ant-pagination) :global(.ant-pagination-item a) {
+  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 18px;
+}
+
+.pagination:global(.ant-pagination) :global(.ant-pagination-item:hover),
+.pagination:global(.ant-pagination) :global(.ant-pagination-item-active) {
+  background: linear-gradient(to bottom, #f27252, #e85443) border-box;
+}
+
+.pagination:global(.ant-pagination) :global(.ant-pagination-item:hover a),
+.pagination:global(.ant-pagination) :global(.ant-pagination-item-active a) {
+  background: linear-gradient(180deg, white 0%, white 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* responsive */
+@media screen and (max-width: 1600px) {
+  .wrapperInner {
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .wrapperInner {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .wrapperInner {
+    grid-template-columns: auto;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .wrapper {
+    margin: 20px auto;
+    padding: 0
+  }
+}

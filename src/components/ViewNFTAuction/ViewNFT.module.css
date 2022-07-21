@@ -1,0 +1,882 @@
+@font-face {
+  font-family: GILROY;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../font/Gilroy_Regular.otf");
+}
+.wrapper {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  width: 100%;
+}
+.table :global(table) {
+  background-color: #f3f3f3;
+  /* border-spacing: 0 1rem !important; */
+  border-collapse: separate;
+
+}
+
+.table :global(table tr td.ant-table-cell:first-child) {
+  /* border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px; */
+  border-color :#f3f3f3
+}
+
+.table :global(table tr td.ant-table-cell:last-child) {
+  /* border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px; */
+  border :1px solid #f3f3f3
+}
+.table :global(.ant-table) {
+  overflow-x: auto;
+}
+
+.table :global(.ant-table-thead) {
+  background: transparent;
+}
+
+.table :global(.ant-table-thead .ant-table-cell) {
+  background: #f3f3f3;
+  /* border-top-left-radius: unset; */
+  font-weight: 700;
+  color: #000;
+}
+
+.table :global(.ant-table-thead .ant-table-cell::before) {
+  content: unset !important;
+}
+
+.table :global(.ant-table-tbody) {
+  background: #fff;
+}
+
+.table :global(.ant-table-row) {
+  border-radius: 20px;
+}
+
+.table :global(.ant-table-row:hover .ant-table-cell) {
+  background: #fff;
+}
+
+.table :global(.ant-table-cell > *) {
+  /* color: #000000 !important; */
+}
+
+
+.table :global(.ant-tag::first-letter) {
+  text-transform: uppercase;
+}
+
+.cardimgbox {
+  padding: 14px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  width: auto;
+  cursor: pointer;
+  transition: box-shadow 0.3s, border-color 0.3s;
+  width: 550px;
+  margin: auto;
+  padding: 10px;
+}
+
+/* .cardimgbox:hover {
+  border: 2px solid #f27252;
+  box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+    0 5px 12px 4px rgb(0 0 0 / 9%);
+} */
+.cardListedbox {
+  padding: 14px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  width: auto;
+  cursor: pointer;
+  transition: box-shadow 0.3s, border-color 0.3s;
+  width: 550px;
+  margin: auto;
+  padding: 10px;
+}
+
+/* .cardListedbox:hover {
+  border: 2px solid #f27252;
+  box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+    0 5px 12px 4px rgb(0 0 0 / 9%);
+} */
+.cardhistorybox {
+  padding: 14px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  width: auto;
+  cursor: pointer;
+  transition: box-shadow 0.3s, border-color 0.3s;
+  width: 550px;
+  margin: auto;
+  padding: 10px;
+}
+
+
+/* .cardhistorybox:hover {
+  border: 2px solid #f27252;
+  box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+    0 5px 12px 4px rgb(0 0 0 / 9%);
+} */
+.cardcreatorbox {
+  padding: 14px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  width: auto;
+  cursor: pointer;
+  transition: box-shadow 0.3s, border-color 0.3s;
+  width: 550px;
+  margin: auto;
+  padding: 10px;
+}
+
+/* .cardcreatorbox:hover {
+  border: 2px solid #f27252;
+  box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+    0 5px 12px 4px rgb(0 0 0 / 9%);
+} */
+.cardbox {
+  padding: 14px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  width: auto;
+  cursor: pointer;
+  transition: box-shadow 0.3s, border-color 0.3s;
+  width: 550px;
+  margin: auto;
+  padding: 10px;
+}
+
+/* .cardbox:hover {
+  border: 2px solid #f27252;
+  box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+    0 5px 12px 4px rgb(0 0 0 / 9%);
+} */
+
+.image {
+  position: relative;
+  background: #adadad;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.avatar:global(.ant-avatar) {
+  /* position: absolute; */
+  bottom: -20px;
+  left: 25%;
+  transform: translate(-50%, 0px);
+  border: 2px solid white;
+  background-color: #e85443;
+}
+
+.avatarCollection:global(.ant-avatar) {
+  /* position: absolute; */
+  bottom: -5px;
+  left: 30%;
+  transform: translate(-50%, 0px);
+  border: 2px solid white;
+  background-color: #e85443;
+}
+
+.avatarCreator:global(.ant-avatar) {
+  /* position: absolute; */
+  bottom: -20px;
+  left: 25%;
+  transform: translate(-50%, 0px);
+  border: 2px solid white;
+  background-color: #e85443;
+}
+.inforAvatar{
+  /* margin-left: -50px; */
+  text-align: left;
+}
+
+.content {
+  margin-top: 0px;
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: left;
+}
+.viewArea {
+  font-size: 18px;
+  /* font-weight: 700; */
+  align-items: right;
+}
+.view {
+  min-width: 10%;
+  min-height: 10%;
+  border-radius: 25px;
+  background: #f4f7fc;
+}
+
+.byAuthor {
+  font-size: 16px;
+  /* font-weight: 700; */
+}
+
+.byAuthor span {
+  color: #f27252;
+}
+
+.description {
+  font-size: 16px;
+  padding: 10px;
+}
+
+.prices {
+  font-size: 40px;
+  color: #f27252;
+  padding: 10px;
+  font-weight: bold;
+}
+.accountName {
+  font-size: 40px;
+  padding: 10px;
+  font-weight: bold;
+  text-align: left;
+}
+.accountTag {
+  font-size: 15px;
+  align-items: right;
+}
+.tag {
+  width: auto;
+  /* height: calc(auto + 10px); */
+  border-radius: 10px;
+  background: #faecd9;
+  padding: 10px;
+  margin: 5px;
+  margin-left: 0;
+}
+.titleCollection {
+  font-weight: bold;
+  font-size: 30px;
+}
+.shareButtonItem {
+  font-size: 100%;
+}
+
+:global(.ant-btn).btnBuy:focus,
+:global(.ant-btn).btnBuy:active,
+:global(.ant-btn).btnBuy:hover,
+.btnBuy:global(.ant-btn) {
+  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  color: white;
+  border: none;
+  font-family: "GILROY ";
+}
+
+:global(.ant-btn).btnBuy:hover {
+  box-shadow: rgb(4 17 29 / 25%) 0px 0px 10px 0px;
+}
+
+/* responsive */
+@media screen and (max-width: 1500px) {
+  /* .cardbox {
+    width: auto;
+  } */
+}
+
+
+@media only screen and (min-width: 250px) and (max-width: 300px) {
+  .cardbox {
+    width: 250px;
+    margin: auto;
+  }
+  .cardimgbox {
+    width: 250px;
+    height: 250px;
+    margin: auto;
+  }
+  .cardhistorybox {
+    width: 250px;
+    margin: auto;
+  }
+  .cardcreatorbox {
+    width: 250px;
+    margin: auto;
+  }
+  .cardListedbox {
+    width: 250px;
+    margin: auto;
+  }
+  .byAuthor {
+    font-size: 14px !important;
+    /* font-weight: 700; */
+  }
+  .accountTag {
+    font-size: 14px;
+    align-items: right;
+  }
+  .titleCollection {
+    font-weight: bold;
+    font-size: 20px !important;
+  }
+  .accountName {
+    font-size: 20px;
+    padding: 10px;
+    font-weight: bold;
+    text-align: left;
+  }
+  .viewAddress {
+    font-size: 11px;
+  }
+  .shareButtonItem {
+    font-size: 100% !important;
+    margin-left: -20px !important;
+    /* margin-top: -10px !important; */
+    width: auto !important;
+  }
+}
+@media only screen and (min-width: 300px) and (max-width: 400px) {
+  .cardbox {
+    width: 300px;
+    margin: auto;
+  }
+  .cardimgbox {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+  }
+  .cardhistorybox {
+    width: 300px;
+    margin: auto;
+  }
+  .cardcreatorbox {
+    width: 300px;
+    margin: auto;
+  }
+  .cardListedbox {
+    width: 300px;
+    margin: auto;
+  }
+  .byAuthor {
+    font-size: 14px !important;
+    /* font-weight: 700; */
+  }
+  .accountTag {
+    font-size: 14px;
+    align-items: right;
+  }
+  .titleCollection {
+    font-weight: bold;
+    font-size: 20px !important;
+  }
+  .accountName {
+    font-size: 20px;
+    padding: 10px;
+    font-weight: bold;
+    text-align: left;
+  }
+  .viewAddress {
+    font-size: 11px;
+  }
+  .shareButtonItem {
+    font-size: 100% !important;
+    margin-left: -20px !important;
+    /* margin-top: -10px !important; */
+    width: auto !important;
+  }
+}
+@media only screen and (min-width: 400px) and (max-width: 500px) {
+  .cardbox {
+    width: 400px;
+    margin: auto;
+  }
+  .cardimgbox {
+    width: 400px;
+    height: 400px;
+    margin: auto;
+  }
+  .cardhistorybox {
+    width: 400px;
+    margin: auto;
+  }
+  .cardcreatorbox {
+    width: 400px;
+    margin: auto;
+  }
+  .cardListedbox {
+    width: 400px;
+    margin: auto;
+  }
+  .byAuthor {
+    font-size: 14px !important;
+    /* font-weight: 700; */
+  }
+  .accountTag {
+    font-size: 14px;
+    align-items: right;
+  }
+  .titleCollection {
+    font-weight: bold;
+    font-size: 20px !important;
+  }
+  .accountName {
+    font-size: 20px;
+    padding: 10px;
+    font-weight: bold;
+    text-align: left;
+  }
+  .viewAddress {
+    font-size: 11px;
+  }
+  .shareButtonItem {
+    font-size: 100% !important;
+    margin-left: -20px !important;
+    /* margin-top: -10px !important; */
+    width: auto !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .viewAddress {
+    font-size: 10px;
+  }
+  .avatarCreator:global(.ant-avatar) {
+    /* position: absolute; */
+    bottom: -20px;
+    left: 30%;
+  }
+  .wrapperAvatar{
+    margin-left: 20px !important;
+  }
+  .inforAvatar{
+    margin-left: 20px !important;
+  }
+  .infoBottom{
+    margin-left: 20px !important;
+  }
+  .titleCollection{
+    font-weight: bold;
+    font-size: 17px !important;
+  }
+  
+}
+@media only screen and (min-width: 1800px) and (max-width: 2000px) {
+  .avatar:global(.ant-avatar) {
+    /* position: absolute; */
+    bottom: -20px;
+    left: 10%;
+    transform: translate(-50%, 0px);
+    border: 2px solid white;
+    background-color: #e85443;
+  }
+  .cardimgbox {
+    padding: 14px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    width: auto;
+    cursor: pointer;
+    height: 850px;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    width: 850px;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  /* .cardimgbox:hover {
+    border: 2px solid #f27252;
+    box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+      0 5px 12px 4px rgb(0 0 0 / 9%);
+  } */
+  .cardListedbox {
+    padding: 14px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    width: auto;
+    cursor: pointer;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    width: 850px;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  /* .cardListedbox:hover {
+    border: 2px solid #f27252;
+    box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+      0 5px 12px 4px rgb(0 0 0 / 9%);
+  } */
+  .cardhistorybox {
+    padding: 14px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    width: auto;
+    cursor: pointer;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    width: 850px;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  
+  /* .cardhistorybox:hover {
+    border: 2px solid #f27252;
+    box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+      0 5px 12px 4px rgb(0 0 0 / 9%);
+  } */
+  .cardcreatorbox {
+    padding: 14px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    width: auto;
+    cursor: pointer;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    width: 850px;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  /* .cardcreatorbox:hover {
+    border: 2px solid #f27252;
+    box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+      0 5px 12px 4px rgb(0 0 0 / 9%);
+  } */
+  .cardbox {
+    padding: 14px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    width: auto;
+    cursor: pointer;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    width: 850px;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  /* .cardbox:hover {
+    border: 2px solid #f27252;
+    box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+      0 5px 12px 4px rgb(0 0 0 / 9%);
+  } */
+  
+}
+@media only screen and (min-width: 1550px) and (max-width: 1800px) {
+  .avatar:global(.ant-avatar) {
+    /* position: absolute; */
+    bottom: -20px;
+    left: 10%;
+    transform: translate(-50%, 0px);
+    border: 2px solid white;
+    background-color: #e85443;
+  }
+  .cardimgbox {
+    padding: 14px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    width: auto;
+    cursor: pointer;
+    height: 750px;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    width: 750px;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  /* .cardimgbox:hover {
+    border: 2px solid #27aae1;
+    box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+      0 5px 12px 4px rgb(0 0 0 / 9%);
+  } */
+  .cardListedbox {
+    padding: 14px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    width: auto;
+    cursor: pointer;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    width: 750px;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  /* .cardListedbox:hover {
+    border: 2px solid #f27252;
+    box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+      0 5px 12px 4px rgb(0 0 0 / 9%);
+  } */
+  .cardhistorybox {
+    padding: 14px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    width: auto;
+    cursor: pointer;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    width: 750px;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  
+  /* .cardhistorybox:hover {
+    border: 2px solid #f27252;
+    box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+      0 5px 12px 4px rgb(0 0 0 / 9%);
+  } */
+  .cardcreatorbox {
+    padding: 14px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    width: auto;
+    cursor: pointer;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    width: 750px;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  /* .cardcreatorbox:hover {
+    border: 2px solid #f27252;
+    box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+      0 5px 12px 4px rgb(0 0 0 / 9%);
+  } */
+  .cardbox {
+    padding: 14px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    width: auto;
+    cursor: pointer;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    width: 750px;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  /* .cardbox:hover {
+    border: 2px solid #f27252;
+    box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+      0 5px 12px 4px rgb(0 0 0 / 9%);
+  } */
+  
+}
+@media only screen and (min-width: 1450px) and (max-width: 1550px) {
+  .avatar:global(.ant-avatar) {
+    /* position: absolute; */
+    bottom: -20px;
+    left: 10%;
+    transform: translate(-50%, 0px);
+    border: 2px solid white;
+    background-color: #e85443;
+  }
+  .cardimgbox {
+    padding: 14px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    width: auto;
+    cursor: pointer;
+    height: 700px;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    width: 700px;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  /* .cardimgbox:hover {
+    border: 2px solid #f27252;
+    box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+      0 5px 12px 4px rgb(0 0 0 / 9%);
+  } */
+  .cardListedbox {
+    padding: 14px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    width: auto;
+    cursor: pointer;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    width: 700px;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  /* .cardListedbox:hover {
+    border: 2px solid #f27252;
+    box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+      0 5px 12px 4px rgb(0 0 0 / 9%);
+  } */
+  .cardhistorybox {
+    padding: 14px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    width: auto;
+    cursor: pointer;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    width: 700px;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  
+  /* .cardhistorybox:hover {
+    border: 2px solid #f27252;
+    box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+      0 5px 12px 4px rgb(0 0 0 / 9%);
+  } */
+  .cardcreatorbox {
+    padding: 14px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    width: auto;
+    cursor: pointer;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    width: 700px;
+    margin: auto;
+    padding: 10px;
+  }
+/*   
+  .cardcreatorbox:hover {
+    border: 2px solid #f27252;
+    box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+      0 5px 12px 4px rgb(0 0 0 / 9%);
+  } */
+  .cardbox {
+    padding: 14px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    width: auto;
+    cursor: pointer;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    width: 700px;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  /* .cardbox:hover {
+    border: 2px solid #f27252;
+    box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+      0 5px 12px 4px rgb(0 0 0 / 9%);
+  } */
+  
+}
+@media only screen and (min-width: 1350px) and (max-width: 1450px) {
+  .avatar:global(.ant-avatar) {
+    /* position: absolute; */
+    bottom: -20px;
+    left: 10%;
+    transform: translate(-50%, 0px);
+    border: 2px solid white;
+    background-color: #e85443;
+  }
+  .cardimgbox {
+    padding: 14px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    width: auto;
+    cursor: pointer;
+    height: 650px;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    width: 650px;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  /* .cardimgbox:hover {
+    border: 2px solid #f27252;
+    box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+      0 5px 12px 4px rgb(0 0 0 / 9%);
+  } */
+  .cardListedbox {
+    padding: 14px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    width: auto;
+    cursor: pointer;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    width: 650px;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  /* .cardListedbox:hover {
+    border: 2px solid #f27252;
+    box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+      0 5px 12px 4px rgb(0 0 0 / 9%);
+  } */
+  .cardhistorybox {
+    padding: 14px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    width: auto;
+    cursor: pointer;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    width: 650px;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  
+  /* .cardhistorybox:hover {
+    border: 2px solid #f27252;
+    box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+      0 5px 12px 4px rgb(0 0 0 / 9%);
+  } */
+  .cardcreatorbox {
+    padding: 14px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    width: auto;
+    cursor: pointer;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    width: 650px;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  /* .cardcreatorbox:hover {
+    border: 2px solid #f27252;
+    box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+      0 5px 12px 4px rgb(0 0 0 / 9%);
+  } */
+  .cardbox {
+    padding: 14px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    width: auto;
+    cursor: pointer;
+    transition: box-shadow 0.3s, border-color 0.3s;
+    width: 650px;
+    margin: auto;
+    padding: 10px;
+  }
+/*   
+  .cardbox:hover {
+    border: 2px solid #f27252;
+    box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+      0 5px 12px 4px rgb(0 0 0 / 9%);
+  } */
+  
+}
+

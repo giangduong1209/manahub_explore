@@ -1,0 +1,62 @@
+.exploreMainWrapper {
+  margin-bottom: 100px;
+  padding: 0 15px;
+}
+
+.exploreSlideWrapper {
+  max-width: 1200px;
+  margin: 0 auto !important;
+  text-align: center;
+}
+
+.exploreSlideWrapper :global(.ant-typography) {
+  font-weight: 700;
+  font-size: 36px;
+  margin-bottom: 36px;
+  background: -webkit-linear-gradient(#f27252, #e85443);
+  -webkit-background-clip: text;
+}
+
+.mySwiper {
+  max-width: 1200px;
+  position: relative;
+}
+
+.arrowWrapper {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.arrowWrapper :global(svg) {
+  margin: 0 8px;
+  cursor: pointer;
+}
+
+.btnArrow {
+  margin: 0 10px;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid #e85443;
+  background: #fff;
+}
+
+.btnArrow :global(.anticon) {
+  color: #e85443;
+  font-size: 18px;
+}
+
+.btnArrow:hover {
+  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  border: none;
+}
+
+.btnArrow:hover :global(.anticon) {
+  color: #fff;
+}

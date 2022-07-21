@@ -1,0 +1,168 @@
+.mainBannerWrapper {
+  max-width: 1200px;
+  margin: 0 auto 100px !important;
+  /* text-align: center; */
+  padding: 0 15px;
+}
+
+.mainBannerBg {
+  position: relative;
+  padding-top: 100px;
+}
+
+.mainBannerBg::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/src/assets/images/Banner/Card.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3;
+  -webkit-mask: linear-gradient(white, transparent);
+}
+
+:local .mainBannerWrapper :global(.ant-col:first-child) {
+  padding-left: 0 !important;
+  justify-content: center;
+}
+
+:local .mainBannerWrapper :global(.ant-col:last-child) {
+  padding-right: 0 !important;
+}
+
+.mainBannerWrapper :global(.ant-typography) {
+  color: #000;
+}
+
+.mainBannerWrapper :global(h1.ant-typography) {
+  line-height: 72px;
+  font-size: 50px;
+}
+
+.mainBannerWrapper :global(span.ant-typography) {
+  font-size: 24px;
+  letter-spacing: 1px;
+  line-height: 38px;
+}
+
+.mainBannerLeft {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+
+.exploreBtn:global(.ant-btn) {
+  margin-top: 50px;
+  background: #ffffff;
+  border-radius: 10px;
+  width: 136px;
+  border-color: #f27252;
+}
+
+.exploreBtn:global(.ant-btn:hover),
+.exploreBtn:global(.ant-btn:focus) {
+  color: #ffffff;
+  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  border: none;
+}
+
+.exploreBtn:global(.ant-btn:focus) span,
+.exploreBtn:global(.ant-btn:hover) span {
+  background: -webkit-linear-gradient(#ffffff, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.exploreBtn span {
+  font-weight: 700;
+  background: -webkit-linear-gradient(#f27252, #e85443);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mainBannerRight :global(.ant-card-body) {
+  background: #fff;
+  padding: 14px;
+  width: calc(100% + 4px);
+  /* margin: -15px -2px 0 -2px; */
+  border-radius: 0 0 20px 20px;
+}
+
+.mainBannerRight :global(.ant-card-meta) {
+  display: flex;
+  align-items: center;
+}
+
+.mainBannerRight :global(.ant-avatar) {
+  width: 48px;
+  height: 48px;
+}
+
+.mainBannerRight :global(.ant-card-meta-title) {
+  font-size: 24px;
+  color: #000;
+  font-weight: 700;
+  margin-bottom: 0 !important;
+}
+
+.mainBannerRight :global(.ant-card) {
+  display: inline-block;
+  border-radius: 20px;
+  max-width: 550px;
+  border: none;
+  box-shadow: rgb(4 17 29 / 25%) 0px 0px 10px 0px;
+}
+
+.mainBannerRight :global(.ant-card):hover {
+  border: none;
+}
+
+.mainBannerRight :global(.ant-card-cover) {
+  border-radius: 20px;
+}
+
+.mainBannerRight :global(.ant-card-cover img) {
+  border-radius: 20px 20px 0 0;
+}
+
+@media screen and (max-width: 991px) {
+  .mainBannerRight {
+    padding-left: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .mainBannerLeft {
+    display: flex !important;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    align-items: center !important;
+    padding-right: 0 !important;
+  }
+
+  .mainBannerRight :global(.ant-card) {
+    max-width: 355px;
+  }
+
+  .mainBannerWrapper :global(h1.ant-typography) {
+    line-height: 50px;
+    font-size: 38px;
+  }
+
+  .mainBannerWrapper :global(span.ant-typography) {
+    line-height: 42px;
+    font-size: 16px;
+  }
+
+  .exploreBtn:global(.ant-btn) {
+    margin-top: 30px;
+  }
+}

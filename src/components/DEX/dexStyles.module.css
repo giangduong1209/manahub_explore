@@ -1,0 +1,37 @@
+:global(.ant-btn.ant-btn-text).switchBtn {
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 0.6rem;
+  height: 50px;
+  background: linear-gradient(to bottom, #f27252, #e85443);
+  font-weight: bold;
+  color: #ffffff;
+}
+:global(.ant-btn.ant-btn-text).switchBtn:hover {
+  box-shadow: rgb(4 17 29 / 25%) 0px 0px 10px 0px;
+}
+
+:global(.ant-btn).switchBtn:hover:disabled,
+:global(.ant-btn).switchBtn:disabled {
+  background: #e5e5e5;
+  color: #ffffff;
+}
+
+:global(.ant-btn.ant-btn-text).switchBtn2 {
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 0.6rem;
+  height: 50px;
+  background: linear-gradient(to bottom, #f27252, #e85443);
+  font-weight: bold;
+  color: #ffffff;
+}
+/* :global(.ant-btn.ant-btn-text).switchBtn:hover {
+  box-shadow: rgb(4 17 29 / 25%) 0px 0px 10px 0px;
+} */
+
+:global(.ant-btn).switchBtn2:hover:disabled,
+:global(.ant-btn).switchBtn2:disabled {
+  background: #e5e5e5;
+  color: #ffffff;
+}

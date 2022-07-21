@@ -1,0 +1,145 @@
+.autoSlideWrapper {
+  max-width: 1200px;
+  margin: 0 auto !important;
+  text-align: center;
+  padding: 0 15px;
+}
+
+.slide {
+  background: #fff;
+  padding: 60px 0;
+}
+
+.autoSlideWrapper :global(.ant-row) {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+:local .autoSlideWrapper :global(.ant-col:first-child) {
+  padding-left: 0 !important;
+}
+
+:local .autoSlideWrapper :global(.ant-col:last-child) {
+  padding-right: 0 !important;
+  margin-top: 0 !important;
+}
+
+.autoSlideWrapper :global(.ant-row) {
+  display: flex;
+  align-items: center;
+}
+
+.autoSlideWrapper :global(h3.ant-typography) {
+  font-size: 36px;
+  font-weight: 700;
+  color: #000;
+}
+
+.exploreBtn:global(.ant-btn:hover),
+.exploreBtn:global(.ant-btn:focus) {
+  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  border: none;
+}
+
+.exploreBtn:global(.ant-btn:focus) span,
+.exploreBtn:global(.ant-btn:hover) span {
+  background: -webkit-linear-gradient(#ffffff, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.exploreBtn:global(.ant-btn) {
+  background: #ffffff;
+  border-radius: 10px;
+  width: 136px;
+  border-color: #f27252;
+}
+
+/* .exploreBtn:global(.ant-btn:hover),
+.exploreBtn:global(.ant-btn:focus) {
+  background: #ffffff;
+  border-color: #e85443;
+} */
+
+.exploreBtn span {
+  font-weight: 700;
+  background: -webkit-linear-gradient(#f27252, #e85443);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.leftAutoSlide {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.slideImg {
+  width: 250px;
+  height: 300px;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.marqueeSlideWrapper {
+  position: relative;
+}
+
+.marqueeSlideWrapper :global(.slider-item) {
+  margin: 0 8px;
+}
+
+.btnArrow {
+  position: absolute;
+  z-index: 100;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid #e85443;
+  background: #fff;
+}
+
+.btnArrow :global(.anticon) {
+  color: #e85443;
+  font-size: 18px;
+}
+
+.btnArrow:hover {
+  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  border: none;
+}
+
+.btnArrow:hover :global(.anticon) {
+  color: #fff;
+}
+
+.btnPrev {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translate(20px, -50%);
+}
+
+.btnNext {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translate(-20px, -50%);
+}
+
+@media screen and (max-width: 767px) {
+  .rightAutoSlide {
+    padding-left: 0 !important;
+  }
+  :local .autoSlideWrapper :global(.ant-col:first-child) {
+    padding-bottom: 16px !important;
+  }
+}
