@@ -147,9 +147,9 @@ const App = ({ isServerInfo }) => {
                 <Tabs.TabPane tab={<span>ERC20 Transactions</span>} key="1">
                   <ERC20Transfers />
                 </Tabs.TabPane>
-                <Tabs.TabPane tab={<span>P2P Transactions</span>} key="2">
+                {/* <Tabs.TabPane tab={<span>P2P Transactions</span>} key="2">
                   <P2PTable />
-                </Tabs.TabPane>
+                </Tabs.TabPane> */}
               </Tabs>
             </Route>
             <Route path="/dex">
@@ -163,12 +163,7 @@ const App = ({ isServerInfo }) => {
                 <Tabs.TabPane tab={<span>Polygon</span>} key="3">
                   <DEX chain="polygon" />
                 </Tabs.TabPane>
-                <Tabs.TabPane tab={<span>Metapolis</span>} key="4">
-                  <DEX chain="bsc" />
-                </Tabs.TabPane>
-                <Tabs.TabPane tab={<span style={{ fontSize:'20px', color: "#e85443",fontWeight: "bold" }}>P2P</span>} key="5">
-                <P2P />
-                </Tabs.TabPane>
+              
               </Tabs>
             </Route>
             <Route path="/create-nft">
@@ -223,7 +218,8 @@ const App = ({ isServerInfo }) => {
               <Redirect to="/game/buy-properties" />
             </Route>
             <Route path="/">
-              <Home />
+              {/* <Home /> */}
+              <Redirect to="/collection/0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D" />
             </Route>
             <Route path="/ethereum-boilerplate">
               <Redirect to="/gamify" />

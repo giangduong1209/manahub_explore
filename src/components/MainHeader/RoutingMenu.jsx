@@ -173,11 +173,6 @@ const RoutingMenu = ({ isOpen, visileSubMenu, setVisileSubMenu }) => {
                       Balances
                     </Link>
                   </Menu.Item>
-                  <Menu.Item key="fiat">
-                    <Link to="/dex/fiat" className={styles.menuLink}>
-                      Fiat
-                    </Link>
-                  </Menu.Item>
                   <Menu.Item key="transactions">
                     <Link to="/dex/transactions" className={styles.menuLink}>
                       Transactions
@@ -294,7 +289,7 @@ const RoutingMenu = ({ isOpen, visileSubMenu, setVisileSubMenu }) => {
                 selectedKeys={selectedKey}
               >
                 <Menu.Item key="explore">
-                  <NavLink to="/explore" className={styles.menuLink}>
+                  <NavLink to="/collection/0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D" className={styles.menuLink}>
                     Explore
                   </NavLink>
                 </Menu.Item>

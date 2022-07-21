@@ -167,7 +167,7 @@ function MainHeader() {
                 >
                   {(md || routePage === "marketplace") && (
                     <div className={styles.topMenuIcon}>
-                      <Link to="/">
+                      <Link to="/collection/0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D">
                         <div className={styles.topMenuIcon}>
                           <NFTMenu />
                         </div>
@@ -195,7 +195,7 @@ function MainHeader() {
 
                   {(md || routePage === "game") && (
                     <div className={styles.topMenuIcon}>
-                      <Link to="/game">
+                      {/* <Link to="/game">
                         <div className={styles.topMenuIcon}>
                           <GameMenu />
                         </div>
@@ -203,7 +203,7 @@ function MainHeader() {
 
                       {md && routePage === "game" && (
                         <Dot className={styles.topMenuIconDot} />
-                      )}
+                      )} */}
                     </div>
                   )}
                 </div>
@@ -238,7 +238,7 @@ function MainHeader() {
         {!md && visileSubMenu && (
           <div className={styles.subMenuMobile}>
             <Link
-              to="/"
+              to="/collection/0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D"
               className={styles.subMenuMobileLink}
               onClick={handleClickSubMenu}
             >
@@ -272,7 +272,7 @@ function MainHeader() {
               </div>
               <span className={styles.textLink}>DEX</span>
             </Link>
-            <Link
+            {/* <Link
               to="/game"
               className={styles.subMenuMobileLink}
               onClick={handleClickSubMenu}
@@ -289,7 +289,7 @@ function MainHeader() {
                 />
               </div>
               <span className={styles.textLink}>Game</span>
-            </Link>
+            </Link> */}
 
             {/* <Link to="/marketplace">
               <Space
