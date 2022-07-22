@@ -167,7 +167,7 @@ function MainHeader() {
                 >
                   {(md || routePage === "marketplace") && (
                     <div className={styles.topMenuIcon}>
-                      <Link to="/collection/0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D">
+                      <Link to="/collection/0x230f55e5d30dfc1bd9de65d9b644820553e72486">
                         <div className={styles.topMenuIcon}>
                           <NFTMenu />
                         </div>
@@ -238,7 +238,7 @@ function MainHeader() {
         {!md && visileSubMenu && (
           <div className={styles.subMenuMobile}>
             <Link
-              to="/collection/0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D"
+              to="/collection/0x230f55e5d30dfc1bd9de65d9b644820553e72486"
               className={styles.subMenuMobileLink}
               onClick={handleClickSubMenu}
             >

@@ -32,16 +32,16 @@ const Collections = memo(({ address }) => {
   // const collections = getCollectionsByChain(chainId);
   // const collection = collections.find(ele => ele.addrs === addrs);
   const collection = {
-    addrs: "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D",
+    addrs: "0x230f55e5d30dfc1bd9de65d9b644820553e72486",
     banner: "https://lh3.googleusercontent.com/i5dYZRkVCUK97bfprQ3WXyrT9BnLSZtVKGJlKQ919uaUB0sxbngVCioaiyu9r6snqfi2aaTyIvv6DHm4m2R3y7hMajbsv14pSZK8mhs=h600",
     image: "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s130",
     name: "Bored Ape Yacht Club"
   }
   // console.log(collection);
   useNFTTokenIds(address).then((res) => setListData(res));
-  const addrsList = ['0xea36a6D6C363d983A4D4C9C52385038e6280FA3B']
+  const addrsList = ['0x230f55e5d30dfc1bd9de65d9b644820553e72486']
   // useEffect(() => {
-  //   if (address.address === "0xea36a6D6C363d983A4D4C9C52385038e6280FA3B") {
+  //   if (address.address === "0x230f55e5d30dfc1bd9de65d9b644820553e72486") {
   //     setType(true);
   //   } else {
   //     setType(false);
