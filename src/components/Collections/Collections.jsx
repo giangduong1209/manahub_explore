@@ -6,7 +6,7 @@ import styless from "./Collections.module.css";
 import CollectionBanner from "./CollectionBanner";
 import { useMoralisQuery, useMoralis } from "react-moralis";
 import { useNFTTokenIds } from "hooks/useNFTTokenIds";
-import { getCollectionsByChain } from "helpers/collection";
+// import { getCollectionsByChain } from "helpers/collection";
 import { useParams } from "react-router-dom";
 
 // const fakeDataItem = {
@@ -29,8 +29,15 @@ const Collections = memo(({ address }) => {
   const [listNFT, setListNFT] = useState([]);
   // const [originListNFT, setOriginListNFT] = useState([]);
   const [marketItems, setMarketItems] = useState([]);
-  const collections = getCollectionsByChain(chainId);
-  const collection = collections.find(ele => ele.addrs === addrs);
+  // const collections = getCollectionsByChain(chainId);
+  // const collection = collections.find(ele => ele.addrs === addrs);
+  const collection = {
+    addrs: "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D",
+    banner: "https://lh3.googleusercontent.com/i5dYZRkVCUK97bfprQ3WXyrT9BnLSZtVKGJlKQ919uaUB0sxbngVCioaiyu9r6snqfi2aaTyIvv6DHm4m2R3y7hMajbsv14pSZK8mhs=h600",
+    image: "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s130",
+    name: "Bored Ape Yacht Club"
+  }
+  // console.log(collection);
   useNFTTokenIds(address).then((res) => setListData(res));
   const addrsList = ['0xea36a6D6C363d983A4D4C9C52385038e6280FA3B']
   // useEffect(() => {
@@ -63,14 +70,14 @@ const Collections = memo(({ address }) => {
           }
         });
       });
-      if(collection?.added){
-          if (addrs === '0x68F33d25b2Ba9d60Cc6615d29d30fF069F840911') {
-            // condtion for new main contract
-            setListNFT([...listedItem.filter((ele) => {return !addrsList.includes(ele.token_address) })]);
-          } else {
-            let newArray = listedItem.filter((ele) => { return ele.token_address.toLowerCase() === addrs.toLowerCase()}).concat(listData);
-            setListNFT([...newArray]);
-          }
+      if (collection?.added) {
+        if (addrs === '0x68F33d25b2Ba9d60Cc6615d29d30fF069F840911') {
+          // condtion for new main contract
+          setListNFT([...listedItem.filter((ele) => { return !addrsList.includes(ele.token_address) })]);
+        } else {
+          let newArray = listedItem.filter((ele) => { return ele.token_address.toLowerCase() === addrs.toLowerCase() }).concat(listData);
+          setListNFT([...newArray]);
+        }
       }
       // setListNFT([...listedItem]);
       // setOriginListNFT([...listedItem]); // port later

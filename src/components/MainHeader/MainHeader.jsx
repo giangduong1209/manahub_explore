@@ -7,9 +7,9 @@ import { AvaxLogo, BSCLogo, ETHLogo, PolygonLogo } from "../Chains/Logos";
 import { HambugerBar } from "./IconHeader";
 import RoutingMenu from "./RoutingMenu";
 import styles from "./styles.module.css";
-import { DexMenu, Dot, GameMenu, NFTMenu } from "./TopMenuItem";
+import { DexMenu, Dot, NFTMenu } from "./TopMenuItem";
 import DexLogo from "components/Icons/DexLogo";
-import GameLogo from "components/Icons/GameLogo";
+// import GameLogo from "components/Icons/GameLogo";
 import MarketplaceLogo from "components/Icons/MarketplaceLogo";
 
 const { Header } = Layout;
