@@ -132,98 +132,47 @@ const CollectionCardOther = ({ item }) => {
   };
 
   return (
-    <div className={styless.cardbox}>
-      <div
-        className={styless.image}
-        style={{ backgroundImage: `url(${item.image})` }}
-      ></div>
-      <div className={styless.content}>
-        <div className={styless.title}>{item.name}</div>
-        <Row justify="space-between">
-          <span className={styless.id}>{item.token_id}</span>
-          {/* <span className={styless.price}>{item.token_id}</span> */}
-        </Row>
-        {/*<Divider style={{ margin: "10px 0" }} />
-         <Row justify="space-between" gutter={16}>
-          <Col span={12}>
-            <Button
-              className={`${styless.button} ${styless.btnInfo}`}
-              onClick={() =>
-                window.open(
-                  `${getExplorer(chainId)}address/${item.token_address}`,
-                  "_blank"
-                )
-              }
-            >
-              Trx Info
-            </Button>
-          </Col>
-          <Col span={12}>
-            <Button
-              className={`${styless.button} ${styless.btnBuy}`}
-              onClick={() => handleBuyClick(item)}
-            >
-              Buy
-            </Button>
-          </Col>
-        </Row> */}
-      </div>
-      {getMarketItem(nftToBuy) ? (
-        <Modal
-          title={`Buy ${nftToBuy?.name} #${nftToBuy?.token_id}`}
-          visible={visible}
-          onCancel={() => setVisibility(false)}
-          onOk={() => purchase()}
-          okText="Buy"
-        >
-          <Spin spinning={loading}>
-            <div
-              style={{
-                width: "250px",
-                margin: "auto"
-              }}
-            >
-              <Badge.Ribbon
-                color="green"
-                text={`${
-                  getMarketItem(nftToBuy).price / ("1e" + 18)
-                } ${nativeName}`}
-              >
-                <img
-                  src={nftToBuy?.image}
-                  alt="Buy"
-                  style={{
-                    width: "250px",
-                    borderRadius: "10px",
-                    marginBottom: "15px"
-                  }}
-                />
-              </Badge.Ribbon>
+    <div className="col-lg-3 col-md-6">
+      <div className="item-card md-mb50">
+        <div className="img">
+          <a href="#0">
+            <img src={item.image} alt="" />
+          </a>
+          <div className="fav">
+            <span className="icon pe-7s-like"></span>
+          </div>
+        </div>          
+        <div className="cont">
+          <div className="info">
+            <div className="item-title mt-15">
+              <h6 className="fw-700"><a href="#0">{ item.metadata?.name }</a></h6>
             </div>
-          </Spin>
-        </Modal>
-      ) : (
-        <Modal
-          title={`Buy ${nftToBuy?.name} #${nftToBuy?.token_id}`}
-          visible={visible}
-          onCancel={() => setVisibility(false)}
-          onOk={() => setVisibility(false)}
-        >
-          <img
-            src={nftToBuy?.image}
-            alt="Buy"
-            style={{
-              width: "250px",
-              margin: "auto",
-              borderRadius: "10px",
-              marginBottom: "15px"
-            }}
-          />
-          <Alert message="This NFT is currently not for sale" type="warning" />
-        </Modal>
-      )}
+            <div className="eth mt-10">
+              <span className="fz-14">
+                <span className="fz-12 opacity-7 mr-5">Highest bid :</span>
+                {/* <span className="icon">
+                  <img src="nft/img/eth1.svg" alt="" />
+                </span> */}
+                <span>{ item.token_id } ETH</span>
+              </span>
+            </div>
+          </div>
+          <div className="botm flex">
+            {/* <div className="left valign">
+              <div className="reles">
+                <span className="fz-12">Relesed :<span className="opacity-7 ml-5">{ styless.date }</span></span>
+              </div>
+            </div> */}
+            <div className="right ml-auto">
+              <div className="bid">
+                <a href="#0">Bid</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  );
-};
+  )
+}
 
 export default CollectionCardOther;
