@@ -8,7 +8,7 @@ export const useNFTTokenIds = async ({address}) => {
   const { resolveLink } = useIPFS();
   const [NFTTokenIds, setNFTTokenIds] = useState([]);
   const options = {
-  address: address,
+  address: "0x230f55e5d30dfc1bd9de65d9b644820553e72486",
   chain: chainId,
     };
     console.log(options)

@@ -8,7 +8,6 @@ import { useMoralisQuery, useMoralis } from "react-moralis";
 import { useNFTTokenIds } from "hooks/useNFTTokenIds";
 // import { getCollectionsByChain } from "helpers/collection";
 import { useParams } from "react-router-dom";
-
 // const fakeDataItem = {
 //   name: 'Name',
 //   description:
