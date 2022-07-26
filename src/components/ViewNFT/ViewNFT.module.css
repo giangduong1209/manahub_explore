@@ -20,7 +20,7 @@
 }
 
 /* .cardimgbox:hover {
-  border: 2px solid #f27252;
+  border: 2px solid #FEA013;
   box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
     0 5px 12px 4px rgb(0 0 0 / 9%);
 } */
@@ -38,7 +38,7 @@
 }
 
 /* .cardListedbox:hover {
-  border: 2px solid #f27252;
+  border: 2px solid #FEA013;
   box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
     0 5px 12px 4px rgb(0 0 0 / 9%);
 } */
@@ -57,7 +57,7 @@
 
 
 /* .cardhistorybox:hover {
-  border: 2px solid #f27252;
+  border: 2px solid #FEA013;
   box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
     0 5px 12px 4px rgb(0 0 0 / 9%);
 } */
@@ -75,7 +75,7 @@
 }
 
 /* .cardcreatorbox:hover {
-  border: 2px solid #f27252;
+  border: 2px solid #FEA013;
   box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
     0 5px 12px 4px rgb(0 0 0 / 9%);
 } */
@@ -93,7 +93,7 @@
 }
 
 /* .cardbox:hover {
-  border: 2px solid #f27252;
+  border: 2px solid #FEA013;
   box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
     0 5px 12px 4px rgb(0 0 0 / 9%);
 } */
@@ -115,7 +115,7 @@
   left: 25%;
   transform: translate(-50%, 0px);
   border: 2px solid white;
-  background-color: #e85443;
+  background-color: #FEA013;
 }
 
 .avatarCollection:global(.ant-avatar) {
@@ -124,7 +124,7 @@
   left: 30%;
   transform: translate(-50%, 0px);
   border: 2px solid white;
-  background-color: #e85443;
+  background-color: #FEA013;
 }
 
 .avatarCreator:global(.ant-avatar) {
@@ -133,7 +133,7 @@
   left: 25%;
   transform: translate(-50%, 0px);
   border: 2px solid white;
-  background-color: #e85443;
+  background-color: #FEA013;
 }
 .inforAvatar{
   /* margin-left: -50px; */
@@ -168,7 +168,7 @@
 }
 
 .byAuthor span {
-  /* color: #f27252; */
+  /* color: #FEA013; */
 }
 
 .description {
@@ -178,7 +178,7 @@
 
 .prices {
   font-size: 40px;
-  color: #f27252;
+  color: #FEA013;
   padding: 10px;
   font-weight: bold;
 }
@@ -213,7 +213,7 @@
 :global(.ant-btn).btnBuy:active,
 :global(.ant-btn).btnBuy:hover,
 .btnBuy:global(.ant-btn) {
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   color: white;
   border: none;
   font-family: "GILROY ";
@@ -410,7 +410,7 @@
     left: 10%;
     transform: translate(-50%, 0px);
     border: 2px solid white;
-    background-color: #e85443;
+    background-color: #FEA013;
   }
   .cardimgbox {
     padding: 14px;
@@ -427,7 +427,7 @@
   }
   
   /* .cardimgbox:hover {
-    border: 2px solid #f27252;
+    border: 2px solid #FEA013;
     box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
       0 5px 12px 4px rgb(0 0 0 / 9%);
   } */
@@ -445,7 +445,7 @@
   }
   
   /* .cardListedbox:hover {
-    border: 2px solid #f27252;
+    border: 2px solid #FEA013;
     box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
       0 5px 12px 4px rgb(0 0 0 / 9%);
   } */
@@ -464,7 +464,7 @@
   
   
   /* .cardhistorybox:hover {
-    border: 2px solid #f27252;
+    border: 2px solid #FEA013;
     box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
       0 5px 12px 4px rgb(0 0 0 / 9%);
   } */
@@ -482,7 +482,7 @@
   }
   
   /* .cardcreatorbox:hover {
-    border: 2px solid #f27252;
+    border: 2px solid #FEA013;
     box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
       0 5px 12px 4px rgb(0 0 0 / 9%);
   } */
@@ -500,7 +500,7 @@
   }
   
   /* .cardbox:hover {
-    border: 2px solid #f27252;
+    border: 2px solid #FEA013;
     box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
       0 5px 12px 4px rgb(0 0 0 / 9%);
   } */
@@ -513,7 +513,7 @@
     left: 10%;
     transform: translate(-50%, 0px);
     border: 2px solid white;
-    background-color: #e85443;
+    background-color: #FEA013;
   }
   .cardimgbox {
     padding: 14px;
@@ -548,7 +548,7 @@
   }
   
   /* .cardListedbox:hover {
-    border: 2px solid #f27252;
+    border: 2px solid #FEA013;
     box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
       0 5px 12px 4px rgb(0 0 0 / 9%);
   } */
@@ -567,7 +567,7 @@
   
   
   /* .cardhistorybox:hover {
-    border: 2px solid #f27252;
+    border: 2px solid #FEA013;
     box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
       0 5px 12px 4px rgb(0 0 0 / 9%);
   } */
@@ -585,7 +585,7 @@
   }
   
   /* .cardcreatorbox:hover {
-    border: 2px solid #f27252;
+    border: 2px solid #FEA013;
     box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
       0 5px 12px 4px rgb(0 0 0 / 9%);
   } */
@@ -603,7 +603,7 @@
   }
   
   /* .cardbox:hover {
-    border: 2px solid #f27252;
+    border: 2px solid #FEA013;
     box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
       0 5px 12px 4px rgb(0 0 0 / 9%);
   } */
@@ -616,7 +616,7 @@
     left: 10%;
     transform: translate(-50%, 0px);
     border: 2px solid white;
-    background-color: #e85443;
+    background-color: #FEA013;
   }
   .cardimgbox {
     padding: 14px;
@@ -633,7 +633,7 @@
   }
   
   /* .cardimgbox:hover {
-    border: 2px solid #f27252;
+    border: 2px solid #FEA013;
     box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
       0 5px 12px 4px rgb(0 0 0 / 9%);
   } */
@@ -651,7 +651,7 @@
   }
   
   /* .cardListedbox:hover {
-    border: 2px solid #f27252;
+    border: 2px solid #FEA013;
     box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
       0 5px 12px 4px rgb(0 0 0 / 9%);
   } */
@@ -670,7 +670,7 @@
   
   
   /* .cardhistorybox:hover {
-    border: 2px solid #f27252;
+    border: 2px solid #FEA013;
     box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
       0 5px 12px 4px rgb(0 0 0 / 9%);
   } */
@@ -688,7 +688,7 @@
   }
 /*   
   .cardcreatorbox:hover {
-    border: 2px solid #f27252;
+    border: 2px solid #FEA013;
     box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
       0 5px 12px 4px rgb(0 0 0 / 9%);
   } */
@@ -706,7 +706,7 @@
   }
   
   /* .cardbox:hover {
-    border: 2px solid #f27252;
+    border: 2px solid #FEA013;
     box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
       0 5px 12px 4px rgb(0 0 0 / 9%);
   } */
@@ -719,7 +719,7 @@
     left: 10%;
     transform: translate(-50%, 0px);
     border: 2px solid white;
-    background-color: #e85443;
+    background-color: #FEA013;
   }
   .cardimgbox {
     padding: 14px;
@@ -736,7 +736,7 @@
   }
   
   /* .cardimgbox:hover {
-    border: 2px solid #f27252;
+    border: 2px solid #FEA013;
     box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
       0 5px 12px 4px rgb(0 0 0 / 9%);
   } */
@@ -754,7 +754,7 @@
   }
   
   /* .cardListedbox:hover {
-    border: 2px solid #f27252;
+    border: 2px solid #FEA013;
     box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
       0 5px 12px 4px rgb(0 0 0 / 9%);
   } */
@@ -773,7 +773,7 @@
   
   
   /* .cardhistorybox:hover {
-    border: 2px solid #f27252;
+    border: 2px solid #FEA013;
     box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
       0 5px 12px 4px rgb(0 0 0 / 9%);
   } */
@@ -791,7 +791,7 @@
   }
   
   /* .cardcreatorbox:hover {
-    border: 2px solid #f27252;
+    border: 2px solid #FEA013;
     box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
       0 5px 12px 4px rgb(0 0 0 / 9%);
   } */
@@ -809,7 +809,7 @@
   }
 /*   
   .cardbox:hover {
-    border: 2px solid #f27252;
+    border: 2px solid #FEA013;
     box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
       0 5px 12px 4px rgb(0 0 0 / 9%);
   } */

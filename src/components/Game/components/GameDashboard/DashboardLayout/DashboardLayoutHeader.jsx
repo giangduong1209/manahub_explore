@@ -26,11 +26,11 @@ const DashboardLayoutHeader = ({ setShow, extraCn, show }) => {
           <Button
             style={{
               ...(show
-                ? { color: '#F27252', background: '#fff' }
+                ? { color: '#FEA013', background: '#fff' }
                 : {
                     color: '#fff',
                     background:
-                      'linear-gradient(180deg, #F27252 0%, #E85443 100%)',
+                      'linear-gradient(180deg, #FEA013 0%, #FEA013 100%)',
                   }),
               border: 'none',
               display: 'inline-flex',

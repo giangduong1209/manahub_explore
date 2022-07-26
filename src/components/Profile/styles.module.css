@@ -73,11 +73,11 @@
 
 .table :global(.ant-tag.tag-Buy),
 .table :global(.ant-tag.tag-Sell) {
-  background: -webkit-linear-gradient(#f27252, #e85443);
+  background: -webkit-linear-gradient(#FEA013, #FEA013);
   background-color: transparent !important;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border: 1px solid #f27252;
+  border: 1px solid #FEA013;
 }
 
 .table :global(.ant-tag.tag-Waiting) {
@@ -132,7 +132,7 @@
 .btnUpdate:global(.ant-btn) {
   width: 100% !important;
   border-radius: 12px !important;
-  background: linear-gradient(to bottom, #f27252, #e85443) !important;
+  background: linear-gradient(to bottom, #FEA013, #FEA013) !important;
   border: none !important;
   font-weight: bold !important;
   color: #ffffff !important;
@@ -150,14 +150,14 @@
 .btnAvatar:hover,
 .btnAvatar {
   background: linear-gradient(white, white) padding-box,
-  linear-gradient(to bottom, #f27252, #e85443) !important;
+  linear-gradient(to bottom, #FEA013, #FEA013) !important;
   border: 1px solid transparent;
   color: #000000;
   font-family: "GILROY ";
 }
 
 .btnAvatar:hover {
-  background: linear-gradient(to bottom, #f27252, #e85443) !important;
+  background: linear-gradient(to bottom, #FEA013, #FEA013) !important;
   color: white;
   border: none;
 }
@@ -239,7 +239,7 @@
 }
 .label:hover {
   background: 
-  linear-gradient(to bottom, #f27252, #e85443) !important;
+  linear-gradient(to bottom, #FEA013, #FEA013) !important;
   color: #fff;
 }
 

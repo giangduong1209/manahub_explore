@@ -6,7 +6,7 @@
 
 .topBg {
   width: 100%;
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
 }
 
 .bottomBg {
@@ -160,7 +160,7 @@
 
 :local .bottomMenu :global(.ant-menu-item-selected) {
   background-color: transparent !important;
-  background: -webkit-linear-gradient(#f27252, #e85443);
+  background: -webkit-linear-gradient(#FEA013, #FEA013);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -191,7 +191,7 @@
 }
 
 :local .bottomMenu :global(.ant-menu-item-active) {
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%) !important;
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%) !important;
   background-color: unset;
   background: unset;
   -webkit-background-clip: unset;
@@ -230,7 +230,7 @@
 }
 
 .icon:hover {
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
 }
 
 a.menuLink,
@@ -253,7 +253,7 @@ a.menuLink,
 }
 
 .subMenuMobile :global(.ant-space span) {
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

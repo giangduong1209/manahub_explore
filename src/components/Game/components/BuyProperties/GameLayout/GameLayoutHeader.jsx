@@ -28,12 +28,12 @@ const GameLayoutHeader = ({ setShow, show }) => {
                 ? {
                     color: '#fff',
                     background:
-                      'linear-gradient(180deg, #F27252 0%, #E85443 100%)',
+                      'linear-gradient(180deg, #FEA013 0%, #FEA013 100%)',
                   }
                 : {
-                    color: '#F27252',
+                    color: '#FEA013',
                     background: '#fff',
-                    border: '1px solid #F27252',
+                    border: '1px solid #FEA013',
                   }),
               border: 'none',
               display: 'inline-flex',

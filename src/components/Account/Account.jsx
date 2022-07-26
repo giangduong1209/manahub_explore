@@ -24,7 +24,7 @@ const styles2 = {
     cursor: "pointer",
   },
   text: {
-    color: "#F27252"
+    color: "#FEA013"
   },
   connector: {
     alignItems: "center",
@@ -178,7 +178,7 @@ function Account() {
             borderRadius: "0.5rem",
             fontSize: "16px",
             fontWeight: "500",
-            backgroundColor: '#ad3a2c',
+            backgroundColor: '#FEA013',
             color: 'white'
           }}
           onClick={async () => {

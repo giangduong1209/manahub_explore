@@ -145,7 +145,7 @@ const ImageBox = ({ information }) => {
       >
         Listed by:
         <br />
-        <a className={styless.viewAddress} style={{ color: "#f27252",fontWeight: "bold" }}>
+        <a className={styless.viewAddress} style={{ color: "#FEA013",fontWeight: "bold" }}>
           {information?.owner_of}
         </a>
         {/* <Link to="/view-nft" style={{color :'blue'}}> 8byMAt9gMbPXuHC8vLprU6ZpQ1XJjiFTrJaF5XMXYnFL</Link> */}

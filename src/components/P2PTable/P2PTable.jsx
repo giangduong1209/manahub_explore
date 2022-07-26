@@ -52,16 +52,16 @@ function ERC20Transfers() {
       key: "isSender",
       render: (isSender) =>
         isSender ? (
-          <Tag style={{ borderColor: "#f27252" }}>
+          <Tag style={{ borderColor: "#FEA013" }}>
             {" "}
-            <div className={styles.tagIn} style={{ color: "#f27252" }}>
+            <div className={styles.tagIn} style={{ color: "#FEA013" }}>
               OUT
             </div>
           </Tag>
         ) : (
-          <Tag style={{ borderColor: "#f27252" }}>
+          <Tag style={{ borderColor: "#FEA013" }}>
             {" "}
-            <div className={styles.tagIn} style={{ color: "#f27252", padding: '0 5px' }}>
+            <div className={styles.tagIn} style={{ color: "#FEA013", padding: '0 5px' }}>
               IN
             </div>
           </Tag>

@@ -108,12 +108,12 @@ function ModalDeposit(props) {
       onOk={() => close()}
       onCancel={() => close()}
       width={1000}
-      footer={<div style={{width:'100%',fontSize:'20px',fontWeight:'Bold',textAlign:'center',color:'#f27252'}} ><Countdown color='red' date={ Date.now()  + 90000}/> </div>}
+      footer={<div style={{width:'100%',fontSize:'20px',fontWeight:'Bold',textAlign:'center',color:'#FEA013'}} ><Countdown color='red' date={ Date.now()  + 90000}/> </div>}
     >
 <Spin spinning={isLoading}>
       <Row>
         <Col span={12}>
-          <h3 style={{ color: "#e85443" }}>Sender Info</h3>
+          <h3 style={{ color: "#FEA013" }}>Sender Info</h3>
           <br />
           <Row>
             <Col span={5}>
@@ -207,7 +207,7 @@ function ModalDeposit(props) {
           </Col>
         </Col>
         <Col span={12}>
-          <h3 style={{ color: "#e85443" }}>Chatting</h3>
+          <h3 style={{ color: "#FEA013" }}>Chatting</h3>
           <br />
           {/* <div className={styles.boxChatMessage}></div> */}
           <br />

@@ -60,13 +60,13 @@
   background: #ffffff;
   border-radius: 10px;
   width: 136px;
-  border-color: #f27252;
+  border-color: #FEA013;
 }
 
 .exploreBtn:global(.ant-btn:hover),
 .exploreBtn:global(.ant-btn:focus) {
   color: #ffffff;
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   border: none;
 }
 
@@ -80,7 +80,7 @@
 
 .exploreBtn span {
   font-weight: 700;
-  background: -webkit-linear-gradient(#f27252, #e85443);
+  background: -webkit-linear-gradient(#FEA013, #FEA013);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

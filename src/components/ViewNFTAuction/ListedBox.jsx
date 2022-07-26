@@ -517,7 +517,7 @@ const ImageBox = ({ information }) => {
         style={{fontWeight: "bold"}}
       >
         <span style={{fontWeight: "normal"}} >Listed by:</span> &ensp;
-        <a className={styless.viewAddress} style={{ color: "#f27252" }}>
+        <a className={styless.viewAddress} style={{ color: "#FEA013" }}>
           {information?.owner_of}
         </a>
         &ensp;&ensp;<span style={{fontWeight: "normal"}}>End at:</span>  &ensp;

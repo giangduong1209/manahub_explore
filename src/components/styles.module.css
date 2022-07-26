@@ -39,7 +39,7 @@
 
 .table :global(.ant-table-row:hover .ant-table-cell) {
   background: rgb(240, 240, 240) !important;
-  color: #e85443;
+  color: #FEA013;
 }
 
 .table :global(.ant-table-cell > *) {
@@ -62,11 +62,11 @@
 
 .table :global(.ant-tag.tag-Buy),
 .table :global(.ant-tag.tag-Sell) {
-  background: -webkit-linear-gradient(#f27252, #e85443);
+  background: -webkit-linear-gradient(#FEA013, #FEA013);
   background-color: transparent !important;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border: 1px solid #f27252;
+  border: 1px solid #FEA013;
 }
 
 .table :global(.ant-tag.tag-Waiting) {
@@ -89,7 +89,7 @@
   text-align: center;
 }
 .title {
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -123,7 +123,7 @@
 .btnCreate {
   width: auto !important;
   border-radius: 12px !important;
-  background: linear-gradient(to bottom, #f27252, #e85443) !important;
+  background: linear-gradient(to bottom, #FEA013, #FEA013) !important;
   border: none !important;
   font-weight: bold !important;
   color: #ffffff !important;

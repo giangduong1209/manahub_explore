@@ -24,6 +24,7 @@ import { MdMail } from 'react-icons/md';
 import { NavLink, useLocation } from 'react-router-dom';
 import styles from './styles.module.css';
 import React, { useMemo } from 'react';
+import logoManahubs from "./ManaHub_logo_light.svg";
 
 const { Title } = Typography;
 const { Footer } = Layout;
@@ -220,7 +221,7 @@ const MainFooter = () => {
           <Col>
             <a href="https://metapolis.gg" rel="noopener noreferrer">
               <img
-                src={polisLogo}
+                src={logoManahubs}
                 alt="logo footer"
                 className={styles.footerLogo}
                 width={180}
@@ -230,7 +231,7 @@ const MainFooter = () => {
           </Col>
           <Col flex="auto">
             <div className={styles.menuWrapper}>
-              <div className={styles.menuItems}>
+              {/* <div className={styles.menuItems}>
                 <NavLink to="/">NFT Marketplace</NavLink>
                 <NavLink to="/">DEX</NavLink>
                 <NavLink to="/">Game</NavLink>
@@ -251,7 +252,7 @@ const MainFooter = () => {
                 <a href="https://docs.metapolis.gg" rel="noopener noreferrer">
                   Whitepaper
                 </a>
-              </div>
+              </div> */}
             </div>
           </Col>
         </Row>

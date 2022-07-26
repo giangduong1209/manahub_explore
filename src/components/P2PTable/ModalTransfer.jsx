@@ -239,7 +239,7 @@ function ModalTransfer(props) {
             </div>
           </Col>
           <Col span={12}>
-            <h3 style={{ color: "#e85443" }}>Chatting</h3>
+            <h3 style={{ color: "#FEA013" }}>Chatting</h3>
             <br />
             {/* <div className={styles.boxChatMessage} style={{marginTop:'-0px'}}></div> */}
             <br />

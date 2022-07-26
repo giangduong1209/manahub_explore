@@ -302,7 +302,7 @@ const ImageBox = ({ information }) => {
           <Col span={4}>
             <div
               className={btnstyles.shareBtn}
-              style={{ borderRadius: "10px", borderColor: "#e85443" }}
+              style={{ borderRadius: "10px", borderColor: "#FEA013" }}
             >
               <Menu
                 mode="horizontal"

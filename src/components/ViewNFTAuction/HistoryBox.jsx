@@ -36,7 +36,7 @@ const HistoryBox = ({ information }) => {
       dataIndex: "to",
       key: "toAddress",
       // eslint-disable-next-line jsx-a11y/anchor-is-valid
-      render: (to) => <a style={{color:'#f27252'}}>{to}</a>
+      render: (to) => <a style={{color:'#FEA013'}}>{to}</a>
     },
     {
       title: "Date",

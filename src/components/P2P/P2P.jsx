@@ -33,12 +33,12 @@ function P2P({ setV }) {
       }}
     >
       <Tabs defaultActiveKey="1" centered>
-        <Tabs.TabPane tab={ <h1 style={{ color: "#e85443" }}>By VND</h1>} key="1">
+        <Tabs.TabPane tab={ <h1 style={{ color: "#FEA013" }}>By VND</h1>} key="1">
           <Card style={styles.card}>
             <BNBTransfer />
           </Card>
         </Tabs.TabPane>
-        <Tabs.TabPane tab={ <h1 style={{ color: "#e85443" }}>By USD</h1>} key="2">
+        <Tabs.TabPane tab={ <h1 style={{ color: "#FEA013" }}>By USD</h1>} key="2">
           <Card style={styles.card}>
             <USDTransfer />
           </Card>

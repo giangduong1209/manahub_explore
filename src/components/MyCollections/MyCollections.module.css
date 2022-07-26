@@ -14,7 +14,7 @@
 .headerTitle {
   font-size: 36px;
   font-weight: 700;
-  color: #f27252;
+  color: #FEA013;
 }
 
 .cardbox {
@@ -33,7 +33,7 @@
 }
 
 .cardbox:hover {
-  border-color: #f27252;
+  border-color: #FEA013;
   box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%), 0 5px 12px 4px rgb(0 0 0 / 9%);
 }
 
@@ -72,13 +72,13 @@
 :global(.ant-btn).btnInfo:active,
 .btnInfo:global(.ant-btn) {
   background: linear-gradient(white, white) padding-box,
-    linear-gradient(to bottom, #f27252, #e85443) border-box;
+    linear-gradient(to bottom, #FEA013, #FEA013) border-box;
   border: 1px solid transparent;
-  color: #f27252;
+  color: #FEA013;
 }
 
 :global(.ant-btn).btnInfo:hover {
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   color: white;
   border: none;
 }
@@ -87,7 +87,7 @@
 :global(.ant-btn).btnBuy:active,
 :global(.ant-btn).btnBuy:hover,
 .btnBuy:global(.ant-btn) {
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   color: white;
   border: none;
   
@@ -107,7 +107,7 @@
   width: auto;
   height: auto;
 
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   color: white;
   border: none;
   
@@ -126,16 +126,16 @@
   width: auto;
   height: auto;
   background: linear-gradient(white, white) padding-box,
-    linear-gradient(to bottom, #f27252, #e85443) border-box;
+    linear-gradient(to bottom, #FEA013, #FEA013) border-box;
   border: 1px solid transparent;
-  color: #f27252;
+  color: #FEA013;
   
 }
 
 :global(.ant-btn).btnCancel:hover {
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   color: white;
-  border-color:#f27252;
+  border-color:#FEA013;
 
 }
 
@@ -152,11 +152,11 @@
 .price {
   font-size: 18px;
   font-weight: 700;
-  color: #f27252;
+  color: #FEA013;
 }
 
 .byAuthor span {
-  color: #f27252;
+  color: #FEA013;
 }
 
 .description {
@@ -165,13 +165,13 @@
 
 .pagination:global(.ant-pagination) :global(.ant-pagination-item) {
   background: linear-gradient(white, white) padding-box,
-    linear-gradient(to bottom, #f27252, #e85443) border-box;
+    linear-gradient(to bottom, #FEA013, #FEA013) border-box;
   border-radius: 50%;
   border: 1px solid transparent;
 }
 
 .pagination:global(.ant-pagination) :global(.ant-pagination-item a) {
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -180,7 +180,7 @@
 
 .pagination:global(.ant-pagination) :global(.ant-pagination-item:hover),
 .pagination:global(.ant-pagination) :global(.ant-pagination-item-active) {
-  background: linear-gradient(to bottom, #f27252, #e85443) border-box;
+  background: linear-gradient(to bottom, #FEA013, #FEA013) border-box;
 }
 
 .pagination:global(.ant-pagination) :global(.ant-pagination-item:hover a),

@@ -48,7 +48,7 @@ function ERC20Transfers() {
           rel="noreferrer"
          
         >
-          <div  style={{color:'#f27252'}}>View Transaction</div>
+          <div  style={{color:'#FEA013'}}>View Transaction</div>
           
         </a>
       ),

@@ -8,7 +8,7 @@ function NativeBalance(props) {
 
   return (
     <div style={{ textAlign: 'center', whiteSpace: 'nowrap' }}>
-      <p style={{ color: '#e85443', fontSize: '20px' }}>{balance.formatted}</p>
+      <p style={{ color: '#FEA013', fontSize: '20px' }}>{balance.formatted}</p>
     </div>
   );
 }

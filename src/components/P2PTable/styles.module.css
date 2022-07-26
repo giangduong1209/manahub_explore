@@ -47,7 +47,7 @@
 
 .table :global(.ant-table-row:hover .ant-table-cell) {
   background: rgb(240, 240, 240) !important;
-  color: #e85443;
+  color: #FEA013;
 }
 
 .table :global(.ant-table-cell > *) {
@@ -70,11 +70,11 @@
 
 .table :global(.ant-tag.tag-Buy),
 .table :global(.ant-tag.tag-Sell) {
-  background: -webkit-linear-gradient(#f27252, #e85443);
+  background: -webkit-linear-gradient(#FEA013, #FEA013);
   background-color: transparent !important;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border: 1px solid #f27252;
+  border: 1px solid #FEA013;
 }
 
 .table :global(.ant-tag.tag-Waiting) {
@@ -122,8 +122,8 @@
   margin-top: 0px !important;
   border-radius: 0.6rem !important;
   height: 35px !important;
-  background: linear-gradient(to bottom, #f27252, #e85443) !important;
-  border: 1px solid #f27252 !important;
+  background: linear-gradient(to bottom, #FEA013, #FEA013) !important;
+  border: 1px solid #FEA013 !important;
   font-weight: bold !important;
   color: #ffffff !important;
 }
@@ -134,7 +134,7 @@
   border-radius: 0.6rem;
   height: 35px;
   border: none;
-  border-color: #f27252;
+  border-color: #FEA013;
   font-weight: bold;
   box-shadow: rgb(4 17 29 / 25%) 0px 0px 10px 0px;
 }
@@ -144,7 +144,7 @@
   margin-top: 0px !important;
   border-radius: 0.6rem !important;
   height: 35px !important;
-  background: linear-gradient(to bottom, #f27252, #e85443) !important;
+  background: linear-gradient(to bottom, #FEA013, #FEA013) !important;
   border: none !important;
   font-weight: bold !important;
   color: #ffffff !important;
@@ -166,8 +166,8 @@
   height: 35px !important;
   background: #ffffff !important;
   font-weight: bold !important;
-  border: 1px solid #f27252 !important;
-  color: #e85443 !important;
+  border: 1px solid #FEA013 !important;
+  color: #FEA013 !important;
 }
 
 .buttonTransfer:hover {
@@ -175,7 +175,7 @@
   margin-top: 15px;
   border-radius: 0.6rem;
   height: 35px;
-  background: linear-gradient(to bottom, #f27252, #e85443) !important;
+  background: linear-gradient(to bottom, #FEA013, #FEA013) !important;
   border: none !important;
   font-weight: bold;
   color: #ffffff !important;
@@ -243,7 +243,7 @@
   cursor: pointer;
   position: absolute;
   padding: 5px;
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   bottom: 0;
   right: 0;
   border-radius: 20px 0;
@@ -261,12 +261,12 @@
 
 .btnDelete:hover {
   /* background: transparent; */
-  /* border: 1px solid #f27252; */
+  /* border: 1px solid #FEA013; */
   box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 6px;
 }
 
 /* .btnDelete:hover :global(.anticon) {
-  color: #f27252;
+  color: #FEA013;
 } */
 
 /* new data */

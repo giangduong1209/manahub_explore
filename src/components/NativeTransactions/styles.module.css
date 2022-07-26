@@ -73,11 +73,11 @@
 
 .table :global(.ant-tag.tag-Buy),
 .table :global(.ant-tag.tag-Sell) {
-  background: -webkit-linear-gradient(#f27252, #e85443);
+  background: -webkit-linear-gradient(#FEA013, #FEA013);
   background-color: transparent !important;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border: 1px solid #f27252;
+  border: 1px solid #FEA013;
 }
 
 .table :global(.ant-tag.tag-Waiting) {
@@ -158,7 +158,7 @@
   cursor: pointer;
   position: absolute;
   padding: 5px;
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   bottom: 0;
   right: 0;
   border-radius: 20px 0;
@@ -176,12 +176,12 @@
 
 .btnDelete:hover {
   /* background: transparent; */
-  /* border: 1px solid #f27252; */
+  /* border: 1px solid #FEA013; */
   box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 6px;
 }
 
 /* .btnDelete:hover :global(.anticon) {
-  color: #f27252;
+  color: #FEA013;
 } */
 
 /* btn auction */
@@ -195,7 +195,7 @@
   width: auto;
   height: auto;
 
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   color: white;
   border: none;
   
@@ -214,16 +214,16 @@
   width: auto;
   height: auto;
   background: linear-gradient(white, white) padding-box,
-    linear-gradient(to bottom, #f27252, #e85443) border-box;
+    linear-gradient(to bottom, #FEA013, #FEA013) border-box;
   border: 1px solid transparent;
-  color: #f27252;
+  color: #FEA013;
   
 }
 
 :global(.ant-btn).btnCancel:hover {
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   color: white;
-  border-color:#f27252;
+  border-color:#FEA013;
 
 }
 

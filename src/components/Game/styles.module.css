@@ -7,7 +7,7 @@
 
 .gameLayoutHeader {
   height: 60px;
-  background: #ad3a2c;
+  background: #FEA013;
   display: flex;
   color: #fff;
   padding: 0 10px;
@@ -66,14 +66,14 @@
 }
 
 .gameLayoutFooter.removeMode .cartTag {
-  color: #ad3a2c;
-  border-color: #ad3a2c;
+  color: #FEA013;
+  border-color: #FEA013;
   background: #fff;
 }
 
 .gameLayoutFooter.removeMode .cartTag.addToRemove {
   color: #fff;
-  background-color: #ad3a2c;
+  background-color: #FEA013;
 }
 
 .gameLayoutFooter
@@ -106,27 +106,27 @@
 :global(.ant-btn).gameCartBtn {
   height: 40px;
   border-radius: 8px;
-  border: 2px solid #f27252;
-  color: #f27252;
+  border: 2px solid #FEA013;
+  color: #FEA013;
   font-size: 18px;
   font-weight: 700;
   transition: background-color 0.5s ease;
 }
 
 :global(.ant-btn).gameCartBtn.removeMode {
-  border: 2px solid #ad3a2c;
-  color: #ad3a2c;
+  border: 2px solid #FEA013;
+  color: #FEA013;
   transition: background-color 0.5s ease;
 }
 
 :global(.ant-btn).gameCartBtn:hover {
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   color: #fff;
   border: none;
 }
 
 :global(.ant-btn).gameCartBtn.removeMode:hover {
-  background: #ad3a2c;
+  background: #FEA013;
   color: #fff;
   border: none;
 }
@@ -136,7 +136,7 @@
   user-select: none;
   cursor: pointer;
   border-radius: 5px;
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   color: #fff;
   font-weight: 700;
   padding: 3px 20px;
@@ -172,7 +172,7 @@
 }
 
 .gameLayout .myCartCollapse :global(.ant-collapse-header) {
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   height: 55px;
   border: none;
   border-bottom: 1px solid #fff;
@@ -241,7 +241,7 @@
 }
 
 .propertiesFilterItem.filterSelected {
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -342,22 +342,22 @@
 }
 
 .layoutItem .rmFromCartBtn {
-  border: 1px solid #ad3a2c;
-  color: #ad3a2c;
+  border: 1px solid #FEA013;
+  color: #FEA013;
 }
 
 .layoutItem .rmFromCartBtn:hover {
   border: none;
-  background: #ad3a2c;
+  background: #FEA013;
   color: #fff;
 }
 
 .layoutItem .addToCartBtn {
-  border: 1px solid #f27252;
+  border: 1px solid #FEA013;
 }
 
 .layoutItem .addToCartBtn span {
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -365,7 +365,7 @@
 
 .layoutItem .addToCartBtn:hover {
   border: none;
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
 }
 
 .layoutItem .addToCartBtn:hover span {
@@ -377,18 +377,18 @@
 
 .layoutItem .sellOnMpBtn {
   border: 1px solid;
-  border-image-source: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  border-image-source: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
 }
 
 .layoutItem .sellOnMpBtn span {
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .layoutItem .sellOnMpBtn:hover {
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   border: none;
 }
 
@@ -400,11 +400,11 @@
 }
 
 .layoutItem .unstackingBtn {
-  border: 1px solid #ad3a2c;
+  border: 1px solid #FEA013;
 }
 
 .layoutItem .unstackingBtn span {
-  background: linear-gradient(180deg, #ad3a2c 0%, #ad3a2c 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -412,7 +412,7 @@
 
 .layoutItem .unstackingBtn:hover {
   border: none;
-  background: #ad3a2c;
+  background: #FEA013;
 }
 
 .layoutItem .unstackingBtn:hover span {
@@ -465,7 +465,7 @@
   line-height: 140%;
   height: 60px;
   display: flex;
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -508,7 +508,7 @@
 
 .gameDashboardFooter {
   height: 100px;
-  background-color: #ad3a2c;
+  background-color: #FEA013;
   margin: 0 -10px;
   display: flex;
   padding: 0 120px;
@@ -555,8 +555,8 @@
 .gameDashboardFooter > *:last-child :global(.ant-btn) {
   font-size: 18px;
   color: #fff;
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
-  border: 1px solid #f27252;
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
+  border: 1px solid #FEA013;
 }
 
 .gameDashboardFooter > *:last-child :global(.ant-btn):hover {
@@ -590,7 +590,7 @@
 }
 
 .gameRewardsTitle {
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -618,7 +618,7 @@
 }
 
 .gameLBItemIndex {
-  color: #f27252;
+  color: #FEA013;
   height: 40px;
   width: 40px;
   min-width: 40px;
@@ -633,7 +633,7 @@
 
 .gameLBItemIndex.highlight {
   color: #fff;
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
 }
 
 .gameLBItemImg {

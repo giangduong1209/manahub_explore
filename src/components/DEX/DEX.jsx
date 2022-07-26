@@ -294,7 +294,7 @@ function DEX({ chain, customTokens = {} }) {
                 fontWeight: '500',
                 fontSize: '17px',
                 gap: '7px',
-                border: '2px solid #F27252',
+                border: '2px solid #FEA013',
               }}
               onClick={() => setFromModalActive(true)}
             >
@@ -368,8 +368,8 @@ function DEX({ chain, customTokens = {} }) {
                 fontWeight: '500',
                 fontSize: '17px',
                 gap: '7px',
-                border: '2px solid #F27252',
-                // borderColor: "linear-gradient(to bottom, #f27252, #e85443)"
+                border: '2px solid #FEA013',
+                // borderColor: "linear-gradient(to bottom, #FEA013, #FEA013)"
               }}
               onClick={() => setToModalActive(true)}
               type={toToken ? 'default' : ''}

@@ -6,7 +6,7 @@ import styles from "./styles.module.css"
 const MyCollection = () => {
   return (
     <div className={styles.mycollectionwrap} style={{ display: 'flex', position: 'relative' }}>
-      <FilterBox />
+      {/* <FilterBox /> */}
       <MyCollections />
     </div>
   );

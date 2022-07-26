@@ -31,7 +31,7 @@ const StackSvg = (props) => {
           y2="8.5055"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#F27252" />
+          <stop stopColor="#FEA013" />
           <stop offset="1" stopColor="currentColor" />
         </linearGradient>
         <linearGradient
@@ -42,7 +42,7 @@ const StackSvg = (props) => {
           y2="12.1449"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#F27252" />
+          <stop stopColor="#FEA013" />
           <stop offset="1" stopColor="currentColor" />
         </linearGradient>
         <linearGradient
@@ -53,7 +53,7 @@ const StackSvg = (props) => {
           y2="15.7271"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#F27252" />
+          <stop stopColor="#FEA013" />
           <stop offset="1" stopColor="currentColor" />
         </linearGradient>
       </defs>

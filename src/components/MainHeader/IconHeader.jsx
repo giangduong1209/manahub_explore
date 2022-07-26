@@ -90,7 +90,7 @@ const IconArrowDown = () => {
     >
       <path
         d="M11 5L6 10L1 5"
-        stroke="#E85443"
+        stroke="#FEA013"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"

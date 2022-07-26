@@ -9,7 +9,7 @@
   font-weight: 700;
   font-size: 36px;
   margin-bottom: 36px;
-  background: -webkit-linear-gradient(#f27252, #e85443);
+  background: -webkit-linear-gradient(#FEA013, #FEA013);
   -webkit-background-clip: text;
 }
 
@@ -54,5 +54,5 @@
 }
 
 :global(.ant-card).cardbox:hover {
-  border: 2px solid #f27252 !important;
+  border: 2px solid #FEA013 !important;
 }

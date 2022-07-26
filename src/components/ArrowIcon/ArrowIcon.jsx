@@ -31,8 +31,8 @@ const ArrowIconPrev = ({ ...props }) => {
           y2="30"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#F27252" />
-          <stop offset="1" stopColor="#E85443" />
+          <stop stopColor="#FEA013" />
+          <stop offset="1" stopColor="#FEA013" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_80_5296"
@@ -42,8 +42,8 @@ const ArrowIconPrev = ({ ...props }) => {
           y2="18"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#F27252" />
-          <stop offset="1" stopColor="#E85443" />
+          <stop stopColor="#FEA013" />
+          <stop offset="1" stopColor="#FEA013" />
         </linearGradient>
       </defs>
     </svg>
@@ -83,8 +83,8 @@ const ArrowIconNext = ({ ...props }) => {
           y2="30"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#F27252" />
-          <stop offset="1" stopColor="#E85443" />
+          <stop stopColor="#FEA013" />
+          <stop offset="1" stopColor="#FEA013" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_80_5300"
@@ -94,8 +94,8 @@ const ArrowIconNext = ({ ...props }) => {
           y2="18"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#F27252" />
-          <stop offset="1" stopColor="#E85443" />
+          <stop stopColor="#FEA013" />
+          <stop offset="1" stopColor="#FEA013" />
         </linearGradient>
       </defs>
     </svg>

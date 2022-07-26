@@ -2,14 +2,14 @@
   background: #ffffff;
   border-radius: 10px;
   width: 100%;
-  border-color: #f27252;
+  border-color: #FEA013;
   margin-bottom: 40px;
 }
 
 .exploreBtn:global(.ant-btn:hover),
 .exploreBtn:global(.ant-btn:focus) {
   color: #ffffff;
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   border: none;
 }
 
@@ -22,7 +22,7 @@
 }
 .exploreBtn span {
   font-weight: 700;
-  background: -webkit-linear-gradient(#f27252, #e85443);
+  background: -webkit-linear-gradient(#FEA013, #FEA013);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -33,14 +33,14 @@
   background: #ffffff;
   border-radius: 10px;
   width: 100%;
-  border-color: #f27252;
+  border-color: #FEA013;
   margin-bottom: 40px;
 }
 
 .endBtn:global(.ant-btn:hover),
 .endBtn:global(.ant-btn:focus) {
   color: #ffffff;
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   border: none;
 }
 
@@ -53,7 +53,7 @@
 }
 .endBtn span {
   font-weight: 700;
-  background:linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background:linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -64,7 +64,7 @@
   background: #ffffff;
   border-radius: 10px;
   width: 100%;
-  border-color: #f27252;
+  border-color: #FEA013;
   margin-bottom: 40px;
 }
 .btnInfo:global(.ant-btn) {
@@ -72,7 +72,7 @@
   background: #ffffff;
   border-radius: 10px;
   width: 100%;
-  border-color: #f27252;
+  border-color: #FEA013;
   margin-bottom: 40px;
 }
 
@@ -81,13 +81,13 @@
 :global(.ant-btn).btnInfo:hover,
 .btnInfo:global(.ant-btn) {
   background: 
-    linear-gradient(to bottom, #f27252, #e85443) border-box;
+    linear-gradient(to bottom, #FEA013, #FEA013) border-box;
   border: 1px solid transparent;
   color: white;
 }
 
 :global(.ant-btn).btnInfo:hover {
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   color: white;
   border: none;
 }
@@ -98,7 +98,7 @@
   background: #ffffff;
   border-radius: 10px;
   width: 100%;
-  border-color: #f27252;
+  border-color: #FEA013;
   margin-bottom: 40px;
 }
 
@@ -107,13 +107,13 @@
 :global(.ant-btn).btnBit:hover,
 .btnBit:global(.ant-btn) {
   background: 
-    linear-gradient(to bottom, #f27252, #e85443) border-box;
+    linear-gradient(to bottom, #FEA013, #FEA013) border-box;
   border: 1px solid transparent;
   color: white;
 }
 
 :global(.ant-btn).btnBit:hover {
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   color: white;
   border: none;
 }
@@ -123,13 +123,13 @@
   background: #ffffff;
   border-radius: 10px;
   width: 100%;
-  border-color: #f27252;
+  border-color: #FEA013;
   margin-bottom: 40px;
 }
 .infoBtn:global(.ant-btn:hover),
 .infoBtn:global(.ant-btn:focus) {
   color: #ffffff;
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   border: none;
 }
 
@@ -142,7 +142,7 @@
 }
 .infoBtn span {
   font-weight: 700;
-  background: -webkit-linear-gradient(#f27252, #e85443);
+  background: -webkit-linear-gradient(#FEA013, #FEA013);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -153,7 +153,7 @@
 :global(.ant-btn).exploreBtn:active,
 :global(.ant-btn).exploreBtn:hover,
 .exploreBtn:global(.ant-btn) {
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   color: white;
   border: none;
   font-family: "GILROY ";
@@ -171,28 +171,28 @@
 .shareBtn {
   background: #ffffff;
   border-radius: 10px;
-  border: #f27252 solid 1px;
+  border: #FEA013 solid 1px;
   /* width: calc(auto -10px);
   height: calc(auto -50px); */
-  color: #f27252;
+  color: #FEA013;
   min-width: 70px;
 }
 .shareBtn:hover,
 .shareBtn:focus {
-  color: #f27252;
-  /* background: linear-gradient(180deg, #f27252 0%, #e85443 100%); */
-  border: #f27252 solid 1px;
+  color: #FEA013;
+  /* background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%); */
+  border: #FEA013 solid 1px;
 }
 .shareBtn:focus span,
 .shareBtn:hover span {
-  background: #f27252;
+  background: #FEA013;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .shareBtn span {
   font-weight: 700;
-  background: -webkit-linear-gradient(#f27252, #e85443);
+  background: -webkit-linear-gradient(#FEA013, #FEA013);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -204,7 +204,7 @@
   border-radius: 10px;
   width: auto;
   /* min-height: 40px; */
-  border-color: #f27252;
+  border-color: #FEA013;
   /* margin-top: -7px; */
   margin-bottom: 30px;
 }
@@ -212,7 +212,7 @@
 .viewBtn:global(.ant-btn:hover),
 .viewBtn:global(.ant-btn:focus) {
   color: #ffffff;
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   border: none;
 }
 
@@ -226,7 +226,7 @@
 
 .viewBtn span {
   font-weight: 700;
-  background: -webkit-linear-gradient(#f27252, #e85443);
+  background: -webkit-linear-gradient(#FEA013, #FEA013);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

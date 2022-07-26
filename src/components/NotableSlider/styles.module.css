@@ -33,7 +33,7 @@
   font-weight: 700;
   font-size: 36px;
   margin-bottom: 36px;
-  background: -webkit-linear-gradient(#f27252, #e85443);
+  background: -webkit-linear-gradient(#FEA013, #FEA013);
   -webkit-background-clip: text;
 }
 
@@ -70,14 +70,14 @@
   background: #ffffff;
   border-radius: 10px;
   width: 136px;
-  border-color: #f27252;
+  border-color: #FEA013;
   margin-bottom: 40px;
 }
 
 .exploreBtn:global(.ant-btn:hover),
 .exploreBtn:global(.ant-btn:focus) {
   color: #ffffff;
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   border: none;
 }
 
@@ -92,12 +92,12 @@
 /* .exploreBtn:global(.ant-btn:hover),
 .exploreBtn:global(.ant-btn:focus) {
   background: #ffffff;
-  border-color: #e85443;
+  border-color: #FEA013;
 } */
 
 .exploreBtn span {
   font-weight: 700;
-  background: -webkit-linear-gradient(#f27252, #e85443);
+  background: -webkit-linear-gradient(#FEA013, #FEA013);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -117,17 +117,17 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  border: 1px solid #e85443;
+  border: 1px solid #FEA013;
   background: #fff;
 }
 
 .btnArrow :global(.anticon) {
-  color: #e85443;
+  color: #FEA013;
   font-size: 18px;
 }
 
 .btnArrow:hover {
-  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   border: none;
 }
 

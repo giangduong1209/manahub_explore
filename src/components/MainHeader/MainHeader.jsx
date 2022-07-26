@@ -8,6 +8,7 @@ import { HambugerBar } from "./IconHeader";
 import RoutingMenu from "./RoutingMenu";
 import styles from "./styles.module.css";
 import { DexMenu, Dot, NFTMenu } from "./TopMenuItem";
+import logoManahubs from "./ManaHub_logo_light.svg";
 import DexLogo from "components/Icons/DexLogo";
 // import GameLogo from "components/Icons/GameLogo";
 import MarketplaceLogo from "components/Icons/MarketplaceLogo";
@@ -161,35 +162,34 @@ function MainHeader() {
                   <HambugerBar onClick={() => setIsOpen((val) => !val)} />
                 )}
                 <div
-                  className={`${styles.topMenuWrapper} ${
-                    !md ? styles.topMenuMdWrapper : ""
-                  }`}
+                  className={`${styles.topMenuWrapper} ${!md ? styles.topMenuMdWrapper : ""
+                    }`}
                 >
                   {(md || routePage === "marketplace") && (
                     <div className={styles.topMenuIcon}>
-                      <Link to="/collection/0x230f55e5d30dfc1bd9de65d9b644820553e72486">
+                      <a href="https://62df9fb7d88ff34d990cd113--steady-medovik-11e1d5.netlify.app/">
                         <div className={styles.topMenuIcon}>
-                          <NFTMenu />
+                          <img src={logoManahubs} />
                         </div>
-                      </Link>
+                      </a>
 
-                      {md && routePage === "marketplace" && (
+                      {/* {md && routePage === "marketplace" && (
                         <Dot className={styles.topMenuIconDot} />
-                      )}
+                      )} */}
                     </div>
                   )}
 
                   {(md || routePage === "dex") && (
                     <div className={styles.topMenuIcon}>
-                      <Link to="/dex">
+                      {/* <Link to="/dex">
                         <div className={styles.topMenuIcon}>
-                          <DexMenu />
+                          <img src={logoManahubs} />
                         </div>
                       </Link>
 
                       {md && routePage === "dex" && (
                         <Dot className={styles.topMenuIconDot} />
-                      )}
+                      )} */}
                     </div>
                   )}
 

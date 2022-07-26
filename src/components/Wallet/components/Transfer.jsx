@@ -43,7 +43,7 @@ const styles = {
 
   title: {
     fontWeight: "bold",
-    color: "#e85443",
+    color: "#FEA013",
   },
 };
 

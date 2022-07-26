@@ -129,40 +129,41 @@ const CollectionCard = ({ item }) => {
         //   }
         //   setMediaSrc(item.image);
         // }, 1000);
-      } else {
-        findExistNftMarket(item).then((existNft) => {
-          if (existNft) {
-            item.image = existNft.attributes.image;
-            getItemType();
-            setMediaSrc(item.image);
-          } else {
-            if (!arrNFTMarketAddress[item.token_id]) {
-              web3.eth.setProvider(Web3.givenProvider);
-              let marketAddessContract = new web3.eth.Contract(contractABIJson, marketAddress);
-              marketAddessContract.methods.tokenURI(item.token_id).call().then((url) => {
-                if (url.includes("https://ipfs.moralis.io:2053/ipfs/")) {
-                  url = url.replace("https://ipfs.moralis.io:2053/ipfs/", "https://gateway.moralisipfs.com/ipfs/");
-                }
-                if (url.includes("https://gateway.moralisipfs.com/ipfs/")) {
-                  fetch(url)
-                    .then(response => response.json())
-                    .then(data => {
-                      arrNFTMarketAddress[item.token_id] = data.image;
-                      item.image = data.image;
-                      item.name = data.name;
-                      console.log(data);
-                      setMediaSrc(item.image);
-                      getItemType().then(() => {
-                        addItemImageFromItem(item);
-                      });
-                    })
-                    .catch((err) => console.log("fetch type media error:", err));
-                }
-              });
-            }
-          }
-        })
       }
+      //  else {
+      //   findExistNftMarket(item).then((existNft) => {
+      //     if (existNft) {
+      //       item.image = existNft.attributes.image;
+      //       getItemType();
+      //       setMediaSrc(item.image);
+      //     } else {
+      //       if (!arrNFTMarketAddress[item.token_id]) {
+      //         web3.eth.setProvider(Web3.givenProvider);
+      //         let marketAddessContract = new web3.eth.Contract(contractABIJson, marketAddress);
+      //         marketAddessContract.methods.tokenURI(item.token_id).call().then((url) => {
+      //           if (url.includes("https://ipfs.moralis.io:2053/ipfs/")) {
+      //             url = url.replace("https://ipfs.moralis.io:2053/ipfs/", "https://gateway.moralisipfs.com/ipfs/");
+      //           }
+      //           if (url.includes("https://gateway.moralisipfs.com/ipfs/")) {
+      //             fetch(url)
+      //               .then(response => response.json())
+      //               .then(data => {
+      //                 arrNFTMarketAddress[item.token_id] = data.image;
+      //                 item.image = data.image;
+      //                 item.name = data.name;
+      //                 console.log(data);
+      //                 setMediaSrc(item.image);
+      //                 getItemType().then(() => {
+      //                   addItemImageFromItem(item);
+      //                 });
+      //               })
+      //               .catch((err) => console.log("fetch type media error:", err));
+      //           }
+      //         });
+      //       }
+      //     }
+      //   })
+      // }
     }
 
   }, [Moralis, ItemImage, contractABIJson, marketAddress, item]);
