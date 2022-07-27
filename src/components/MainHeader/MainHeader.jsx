@@ -8,7 +8,8 @@ import { HambugerBar } from "./IconHeader";
 import RoutingMenu from "./RoutingMenu";
 import styles from "./styles.module.css";
 import { DexMenu, Dot, NFTMenu } from "./TopMenuItem";
-import logoManahubs from "./ManaHub_logo_light.svg";
+import logoManahubsDex from "./ManaHub_logo_dex_white.svg";
+import logoManahubsMKP from "./ManaHub_logo_mkp_white.svg";
 import DexLogo from "components/Icons/DexLogo";
 // import GameLogo from "components/Icons/GameLogo";
 import MarketplaceLogo from "components/Icons/MarketplaceLogo";
@@ -169,27 +170,27 @@ function MainHeader() {
                     <div className={styles.topMenuIcon}>
                       <a href="https://62df9fb7d88ff34d990cd113--steady-medovik-11e1d5.netlify.app/">
                         <div className={styles.topMenuIcon}>
-                          <img src={logoManahubs} />
+                          <img src={logoManahubsMKP} />
                         </div>
                       </a>
 
-                      {/* {md && routePage === "marketplace" && (
+                      {md && routePage === "marketplace" && (
                         <Dot className={styles.topMenuIconDot} />
-                      )} */}
+                      )}
                     </div>
                   )}
 
                   {(md || routePage === "dex") && (
                     <div className={styles.topMenuIcon}>
-                      {/* <Link to="/dex">
+                      <Link to="/dex">
                         <div className={styles.topMenuIcon}>
-                          <img src={logoManahubs} />
+                          <img src={logoManahubsDex} />
                         </div>
                       </Link>
 
                       {md && routePage === "dex" && (
                         <Dot className={styles.topMenuIconDot} />
-                      )} */}
+                      )}
                     </div>
                   )}
 

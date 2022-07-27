@@ -267,12 +267,12 @@ function NFTCreate(props) {
         <div className={styles.formBore}>
           <Form form={form} layout="vertical">
             <Row gutter={32}>
-              <Col span={24}>
+              <Col span={12}>
                 <Form.Item >
                   <label>Asset Name</label>
                   <Input
                     value={formInput.name}
-                    placeholder="Asset name"
+                    placeholder="Work name"
                     onChange={(e) => handleInputName(e.target.value)}
                   />
                   <div style={{ color: "red" }}>
@@ -285,27 +285,7 @@ function NFTCreate(props) {
                   </div>
                 </Form.Item>
               </Col>
-              <Col span={24}>
-                <Form.Item>
-                  <label>Description</label>
-                  <Input.TextArea
-                    placeholder="Asset Description"
-                    rows={5}
-                    value={formInput.description}
-                    onChange={(e) => handleInputDesc(e.target.value)}
-                    style={{'white-space': 'pre-wrap'}}
-                  />
-                  <div style={{ color: "red" }}>
-                    {!formInput.description && formValid.descriptionErr
-                      ? "Please input your description"
-                      :
-                      formInput.description && !descValid ?
-                        "English only"
-                        : ""}
-                  </div>
-                </Form.Item>
-              </Col>
-              <Col span={24}>
+              <Col span={12}>
                 <Form.Item>
                   <label>Image</label>
                   <Input
@@ -383,6 +363,44 @@ function NFTCreate(props) {
                     }
                   >
                     Max file size : 50MB
+                  </div>
+                </Form.Item>
+              </Col>
+              <Col span={12}>
+                <Form.Item>
+                  <label>Description</label>
+                  <Input.TextArea
+                    placeholder="Asset Description"
+                    rows={5}
+                    value={formInput.description}
+                    onChange={(e) => handleInputDesc(e.target.value)}
+                    style={{'white-space': 'pre-wrap'}}
+                  />
+                  <div style={{ color: "red" }}>
+                    {!formInput.description && formValid.descriptionErr
+                      ? "Please input your description"
+                      :
+                      formInput.description && !descValid ?
+                        "English only"
+                        : ""}
+                  </div>
+                </Form.Item>
+              </Col>
+              <Col span={12}>
+                <Form.Item >
+                  <label>Asset Name</label>
+                  <Input
+                    value={formInput.name}
+                    placeholder="Work name"
+                    onChange={(e) => handleInputName(e.target.value)}
+                  />
+                  <div style={{ color: "red" }}>
+                    {!formInput.name && formValid.nameErr ?
+                      "Please input your asset name"
+                      :
+                      formInput.name && !nameValid ?
+                        "English only"
+                        : ''}
                   </div>
                 </Form.Item>
               </Col>

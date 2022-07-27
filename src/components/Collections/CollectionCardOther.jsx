@@ -1,6 +1,6 @@
 import { Row, Modal, Spin, Badge, Alert } from "antd";
 import React, { useState } from "react";
-import styless from "./Collections.module.css";
+// import styless from "./Collections.module.css";
 import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
 import { getNativeByChain } from "helpers/networks";
 import {
@@ -8,6 +8,7 @@ import {
   useMoralisQuery,
   useWeb3ExecuteFunction
 } from "react-moralis";
+import "./nft.css"
 
 const CollectionCardOther = ({ item }) => {
   const [nftToBuy, setNftToBuy] = useState(null);
@@ -138,12 +139,17 @@ const CollectionCardOther = ({ item }) => {
           <a href="#0">
             <img src={item.image} alt="" />
           </a>
-          <div className="fav">
-            <span className="icon pe-7s-like"></span>
-          </div>
+          {/* <div className="fav">
+            ♥
+          </div> */}
         </div>          
         <div className="cont">
           <div className="info">
+            <div className="author-name valign">
+              <span className="fz-12 ml-10 opacity-8">
+                shshdss
+              </span>
+            </div>
             <div className="item-title mt-15">
               <h6 className="fw-700"><a href="#0">{ item.metadata?.name }</a></h6>
             </div>
@@ -153,7 +159,7 @@ const CollectionCardOther = ({ item }) => {
                 {/* <span className="icon">
                   <img src="nft/img/eth1.svg" alt="" />
                 </span> */}
-                <span>{ item.token_id } ETH</span>
+                <span>{ item.token_id } BNB</span>
               </span>
             </div>
           </div>
