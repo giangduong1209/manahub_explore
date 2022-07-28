@@ -76,26 +76,7 @@ function Account() {
             Connect Wallet
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
-            {window.innerWidth < 750 ? connectorsMobile.map(({ title, icon, connectorId }, key) => (
-              <div
-                style={styles2.connector}
-                key={key}
-                onClick={async () => {
-                  try {
-                    await authenticate({ provider: connectorId });
-                    window.localStorage.setItem("connectorId", connectorId);
-              
-                    setIsAuthModalVisible(false);
-                  } catch (e) {
-                    console.error(e);
-                  }
-                }}
-              >
-                <img src={icon} alt={title} style={styles2.icon} />
-                <Text style={{ fontSize: "14px" }}>{title}</Text>
-              </div>
-            )) :
-              connectors.map(({ title, icon, connectorId }, key) => (
+              {connectors.map(({ title, icon, connectorId }, key) => (
                 <div
                   style={styles2.connector}
                   key={key}
