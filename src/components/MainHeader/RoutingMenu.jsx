@@ -10,7 +10,7 @@ import { Link, matchPath, useHistory, useLocation } from "react-router-dom";
 import { IconArrowDown } from "./IconHeader";
 import styles from "./styles.module.css";
 import { UserIcon } from "../MainHeader/IconHeader";
-import { InstallApp } from "./IconHeader";
+// import { InstallApp } from "./IconHeader";
 
 const { useBreakpoint } = Grid;
 const gamePaths = [
@@ -321,14 +321,14 @@ const RoutingMenu = ({ isOpen, visileSubMenu, setVisileSubMenu }) => {
                   }
                 />
               )}
-              <div className={styles.walletInfo} style={{ marginLeft: "10px" }}>
+              {/* <div className={styles.walletInfo} style={{ marginLeft: "10px" }}>
                 <div
                   onClick={() => startChromeInstall()}
                   className={styles.icon1}
                 >
                   <InstallApp className={styles.svgIcon1}/>
                 </div>
-              </div>
+              </div> */}
               <div className={styles.walletInfo}>
                 <div
                   onClick={() => history.push("/profile")}
