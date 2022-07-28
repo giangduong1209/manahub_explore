@@ -4,7 +4,7 @@ import CollectionCard from "./CollectionCard";
 import CollectionCardOther from './CollectionCardOther'
 import styless from "./Collections.module.css";
 import CollectionBanner from "./CollectionBanner";
-import { useMoralisQuery, useMoralis, useMoralisWeb3Api } from "react-moralis";
+import { useMoralisQuery, useMoralis } from "react-moralis";
 import { useNFTTokenIds } from "hooks/useNFTTokenIds";
 // import { getCollectionsByChain } from "helpers/collection";
 import { useParams } from "react-router-dom";
@@ -23,7 +23,6 @@ const Collections = memo(({ address }) => {
   // setListData(useNFTBalances(address));
   // const { data: list } = useNFTBalances(address);
   const { chainId } = useMoralis();
-  const Web3Api = useMoralisWeb3Api();
   const queryMarketItems = useMoralisQuery("MarketItemCreateds");
   const queryListedItems = useMoralisQuery("ListedItem", q => q.descending('createdAt'));
   const [listNFT, setListNFT] = useState([]);
@@ -37,27 +36,18 @@ const Collections = memo(({ address }) => {
     image: "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s130",
     name: "Bored Ape Yacht Club"
   }
-  // console.log(collection);
+ 
   useNFTTokenIds(address).then((res) => setListData(res));
-  // async function GetCollections(){
-    
-    // const options ={
-    //   addresses: "0x230f55e5d30dfc1bd9de65d9b644820553e72486",
-    //   chain: "bsc",
-    // };
-    // const tokenMetadata = await Web3Api.token.getNFTMetadata(options);
-    // console.log(tokenMetadata);
-  // }
   const addrsList = ['0x230f55e5d30dfc1bd9de65d9b644820553e72486']
 
   const { data: marketData } = queryMarketItems;
   useEffect(() => {
+ 
     setMarketItems([...marketData]);
   }, [marketData]); // data
 
   let { data } = queryListedItems //useMoralisQuery('ListedItem');
   useEffect(() => {
-    // GetCollections();
     if (data) {
       let listedItem = []
       data.forEach(el => {
@@ -88,16 +78,6 @@ const Collections = memo(({ address }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, marketItems, chainId, listData]);
 
-
-  // function itemRender(current, type, originalElement) {
-  //   if (type === "prev") {
-  //     return null;
-  //   }
-  //   if (type === "next") {
-  //     return null;
-  //   }
-  //   return originalElement;
-  // }
   return (
     <>
       <CollectionBanner address={address} />

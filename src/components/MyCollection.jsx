@@ -1,5 +1,5 @@
 import React from 'react';
-import FilterBox from './FilterBox';
+// import FilterBox from './FilterBox';
 import MyCollections from './MyCollections';
 import styles from "./styles.module.css"
 

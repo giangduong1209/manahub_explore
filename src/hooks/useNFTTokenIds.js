@@ -2,35 +2,38 @@ import { useEffect, useState } from "react";
 import { useMoralisWeb3Api, useMoralis } from "react-moralis";
 import { useIPFS } from "./useIPFS";
 
-export const useNFTTokenIds = async ({address}) => {
+export const useNFTTokenIds = async ({ address }) => {
   const { token } = useMoralisWeb3Api();
-  const { chainId } = useMoralis();
+  const { Moralis, chainId } = useMoralis();
   const { resolveLink } = useIPFS();
   const [NFTTokenIds, setNFTTokenIds] = useState([]);
   const options = {
-  address: "0x230f55e5d30dfc1bd9de65d9b644820553e72486",
-  chain: chainId,
-    };
-    console.log(options)
-    useEffect(() => {
-      async function fetchData() {
-        // You can await here
-        await token.getAllTokenIds(options).then((res) => {
-          if(res.result) {
-            const NFTs = res.result;
-            for (let NFT of NFTs){
-              if(NFT.metadata) {
-                NFT.metadata = JSON.parse(NFT.metadata);
-                NFT.image = resolveLink(NFT.metadata.image);
-              }
-            }
-            setNFTTokenIds(NFTs.slice(0,50))
+    address: "0x230f55e5d30dfc1bd9de65d9b644820553e72486",
+    chain: chainId,
+  };
+  Moralis.CoreManager.get("VERSION");
+  const APP_ID = process.env.REACT_APP_MORALIS_APPLICATION_ID;
+  const SERVER_URL = process.env.REACT_APP_MORALIS_SERVER_URL;
+  Moralis.start({ serverUrl: SERVER_URL, appId: APP_ID });
+
+  useEffect(() => {
+    async function fetchData() {
+      // You can await here
+      let res = await token.getAllTokenIds(options);
+      if (res.result) {
+        const NFTs = res.result;
+        for (let NFT of NFTs) {
+          if (NFT.metadata) {
+            NFT.metadata = JSON.parse(NFT.metadata);
+            NFT.image = resolveLink(NFT.metadata.image);
           }
-        });
+        }
+        setNFTTokenIds(NFTs.slice(0, 50))
       }
-      fetchData();
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [chainId]);
+    }
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [chainId]);
 
   // console.log(data)
   // useEffect(() => {
@@ -52,8 +55,8 @@ export const useNFTTokenIds = async ({address}) => {
   // async function fetchData() {
   //   return await Web3Api.token.getAllTokenIds(options);
   // }
-  
-  return NFTTokenIds ;
+
+  return NFTTokenIds;
 };
 
 export default useNFTTokenIds;

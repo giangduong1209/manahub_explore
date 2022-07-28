@@ -7,7 +7,7 @@ import { AvaxLogo, BSCLogo, ETHLogo, PolygonLogo } from "../Chains/Logos";
 import { HambugerBar } from "./IconHeader";
 import RoutingMenu from "./RoutingMenu";
 import styles from "./styles.module.css";
-import { DexMenu, Dot, NFTMenu } from "./TopMenuItem";
+import { Dot } from "./TopMenuItem";
 import logoManahubsDex from "./ManaHub_logo_dex_white.svg";
 import logoManahubsMKP from "./ManaHub_logo_mkp_white.svg";
 import DexLogo from "components/Icons/DexLogo";
@@ -110,6 +110,7 @@ function MainHeader() {
 
   useEffect(() => {
     const defaultChain = menuItems.find((item) => item.key === "0x61");
+    alert(chainId);
     if (!chainId || !isAuthenticated || !account) {
       setSelected(defaultChain);
     } else {
@@ -168,7 +169,7 @@ function MainHeader() {
                 >
                   {(md || routePage === "marketplace") && (
                     <div className={styles.topMenuIcon}>
-                      <a href="https://62df9fb7d88ff34d990cd113--steady-medovik-11e1d5.netlify.app/">
+                      <a href="/">
                         <div className={styles.topMenuIcon}>
                           <img src={logoManahubsMKP} />
                         </div>

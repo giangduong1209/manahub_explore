@@ -32,22 +32,15 @@ const validateMessages = {
 };
 /* eslint-enable no-template-curly-in-string */
 // const { useBreakpoint } = Grid;
-
 function Profile() {
   const history = useHistory();
   const { Moralis, account } = useMoralis();
   const [auth, setAuth] = useState();
+  const [refDisabled, setrefDisabled] = useState(false);
   const queryProfile = useMoralisQuery("profile");
+
   const fetchProfile = JSON.parse(
-    JSON.stringify(queryProfile.data, [
-      "address",
-      "email",
-      "name",
-      "phone",
-      "background",
-      "avatar",
-      "bio",
-    ])
+    JSON.stringify(queryProfile.data)
   );
   const [form] = Form.useForm();
   const [image, setImage] = useState("");
@@ -55,12 +48,16 @@ function Profile() {
   const [loading, setLoading] = useState(false);
   const [changeAva, setChangeAva] = useState(false);
 
-  const checkAuthen = () => {
+  const checkAuthen = async () => {
     const result =
       fetchProfile.find((element) => element.address === account) || null;
     if (result && account !== undefined) {
       setAuth(true);
+      if (result.ref) {
+        setrefDisabled(true);
+      }
       form.setFieldsValue({
+        ref: result.ref,
         name: result.name,
         email: result.email,
         phone: result.phone,
@@ -89,6 +86,18 @@ function Profile() {
         save = await query.first();
       } else {
         save = new users();
+      }
+
+      const resultGetRefs =
+        fetchProfile.find((element) => element.address === values.ref.toLowerCase()) || null;
+      let refs = [];
+      if (resultGetRefs.refs) {
+        refs = JSON.parse(resultGetRefs.refs);
+      }
+      if (values.ref !== account) {
+        refs.push(values.ref);
+        save.set("refs", JSON.stringify(refs));
+        save.set("ref", values.ref);
       }
 
       save.set("address", account);
@@ -162,8 +171,8 @@ function Profile() {
           justifyContent: "center",
           backgroundImage: `url(${bg})`,
           backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
         }}
       >
         <Card
@@ -230,6 +239,18 @@ function Profile() {
               <div className={styles.tranfer}>
                 <div className={styles.header}>
                   <h3>Your Information</h3>
+                </div>
+                <div className={styles.select}>
+                  <div className={styles.textWrapper}>
+                    <Text strong>Referral</Text>
+                  </div>
+                  <Form.Item
+                    name={"ref"}
+                    rules={[{ required: true }]}
+                    style={{ width: "100%", marginTop: "20px" }}
+                  >
+                    <Input style={{ width: "100%" }} disabled={refDisabled} />
+                  </Form.Item>
                 </div>
                 <div className={styles.select}>
                   <div className={styles.textWrapper}>

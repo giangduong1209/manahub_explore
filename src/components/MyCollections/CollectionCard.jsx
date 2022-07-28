@@ -33,7 +33,7 @@ const categoryLs = [
   "Utility",
   "VirtualWorlds"
 ];
-let arrNFTMarketAddress = {};
+// let arrNFTMarketAddress = {};
 
 const CollectionCard = ({ item }) => {
   
@@ -76,26 +76,14 @@ const CollectionCard = ({ item }) => {
 
 
   useEffect(() => {
-    const findExistNftMarket = async (item) => {
-      // const ListedItem = Moralis.Object.extend("ItemImages");
-      const query = new Moralis.Query(ItemImage);
-      query.equalTo('nftContract', item.token_address);
-      query.equalTo('tokenId', item.token_id);
-      const result = await query.first();
-      return result
-    }
-    async function addItemImageFromItem(item) {
-      let exist = await findExistNftMarket(item);
-      if (!exist) {
-        const itemImage = new ItemImage();
-        itemImage.set("image", item.image);
-        itemImage.set("nftContract", item.token_address);
-        itemImage.set("tokenId", item.token_id);
-        itemImage.set("name", item.name);
-        itemImage.set("type", item.type);
-        itemImage.save();
-      }
-    }
+    // const findExistNftMarket = async (item) => {
+    //   // const ListedItem = Moralis.Object.extend("ItemImages");
+    //   const query = new Moralis.Query(ItemImage);
+    //   query.equalTo('nftContract', item.token_address);
+    //   query.equalTo('tokenId', item.token_id);
+    //   const result = await query.first();
+    //   return result
+    // }
 
     async function getItemType() {
       try {
