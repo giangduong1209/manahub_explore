@@ -110,7 +110,7 @@ function MainHeader() {
 
   useEffect(() => {
     const defaultChain = menuItems.find((item) => item.key === "0x61");
-    alert(chainId);
+  
     if (!chainId || !isAuthenticated || !account) {
       setSelected(defaultChain);
     } else {
