@@ -1,6 +1,6 @@
 import { Grid, Table, Tag, Space, Modal, Button, Spin } from 'antd';
 import 'antd/dist/antd.css';
-import TransactionFilterBox from 'components/TransactionFilterBox';
+// import TransactionFilterBox from 'components/TransactionFilterBox';
 // import TransactionRow from 'components/TransactionRow';
 import useNativeTransactions from 'hooks/useNativeTransactions';
 import { useMoralisDapp } from 'providers/MoralisDappProvider/MoralisDappProvider';
@@ -387,7 +387,7 @@ function NativeTransactions() {
 
   return (
     <div style={{ display: 'flex', position: 'relative' }}>
-      <TransactionFilterBox />
+      {/* <TransactionFilterBox /> */}
       <div className={styles.transactionWrapper}>
         <Table
           pagination={false}
