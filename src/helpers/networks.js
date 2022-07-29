@@ -48,8 +48,8 @@ export const networkConfigs = {
     chainName: "Smart Chain - Testnet",
     currencyName: "BNB",
     currencySymbol: "BNB",
-    // rpcUrl: "https://data-seed-prebsc-1-s1.binance.org:8545/",
-    rpcUrl: "https://speedy-nodes-nyc.moralis.io/dbf52adceda2e067e631dfb1/bsc/mainnet",
+    rpcUrl: "https://data-seed-prebsc-1-s1.binance.org:8545/",
+    // rpcUrl: "https://speedy-nodes-nyc.moralis.io/dbf52adceda2e067e631dfb1/bsc/mainnet",
     blockExplorerUrl: "https://testnet.bscscan.com/",
   },
   "0x89": {
