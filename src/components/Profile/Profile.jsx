@@ -92,8 +92,10 @@ function Profile() {
         const resultGetRefs =
           fetchProfile.find((element) => element.address === values.ref.toLowerCase()) || null;
         let refs = [];
-        if (resultGetRefs.refs) {
-          refs = JSON.parse(resultGetRefs.refs);
+        if (resultGetRefs) {
+          if (resultGetRefs.refs) {
+            refs = JSON.parse(resultGetRefs.refs);
+          }       
         }
         if (values.ref !== account) {
           refs.push(values.ref);
