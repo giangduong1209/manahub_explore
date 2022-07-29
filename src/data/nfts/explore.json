@@ -1,0 +1,112 @@
+{
+  "tabs": [
+    {
+      "id": 1,
+      "title": "Trendings",
+      "icon": "fas fa-fire"
+    },
+    {
+      "id": 2,
+      "title": "abstract Art",
+      "icon": "fas fa-gem"
+    },
+    {
+      "id": 3,
+      "title": "Sports",
+      "icon": "fas fa-basketball-ball"
+    },
+    {
+      "id": 4,
+      "title": "Celebrity",
+      "icon": "fas fa-female"
+    }
+  ],
+  "contents": [
+    {
+      "id": 0,
+      "show": true,
+      "cards": [
+        {
+          "image": "nft/img/nfts-img/1.jpg",
+          "author": {
+            "picture": "nft/img/authors/1.jpg",
+            "name": "Manahubs"
+          },
+          "title": "Graphics for Games",
+          "date": "October 2021",
+          "price": "0.15"
+        },
+        {
+          "image": "nft/img/nfts-img/2.jpg",
+          "author": {
+            "picture": "nft/img/authors/1.jpg",
+            "name": "Manahubs"
+          },
+          "title": "Graphics for Music",
+          "date": "October 2021",
+          "price": "0.15"
+        },
+        {
+          "image": "nft/img/nfts-img/3.jpg",
+          "author": {
+            "picture": "nft/img/authors/1.jpg",
+            "name": "Manahubs"
+          },
+          "title": "Justin Bieber",
+          "date": "October 2021",
+          "price": "0.15"
+        },
+        {
+          "image": "nft/img/nfts-img/4.jpg",
+          "author": {
+            "picture": "nft/img/authors/1.jpg",
+            "name": "Manahubs"
+          },
+          "title": "Charlie Puth",
+          "date": "October 2021",
+          "price": "0.15"
+        },
+        {
+          "image": "nft/img/nfts-img/5.jpg",
+          "author": {
+            "picture": "nft/img/authors/1.jpg",
+            "name": "Manahubs"
+          },
+          "title": "Shawn Mendes",
+          "date": "October 2021",
+          "price": "0.15"
+        },
+        {
+          "image": "nft/img/nfts-img/6.jpg",
+          "author": {
+            "picture": "nft/img/authors/1.jpg",
+            "name": "Manahubs"
+          },
+          "title": "Hailey Bieber",
+          "date": "October 2021",
+          "price": "0.15"
+        },
+        {
+          "image": "nft/img/nfts-img/7.jpg",
+          "author": {
+            "picture": "nft/img/authors/1.jpg",
+            "name": "Manahubs"
+          },
+          "title": "The Weekend",
+          "date": "October 2021",
+          "price": "0.15"
+        },
+        {
+          "image": "nft/img/nfts-img/8.jpg",
+          "author": {
+            "picture": "nft/img/authors/1.jpg",
+            "name": "Manahubs"
+          },
+          "title": "Elon Buffett",
+          "date": "October 2021",
+          "price": "0.15"
+        }
+      ]
+    }
+  ]
+}

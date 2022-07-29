@@ -88,16 +88,18 @@ function Profile() {
         save = new users();
       }
 
-      const resultGetRefs =
-        fetchProfile.find((element) => element.address === values.ref.toLowerCase()) || null;
-      let refs = [];
-      if (resultGetRefs.refs) {
-        refs = JSON.parse(resultGetRefs.refs);
-      }
-      if (values.ref !== account) {
-        refs.push(values.ref);
-        save.set("refs", JSON.stringify(refs));
-        save.set("ref", values.ref);
+      if (values.ref) {
+        const resultGetRefs =
+          fetchProfile.find((element) => element.address === values.ref.toLowerCase()) || null;
+        let refs = [];
+        if (resultGetRefs.refs) {
+          refs = JSON.parse(resultGetRefs.refs);
+        }
+        if (values.ref !== account) {
+          refs.push(values.ref);
+          save.set("refs", JSON.stringify(refs));
+          save.set("ref", values.ref);
+        }
       }
 
       save.set("address", account);
@@ -246,7 +248,7 @@ function Profile() {
                   </div>
                   <Form.Item
                     name={"ref"}
-                    rules={[{ required: true }]}
+                    // rules={[{ required: true }]}
                     style={{ width: "100%", marginTop: "20px" }}
                   >
                     <Input style={{ width: "100%" }} disabled={refDisabled} />

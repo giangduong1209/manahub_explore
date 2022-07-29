@@ -35,7 +35,7 @@ const CollectionCardOther = ({ item }) => {
       "confirmed"
     ])
   );
-
+  console.log(item);
   const getMarketItem = (item) => {
     const result = fetchMarketItems?.find(
       (e) =>

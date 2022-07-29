@@ -23,7 +23,7 @@ const Collections = memo(({ address }) => {
   // setListData(useNFTBalances(address));
   // const { data: list } = useNFTBalances(address);
   const { chainId } = useMoralis();
-  const queryMarketItems = useMoralisQuery("MarketItemCreateds");
+  const queryMarketItems = useMoralisQuery("ItemImages");
   const queryListedItems = useMoralisQuery("ListedItem", q => q.descending('createdAt'));
   const [listNFT, setListNFT] = useState([]);
   // const [originListNFT, setOriginListNFT] = useState([]);
@@ -31,14 +31,14 @@ const Collections = memo(({ address }) => {
   // const collections = getCollectionsByChain(chainId);
   // const collection = collections.find(ele => ele.addrs === addrs);
   const collection = {
-    addrs: "0x230f55e5d30dfc1bd9de65d9b644820553e72486",
+    addrs: "0xBE87ef0FF214c4484D31031863Cb88863b65858E",
     banner: "https://lh3.googleusercontent.com/i5dYZRkVCUK97bfprQ3WXyrT9BnLSZtVKGJlKQ919uaUB0sxbngVCioaiyu9r6snqfi2aaTyIvv6DHm4m2R3y7hMajbsv14pSZK8mhs=h600",
     image: "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s130",
-    name: "Bored Ape Yacht Club"
+    name: "ManaHubs"
   }
  
   useNFTTokenIds(address).then((res) => setListData(res));
-  const addrsList = ['0x230f55e5d30dfc1bd9de65d9b644820553e72486']
+  const addrsList = ['0xBE87ef0FF214c4484D31031863Cb88863b65858E']
 
   const { data: marketData } = queryMarketItems;
   useEffect(() => {
@@ -55,19 +55,25 @@ const Collections = memo(({ address }) => {
       })
       listedItem.forEach((item, idx) => {
         marketItems?.forEach((ele) => {
+          // console.log(item);
+          // console.log(ele.attributes);
           if (
-            ele.attributes.nftContract === item.token_address &&
-            ele.attributes.tokenId === item.token_id
+            ele.attributes.nftContract.toLowerCase() === item.token_address.toLowerCase() &&
+            parseInt(ele.attributes.tokenId) === parseInt(item.token_id)
           ) {
+            
             item.price = ele.attributes.price / ("1e" + 18);
           }
         });
       });
-      if (collection?.added) {
-        if (addrs === '0x68F33d25b2Ba9d60Cc6615d29d30fF069F840911') {
+      console.log(collection);
+      if (collection?.addrs) {
+        if (addrs === '0xBE87ef0FF214c4484D31031863Cb88863b65858E') {
           // condtion for new main contract
+          console.log("test");
           setListNFT([...listedItem.filter((ele) => { return !addrsList.includes(ele.token_address) })]);
         } else {
+          console.log("test2");
           let newArray = listedItem.filter((ele) => { return ele.token_address.toLowerCase() === addrs.toLowerCase() }).concat(listData);
           setListNFT([...newArray]);
         }

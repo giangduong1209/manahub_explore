@@ -94,6 +94,7 @@ header .star4 {
   object-fit: cover;
   -o-object-position: center;
   object-position: center;
+  margin: 2px;
 }
 
 @-webkit-keyframes slide-vertical {

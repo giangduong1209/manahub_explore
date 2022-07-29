@@ -7,7 +7,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00001.png",
     type: "ssr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00002",
@@ -17,7 +17,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00002.png",
     type: "ssr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00003",
@@ -27,7 +27,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00003.png",
     type: "ssr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00004",
@@ -36,7 +36,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00004.png",
     type: "ssr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00005",
@@ -45,7 +45,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00005.png",
     type: "ssr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00006",
@@ -54,7 +54,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00006.png",
     type: "ssr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00007",
@@ -64,7 +64,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00007.png",
     type: "ssr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00008",
@@ -73,7 +73,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00008.png",
     type: "ssr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00009",
@@ -82,7 +82,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00009.png",
     type: "ssr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00010",
@@ -91,7 +91,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00010.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00011",
@@ -101,7 +101,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00011.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00012",
@@ -111,7 +111,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00012.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00013",
@@ -120,7 +120,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00013.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00014",
@@ -129,7 +129,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00014.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00015",
@@ -139,7 +139,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00015.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00016",
@@ -149,7 +149,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00016.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00017",
@@ -158,7 +158,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00017.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00018",
@@ -168,7 +168,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00018.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00019",
@@ -177,7 +177,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00019.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00020",
@@ -187,7 +187,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00020.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00021",
@@ -197,7 +197,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00021.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00022",
@@ -206,7 +206,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00022.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00023",
@@ -216,7 +216,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00023.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00024",
@@ -225,7 +225,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00024.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00025",
@@ -234,7 +234,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00025.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00026",
@@ -243,7 +243,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00026.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00027",
@@ -252,7 +252,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00027.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00028",
@@ -261,7 +261,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00028.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00029",
@@ -270,7 +270,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00029.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00030",
@@ -280,7 +280,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00030.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00031",
@@ -290,7 +290,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00031.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00032",
@@ -300,7 +300,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00032.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00033",
@@ -310,7 +310,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00033.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00034",
@@ -320,7 +320,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00034.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00035",
@@ -330,7 +330,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00035.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00036",
@@ -340,7 +340,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00036.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00037",
@@ -350,7 +350,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00037.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00038",
@@ -359,7 +359,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00038.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00039",
@@ -369,7 +369,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00039.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00040",
@@ -378,7 +378,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00040.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00041",
@@ -387,7 +387,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00041.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00042",
@@ -396,7 +396,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00042.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00043",
@@ -405,7 +405,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00043.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00044",
@@ -415,7 +415,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00044.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00045",
@@ -424,7 +424,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00045.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00046",
@@ -433,7 +433,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00046.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00047",
@@ -442,7 +442,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00047.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00048",
@@ -451,7 +451,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00048.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00049",
@@ -460,7 +460,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00049.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00050",
@@ -469,7 +469,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00050.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00051",
@@ -478,7 +478,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00051.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00052",
@@ -487,7 +487,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00052.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00053",
@@ -496,7 +496,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00053.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00054",
@@ -505,7 +505,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00054.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00055",
@@ -514,7 +514,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00055.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00056",
@@ -523,7 +523,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00056.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00057",
@@ -532,7 +532,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00057.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00058",
@@ -541,7 +541,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00058.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00059",
@@ -550,7 +550,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00059.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00060",
@@ -559,7 +559,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00060.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00061",
@@ -568,7 +568,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00061.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00062",
@@ -577,7 +577,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00062.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00063",
@@ -587,7 +587,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00063.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00064",
@@ -597,7 +597,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00064.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00065",
@@ -607,7 +607,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00065.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00066",
@@ -616,7 +616,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00066.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00067",
@@ -625,7 +625,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00067.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00068",
@@ -634,7 +634,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00068.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00069",
@@ -643,7 +643,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00069.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00070",
@@ -652,7 +652,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00070.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00071",
@@ -661,7 +661,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00071.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00072",
@@ -671,7 +671,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00072.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00073",
@@ -680,7 +680,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00073.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00074",
@@ -690,7 +690,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00074.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00075",
@@ -699,7 +699,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00075.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00076",
@@ -708,7 +708,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00076.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00077",
@@ -717,7 +717,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00077.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00078",
@@ -727,7 +727,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00078.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00079",
@@ -736,7 +736,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00079.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00080",
@@ -745,7 +745,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00080.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00081",
@@ -754,7 +754,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00081.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00082",
@@ -763,7 +763,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00082.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00083",
@@ -773,7 +773,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00083.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00084",
@@ -783,7 +783,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00084.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00085",
@@ -793,7 +793,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00085.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00086",
@@ -803,7 +803,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00086.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00087",
@@ -813,7 +813,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00087.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00088",
@@ -822,7 +822,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00088.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00089",
@@ -832,7 +832,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00089.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00090",
@@ -841,7 +841,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00090.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00091",
@@ -851,7 +851,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00091.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00092",
@@ -861,7 +861,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00092.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00093",
@@ -870,7 +870,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00093.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00094",
@@ -879,7 +879,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00094.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00095",
@@ -889,7 +889,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00095.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00096",
@@ -899,7 +899,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00096.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00097",
@@ -909,7 +909,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00097.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00098",
@@ -919,7 +919,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00098.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00099",
@@ -928,7 +928,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00099.png",
     type: "sr",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00100",
@@ -938,7 +938,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00100.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00101",
@@ -948,7 +948,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00101.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00102",
@@ -958,7 +958,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00102.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00103",
@@ -968,7 +968,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00103.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00104",
@@ -977,7 +977,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00104.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00105",
@@ -987,7 +987,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00105.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00106",
@@ -996,7 +996,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00106.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00107",
@@ -1005,7 +1005,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00107.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00108",
@@ -1014,7 +1014,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00108.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00109",
@@ -1023,7 +1023,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00109.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00110",
@@ -1033,7 +1033,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00110.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00111",
@@ -1043,7 +1043,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00111.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00112",
@@ -1053,7 +1053,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00112.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00113",
@@ -1063,7 +1063,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00113.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00114",
@@ -1073,7 +1073,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00114.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00115",
@@ -1082,7 +1082,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00115.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00116",
@@ -1091,7 +1091,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00116.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00117",
@@ -1100,7 +1100,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00117.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00118",
@@ -1110,7 +1110,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00118.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00119",
@@ -1119,7 +1119,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00119.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00120",
@@ -1128,7 +1128,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00120.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00121",
@@ -1137,7 +1137,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00121.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00122",
@@ -1147,7 +1147,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00122.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00123",
@@ -1156,7 +1156,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00123.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00124",
@@ -1166,7 +1166,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00124.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00125",
@@ -1176,7 +1176,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00125.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00126",
@@ -1186,7 +1186,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00126.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00127",
@@ -1196,7 +1196,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00127.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00128",
@@ -1206,7 +1206,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00128.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00129",
@@ -1216,7 +1216,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00129.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00130",
@@ -1226,7 +1226,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00130.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00131",
@@ -1236,7 +1236,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00131.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00132",
@@ -1246,7 +1246,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00132.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00133",
@@ -1256,7 +1256,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00133.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00134",
@@ -1266,7 +1266,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00134.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00135",
@@ -1276,7 +1276,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00135.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00136",
@@ -1286,7 +1286,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00136.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00137",
@@ -1296,7 +1296,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00137.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00138",
@@ -1306,7 +1306,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00138.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00139",
@@ -1316,7 +1316,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00139.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00140",
@@ -1325,7 +1325,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00140.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00141",
@@ -1335,7 +1335,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00141.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00142",
@@ -1345,7 +1345,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00142.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00143",
@@ -1355,7 +1355,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00143.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00144",
@@ -1364,7 +1364,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00144.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00145",
@@ -1373,7 +1373,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00145.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00146",
@@ -1383,7 +1383,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00146.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00147",
@@ -1393,7 +1393,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00147.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00148",
@@ -1403,7 +1403,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00148.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00149",
@@ -1413,7 +1413,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00149.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00150",
@@ -1422,7 +1422,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00150.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00151",
@@ -1432,7 +1432,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00151.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00152",
@@ -1441,7 +1441,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00152.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00153",
@@ -1451,7 +1451,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00153.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00154",
@@ -1461,7 +1461,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00154.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00155",
@@ -1471,7 +1471,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00155.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00156",
@@ -1481,7 +1481,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00156.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00157",
@@ -1491,7 +1491,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00157.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00158",
@@ -1501,7 +1501,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00158.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00159",
@@ -1510,7 +1510,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00159.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00160",
@@ -1519,7 +1519,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00160.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00161",
@@ -1529,7 +1529,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00161.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00162",
@@ -1539,7 +1539,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00162.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00163",
@@ -1549,7 +1549,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00163.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00164",
@@ -1559,7 +1559,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00164.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00165",
@@ -1569,7 +1569,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00165.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00166",
@@ -1578,7 +1578,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00166.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00167",
@@ -1587,7 +1587,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00167.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00168",
@@ -1596,7 +1596,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00168.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00169",
@@ -1605,7 +1605,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00169.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00170",
@@ -1615,7 +1615,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00170.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00171",
@@ -1624,7 +1624,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00171.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00172",
@@ -1634,7 +1634,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00172.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00173",
@@ -1644,7 +1644,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00173.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00174",
@@ -1654,7 +1654,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00174.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00175",
@@ -1664,7 +1664,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00175.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00176",
@@ -1674,7 +1674,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00176.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00177",
@@ -1683,7 +1683,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00177.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00178",
@@ -1693,7 +1693,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00178.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00179",
@@ -1703,7 +1703,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00179.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00180",
@@ -1712,7 +1712,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00180.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00181",
@@ -1722,7 +1722,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00181.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00182",
@@ -1732,7 +1732,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00182.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00183",
@@ -1742,7 +1742,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00183.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00184",
@@ -1752,7 +1752,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00184.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00185",
@@ -1762,7 +1762,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00185.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00186",
@@ -1771,7 +1771,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00186.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00187",
@@ -1781,7 +1781,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00187.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00188",
@@ -1791,7 +1791,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00188.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00189",
@@ -1801,7 +1801,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00189.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00190",
@@ -1811,7 +1811,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00190.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00191",
@@ -1821,7 +1821,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00191.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00192",
@@ -1831,7 +1831,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00192.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00193",
@@ -1841,7 +1841,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00193.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00194",
@@ -1850,7 +1850,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00194.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00195",
@@ -1860,7 +1860,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00195.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00196",
@@ -1870,7 +1870,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00196.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00197",
@@ -1880,7 +1880,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00197.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00198",
@@ -1890,7 +1890,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00198.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00199",
@@ -1899,7 +1899,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00199.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00200",
@@ -1908,7 +1908,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00200.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00201",
@@ -1918,7 +1918,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00201.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00202",
@@ -1928,7 +1928,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00202.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00203",
@@ -1938,7 +1938,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00203.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00204",
@@ -1948,7 +1948,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00204.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00205",
@@ -1958,7 +1958,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00205.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00206",
@@ -1968,7 +1968,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00206.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00207",
@@ -1978,7 +1978,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00207.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00208",
@@ -1988,7 +1988,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00208.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00209",
@@ -1998,7 +1998,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00209.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00210",
@@ -2008,7 +2008,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00210.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00211",
@@ -2017,7 +2017,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00211.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00212",
@@ -2026,7 +2026,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00212.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00213",
@@ -2036,7 +2036,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00213.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00214",
@@ -2046,7 +2046,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00214.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00215",
@@ -2056,7 +2056,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00215.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00216",
@@ -2066,7 +2066,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00216.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00217",
@@ -2076,7 +2076,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00217.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00218",
@@ -2085,7 +2085,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00218.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00219",
@@ -2095,7 +2095,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00219.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00220",
@@ -2105,7 +2105,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00220.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00221",
@@ -2114,7 +2114,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00221.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00222",
@@ -2124,7 +2124,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00222.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00223",
@@ -2133,7 +2133,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00223.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00224",
@@ -2142,7 +2142,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00224.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00225",
@@ -2152,7 +2152,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00225.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00226",
@@ -2162,7 +2162,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00226.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00227",
@@ -2171,7 +2171,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00227.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00228",
@@ -2181,7 +2181,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00228.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00229",
@@ -2190,7 +2190,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00229.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00230",
@@ -2200,7 +2200,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00230.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00231",
@@ -2209,7 +2209,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00231.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#0232",
@@ -2219,7 +2219,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/0232.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00233",
@@ -2228,7 +2228,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00233.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00234",
@@ -2238,7 +2238,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00234.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00235",
@@ -2247,7 +2247,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00235.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00236",
@@ -2256,7 +2256,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00236.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00237",
@@ -2265,7 +2265,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00237.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00238",
@@ -2275,7 +2275,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00238.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00239",
@@ -2285,7 +2285,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00239.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00240",
@@ -2295,7 +2295,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00240.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00241",
@@ -2304,7 +2304,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00241.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00242",
@@ -2314,7 +2314,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00242.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00243",
@@ -2324,7 +2324,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00243.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00244",
@@ -2334,7 +2334,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00244.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00245",
@@ -2344,7 +2344,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00245.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00246",
@@ -2354,7 +2354,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00246.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00247",
@@ -2364,7 +2364,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00247.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00248",
@@ -2373,7 +2373,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00248.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00249",
@@ -2383,7 +2383,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00249.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00250",
@@ -2393,7 +2393,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00250.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00251",
@@ -2403,7 +2403,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00251.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00252",
@@ -2413,7 +2413,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00252.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00253",
@@ -2423,7 +2423,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00253.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00254",
@@ -2433,7 +2433,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00254.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00255",
@@ -2442,7 +2442,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00255.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00256",
@@ -2452,7 +2452,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00256.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00257",
@@ -2461,7 +2461,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00257.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00258",
@@ -2471,7 +2471,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00258.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00259",
@@ -2481,7 +2481,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00259.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00260",
@@ -2491,7 +2491,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00260.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00261",
@@ -2500,7 +2500,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00261.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00262",
@@ -2509,7 +2509,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00262.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00263",
@@ -2518,7 +2518,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00263.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00264",
@@ -2528,7 +2528,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00264.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00265",
@@ -2538,7 +2538,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00265.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00266",
@@ -2547,7 +2547,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00266.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00267",
@@ -2556,7 +2556,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00267.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00268",
@@ -2566,7 +2566,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00268.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00269",
@@ -2576,7 +2576,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00269.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00270",
@@ -2586,7 +2586,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00270.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00271",
@@ -2596,7 +2596,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00271.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00272",
@@ -2605,7 +2605,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00272.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00273",
@@ -2614,7 +2614,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00273.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00274",
@@ -2624,7 +2624,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00274.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00275",
@@ -2634,7 +2634,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00275.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00276",
@@ -2644,7 +2644,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00276.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00277",
@@ -2654,7 +2654,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00277.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00278",
@@ -2664,7 +2664,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00278.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00279",
@@ -2674,7 +2674,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00279.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00280",
@@ -2684,7 +2684,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00280.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00281",
@@ -2693,7 +2693,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00281.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00282",
@@ -2703,7 +2703,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00282.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00283",
@@ -2713,7 +2713,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00283.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00284",
@@ -2723,7 +2723,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00284.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00285",
@@ -2732,7 +2732,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00285.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00286",
@@ -2742,7 +2742,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00286.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00287",
@@ -2752,7 +2752,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00287.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00288",
@@ -2762,7 +2762,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00288.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00289",
@@ -2772,7 +2772,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00289.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00290",
@@ -2782,7 +2782,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00290.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00291",
@@ -2792,7 +2792,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00291.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00292",
@@ -2802,7 +2802,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00292.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00293",
@@ -2812,7 +2812,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00293.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00294",
@@ -2822,7 +2822,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00294.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00295",
@@ -2831,7 +2831,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00295.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00296",
@@ -2840,7 +2840,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00296.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00297",
@@ -2850,7 +2850,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00297.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00298",
@@ -2860,7 +2860,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00298.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00299",
@@ -2870,7 +2870,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00299.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00300",
@@ -2879,7 +2879,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00300.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00301",
@@ -2888,7 +2888,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00301.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00302",
@@ -2898,7 +2898,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00302.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00303",
@@ -2907,7 +2907,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00303.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00304",
@@ -2917,7 +2917,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00304.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00305",
@@ -2927,7 +2927,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00305.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00306",
@@ -2936,7 +2936,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00306.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00307",
@@ -2945,7 +2945,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00307.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00308",
@@ -2955,7 +2955,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00308.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00309",
@@ -2965,7 +2965,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00309.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00310",
@@ -2975,7 +2975,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00310.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00311",
@@ -2985,7 +2985,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00311.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00312",
@@ -2995,7 +2995,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00312.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00313",
@@ -3005,7 +3005,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00313.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00314",
@@ -3014,7 +3014,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00314.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00315",
@@ -3024,7 +3024,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00315.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00316",
@@ -3033,7 +3033,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00316.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00317",
@@ -3043,7 +3043,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00317.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00318",
@@ -3053,7 +3053,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00318.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00319",
@@ -3063,7 +3063,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00319.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00320",
@@ -3073,7 +3073,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00320.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00321",
@@ -3083,7 +3083,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00321.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00322",
@@ -3093,7 +3093,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00322.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00323",
@@ -3103,7 +3103,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00323.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00324",
@@ -3113,7 +3113,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00324.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00325",
@@ -3123,7 +3123,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00325.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00326",
@@ -3132,7 +3132,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00326.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00327",
@@ -3141,7 +3141,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00327.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00328",
@@ -3151,7 +3151,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00328.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00329",
@@ -3161,7 +3161,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00329.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00330",
@@ -3171,7 +3171,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00330.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00331",
@@ -3181,7 +3181,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00331.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#0332",
@@ -3191,7 +3191,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/0332.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00333",
@@ -3201,7 +3201,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00333.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00334",
@@ -3210,7 +3210,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00334.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00335",
@@ -3220,7 +3220,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00335.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00336",
@@ -3230,7 +3230,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00336.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00337",
@@ -3240,7 +3240,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00337.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00338",
@@ -3250,7 +3250,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00338.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00339",
@@ -3259,7 +3259,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00339.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00340",
@@ -3269,7 +3269,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00340.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00341",
@@ -3279,7 +3279,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00341.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00342",
@@ -3289,7 +3289,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00342.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00343",
@@ -3299,7 +3299,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00343.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00344",
@@ -3309,7 +3309,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00344.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00345",
@@ -3318,7 +3318,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00345.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00346",
@@ -3328,7 +3328,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00346.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00347",
@@ -3337,7 +3337,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00347.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00348",
@@ -3347,7 +3347,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00348.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00349",
@@ -3357,7 +3357,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00349.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00350",
@@ -3366,7 +3366,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00350.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00351",
@@ -3376,7 +3376,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00351.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00352",
@@ -3385,7 +3385,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00352.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00353",
@@ -3394,7 +3394,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00353.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00354",
@@ -3403,7 +3403,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00354.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00355",
@@ -3413,7 +3413,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00355.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00356",
@@ -3423,7 +3423,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00356.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00357",
@@ -3433,7 +3433,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00357.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00358",
@@ -3443,7 +3443,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00358.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00359",
@@ -3453,7 +3453,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00359.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00360",
@@ -3462,7 +3462,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00360.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00361",
@@ -3472,7 +3472,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00361.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00362",
@@ -3481,7 +3481,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00362.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00363",
@@ -3491,7 +3491,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00363.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00364",
@@ -3501,7 +3501,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00364.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00365",
@@ -3511,7 +3511,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00365.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00366",
@@ -3521,7 +3521,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00366.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00367",
@@ -3531,7 +3531,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00367.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00368",
@@ -3541,7 +3541,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00368.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00369",
@@ -3551,7 +3551,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00369.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00370",
@@ -3561,7 +3561,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00370.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00371",
@@ -3570,7 +3570,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00371.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00372",
@@ -3580,7 +3580,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00372.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00373",
@@ -3589,7 +3589,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00373.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00374",
@@ -3599,7 +3599,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00374.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00375",
@@ -3609,7 +3609,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00375.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00376",
@@ -3619,7 +3619,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00376.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00377",
@@ -3628,7 +3628,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00377.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00378",
@@ -3638,7 +3638,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00378.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00379",
@@ -3648,7 +3648,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00379.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00380",
@@ -3658,7 +3658,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00380.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00381",
@@ -3667,7 +3667,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00381.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00382",
@@ -3677,7 +3677,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00382.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00383",
@@ -3687,7 +3687,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00383.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00384",
@@ -3697,7 +3697,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00384.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00385",
@@ -3707,7 +3707,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00385.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00386",
@@ -3717,7 +3717,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00386.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00387",
@@ -3727,7 +3727,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00387.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00388",
@@ -3737,7 +3737,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00388.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00389",
@@ -3747,7 +3747,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00389.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00390",
@@ -3757,7 +3757,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00390.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00391",
@@ -3767,7 +3767,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00391.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00392",
@@ -3777,7 +3777,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00392.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00393",
@@ -3787,7 +3787,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00393.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00394",
@@ -3797,7 +3797,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00394.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00395",
@@ -3807,7 +3807,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00395.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00396",
@@ -3817,7 +3817,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00396.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00397",
@@ -3827,7 +3827,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00397.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00398",
@@ -3837,7 +3837,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00398.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00399",
@@ -3847,7 +3847,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00399.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00400",
@@ -3856,7 +3856,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00400.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00401",
@@ -3865,7 +3865,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00401.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00402",
@@ -3874,7 +3874,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00402.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00403",
@@ -3883,7 +3883,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00403.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00404",
@@ -3892,7 +3892,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00404.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00405",
@@ -3901,7 +3901,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00405.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00406",
@@ -3910,7 +3910,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00406.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00407",
@@ -3919,7 +3919,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00407.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00408",
@@ -3928,7 +3928,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00408.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00409",
@@ -3937,7 +3937,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00409.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00410",
@@ -3946,7 +3946,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00410.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00411",
@@ -3955,7 +3955,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00411.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00412",
@@ -3964,7 +3964,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00412.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00413",
@@ -3973,7 +3973,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00413.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00414",
@@ -3983,7 +3983,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00414.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00415",
@@ -3992,7 +3992,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00415.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00416",
@@ -4001,7 +4001,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00416.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00417",
@@ -4010,7 +4010,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00417.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00418",
@@ -4019,7 +4019,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00418.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00419",
@@ -4028,7 +4028,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00419.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00420",
@@ -4037,7 +4037,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00420.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00421",
@@ -4047,7 +4047,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00421.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00422",
@@ -4056,7 +4056,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00422.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00423",
@@ -4065,7 +4065,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00423.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00424",
@@ -4074,7 +4074,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00424.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00425",
@@ -4083,7 +4083,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00425.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00426",
@@ -4092,7 +4092,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00426.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00427",
@@ -4101,7 +4101,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00427.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00428",
@@ -4110,7 +4110,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00428.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00429",
@@ -4119,7 +4119,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00429.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00430",
@@ -4128,7 +4128,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00430.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00431",
@@ -4137,7 +4137,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00431.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#0432",
@@ -4146,7 +4146,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/0432.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00433",
@@ -4155,7 +4155,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00433.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00434",
@@ -4164,7 +4164,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00434.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00435",
@@ -4173,7 +4173,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00435.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00436",
@@ -4182,7 +4182,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00436.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00437",
@@ -4191,7 +4191,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00437.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00438",
@@ -4200,7 +4200,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00438.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00439",
@@ -4209,7 +4209,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00439.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00440",
@@ -4218,7 +4218,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00440.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00441",
@@ -4227,7 +4227,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00441.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00442",
@@ -4236,7 +4236,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00442.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00443",
@@ -4245,7 +4245,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00443.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00444",
@@ -4254,7 +4254,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00444.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00445",
@@ -4263,7 +4263,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00445.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00446",
@@ -4272,7 +4272,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00446.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00447",
@@ -4281,7 +4281,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00447.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00448",
@@ -4290,7 +4290,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00448.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00449",
@@ -4299,7 +4299,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00449.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00450",
@@ -4309,7 +4309,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00450.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00451",
@@ -4319,7 +4319,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00451.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00452",
@@ -4328,7 +4328,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00452.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00453",
@@ -4337,7 +4337,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00453.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00454",
@@ -4346,7 +4346,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00454.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00455",
@@ -4355,7 +4355,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00455.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00456",
@@ -4364,7 +4364,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00456.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00457",
@@ -4373,7 +4373,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00457.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00458",
@@ -4382,7 +4382,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00458.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00459",
@@ -4392,7 +4392,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00459.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00460",
@@ -4402,7 +4402,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00460.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00461",
@@ -4411,7 +4411,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00461.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00462",
@@ -4420,7 +4420,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00462.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00463",
@@ -4429,7 +4429,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00463.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00464",
@@ -4438,7 +4438,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00464.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00465",
@@ -4447,7 +4447,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00465.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00466",
@@ -4456,7 +4456,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00466.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00467",
@@ -4465,7 +4465,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00467.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00468",
@@ -4474,7 +4474,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00468.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00469",
@@ -4483,7 +4483,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00469.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00470",
@@ -4492,7 +4492,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00470.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00471",
@@ -4501,7 +4501,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00471.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00472",
@@ -4510,7 +4510,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00472.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00473",
@@ -4519,7 +4519,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00473.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00474",
@@ -4528,7 +4528,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00474.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00475",
@@ -4537,7 +4537,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00475.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00476",
@@ -4546,7 +4546,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00476.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00477",
@@ -4555,7 +4555,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00477.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00478",
@@ -4564,7 +4564,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00478.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00479",
@@ -4573,7 +4573,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00479.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00480",
@@ -4582,7 +4582,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00480.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00481",
@@ -4591,7 +4591,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00481.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00482",
@@ -4600,7 +4600,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00482.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00483",
@@ -4609,7 +4609,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00483.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00484",
@@ -4618,7 +4618,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00484.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00485",
@@ -4627,7 +4627,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00485.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00486",
@@ -4636,7 +4636,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00486.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00487",
@@ -4645,7 +4645,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00487.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00488",
@@ -4654,7 +4654,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00488.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00489",
@@ -4663,7 +4663,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00489.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00490",
@@ -4672,7 +4672,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00490.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00491",
@@ -4681,7 +4681,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00491.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00492",
@@ -4690,7 +4690,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00492.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00493",
@@ -4699,7 +4699,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00493.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00494",
@@ -4708,7 +4708,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00494.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00495",
@@ -4717,7 +4717,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00495.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00496",
@@ -4726,7 +4726,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00496.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00497",
@@ -4735,7 +4735,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00497.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00498",
@@ -4744,7 +4744,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00498.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00499",
@@ -4753,7 +4753,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00499.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00500",
@@ -4762,7 +4762,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00500.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00501",
@@ -4772,7 +4772,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00501.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00502",
@@ -4781,7 +4781,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00502.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00503",
@@ -4790,7 +4790,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00503.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00504",
@@ -4799,7 +4799,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00504.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00505",
@@ -4808,7 +4808,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00505.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00506",
@@ -4817,7 +4817,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00506.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00507",
@@ -4826,7 +4826,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00507.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00508",
@@ -4835,7 +4835,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00508.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00509",
@@ -4844,7 +4844,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00509.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00510",
@@ -4853,7 +4853,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00510.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00511",
@@ -4862,7 +4862,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00511.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00512",
@@ -4871,7 +4871,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00512.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00513",
@@ -4880,7 +4880,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00513.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00514",
@@ -4889,7 +4889,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00514.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00515",
@@ -4898,7 +4898,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00515.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00516",
@@ -4907,7 +4907,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00516.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00517",
@@ -4916,7 +4916,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00517.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00518",
@@ -4925,7 +4925,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00518.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00519",
@@ -4934,7 +4934,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00519.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00520",
@@ -4943,7 +4943,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00520.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00521",
@@ -4952,7 +4952,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00521.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00522",
@@ -4961,7 +4961,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00522.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00523",
@@ -4970,7 +4970,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00523.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00524",
@@ -4979,7 +4979,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00524.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00525",
@@ -4988,7 +4988,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00525.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00526",
@@ -4997,7 +4997,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00526.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00527",
@@ -5006,7 +5006,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00527.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00528",
@@ -5015,7 +5015,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00528.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00529",
@@ -5024,7 +5024,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00529.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00530",
@@ -5033,7 +5033,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00530.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00531",
@@ -5042,7 +5042,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00531.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#0532",
@@ -5051,7 +5051,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/0532.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00533",
@@ -5060,7 +5060,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00533.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00534",
@@ -5069,7 +5069,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00534.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00535",
@@ -5078,7 +5078,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00535.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00536",
@@ -5087,7 +5087,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00536.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00537",
@@ -5097,7 +5097,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00537.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00538",
@@ -5106,7 +5106,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00538.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00539",
@@ -5115,7 +5115,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00539.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00540",
@@ -5124,7 +5124,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00540.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00541",
@@ -5133,7 +5133,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00541.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00542",
@@ -5142,7 +5142,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00542.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00543",
@@ -5151,7 +5151,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00543.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00544",
@@ -5160,7 +5160,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00544.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00545",
@@ -5169,7 +5169,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00545.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00546",
@@ -5178,7 +5178,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00546.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00547",
@@ -5187,7 +5187,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00547.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00548",
@@ -5196,7 +5196,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00548.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00549",
@@ -5205,7 +5205,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00549.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00550",
@@ -5214,7 +5214,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00550.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00551",
@@ -5223,7 +5223,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00551.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00552",
@@ -5232,7 +5232,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00552.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00553",
@@ -5241,7 +5241,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00553.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00554",
@@ -5250,7 +5250,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00554.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00555",
@@ -5259,7 +5259,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00555.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00556",
@@ -5268,7 +5268,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00556.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00557",
@@ -5277,7 +5277,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00557.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00558",
@@ -5286,7 +5286,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00558.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00559",
@@ -5295,7 +5295,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00559.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00560",
@@ -5304,7 +5304,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00560.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00561",
@@ -5313,7 +5313,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00561.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00562",
@@ -5322,7 +5322,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00562.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00563",
@@ -5331,7 +5331,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00563.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00564",
@@ -5340,7 +5340,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00564.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00565",
@@ -5349,7 +5349,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00565.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00566",
@@ -5358,7 +5358,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00566.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00567",
@@ -5367,7 +5367,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00567.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00568",
@@ -5376,7 +5376,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00568.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00569",
@@ -5385,7 +5385,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00569.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00570",
@@ -5394,7 +5394,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00570.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00571",
@@ -5403,7 +5403,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00571.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00572",
@@ -5412,7 +5412,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00572.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00573",
@@ -5421,7 +5421,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00573.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00574",
@@ -5430,7 +5430,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00574.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00575",
@@ -5439,7 +5439,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00575.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00576",
@@ -5448,7 +5448,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00576.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00577",
@@ -5457,7 +5457,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00577.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00578",
@@ -5466,7 +5466,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00578.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00579",
@@ -5475,7 +5475,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00579.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00580",
@@ -5484,7 +5484,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00580.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00581",
@@ -5493,7 +5493,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00581.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00582",
@@ -5502,7 +5502,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00582.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00583",
@@ -5511,7 +5511,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00583.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00584",
@@ -5520,7 +5520,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00584.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00585",
@@ -5529,7 +5529,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00585.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00586",
@@ -5538,7 +5538,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00586.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00587",
@@ -5547,7 +5547,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00587.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00588",
@@ -5556,7 +5556,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00588.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00589",
@@ -5565,7 +5565,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00589.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00590",
@@ -5574,7 +5574,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00590.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00591",
@@ -5583,7 +5583,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00591.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00592",
@@ -5592,7 +5592,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00592.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00593",
@@ -5601,7 +5601,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00593.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00594",
@@ -5611,7 +5611,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00594.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00595",
@@ -5621,7 +5621,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00595.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00596",
@@ -5630,7 +5630,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00596.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00597",
@@ -5639,7 +5639,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00597.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00598",
@@ -5648,7 +5648,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00598.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00599",
@@ -5657,7 +5657,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00599.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00600",
@@ -5666,7 +5666,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00600.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00601",
@@ -5675,7 +5675,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00601.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00602",
@@ -5684,7 +5684,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00602.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00603",
@@ -5694,7 +5694,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00603.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00604",
@@ -5703,7 +5703,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00604.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00605",
@@ -5712,7 +5712,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00605.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00606",
@@ -5721,7 +5721,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00606.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00607",
@@ -5730,7 +5730,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00607.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00608",
@@ -5739,7 +5739,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00608.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00609",
@@ -5748,7 +5748,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00609.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00610",
@@ -5757,7 +5757,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00610.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00611",
@@ -5766,7 +5766,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00611.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00612",
@@ -5775,7 +5775,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00612.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00613",
@@ -5784,7 +5784,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00613.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00614",
@@ -5793,7 +5793,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00614.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00615",
@@ -5802,7 +5802,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00615.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00616",
@@ -5811,7 +5811,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00616.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00617",
@@ -5820,7 +5820,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00617.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00618",
@@ -5829,7 +5829,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00618.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00619",
@@ -5838,7 +5838,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00619.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00620",
@@ -5847,7 +5847,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00620.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00621",
@@ -5856,7 +5856,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00621.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00622",
@@ -5865,7 +5865,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00622.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00623",
@@ -5874,7 +5874,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00623.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00624",
@@ -5883,7 +5883,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00624.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00625",
@@ -5892,7 +5892,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00625.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00626",
@@ -5901,7 +5901,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00626.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00627",
@@ -5910,7 +5910,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00627.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00628",
@@ -5919,7 +5919,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00628.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00629",
@@ -5929,7 +5929,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00629.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00630",
@@ -5938,7 +5938,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00630.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00631",
@@ -5947,7 +5947,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00631.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#0632",
@@ -5956,7 +5956,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/0632.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00633",
@@ -5965,7 +5965,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00633.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00634",
@@ -5974,7 +5974,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00634.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00635",
@@ -5983,7 +5983,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00635.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00636",
@@ -5992,7 +5992,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00636.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00637",
@@ -6001,7 +6001,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00637.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00638",
@@ -6010,7 +6010,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00638.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00639",
@@ -6020,7 +6020,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00639.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00640",
@@ -6029,7 +6029,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00640.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00641",
@@ -6039,7 +6039,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00641.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00642",
@@ -6048,7 +6048,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00642.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00643",
@@ -6057,7 +6057,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00643.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00644",
@@ -6066,7 +6066,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00644.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00645",
@@ -6075,7 +6075,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00645.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00646",
@@ -6084,7 +6084,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00646.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00647",
@@ -6093,7 +6093,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00647.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00648",
@@ -6102,7 +6102,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00648.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00649",
@@ -6111,7 +6111,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00649.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00650",
@@ -6120,7 +6120,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00650.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00651",
@@ -6129,7 +6129,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00651.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00652",
@@ -6138,7 +6138,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00652.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00653",
@@ -6147,7 +6147,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00653.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00654",
@@ -6156,7 +6156,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00654.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00655",
@@ -6165,7 +6165,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00655.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00656",
@@ -6174,7 +6174,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00656.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00657",
@@ -6184,7 +6184,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00657.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00658",
@@ -6193,7 +6193,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00658.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00659",
@@ -6202,7 +6202,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00659.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00660",
@@ -6211,7 +6211,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00660.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00661",
@@ -6220,7 +6220,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00661.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00662",
@@ -6229,7 +6229,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00662.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00663",
@@ -6238,7 +6238,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00663.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00664",
@@ -6247,7 +6247,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00664.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00665",
@@ -6256,7 +6256,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00665.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00666",
@@ -6265,7 +6265,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00666.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00667",
@@ -6274,7 +6274,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00667.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00668",
@@ -6283,7 +6283,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00668.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00669",
@@ -6292,7 +6292,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00669.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00670",
@@ -6301,7 +6301,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00670.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00671",
@@ -6310,7 +6310,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00671.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00672",
@@ -6319,7 +6319,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00672.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00673",
@@ -6328,7 +6328,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00673.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00674",
@@ -6337,7 +6337,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00674.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00675",
@@ -6346,7 +6346,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00675.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00676",
@@ -6355,7 +6355,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00676.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00677",
@@ -6364,7 +6364,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00677.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00678",
@@ -6373,7 +6373,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00678.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00679",
@@ -6382,7 +6382,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00679.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00680",
@@ -6391,7 +6391,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00680.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00681",
@@ -6400,7 +6400,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00681.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00682",
@@ -6409,7 +6409,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00682.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00683",
@@ -6418,7 +6418,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00683.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00684",
@@ -6427,7 +6427,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00684.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00685",
@@ -6436,7 +6436,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00685.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00686",
@@ -6445,7 +6445,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00686.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00687",
@@ -6454,7 +6454,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00687.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00688",
@@ -6463,7 +6463,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00688.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00689",
@@ -6472,7 +6472,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00689.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00690",
@@ -6481,7 +6481,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00690.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00691",
@@ -6490,7 +6490,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00691.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00692",
@@ -6499,7 +6499,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00692.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00693",
@@ -6508,7 +6508,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00693.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00694",
@@ -6517,7 +6517,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00694.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00695",
@@ -6526,7 +6526,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00695.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00696",
@@ -6535,7 +6535,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00696.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00697",
@@ -6544,7 +6544,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00697.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00698",
@@ -6553,7 +6553,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00698.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00699",
@@ -6562,7 +6562,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00699.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00700",
@@ -6571,7 +6571,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00700.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00701",
@@ -6581,7 +6581,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00701.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00702",
@@ -6591,7 +6591,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00702.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00703",
@@ -6601,7 +6601,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00703.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00704",
@@ -6610,7 +6610,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00704.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00705",
@@ -6619,7 +6619,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00705.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00706",
@@ -6628,7 +6628,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00706.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00707",
@@ -6637,7 +6637,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00707.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00708",
@@ -6646,7 +6646,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00708.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00709",
@@ -6655,7 +6655,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00709.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00710",
@@ -6664,7 +6664,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00710.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00711",
@@ -6673,7 +6673,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00711.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00712",
@@ -6683,7 +6683,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00712.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00713",
@@ -6692,7 +6692,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00713.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00714",
@@ -6701,7 +6701,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00714.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00715",
@@ -6710,7 +6710,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00715.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00716",
@@ -6720,7 +6720,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00716.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00717",
@@ -6729,7 +6729,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00717.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00718",
@@ -6739,7 +6739,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00718.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00719",
@@ -6749,7 +6749,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00719.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00720",
@@ -6758,7 +6758,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00720.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00721",
@@ -6768,7 +6768,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00721.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00722",
@@ -6777,7 +6777,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00722.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00723",
@@ -6786,7 +6786,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00723.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00724",
@@ -6795,7 +6795,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00724.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00725",
@@ -6804,7 +6804,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00725.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00726",
@@ -6813,7 +6813,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00726.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00727",
@@ -6822,7 +6822,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00727.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00728",
@@ -6831,7 +6831,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00728.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00729",
@@ -6840,7 +6840,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00729.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00730",
@@ -6850,7 +6850,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00730.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00731",
@@ -6859,7 +6859,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00731.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#0732",
@@ -6868,7 +6868,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/0732.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00733",
@@ -6877,7 +6877,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00733.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00734",
@@ -6886,7 +6886,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00734.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00735",
@@ -6895,7 +6895,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00735.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00736",
@@ -6905,7 +6905,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00736.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00737",
@@ -6914,7 +6914,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00737.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00738",
@@ -6923,7 +6923,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00738.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00739",
@@ -6932,7 +6932,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00739.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00740",
@@ -6941,7 +6941,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00740.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00741",
@@ -6950,7 +6950,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00741.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00742",
@@ -6959,7 +6959,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00742.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00743",
@@ -6968,7 +6968,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00743.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00744",
@@ -6978,7 +6978,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00744.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00745",
@@ -6987,7 +6987,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00745.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00746",
@@ -6996,7 +6996,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00746.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00747",
@@ -7005,7 +7005,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00747.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00748",
@@ -7014,7 +7014,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00748.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00749",
@@ -7024,7 +7024,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00749.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00750",
@@ -7033,7 +7033,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00750.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00751",
@@ -7043,7 +7043,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00751.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00752",
@@ -7052,7 +7052,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00752.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00753",
@@ -7061,7 +7061,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00753.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00754",
@@ -7070,7 +7070,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00754.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00755",
@@ -7080,7 +7080,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00755.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00756",
@@ -7089,7 +7089,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00756.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00757",
@@ -7098,7 +7098,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00757.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00758",
@@ -7108,7 +7108,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00758.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00759",
@@ -7117,7 +7117,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00759.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00760",
@@ -7127,7 +7127,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00760.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00761",
@@ -7137,7 +7137,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00761.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00762",
@@ -7146,7 +7146,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00762.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00763",
@@ -7155,7 +7155,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00763.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00764",
@@ -7164,7 +7164,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00764.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00765",
@@ -7174,7 +7174,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00765.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00766",
@@ -7183,7 +7183,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00766.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00767",
@@ -7192,7 +7192,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00767.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00768",
@@ -7201,7 +7201,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00768.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00769",
@@ -7210,7 +7210,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00769.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00770",
@@ -7220,7 +7220,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00770.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00771",
@@ -7229,7 +7229,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00771.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00772",
@@ -7239,7 +7239,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00772.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00773",
@@ -7248,7 +7248,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00773.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00774",
@@ -7258,7 +7258,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00774.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00775",
@@ -7267,7 +7267,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00775.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00776",
@@ -7276,7 +7276,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00776.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00777",
@@ -7286,7 +7286,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00777.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00778",
@@ -7295,7 +7295,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00778.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00779",
@@ -7304,7 +7304,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00779.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00780",
@@ -7313,7 +7313,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00780.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00781",
@@ -7323,7 +7323,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00781.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00782",
@@ -7333,7 +7333,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00782.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00783",
@@ -7342,7 +7342,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00783.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00784",
@@ -7352,7 +7352,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00784.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00785",
@@ -7362,7 +7362,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00785.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00786",
@@ -7371,7 +7371,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00786.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00787",
@@ -7381,7 +7381,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00787.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00788",
@@ -7390,7 +7390,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00788.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00789",
@@ -7399,7 +7399,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00789.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00790",
@@ -7409,7 +7409,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00790.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00791",
@@ -7418,7 +7418,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00791.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00792",
@@ -7428,7 +7428,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00792.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00793",
@@ -7437,7 +7437,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00793.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00794",
@@ -7447,7 +7447,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00794.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00795",
@@ -7456,7 +7456,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00795.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00796",
@@ -7466,7 +7466,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00796.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00797",
@@ -7476,7 +7476,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00797.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00798",
@@ -7486,7 +7486,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00798.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00799",
@@ -7495,7 +7495,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00799.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00800",
@@ -7504,7 +7504,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00800.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00801",
@@ -7513,7 +7513,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00801.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00802",
@@ -7523,7 +7523,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00802.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00803",
@@ -7533,7 +7533,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00803.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00804",
@@ -7543,7 +7543,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00804.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00805",
@@ -7552,7 +7552,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00805.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00806",
@@ -7562,7 +7562,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00806.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00807",
@@ -7572,7 +7572,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00807.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00808",
@@ -7582,7 +7582,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00808.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00809",
@@ -7591,7 +7591,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00809.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00810",
@@ -7601,7 +7601,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00810.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00811",
@@ -7611,7 +7611,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00811.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00812",
@@ -7621,7 +7621,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00812.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00813",
@@ -7631,7 +7631,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00813.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00814",
@@ -7640,7 +7640,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00814.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00815",
@@ -7649,7 +7649,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00815.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00816",
@@ -7659,7 +7659,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00816.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00817",
@@ -7668,7 +7668,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00817.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00818",
@@ -7677,7 +7677,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00818.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00819",
@@ -7686,7 +7686,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00819.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00820",
@@ -7695,7 +7695,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00820.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00821",
@@ -7704,7 +7704,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00821.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00822",
@@ -7713,7 +7713,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00822.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00823",
@@ -7722,7 +7722,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00823.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00824",
@@ -7731,7 +7731,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00824.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00825",
@@ -7740,7 +7740,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00825.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00826",
@@ -7749,7 +7749,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00826.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00827",
@@ -7759,7 +7759,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00827.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00828",
@@ -7769,7 +7769,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00828.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00829",
@@ -7778,7 +7778,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00829.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00830",
@@ -7788,7 +7788,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00830.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00831",
@@ -7798,7 +7798,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00831.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#0832",
@@ -7808,7 +7808,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/0832.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00833",
@@ -7818,7 +7818,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00833.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00834",
@@ -7828,7 +7828,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00834.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00835",
@@ -7837,7 +7837,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00835.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00836",
@@ -7847,7 +7847,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00836.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00837",
@@ -7857,7 +7857,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00837.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00838",
@@ -7866,7 +7866,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00838.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00839",
@@ -7876,7 +7876,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00839.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00840",
@@ -7886,7 +7886,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00840.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00841",
@@ -7895,7 +7895,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00841.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00842",
@@ -7905,7 +7905,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00842.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00843",
@@ -7914,7 +7914,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00843.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00844",
@@ -7924,7 +7924,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00844.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00845",
@@ -7933,7 +7933,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00845.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00846",
@@ -7943,7 +7943,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00846.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00847",
@@ -7953,7 +7953,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00847.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00848",
@@ -7963,7 +7963,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00848.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00849",
@@ -7973,7 +7973,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00849.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00850",
@@ -7982,7 +7982,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00850.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00851",
@@ -7992,7 +7992,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00851.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00852",
@@ -8001,7 +8001,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00852.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00853",
@@ -8010,7 +8010,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00853.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00854",
@@ -8020,7 +8020,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00854.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00855",
@@ -8030,7 +8030,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00855.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00856",
@@ -8039,7 +8039,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00856.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00857",
@@ -8049,7 +8049,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00857.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00858",
@@ -8059,7 +8059,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00858.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00859",
@@ -8068,7 +8068,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00859.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00860",
@@ -8077,7 +8077,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00860.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00861",
@@ -8086,7 +8086,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00861.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00862",
@@ -8095,7 +8095,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00862.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00863",
@@ -8104,7 +8104,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00863.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00864",
@@ -8113,7 +8113,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00864.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00865",
@@ -8123,7 +8123,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00865.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00866",
@@ -8133,7 +8133,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00866.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00867",
@@ -8142,7 +8142,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00867.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00868",
@@ -8151,7 +8151,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00868.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00869",
@@ -8160,7 +8160,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00869.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00870",
@@ -8170,7 +8170,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00870.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00871",
@@ -8180,7 +8180,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00871.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00872",
@@ -8189,7 +8189,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00872.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00873",
@@ -8199,7 +8199,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00873.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00874",
@@ -8209,7 +8209,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00874.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00875",
@@ -8218,7 +8218,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00875.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00876",
@@ -8228,7 +8228,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00876.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00877",
@@ -8238,7 +8238,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00877.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00878",
@@ -8248,7 +8248,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00878.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00879",
@@ -8258,7 +8258,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00879.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00880",
@@ -8268,7 +8268,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00880.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00881",
@@ -8278,7 +8278,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00881.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00882",
@@ -8287,7 +8287,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00882.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00883",
@@ -8297,7 +8297,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00883.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00884",
@@ -8307,7 +8307,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00884.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00885",
@@ -8317,7 +8317,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00885.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00886",
@@ -8326,7 +8326,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00886.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00887",
@@ -8336,7 +8336,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00887.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00888",
@@ -8346,7 +8346,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00888.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00889",
@@ -8356,7 +8356,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00889.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00890",
@@ -8365,7 +8365,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00890.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00891",
@@ -8375,7 +8375,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00891.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00892",
@@ -8384,7 +8384,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00892.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00893",
@@ -8393,7 +8393,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00893.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00894",
@@ -8403,7 +8403,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00894.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00895",
@@ -8413,7 +8413,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00895.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00896",
@@ -8423,7 +8423,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00896.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00897",
@@ -8433,7 +8433,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00897.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00898",
@@ -8442,7 +8442,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00898.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00899",
@@ -8452,7 +8452,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00899.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00900",
@@ -8462,7 +8462,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00900.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00901",
@@ -8472,7 +8472,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00901.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00902",
@@ -8482,7 +8482,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00902.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00903",
@@ -8491,7 +8491,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00903.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00904",
@@ -8501,7 +8501,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00904.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00905",
@@ -8510,7 +8510,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00905.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00906",
@@ -8519,7 +8519,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00906.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00907",
@@ -8529,7 +8529,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00907.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00908",
@@ -8538,7 +8538,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00908.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00909",
@@ -8548,7 +8548,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00909.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00910",
@@ -8558,7 +8558,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00910.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00911",
@@ -8568,7 +8568,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00911.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00912",
@@ -8578,7 +8578,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00912.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00913",
@@ -8587,7 +8587,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00913.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00914",
@@ -8597,7 +8597,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00914.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00915",
@@ -8607,7 +8607,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00915.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00916",
@@ -8617,7 +8617,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00916.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00917",
@@ -8627,7 +8627,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00917.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00918",
@@ -8637,7 +8637,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00918.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00919",
@@ -8647,7 +8647,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00919.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00920",
@@ -8657,7 +8657,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00920.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00921",
@@ -8667,7 +8667,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00921.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00922",
@@ -8677,7 +8677,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00922.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00923",
@@ -8686,7 +8686,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00923.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00924",
@@ -8695,7 +8695,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00924.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00925",
@@ -8705,7 +8705,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00925.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00926",
@@ -8714,7 +8714,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00926.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00927",
@@ -8724,7 +8724,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00927.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00928",
@@ -8734,7 +8734,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00928.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00929",
@@ -8743,7 +8743,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00929.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00930",
@@ -8753,7 +8753,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00930.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00931",
@@ -8763,7 +8763,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00931.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#0932",
@@ -8772,7 +8772,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/0932.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00933",
@@ -8782,7 +8782,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00933.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00934",
@@ -8791,7 +8791,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00934.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00935",
@@ -8800,7 +8800,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00935.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00936",
@@ -8809,7 +8809,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00936.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00937",
@@ -8818,7 +8818,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00937.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00938",
@@ -8828,7 +8828,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00938.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00939",
@@ -8838,7 +8838,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00939.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00940",
@@ -8848,7 +8848,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00940.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00941",
@@ -8858,7 +8858,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00941.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00942",
@@ -8868,7 +8868,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00942.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00943",
@@ -8878,7 +8878,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00943.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00944",
@@ -8888,7 +8888,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00944.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00945",
@@ -8898,7 +8898,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00945.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00946",
@@ -8908,7 +8908,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00946.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00947",
@@ -8917,7 +8917,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00947.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00948",
@@ -8927,7 +8927,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00948.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00949",
@@ -8937,7 +8937,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00949.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00950",
@@ -8947,7 +8947,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00950.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00951",
@@ -8956,7 +8956,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00951.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00952",
@@ -8966,7 +8966,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00952.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00953",
@@ -8976,7 +8976,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00953.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00954",
@@ -8986,7 +8986,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00954.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00955",
@@ -8996,7 +8996,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00955.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00956",
@@ -9006,7 +9006,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00956.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00957",
@@ -9016,7 +9016,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00957.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00958",
@@ -9026,7 +9026,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00958.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00959",
@@ -9036,7 +9036,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00959.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00960",
@@ -9046,7 +9046,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00960.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00961",
@@ -9056,7 +9056,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00961.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00962",
@@ -9065,7 +9065,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00962.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00963",
@@ -9075,7 +9075,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00963.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00964",
@@ -9085,7 +9085,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00964.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00965",
@@ -9094,7 +9094,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00965.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00966",
@@ -9104,7 +9104,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00966.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00967",
@@ -9114,7 +9114,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00967.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00968",
@@ -9123,7 +9123,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00968.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00969",
@@ -9133,7 +9133,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00969.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00970",
@@ -9143,7 +9143,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00970.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00971",
@@ -9153,7 +9153,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00971.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00972",
@@ -9163,7 +9163,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00972.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00973",
@@ -9172,7 +9172,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00973.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00974",
@@ -9182,7 +9182,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00974.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00975",
@@ -9192,7 +9192,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00975.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00976",
@@ -9202,7 +9202,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00976.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00977",
@@ -9212,7 +9212,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00977.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00978",
@@ -9222,7 +9222,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00978.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00979",
@@ -9232,7 +9232,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00979.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00980",
@@ -9241,7 +9241,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00980.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00981",
@@ -9251,7 +9251,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00981.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00982",
@@ -9261,7 +9261,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00982.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00983",
@@ -9270,7 +9270,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00983.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00984",
@@ -9280,7 +9280,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00984.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00985",
@@ -9289,7 +9289,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00985.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00986",
@@ -9298,7 +9298,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00986.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00987",
@@ -9307,7 +9307,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00987.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00988",
@@ -9317,7 +9317,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00988.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00989",
@@ -9326,7 +9326,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00989.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00990",
@@ -9335,7 +9335,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00990.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00991",
@@ -9345,7 +9345,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00991.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00992",
@@ -9354,7 +9354,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00992.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00993",
@@ -9363,7 +9363,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00993.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00994",
@@ -9372,7 +9372,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00994.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00995",
@@ -9382,7 +9382,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00995.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00996",
@@ -9392,7 +9392,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00996.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00997",
@@ -9402,7 +9402,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00997.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00998",
@@ -9412,7 +9412,7 @@ export const properties = [
     price: "$200",
     image: "/buildings/00998.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   },
   {
     code: "#00999",
@@ -9422,6 +9422,6 @@ export const properties = [
     price: "$200",
     image: "/buildings/00999.png",
     type: "r",
-    owner: "MetaPolis"
+    owner: "Manahubs"
   }
 ];

@@ -110,7 +110,7 @@ const CollectionCard = ({ item }) => {
         //     if (item.token_address === "0xa0dbbb69b4ae1002d62aab993baa644678d8cede") {
         //       item.image = "https://airobots.s3.filebase.com/" + item.token_id + '.png';
         //     }
-        //     if (item.token_address === "0x230f55e5d30dfc1bd9de65d9b644820553e72486") {
+        //     if (item.token_address === "0xBE87ef0FF214c4484D31031863Cb88863b65858E") {
 
         //       item.image = "https://1988dragon.s3.filebase.com/" + item.token_id + '.jpeg';
         //     }

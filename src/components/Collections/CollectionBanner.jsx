@@ -5,7 +5,7 @@ import styless from './Collections.module.css';
 // import { getCollectionsByChain } from "helpers/collection";
 import { useMoralis } from "react-moralis";
 import { networkCollections } from 'helpers/collection';
-
+import exploreData from "../../data/nfts/explore.json";
 import headerData from './header.json';
 
 // const avatarFake =
@@ -14,6 +14,7 @@ import headerData from './header.json';
 //   'https://cdn.sanity.io/images/kt6t0x48/production/edd4104b305b8275532dda27e6ccb8657108f3e2-1920x768.jpg';
 
 const CollectionBanner = ({ address }) => {
+  const [explores, setExplores] = React.useState(exploreData);
 
   const { chainId } = useMoralis();
   // const NFTCollections = getCollectionsByChain(chainId);
@@ -21,55 +22,7 @@ const CollectionBanner = ({ address }) => {
   return (
     <div>
       <div>
-        <div className="" style={{display:"flex", height:"250px"}}>
-          <div className="slide-vertical st1 mr-20">
-            <div className="box">
-              {headerData.st1.map((img, i) => (
-                <div className="img" key={i}>
-                  <img src={img} alt="" />
-                </div>
-              ))}
-            </div>
-            <div className="box">
-              {headerData.st1.map((img, i) => (
-                <div className="img" key={i}>
-                  <img src={img} alt="" />
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="slide-vertical st2">
-            <div className="box">
-              {headerData.st2.map((img, i) => (
-                <div className="img" key={i}>
-                  <img src={img} alt="" />
-                </div>
-              ))}
-            </div>
-            <div className="box">
-              {headerData.st2.map((img, i) => (
-                <div className="img" key={i}>
-                  <img src={img} alt="" />
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="slide-vertical st3 ml-20">
-            <div className="box">
-              {headerData.st3.map((img, i) => (
-                <div className="img" key={i}>
-                  <img src={img} alt="" />
-                </div>
-              ))}
-            </div>
-            <div className="box">
-              {headerData.st3.map((img, i) => (
-                <div className="img" key={i}>
-                  <img src={img} alt="" />
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className="" style={{ display: "flex", height: "250px" }}>
           <div className="slide-vertical st1 mr-20">
             <div className="box">
               {headerData.st1.map((img, i) => (
@@ -176,12 +129,27 @@ const CollectionBanner = ({ address }) => {
           <Avatar src={info?.image} className={styless.avatar} size={160} />
         </div> */}
         <div className={styless.bannerContent}>
-          <h1 style={{ color: "#FEA013", fontSize: "32px" }}>
+          <h1 style={{ color: "#FEA013", fontSize: "32px", float: "left", marginLeft: "13%" }}>
             {/* <span className="icon">
               <i className="fas fa-fire"></i>
             </span>{" "} */}
             Explore NFTs
           </h1>
+          <div className="ml-auto">
+            <div className="tab-links">
+              <ul className="rest flex">
+                {explores.tabs.map((tab, i) => (
+                  <li className={`item-link ${i == 0 ? 'current' : ''}`}
+                    data-tab={`tab-${tab.id}`}
+                    //  onClick={() => openTab(tab.id)} 
+                    key={i}>
+                    <span><i className={tab.icon}></i> {tab.title}</span>
+                  </li>
+                ))
+                }
+              </ul>
+            </div>
+          </div>
           <div className={styless.bannerTitle}>{info?.name}</div>
           {/* <div className={styless.createdBy}>
           Created by <span>MetaMints</span>

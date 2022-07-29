@@ -240,7 +240,7 @@ function MainHeader() {
         {!md && visileSubMenu && (
           <div className={styles.subMenuMobile}>
             <Link
-              to="/collection/0x230f55e5d30dfc1bd9de65d9b644820553e72486"
+              to="/collection/0xBE87ef0FF214c4484D31031863Cb88863b65858E"
               className={styles.subMenuMobileLink}
               onClick={handleClickSubMenu}
             >

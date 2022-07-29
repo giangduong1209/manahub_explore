@@ -17,7 +17,7 @@ import { useHistory } from 'react-router-dom';
 
 const MyCollections = memo((props) => {
   const { data: NFTBalances } = useNFTBalances();
-  const [user, setUser] = useState("METAPOLIS");
+  const [user, setUser] = useState("Manahubs");
   const { Moralis, account } = useMoralis();
   const history = useHistory();
   function itemRender(current, type, originalElement) {
