@@ -7,20 +7,20 @@ const useInchDex = (chain) => {
   const { Moralis, account } = useMoralis();
   const [tokenList, setTokenlist] = useState({});
   const myToken = {
-    '0xA4389f795F5Ad3715bA1b153F82E89DD652Fe43D': {
-      address: "0xA4389f795F5Ad3715bA1b153F82E89DD652Fe43D",
-      decimals: 18,
-      logoURI: vndLogo,
-      name: "Polis VND",
-      symbol: "pVND",
-    },
-    '0x8Ad0D94f2864B815f84c2De43C3c7e84bd09E969': {
-      address: "0x8Ad0D94f2864B815f84c2De43C3c7e84bd09E969",
-      decimals: 18,
-      logoURI: usdLogo,
-      name: "Polis USD",
-      symbol: "pUSD",
-    }
+    // '0xA4389f795F5Ad3715bA1b153F82E89DD652Fe43D': {
+    //   address: "0xA4389f795F5Ad3715bA1b153F82E89DD652Fe43D",
+    //   decimals: 18,
+    //   logoURI: vndLogo,
+    //   name: "Polis VND",
+    //   symbol: "pVND",
+    // },
+    // '0x8Ad0D94f2864B815f84c2De43C3c7e84bd09E969': {
+    //   address: "0x8Ad0D94f2864B815f84c2De43C3c7e84bd09E969",
+    //   decimals: 18,
+    //   logoURI: usdLogo,
+    //   name: "Polis USD",
+    //   symbol: "pUSD",
+    // }
 
   }
 
