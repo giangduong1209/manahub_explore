@@ -1,5 +1,6 @@
 import { Avatar } from 'antd';
 import React from 'react';
+import "./nft.css";
 import styless from './Collections.module.css';
 // import FloorPriceIcon from './FloorPriceIcon';
 // import { getCollectionsByChain } from "helpers/collection";
@@ -8,10 +9,13 @@ import { networkCollections } from 'helpers/collection';
 import exploreData from "../../data/nfts/explore.json";
 import headerData from './header.json';
 
+
+
 // const avatarFake =
 //   'https://cdn.sanity.io/images/kt6t0x48/production/41e51630c43b9ade112281066bb22327dbc16fcd-2000x2000.jpg';
 // const imgFake =
 //   'https://cdn.sanity.io/images/kt6t0x48/production/edd4104b305b8275532dda27e6ccb8657108f3e2-1920x768.jpg';
+
 
 const CollectionBanner = ({ address }) => {
   const [explores, setExplores] = React.useState(exploreData);
@@ -136,21 +140,21 @@ const CollectionBanner = ({ address }) => {
             Explore NFTs
           </h1>
           <div className="ml-auto">
-            <div className="tab-links">
-              <ul className="rest flex">
+            <div className="tab-links" >
+              <ul className="rest flex" style={{ display: "inline-flex", margin: 0, padding: 0 }}>
                 {explores.tabs.map((tab, i) => (
                   <li className={`item-link ${i == 0 ? 'current' : ''}`}
                     data-tab={`tab-${tab.id}`}
                     //  onClick={() => openTab(tab.id)} 
                     key={i}>
-                    <span><i className={tab.icon}></i> {tab.title}</span>
+                    <span style={{}}><i className={tab.icon}></i> {tab.title}</span>
                   </li>
                 ))
                 }
               </ul>
             </div>
           </div>
-          <div className={styless.bannerTitle}>{info?.name}</div>
+          {/* <div className={styless.bannerTitle}>{info?.name}</div> */}
           {/* <div className={styless.createdBy}>
           Created by <span>MetaMints</span>
         </div> */}

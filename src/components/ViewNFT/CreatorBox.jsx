@@ -279,7 +279,7 @@ const ImageBox = ({ information }) => {
           <Row>
             <Col span={4}>
               <Avatar
-                src={'https://ipfs.moralis.io:2053/ipfs/QmNjFGYsGW38j3vmtUYsoTPANZ6nrSFp9a9bjfLyzkmKX1'}
+                src={'https://ipfs.moralis.io:2053/ipfs/QmYadFxBzqoDivZ56dxb6DrPNhVwSEkuwcRpKjo15xFUCf'}
                 className={styless.avatarCollection}
                 size={60}
               />
@@ -288,9 +288,9 @@ const ImageBox = ({ information }) => {
               <div className={styless.infoBottom} style={{marginLeft:'-30px' }}>
                 <div className={styless.titleCollection}>
                   {/* {information?.name} */}
-                  METAPOLIS
+                  Manahubs
                 </div>
-                Metapolis Marketplace{" "}
+                Manahubs Marketplace{" "}
               </div>
             </Col>
           </Row>

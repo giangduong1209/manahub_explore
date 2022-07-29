@@ -36,13 +36,12 @@ const Collections = memo(({ address }) => {
     image: "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s130",
     name: "ManaHubs"
   }
- 
-  useNFTTokenIds(address).then((res) => setListData(res));
+
+  // useNFTTokenIds(address).then((res) => setListData(res));
   const addrsList = ['0xBE87ef0FF214c4484D31031863Cb88863b65858E']
 
   const { data: marketData } = queryMarketItems;
   useEffect(() => {
- 
     setMarketItems([...marketData]);
   }, [marketData]); // data
 
@@ -61,19 +60,16 @@ const Collections = memo(({ address }) => {
             ele.attributes.nftContract.toLowerCase() === item.token_address.toLowerCase() &&
             parseInt(ele.attributes.tokenId) === parseInt(item.token_id)
           ) {
-            
-            item.price = ele.attributes.price / ("1e" + 18);
+
+            item.price = data[idx].attributes.price / ("1e" + 18);
           }
         });
       });
-      console.log(collection);
       if (collection?.addrs) {
         if (addrs === '0xBE87ef0FF214c4484D31031863Cb88863b65858E') {
           // condtion for new main contract
-          console.log("test");
           setListNFT([...listedItem.filter((ele) => { return !addrsList.includes(ele.token_address) })]);
         } else {
-          console.log("test2");
           let newArray = listedItem.filter((ele) => { return ele.token_address.toLowerCase() === addrs.toLowerCase() }).concat(listData);
           setListNFT([...newArray]);
         }
@@ -90,23 +86,9 @@ const Collections = memo(({ address }) => {
       <div className={styless.wrapper}>
         <div className={styless.wrapperInner}>
           <Skeleton loading={!listNFT || !listData} active>
-            {collection?.added ? (
+            {(
               listNFT?.length > 0 ? (
                 listNFT.map((nft, index) => (
-                  <CollectionCard
-                    item={{
-                      ...nft,
-                      name: nft?.metadata.name,
-                    }}
-                    key={index}
-                  />
-                ))
-              ) : (
-                <h2>No NFTs found</h2>
-              )
-            ) : (
-              listData?.length > 0 ? (
-                listData.map((nft, index) => (
                   <CollectionCardOther
                     item={{
                       ...nft,

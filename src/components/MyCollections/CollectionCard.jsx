@@ -157,7 +157,7 @@ const CollectionCard = ({ item }) => {
   }, [Moralis, ItemImage, contractABIJson, marketAddress, item]);
 
   const handleSellClick = (item) => {
-    console.log(item)
+    // console.log(item)
     setNftToSell(item);
     setVisibility(true)
   }
@@ -190,11 +190,11 @@ const CollectionCard = ({ item }) => {
             approved: true
           },
         };
-        console.log("approve all >>>>>>>>>", ops)
+        // console.log("approve all >>>>>>>>>", ops)
         await contractProcessor.fetch({
           params: ops,
           onSuccess: () => {
-            console.log("Approval Received");
+            // console.log("Approval Received");
             // setLoading(false);
             // setVisibility(false);
             // succApprove();

@@ -17,7 +17,7 @@ const CollectionCard = ({ item }) => {
   const [visible, setVisibility] = useState(false);
   const nativeName = getNativeByChain(chainId);
   const [loading, setLoading] = useState(false);
-  const queryMarketItems = useMoralisQuery("MarketItemCreateds");
+  const queryMarketItems = useMoralisQuery("ListedItem");
   const purchaseItemFunction = "createMarketSale";
   const contractProcessor = useWeb3ExecuteFunction();
   const { marketAddress, contractABI, walletAddress } = useMoralisDapp();
@@ -38,6 +38,8 @@ const CollectionCard = ({ item }) => {
   );
   const [mediaSrc, setMediaSrc] = useState("");
   const [mediaType, setMediaType] = useState("");
+
+  console.log(item);
 
   const getMarketItem = (item) => {
     const result = fetchMarketItems?.find(

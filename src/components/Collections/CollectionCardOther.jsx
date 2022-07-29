@@ -9,14 +9,16 @@ import {
   useWeb3ExecuteFunction
 } from "react-moralis";
 import "./nft.css"
+import { useHistory } from "react-router";
 
 const CollectionCardOther = ({ item }) => {
+  const history = useHistory();
   const [nftToBuy, setNftToBuy] = useState(null);
   const { Moralis, chainId, authenticate } = useMoralis();
   const [visible, setVisibility] = useState(false);
   const nativeName = getNativeByChain(chainId);
   const [loading, setLoading] = useState(false);
-  const queryMarketItems = useMoralisQuery("MarketItemCreateds");
+  const queryMarketItems = useMoralisQuery("ListedItem");
   const purchaseItemFunction = "createMarketSale";
   const contractProcessor = useWeb3ExecuteFunction();
   const { marketAddress, contractABI, walletAddress } = useMoralisDapp();
@@ -35,7 +37,7 @@ const CollectionCardOther = ({ item }) => {
       "confirmed"
     ])
   );
-  console.log(item);
+
   const getMarketItem = (item) => {
     const result = fetchMarketItems?.find(
       (e) =>
@@ -44,8 +46,20 @@ const CollectionCardOther = ({ item }) => {
         e.sold === false &&
         e.confirmed === true
     );
+    console.log(result);
     return result;
   };
+  
+  const nftInfo = (item) => {
+    if (item.auction) {
+      history.push(
+        `/view-auction/${item.token_address}/${item.token_id}/${item.auctionContract}`
+      );
+    } else {
+      history.push(`/view-nft/${item.token_address}/${item.token_id}`);
+    }
+  };
+
 
   async function purchase() {
     // Moralis.enableWeb3();
@@ -135,48 +149,61 @@ const CollectionCardOther = ({ item }) => {
   return (
     <div className="col-lg-3 col-md-6">
       <div className="item-card md-mb50">
-        <div className="img">
-          <a href="#0">
-            <img src={item.image} alt="" />
-          </a>
-          {/* <div className="fav">
+        <Badge.Ribbon
+          color={item?.auction ? "blue" : "green"}
+          text={
+            item?.auction
+              ? `Auction`
+              : item?.price > 0
+                ? `${item?.price} ${nativeName}`
+                : ""
+          }
+          style={item?.price < 0 && { display: "none" }}
+        >
+          <div className="img">
+            <a href="#0">
+              <img src={item.image} alt="" />
+            </a>
+            {/* <div className="fav">
             ♥
           </div> */}
-        </div>          
-        <div className="cont">
-          <div className="info">
-            <div className="author-name valign">
-              <span className="fz-12 ml-10 opacity-8">
-                shshdss
-              </span>
-            </div>
-            <div className="item-title mt-15">
-              <h6 className="fw-700"><a href="#0">{ item.metadata?.name }</a></h6>
-            </div>
-            <div className="eth mt-10">
-              <span className="fz-14">
-                <span className="fz-12 opacity-7 mr-5">Highest bid :</span>
-                {/* <span className="icon">
+          </div>
+          <div className="cont">
+            <div className="info">
+              <div className="author-name valign">
+                <span className="fz-12 ml-10 opacity-8">
+                  {item.token_address.substring(0, 4)}...{item.token_address.substring(item.token_address.length - 4, item.token_address.length)}
+                </span>
+              </div>
+              <div className="item-title mt-15">
+                <h6 className="fw-700"><a href="#0">{item.metadata?.name}</a></h6>
+              </div>
+              <div className="eth mt-10">
+                <span className="fz-14">
+                  <span className="fz-12 opacity-7 mr-5">Highest bid :</span>
+                  {/* <span className="icon">
                   <img src="nft/img/eth1.svg" alt="" />
                 </span> */}
-                <span>{ item.token_id } BNB</span>
-              </span>
+                  <span>{item.price} BNB</span>
+                </span>
+              </div>
             </div>
-          </div>
-          <div className="botm flex">
-            {/* <div className="left valign">
+            <div className="botm flex">
+              {/* <div className="left valign">
               <div className="reles">
                 <span className="fz-12">Relesed :<span className="opacity-7 ml-5">{ styless.date }</span></span>
               </div>
             </div> */}
-            <div className="right ml-auto">
-              <div className="bid">
-                <a href="#0">Bid</a>
+              <div className="right ml-auto">
+                <div className="bid">
+                  <a href="#0" onClick={() => nftInfo(item)}>Buy</a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </Badge.Ribbon>
       </div>
+
     </div>
   )
 }
