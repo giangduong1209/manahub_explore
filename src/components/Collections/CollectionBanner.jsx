@@ -1,28 +1,28 @@
-import { Avatar } from 'antd';
-import React from 'react';
+import { Avatar } from "antd";
+import React from "react";
 import "./nft.css";
-import styless from './Collections.module.css';
+import styless from "./Collections.module.css";
 // import FloorPriceIcon from './FloorPriceIcon';
 // import { getCollectionsByChain } from "helpers/collection";
 import { useMoralis } from "react-moralis";
-import { networkCollections } from 'helpers/collection';
+import { networkCollections } from "helpers/collection";
 import exploreData from "../../data/nfts/explore.json";
-import headerData from './header.json';
-
-
+import headerData from "./header.json";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // const avatarFake =
 //   'https://cdn.sanity.io/images/kt6t0x48/production/41e51630c43b9ade112281066bb22327dbc16fcd-2000x2000.jpg';
 // const imgFake =
 //   'https://cdn.sanity.io/images/kt6t0x48/production/edd4104b305b8275532dda27e6ccb8657108f3e2-1920x768.jpg';
 
-
 const CollectionBanner = ({ address }) => {
   const [explores, setExplores] = React.useState(exploreData);
 
   const { chainId } = useMoralis();
   // const NFTCollections = getCollectionsByChain(chainId);
-  const info = networkCollections[chainId]?.find(ele => ele.addrs === address.addrs);
+  const info = networkCollections[chainId]?.find(
+    (ele) => ele.addrs === address.addrs
+  );
   return (
     <div>
       <div>
@@ -133,24 +133,37 @@ const CollectionBanner = ({ address }) => {
           <Avatar src={info?.image} className={styless.avatar} size={160} />
         </div> */}
         <div className={styless.bannerContent}>
-          <h1 style={{ color: "#FEA013", fontSize: "32px", float: "left", marginLeft: "13%" }}>
+          <h1
+            style={{
+              color: "#FEA013",
+              fontSize: "32px",
+              float: "left",
+              marginLeft: "13%",
+            }}
+          >
             {/* <span className="icon">
               <i className="fas fa-fire"></i>
             </span>{" "} */}
             Explore NFTs
           </h1>
           <div className="ml-auto">
-            <div className="tab-links" >
-              <ul className="rest flex" style={{ display: "inline-flex", margin: 0, padding: 0 }}>
+            <div className="tab-links">
+              <ul
+                className="rest flex"
+                style={{ display: "inline-flex", margin: 0, padding: 0 }}
+              >
                 {explores.tabs.map((tab, i) => (
-                  <li className={`item-link ${i == 0 ? 'current' : ''}`}
+                  <li
+                    className={`item-link ${i === 0 ? "current" : ""}`}
                     data-tab={`tab-${tab.id}`}
-                    //  onClick={() => openTab(tab.id)} 
-                    key={i}>
-                    <span style={{}}><i className={tab.icon}></i> {tab.title}</span>
+                    //  onClick={() => openTab(tab.id)}
+                    key={i}
+                  >
+                    <span style={{}}>
+                      <i className={tab.icon}></i> {tab.title}
+                    </span>
                   </li>
-                ))
-                }
+                ))}
               </ul>
             </div>
           </div>

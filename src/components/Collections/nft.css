@@ -10,9 +10,27 @@ header .main-marq:after {
   height: 30%;
   left: 0;
   top: 0;
-  background: -webkit-linear-gradient(bottom, #05092b, rgba(255, 255, 255, 0) 80px, rgba(255, 255, 255, 0) calc(100% - 80px), #05092b);
-  background: -o-linear-gradient(bottom, #05092b, rgba(255, 255, 255, 0) 80px, rgba(255, 255, 255, 0) calc(100% - 80px), #05092b);
-  background: linear-gradient(to top, #05092b, rgba(255, 255, 255, 0) 80px, rgba(255, 255, 255, 0) calc(100% - 80px), #05092b);
+  background: -webkit-linear-gradient(
+    bottom,
+    #05092b,
+    rgba(255, 255, 255, 0) 80px,
+    rgba(255, 255, 255, 0) calc(100% - 80px),
+    #05092b
+  );
+  background: -o-linear-gradient(
+    bottom,
+    #05092b,
+    rgba(255, 255, 255, 0) 80px,
+    rgba(255, 255, 255, 0) calc(100% - 80px),
+    #05092b
+  );
+  background: linear-gradient(
+    to top,
+    #05092b,
+    rgba(255, 255, 255, 0) 80px,
+    rgba(255, 255, 255, 0) calc(100% - 80px),
+    #05092b
+  );
   pointer-events: none;
 }
 
@@ -45,7 +63,7 @@ header .star4 {
   height: 90px;
   border-radius: 30px;
   border: 1px solid #eee;
-  opacity: .3;
+  opacity: 0.3;
 }
 
 .slide-vertical {
@@ -124,8 +142,8 @@ header .star4 {
 .item-card {
   border-radius: 15px;
   margin: 10px;
-  background: #272a37;
-  background: rgba(255, 255, 255, 0.05);
+  background: #fff;
+  /* background: rgba(255, 255, 255, 0.05); */
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(162, 175, 200, 0.16);
@@ -195,7 +213,7 @@ header .star4 {
 }
 
 .item-card .img .clockdiv div:after {
-  content: ':';
+  content: ":";
   position: absolute;
   right: -10px;
   top: 50%;
@@ -230,7 +248,7 @@ header .star4 {
 }
 
 .item-card .cont .authors-img div:after {
-  content: '';
+  content: "";
   position: absolute;
   top: -1px;
   left: -1px;
@@ -266,29 +284,31 @@ header .star4 {
 }
 
 .item-card .botm {
-  padding: 10px 20px;
+  padding: 10px;
   margin-top: 20px;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.05);
+  text-align: end;
+  background: #2d2d72;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-top: 1px solid rgba(162, 175, 200, 0.16);
+  border-radius: 0 0 15px 15px;
 }
 
 .item-card .botm .bid a {
+  color: #fff;
   font-size: 13px;
   padding: 7px 15px;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 4px;
-  -webkit-transition: all .4s;
-  -o-transition: all .4s;
-  transition: all .4s;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
 }
 
 .item-card .botm .bid a:hover {
-  background: #FEA013;
+  background: #fea013;
   color: white;
-  border-color: #FEA013;
+  border-color: #fea013;
   cursor: pointer;
 }
 
@@ -303,7 +323,7 @@ header .star4 {
   background: rgba(255, 255, 255, 0.02);
   border-radius: 30px;
   margin-right: 10px;
-  transition: all .4s;
+  transition: all 0.4s;
   backdrop-filter: blur(1px);
   cursor: pointer;
 }
@@ -311,15 +331,17 @@ header .star4 {
 .tab-links .item-link span i {
   margin-right: 10px;
 }
-
-.tab-links .item-link span :hover {
-  background: #fff;
-  color: #05092b;
+.tab-links .item-link span {
+  background: transparent;
+  color: #000;
+  border: 1px solid #000;
 }
 
-.tab-links .item-link .current span {
-  background: #fff;
-  color: #05092b;
+.tab-links .item-link:hover span,
+.tab-links .item-link.current span {
+  background: #fea013;
+  color: #fff;
+  border: 1px solid transparent;
 }
 
 .tab-content {
@@ -328,4 +350,10 @@ header .star4 {
 
 .tab-content .current {
   display: block;
+}
+
+.item-title a {
+  color: #2d2d72;
+  font-weight: 700;
+  font-size: 16px;
 }

@@ -6,7 +6,7 @@
 
 .topBg {
   width: 100%;
-  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
+  background: linear-gradient(180deg, #fea013 0%, #fea013 100%);
 }
 
 .bottomBg {
@@ -95,6 +95,7 @@
   transition: all 0.2s ease-out;
   max-width: 1200px;
   margin: 0 auto;
+  background: #2d2d72;
 }
 
 .bottomHeaderClose {
@@ -163,7 +164,7 @@
 
 :local .bottomMenu :global(.ant-menu-item-selected) {
   background-color: transparent !important;
-  background: -webkit-linear-gradient(#FEA013, #FEA013);
+  background: -webkit-linear-gradient(#fea013, #fea013);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -194,7 +195,7 @@
 }
 
 :local .bottomMenu :global(.ant-menu-item-active) {
-  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%) !important;
+  background: linear-gradient(180deg, #fea013 0%, #fea013 100%) !important;
   background-color: unset;
   background: unset;
   -webkit-background-clip: unset;
@@ -232,7 +233,7 @@
 }
 
 .icon:hover {
-  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
+  background: linear-gradient(180deg, #fea013 0%, #fea013 100%);
 }
 
 a.menuLink,
@@ -274,7 +275,7 @@ a.menuLink,
 }
 
 .subMenuMobile .mainMenuActive:global(.ant-space span) {
-  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
+  background: linear-gradient(180deg, #fea013 0%, #fea013 100%);
   -webkit-background-clip: text;
 }
 
@@ -291,13 +292,13 @@ a.menuLink,
 }
 
 .logoActive ~ .textLink {
-  color: #FEA013 !important;
+  color: #fea013 !important;
 }
 
 .logoMobile {
   padding: 1px;
   border-radius: 50%;
-  border: 1px solid #FEA013;
+  border: 1px solid #fea013;
 }
 
 .walletInfo {
@@ -325,8 +326,8 @@ a.menuLink,
 }
 
 .btnCreate:global(.ant-menu-item) {
-  border: 2px solid #FEA013 !important;
-  color: #FEA013 !important;
+  border: 2px solid #fea013 !important;
+  color: #fea013 !important;
   background: #fff;
   margin: 0 20px;
 }
@@ -336,7 +337,7 @@ a.menuLink,
 }
 
 .btnCreate:global(.ant-menu-item) .menuLink {
-  color: #FEA013 !important;
+  color: #fea013 !important;
 }
 
 .dotTransaction {
@@ -436,7 +437,7 @@ a.menuLink,
   }
 
   .logoLink.logoActive {
-    border: 1px solid #FEA013;
+    border: 1px solid #fea013;
   }
 
   .bottomHeader {
@@ -493,23 +494,22 @@ a.menuLink,
   }
 }
 
-
 /* text chain */
 
 @media screen and (max-width: 440px) {
-  .textChain{
+  .textChain {
     font-size: 10px !important;
   }
 }
 
 @media screen and (max-width: 300px) {
-  .textChain{
+  .textChain {
     font-size: 8px !important;
   }
 }
 
 @media only screen and (min-width: 760px) and (max-width: 980px) {
-  .textChain{
+  .textChain {
     font-size: 11px !important;
   }
 }
@@ -530,5 +530,5 @@ a.menuLink,
 }
 
 .icon1:hover {
-  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
+  background: linear-gradient(180deg, #fea013 0%, #fea013 100%);
 }
