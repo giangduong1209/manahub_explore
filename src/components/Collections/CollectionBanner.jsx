@@ -1,19 +1,33 @@
-import { Avatar } from "antd";
-import React from "react";
-import "./nft.css";
-import styless from "./Collections.module.css";
+import { Avatar, Space } from 'antd';
+import React from 'react';
+import './nft.css';
+import styless from './Collections.module.css';
 // import FloorPriceIcon from './FloorPriceIcon';
 // import { getCollectionsByChain } from "helpers/collection";
-import { useMoralis } from "react-moralis";
-import { networkCollections } from "helpers/collection";
-import exploreData from "../../data/nfts/explore.json";
-import headerData from "./header.json";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useMoralis } from 'react-moralis';
+import { networkCollections } from 'helpers/collection';
+import exploreData from '../../data/nfts/explore.json';
+import headerData from './header.json';
 
 // const avatarFake =
 //   'https://cdn.sanity.io/images/kt6t0x48/production/41e51630c43b9ade112281066bb22327dbc16fcd-2000x2000.jpg';
 // const imgFake =
 //   'https://cdn.sanity.io/images/kt6t0x48/production/edd4104b305b8275532dda27e6ccb8657108f3e2-1920x768.jpg';
+import {
+  FireIcon,
+  GemIcon,
+  BaseketBallIcon,
+  FemaleIcon,
+  PlaystationIcon,
+} from 'components/Icons';
+
+const icons = {
+  fire: <FireIcon />,
+  gem: <GemIcon />,
+  ball: <BaseketBallIcon />,
+  female: <FemaleIcon />,
+  playstation: <PlaystationIcon />,
+};
 
 const CollectionBanner = ({ address }) => {
   const [explores, setExplores] = React.useState(exploreData);
@@ -26,7 +40,7 @@ const CollectionBanner = ({ address }) => {
   return (
     <div>
       <div>
-        <div className="" style={{ display: "flex", height: "250px" }}>
+        <div className="" style={{ display: 'flex', height: '250px' }}>
           <div className="slide-vertical st1 mr-20">
             <div className="box">
               {headerData.st1.map((img, i) => (
@@ -135,10 +149,10 @@ const CollectionBanner = ({ address }) => {
         <div className={styless.bannerContent}>
           <h1
             style={{
-              color: "#FEA013",
-              fontSize: "32px",
-              float: "left",
-              marginLeft: "13%",
+              color: '#FEA013',
+              fontSize: '32px',
+              float: 'left',
+              marginLeft: '13%',
             }}
           >
             {/* <span className="icon">
@@ -150,17 +164,20 @@ const CollectionBanner = ({ address }) => {
             <div className="tab-links">
               <ul
                 className="rest flex"
-                style={{ display: "inline-flex", margin: 0, padding: 0 }}
+                style={{ display: 'inline-flex', margin: 0, padding: 0 }}
               >
                 {explores.tabs.map((tab, i) => (
                   <li
-                    className={`item-link ${i === 0 ? "current" : ""}`}
+                    className={`item-link ${i === 0 ? 'current' : ''}`}
                     data-tab={`tab-${tab.id}`}
                     //  onClick={() => openTab(tab.id)}
                     key={i}
                   >
-                    <span style={{}}>
-                      <i className={tab.icon}></i> {tab.title}
+                    <span className="explore-link">
+                      <Space>
+                        {icons[tab.icon]}
+                        {tab.title}
+                      </Space>
                     </span>
                   </li>
                 ))}
