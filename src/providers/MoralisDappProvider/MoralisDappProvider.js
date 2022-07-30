@@ -570,7 +570,7 @@ function MoralisDappProvider({ children }) {
       "type": "function"
     }
   ]`);
-  const [marketAddress, setMarketAddress] = useState('0xBE87ef0FF214c4484D31031863Cb88863b65858E')
+  const [marketAddress, setMarketAddress] = useState('0xE46da8A41015Bc40917f68b648dDc5d6688EeBFE')
   useEffect(() => {
     Moralis.onChainChanged(function (chain) {
       setChainId(chain);

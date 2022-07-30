@@ -22,14 +22,16 @@ import { useHistory } from "react-router";
 import { UserOutlined } from "@ant-design/icons";
 import { BNBIcon } from "components/Chains/Logos";
 
+
 const CollectionCardOther = ({ item }) => {
   const history = useHistory();
+ 
   const [nftToBuy, setNftToBuy] = useState(null);
   const { Moralis, chainId, authenticate } = useMoralis();
   const [visible, setVisibility] = useState(false);
   const nativeName = getNativeByChain(chainId);
   const [loading, setLoading] = useState(false);
-  const queryMarketItems = useMoralisQuery("ListedItem");
+  const queryMarketItems = useMoralisQuery("MarketItemCreated");
   const purchaseItemFunction = "createMarketSale";
   const contractProcessor = useWeb3ExecuteFunction();
   const { marketAddress, contractABI, walletAddress } = useMoralisDapp();
@@ -57,7 +59,6 @@ const CollectionCardOther = ({ item }) => {
         e.sold === false &&
         e.confirmed === true
     );
-    console.log(result);
     return result;
   };
 
@@ -141,7 +142,7 @@ const CollectionCardOther = ({ item }) => {
 
   async function updateSoldMarketItem() {
     const id = getMarketItem(nftToBuy).objectId;
-    const marketList = Moralis.Object.extend("MarketItemCreateds");
+    const marketList = Moralis.Object.extend("MarketItemCreated");
     const query = new Moralis.Query(marketList);
     await query.get(id).then((obj) => {
       obj.set("sold", true);
@@ -156,7 +157,7 @@ const CollectionCardOther = ({ item }) => {
     setVisibility(true);
   };
 
-  console.log({ item });
+  // console.log({ item });
 
   return (
     <div className="col-lg-3 col-md-6">
@@ -166,11 +167,12 @@ const CollectionCardOther = ({ item }) => {
           text={
             item?.auction
               ? `Auction`
-              : item?.price > 0
-              ? `${item?.price} ${nativeName}`
-              : ""
+              : getMarketItem(item)?.price > 0
+                ? `${getMarketItem(item)?.price / ("1e" + 18)} ${nativeName}`
+                : "Mint"
           }
-          style={item?.price < 0 && { display: "none" }}
+          style={item?.auction ? { display: "block" } : { display: "none" }}
+        // style={item?.auction ? { display: "block" } : { display: "none" } && getMarketItem(item)?.price > 0 ? { display: "block" } : { display: "none" }}
         >
           <div className="img">
             <a href="#0">
@@ -205,9 +207,9 @@ const CollectionCardOther = ({ item }) => {
                   <img src="nft/img/eth1.svg" alt="" />
                 </span> */}
                   <Space size={2}>
-                    <span className="fz-12 opacity-7 mr-5">Highest bid:</span>
+                    <span className="fz-12 opacity-7 mr-5">{item?.auction?"Highest bid:":"Highest bid:"}</span>
                     <BNBIcon />
-                    <span>{item.price} BNB</span>
+                    <span>{item?.price} BNB</span>
                   </Space>
                 </span>
               </div>
@@ -220,8 +222,7 @@ const CollectionCardOther = ({ item }) => {
             </div> */}
               <div className="right ml-auto">
                 <div className="bid">
-                  <a href="#0" onClick={() => nftInfo(item)}>
-                    Buy
+                  <a href="#0" onClick={() => nftInfo(item)}>{item?.auction ? "Bid" : "Buy"}
                   </a>
                 </div>
               </div>

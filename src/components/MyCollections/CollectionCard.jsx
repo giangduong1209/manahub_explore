@@ -1,4 +1,4 @@
-import { Button, Col, Divider, Row, Modal, Input, Spin,Select ,Tabs,} from 'antd';
+import { Button, Col, Divider, Row, Modal, Input, Spin, Select, Tabs, } from 'antd';
 import React, { useState, useEffect } from "react";
 import styless from './MyCollections.module.css';
 import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
@@ -36,7 +36,7 @@ const categoryLs = [
 // let arrNFTMarketAddress = {};
 
 const CollectionCard = ({ item }) => {
-  
+
   const [visible, setVisibility] = useState(false);
   const [price, setPrice] = useState();
   const [time, setTime] = useState();
@@ -110,7 +110,7 @@ const CollectionCard = ({ item }) => {
         //     if (item.token_address === "0xa0dbbb69b4ae1002d62aab993baa644678d8cede") {
         //       item.image = "https://airobots.s3.filebase.com/" + item.token_id + '.png';
         //     }
-        //     if (item.token_address === "0xBE87ef0FF214c4484D31031863Cb88863b65858E") {
+        //     if (item.token_address === "0xE46da8A41015Bc40917f68b648dDc5d6688EeBFE") {
 
         //       item.image = "https://1988dragon.s3.filebase.com/" + item.token_id + '.jpeg';
         //     }
@@ -184,7 +184,7 @@ const CollectionCard = ({ item }) => {
         const ops = {
           contractAddress: item.token_address,
           functionName: "setApprovalForAll",
-          abi: [{"inputs":[{"internalType":"address","name":"operator","type":"address"},{"internalType":"bool","name":"approved","type":"bool"}],"name":"setApprovalForAll","outputs":[],"stateMutability":"nonpayable","type":"function"}],
+          abi: [{ "inputs": [{ "internalType": "address", "name": "operator", "type": "address" }, { "internalType": "bool", "name": "approved", "type": "bool" }], "name": "setApprovalForAll", "outputs": [], "stateMutability": "nonpayable", "type": "function" }],
           params: {
             operator: marketAddress,
             approved: true
@@ -212,8 +212,8 @@ const CollectionCard = ({ item }) => {
         setVisibility(false);
         failApprove();
       }
-    })  
-    
+    })
+
   }
   async function auction(item) {
 
@@ -232,20 +232,20 @@ const CollectionCard = ({ item }) => {
           web3.utils.toHex(minBid),
         ],
       };
-  
+
       let parameter = {
         from: userAddress,
         gas: web3.utils.toHex(6000000),
         gasPrice: web3.utils.toHex(web3.utils.toWei("5", "gwei")),
       };
-  
+
       // console.log(parameter)
       deploy_contract
         .deploy(payload)
         .send(parameter, (err, transactionHash) => {
           console.log("Transaction Hash :", transactionHash);
         })
-        .on("confirmation", () => {})
+        .on("confirmation", () => { })
         .then((newContractInstance) => {
           console.log(
             "Deployed Contract Address : ",
@@ -261,7 +261,7 @@ const CollectionCard = ({ item }) => {
     } catch (error) {
       setLoading(false);
     }
-   
+
   }
 
   async function approveAuction(address) {
@@ -311,9 +311,9 @@ const CollectionCard = ({ item }) => {
     await contractProcessor.fetch({
       params: ops,
       onSuccess: () => {
-        saveListedAuction(item, String(price * ("1e" + 18)), addrs);
+        saveListedAuction(item, price * ("1e" + 18), addrs);
         setLoading(false);
-        history.push("/explore");
+        history.push("/");
         console.log("success start");
       },
       onError: (error) => {
@@ -378,13 +378,13 @@ const CollectionCard = ({ item }) => {
     };
 
 
-    console.log(">>>>>>",ops);
+    console.log(">>>>>>", ops);
     await contractProcessor.fetch({
       params: ops,
       onSuccess: () => {
         console.log("success");
         setLoading(false);
-        saveListedNFT(item, String(p));
+        saveListedNFT(item, p);
         setVisibility(false);
         addItemImage();
         succList();
@@ -394,7 +394,7 @@ const CollectionCard = ({ item }) => {
         failList();
       },
     });
-  
+
   }
 
   async function saveListedNFT(item, price) {
@@ -443,7 +443,7 @@ const CollectionCard = ({ item }) => {
       title: "Success!",
       content: `Your NFT was listed on the marketplace`
     });
-    history.push("/explore");
+    history.push("/");
     setTimeout(() => {
       modal.destroy();
     }, secondsToGo * 1000);
@@ -470,7 +470,7 @@ const CollectionCard = ({ item }) => {
     itemImage.set("type", nftToSell.type);
     itemImage.save();
   }
-    function handleChange(value) {
+  function handleChange(value) {
     setCategory(value);
   }
   function onChangePrice(e) {
@@ -571,7 +571,7 @@ const CollectionCard = ({ item }) => {
     <div className={styless.cardbox}>
       <div
         className={styless.image}
-        // style={{ backgroundImage: `url(${item.image})` }}
+      // style={{ backgroundImage: `url(${item.image})` }}
       >
         {mediaType.includes("video") ? (
           <video className={styless.image} width="350" controls>
@@ -631,7 +631,7 @@ const CollectionCard = ({ item }) => {
             onClick={() => setVisibility(false)}
             className={styless.btnCancel}
             loading={loading ? true : false}
-            // disabled={loading ? true : false}
+          // disabled={loading ? true : false}
           >
             Cancel
           </Button>,

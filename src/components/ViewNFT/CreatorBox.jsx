@@ -19,7 +19,7 @@ const ImageBox = ({ information }) => {
   const { SubMenu } = Menu;
   const { Moralis, account, isAuthenticated, authenticate } = useMoralis();
   const [likeNum, setLikeNum] = useState(0);
-  const queryMarketItems = useMoralisQuery("MarketItemCreateds");
+  const queryMarketItems = useMoralisQuery("MarketItemCreated");
   const fetchMarketItems = JSON.parse(
     JSON.stringify(queryMarketItems.data, [
       "objectId",

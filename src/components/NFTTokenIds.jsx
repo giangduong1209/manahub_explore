@@ -34,7 +34,7 @@ function NFTTokenId({inputValue}) {
   const [loading, setLoading] = useState(false);
   const { verifyMetadata } = useVerifyMetadata();
   const NFTCollections = getCollectionsByChain(chainId);
-  const queryMarketItems = useMoralisQuery("MarketItemCreateds");
+  const queryMarketItems = useMoralisQuery("MarketItemCreated");
   const purchaseItemFunction = "createMarketSale";
   const contractProcessor = useWeb3ExecuteFunction();
   const { marketAddress, contractABI, walletAddress } = useMoralisDapp();
@@ -122,7 +122,7 @@ function NFTTokenId({inputValue}) {
 
   async function updateSoldMarketItem() {
     const id = getMarketItem(nftToBuy).objectId;
-    const marketList = Moralis.Object.extend("MarketItemCreateds");
+    const marketList = Moralis.Object.extend("MarketItemCreated");
     const query = new Moralis.Query(marketList);
     await query.get(id).then((obj) => {
       obj.set("sold", true);

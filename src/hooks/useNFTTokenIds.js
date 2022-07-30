@@ -8,7 +8,7 @@ export const useNFTTokenIds = async ({ address }) => {
   const { resolveLink } = useIPFS();
   const [NFTTokenIds, setNFTTokenIds] = useState([]);
   const options = {
-    address: "0xBE87ef0FF214c4484D31031863Cb88863b65858E",
+    address: "0xE46da8A41015Bc40917f68b648dDc5d6688EeBFE",
     chain: chainId,
   };
   Moralis.CoreManager.get("VERSION");

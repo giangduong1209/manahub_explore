@@ -229,7 +229,7 @@ function NativeTransactions() {
   async function removeMarketItemsFromDB() {
     // let itemDelist = data.filter(item => item.key === recordDelist.index);
 
-    const query = new Moralis.Query("MarketItemCreateds")
+    const query = new Moralis.Query("MarketItemCreated")
     query.equalTo('nftContract', recordDelist.nftContract)
     query.equalTo('tokenId', recordDelist.tokenId)
     const object = await query.first();
@@ -277,7 +277,7 @@ function NativeTransactions() {
   async function removeFromDB() {
     // let itemDelist = data.filter(item => item.key === recordDelist.index);
 
-    const query = new Moralis.Query("MarketItemCreateds")
+    const query = new Moralis.Query("MarketItemCreated")
     query.equalTo('nftContract', recordDelist.collection)
     query.equalTo('tokenId', recordDelist.item)
     const object = await query.first();
@@ -345,7 +345,7 @@ function NativeTransactions() {
     return nme?.name;
   }
 
-  const queryMarketItems = useMoralisQuery("MarketItemCreateds");
+  const queryMarketItems = useMoralisQuery("MarketItemCreated");
   const fetchMarketItems = JSON.parse(
     JSON.stringify(queryMarketItems.data, [
       'updatedAt',

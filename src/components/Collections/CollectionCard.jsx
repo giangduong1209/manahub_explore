@@ -122,7 +122,7 @@ const CollectionCard = ({ item }) => {
 
   async function updateSoldMarketItem() {
     const id = getMarketItem(nftToBuy).objectId;
-    const marketList = Moralis.Object.extend("MarketItemCreateds");
+    const marketList = Moralis.Object.extend("MarketItemCreated");
     const query = new Moralis.Query(marketList);
     await query.get(id).then((obj) => {
       obj.set("sold", true);
@@ -167,14 +167,14 @@ const CollectionCard = ({ item }) => {
           item?.auction
             ? `Auction`
             : getMarketItem(item)?.price > 0
-            ? `${getMarketItem(item)?.price / ("1e" + 18)} ${nativeName}`
-            : "Mint"
+              ? `${getMarketItem(item)?.price / ("1e" + 18)} ${nativeName}`
+              : "Mint"
         }
-        style={item?.price < 0 && { display: "none" }}
+        style={item?.auction ? { display: "block" } : { display: "none" } && getMarketItem(item)?.price > 0 ? { display: "block" } : { display: "none" }}
       >
         <div
           className={styless.image}
-          // style={{ backgroundImage: `url(${item.image})` }}
+        // style={{ backgroundImage: `url(${item.image})` }}
         >
           {mediaType.includes("video") ? (
             <video
@@ -259,9 +259,8 @@ const CollectionCard = ({ item }) => {
             >
               <Badge.Ribbon
                 color="green"
-                text={`${
-                  getMarketItem(nftToBuy).price / ("1e" + 18)
-                } ${nativeName}`}
+                text={`${getMarketItem(nftToBuy).price / ("1e" + 18)
+                  } ${nativeName}`}
               >
                 <img
                   src={nftToBuy?.image}

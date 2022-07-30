@@ -4,10 +4,12 @@ import CollectionCard from "./CollectionCard";
 import CollectionCardOther from './CollectionCardOther'
 import styless from "./Collections.module.css";
 import CollectionBanner from "./CollectionBanner";
-import { useMoralisQuery, useMoralis } from "react-moralis";
+import { useMoralisQuery, useMoralis, useWeb3ExecuteFunction } from "react-moralis";
 import { useNFTTokenIds } from "hooks/useNFTTokenIds";
-// import { getCollectionsByChain } from "helpers/collection";
+import { getCollectionsByChain } from "helpers/collection";
 import { useParams } from "react-router-dom";
+import { auctionABI } from "helpers/auction";
+
 // const fakeDataItem = {
 //   name: 'Name',
 //   description:
@@ -23,22 +25,27 @@ const Collections = memo(({ address }) => {
   // setListData(useNFTBalances(address));
   // const { data: list } = useNFTBalances(address);
   const { chainId } = useMoralis();
-  const queryMarketItems = useMoralisQuery("ItemImages");
+  const queryMarketItems = useMoralisQuery("MarketItemCreated");
   const queryListedItems = useMoralisQuery("ListedItem", q => q.descending('createdAt'));
   const [listNFT, setListNFT] = useState([]);
   // const [originListNFT, setOriginListNFT] = useState([]);
   const [marketItems, setMarketItems] = useState([]);
+
+  //
+  const contractProcessor = useWeb3ExecuteFunction();
+  const contractAuctionABIJson = JSON.parse(auctionABI);
+
   // const collections = getCollectionsByChain(chainId);
   // const collection = collections.find(ele => ele.addrs === addrs);
-  const collection = {
-    addrs: "0xBE87ef0FF214c4484D31031863Cb88863b65858E",
-    banner: "https://lh3.googleusercontent.com/i5dYZRkVCUK97bfprQ3WXyrT9BnLSZtVKGJlKQ919uaUB0sxbngVCioaiyu9r6snqfi2aaTyIvv6DHm4m2R3y7hMajbsv14pSZK8mhs=h600",
-    image: "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s130",
-    name: "ManaHubs"
-  }
-
-  // useNFTTokenIds(address).then((res) => setListData(res));
-  const addrsList = ['0xBE87ef0FF214c4484D31031863Cb88863b65858E']
+  useNFTTokenIds(address).then((res) => setListData(res));
+  const addrsList = ['0xE46da8A41015Bc40917f68b648dDc5d6688EeBFE']
+  // useEffect(() => {
+  //   if (address.address === "0xE46da8A41015Bc40917f68b648dDc5d6688EeBFE") {
+  //     setType(true);
+  //   } else {
+  //     setType(false);
+  //   }
+  // }, [address]);
 
   const { data: marketData } = queryMarketItems;
   useEffect(() => {
@@ -54,32 +61,61 @@ const Collections = memo(({ address }) => {
       })
       listedItem.forEach((item, idx) => {
         marketItems?.forEach((ele) => {
-          // console.log(item);
-          // console.log(ele.attributes);
           if (
-            ele.attributes.nftContract.toLowerCase() === item.token_address.toLowerCase() &&
-            parseInt(ele.attributes.tokenId) === parseInt(item.token_id)
+            ele.attributes.nftContract === item.token_address &&
+            ele.attributes.tokenId === item.token_id
           ) {
-
-            item.price = data[idx].attributes.price / ("1e" + 18);
+            item.price = ele.attributes.price / ("1e" + 18);
           }
         });
-      });
-      if (collection?.addrs) {
-        if (addrs === '0xBE87ef0FF214c4484D31031863Cb88863b65858E') {
-          // condtion for new main contract
-          setListNFT([...listedItem.filter((ele) => { return !addrsList.includes(ele.token_address) })]);
-        } else {
-          let newArray = listedItem.filter((ele) => { return ele.token_address.toLowerCase() === addrs.toLowerCase() }).concat(listData);
-          setListNFT([...newArray]);
+        if (item?.auctionContract) {
+          getHighestBid(item);
+          // getTransaction();
         }
+      });
+      // if (collection?.added) {
+      if (addrs === '0xE46da8A41015Bc40917f68b648dDc5d6688EeBFE') {
+        // condtion for new main contract
+        setListNFT([...listedItem.filter((ele) => { return !addrsList.includes(ele.token_address) })]);
+      } else {
+        let newArray = listedItem.filter((ele) => { return ele.token_address.toLowerCase() === addrs.toLowerCase() }).concat(listData);
+        setListNFT([...newArray]);
       }
+      // }
       // setListNFT([...listedItem]);
       // setOriginListNFT([...listedItem]); // port later
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, marketItems, chainId, listData]);
 
+  const getHighestBid = async (item) => {
+    let ops = {
+      contractAddress: item?.auctionContract,
+      functionName: "highestBid",
+      abi: contractAuctionABIJson,
+    };
+
+    await contractProcessor.fetch({
+      params: ops,
+      onSuccess: (res) => {
+        item.price = res / ("1e" + 18);
+      },
+      onError: (e) => {
+        console.log(e);
+      },
+    });
+  };
+
+
+  // function itemRender(current, type, originalElement) {
+  //   if (type === "prev") {
+  //     return null;
+  //   }
+  //   if (type === "next") {
+  //     return null;
+  //   }
+  //   return originalElement;
+  // }
   return (
     <>
       <CollectionBanner address={address} />

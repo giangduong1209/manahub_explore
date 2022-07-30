@@ -17,7 +17,7 @@ const ImageBox = ({ information }) => {
   // console.log(information)
   const history = useHistory()
   const { Moralis, authenticate, chainId } = useMoralis();
-  const queryMarketItems = useMoralisQuery("ListedItem");
+  const queryMarketItems = useMoralisQuery("MarketItemCreated");
   const [loading, setLoading] = useState(false);
   const { marketAddress, contractABI, walletAddress } = useMoralisDapp();
   const purchaseItemFunction = "createMarketSale";
@@ -145,7 +145,7 @@ const ImageBox = ({ information }) => {
       >
         Listed by:
         <br />
-        <a className={styless.viewAddress} style={{ color: "#FEA013", fontWeight: "bold" }}>
+        <a className={styless.viewAddress} style={{ color: "#f27252",fontWeight: "bold" }}>
           {information?.owner_of}
         </a>
         {/* <Link to="/view-nft" style={{color :'blue'}}> 8byMAt9gMbPXuHC8vLprU6ZpQ1XJjiFTrJaF5XMXYnFL</Link> */}
@@ -156,10 +156,10 @@ const ImageBox = ({ information }) => {
         style={{
           borderTop: "solid 1px gray",
           borderBottom: "solid 1px gray",
-
+        
         }}
       >
-        {information?.price / ("1e" + 18)}{" "}
+        {getMarketItem()?.price / ("1e" + 18)}{" "}
         <span style={{ fontSize: "50%" }}> BNB </span>
       </div>
 
@@ -170,7 +170,7 @@ const ImageBox = ({ information }) => {
         >
           Creator royalties on secondary sales: <span style={{fontWeight:'bold'}}>15 %</span>
         </div> */}
-        {information ? (
+        {getMarketItem() ? (
           <Row justify="space-between" gutter={16}>
             <Col span={12}>
               <Button
@@ -178,7 +178,8 @@ const ImageBox = ({ information }) => {
                 loading={loading}
                 onClick={() =>
                   window.open(
-                    `${getExplorer(chainId)}address/${information?.token_address
+                    `${getExplorer(chainId)}address/${
+                      information?.token_address
                     }`,
                     "_blank"
                   )
@@ -193,7 +194,7 @@ const ImageBox = ({ information }) => {
                 className={btnstyles.btnInfo}
                 loading={loading}
                 onClick={() => purchase()}
-                style={{ fontFamily: 'GILROY', fontWeight: 700, marginTop: "10px" }}
+                style={{ fontFamily:'GILROY',fontWeight: 700,marginTop: "10px" }}
               >
                 <span >Buy</span>
               </Button>
@@ -203,7 +204,7 @@ const ImageBox = ({ information }) => {
           <div
             className={styless.description}
             style={{
-
+            
               fontWeight: "300",
               textAlign: "left"
             }}

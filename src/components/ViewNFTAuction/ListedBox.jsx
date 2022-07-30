@@ -18,7 +18,7 @@ import moment from "moment";
 const ImageBox = ({ information }) => {
   console.log(information);
   const { Moralis, authenticate, chainId, account } = useMoralis();
-  const queryMarketItems = useMoralisQuery("MarketItemCreateds");
+  const queryMarketItems = useMoralisQuery("MarketItemCreated");
   const [loading, setLoading] = useState(false);
   const { marketAddress, contractABI, walletAddress } = useMoralisDapp();
   const purchaseItemFunction = "createMarketSale";
@@ -225,7 +225,7 @@ const ImageBox = ({ information }) => {
 
   async function updateSoldMarketItem() {
     const id = getMarketItem().objectId;
-    const marketList = Moralis.Object.extend("MarketItemCreateds");
+    const marketList = Moralis.Object.extend("MarketItemCreated");
     const query = new Moralis.Query(marketList);
     await query.get(id).then((obj) => {
       obj.set("sold", true);
@@ -415,7 +415,7 @@ const ImageBox = ({ information }) => {
     query.equalTo("fromAddress", account);
     query.equalTo("withdraw", false);
     const object = await query.descending("createdAt").find();
-    console.log(object);
+    // console.log(object);
     getHighestBid();
     if (object || object !== undefined) {
       return 1;

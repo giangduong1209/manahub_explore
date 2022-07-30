@@ -4,7 +4,7 @@ export const networkCollections = {
         image: "https://ipfs.moralis.io:2053/ipfs/QmNjFGYsGW38j3vmtUYsoTPANZ6nrSFp9a9bjfLyzkmKX1",
         banner: 'https://ipfs.moralis.io:2053/ipfs/QmQCECGEZNpKRHCAPBUNvu6QosWJT7iSYMR4oNimHsjGNC',
         name: "Manahubs",
-        addrs: "0x68F33d25b2Ba9d60Cc6615d29d30fF069F840911",
+        addrs: "0xE46da8A41015Bc40917f68b648dDc5d6688EeBFE",
         added: true
       }
     ],
@@ -30,7 +30,7 @@ export const networkCollections = {
           image: "https://lh3.googleusercontent.com/eW5nOj3vY1lnW1SzVEatHKgmwB82YdFsrzyYp3eW-x371EpIuLMjOqd5VezBKSZya3z3NZNbFr8Tlk2NAGoPc6hiaRbn9jFN2tgJQA=s0",
           banner: 'https://cdn.sanity.io/images/kt6t0x48/production/41e51630c43b9ade112281066bb22327dbc16fcd-2000x2000.jpg',
           name: "Manahubs",
-          addrs: "0xBE87ef0FF214c4484D31031863Cb88863b65858E",
+          addrs: "0xE46da8A41015Bc40917f68b648dDc5d6688EeBFE",
           added: true
       }
     ],
@@ -56,7 +56,7 @@ export const networkCollections = {
             "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s130",
           banner: 'https://lh3.googleusercontent.com/i5dYZRkVCUK97bfprQ3WXyrT9BnLSZtVKGJlKQ919uaUB0sxbngVCioaiyu9r6snqfi2aaTyIvv6DHm4m2R3y7hMajbsv14pSZK8mhs=h600',
           name: "Bored Ape Yacht Club",
-          addrs: "0xBE87ef0FF214c4484D31031863Cb88863b65858E",
+          addrs: "0xE46da8A41015Bc40917f68b648dDc5d6688EeBFE",
         },
         {
           image:
