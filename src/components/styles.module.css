@@ -39,7 +39,7 @@
 
 .table :global(.ant-table-row:hover .ant-table-cell) {
   background: rgb(240, 240, 240) !important;
-  color: #FEA013;
+  color: #fea013;
 }
 
 .table :global(.ant-table-cell > *) {
@@ -62,11 +62,11 @@
 
 .table :global(.ant-tag.tag-Buy),
 .table :global(.ant-tag.tag-Sell) {
-  background: -webkit-linear-gradient(#FEA013, #FEA013);
+  background: -webkit-linear-gradient(#fea013, #fea013);
   background-color: transparent !important;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border: 1px solid #FEA013;
+  border: 1px solid #fea013;
 }
 
 .table :global(.ant-tag.tag-Waiting) {
@@ -89,7 +89,7 @@
   text-align: center;
 }
 .title {
-  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
+  background: linear-gradient(180deg, #fea013 0%, #fea013 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -114,16 +114,16 @@
   width: 100%;
 }
 
-.formBore{
+.formBore {
   background: #fff;
   border-radius: 20px;
   padding: 15px;
 }
 
 .btnCreate {
-  width: auto !important;
+  width: 100% !important;
   border-radius: 12px !important;
-  background: linear-gradient(to bottom, #FEA013, #FEA013) !important;
+  background: linear-gradient(to bottom, #fea013, #fea013) !important;
   border: none !important;
   font-weight: bold !important;
   color: #ffffff !important;
@@ -139,7 +139,7 @@
   .createForm {
     padding-top: 50px !important;
     padding-left: 100px !important;
-    padding-right: 100px!important;
+    padding-right: 100px !important;
     max-width: 1030px !important;
     width: 100%;
   }
@@ -153,10 +153,11 @@
   }
 }
 @media screen and (max-width: 992px) {
-  .mycollectionwrap{
+  .mycollectionwrap {
     margin-bottom: 40px !important;
   }
 }
 
-
-
+.nftImage :global(.ant-upload.ant-upload-select-picture-card) {
+  width: 100%;
+}
