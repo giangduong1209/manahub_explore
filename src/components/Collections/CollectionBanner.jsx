@@ -1,5 +1,5 @@
-import { Avatar, Space } from 'antd';
-import React from 'react';
+import { Avatar, Button, Col, Row, Space } from 'antd';
+import React, { useState } from 'react';
 import './nft.css';
 import styless from './Collections.module.css';
 // import FloorPriceIcon from './FloorPriceIcon';
@@ -20,6 +20,7 @@ import {
   FemaleIcon,
   PlaystationIcon,
 } from 'components/Icons';
+import clsx from 'clsx';
 
 const icons = {
   fire: <FireIcon />,
@@ -31,6 +32,7 @@ const icons = {
 
 const CollectionBanner = ({ address }) => {
   const [explores, setExplores] = React.useState(exploreData);
+  const [currentExplore, setCurrentExplore] = useState(1);
 
   const { chainId } = useMoralis();
   // const NFTCollections = getCollectionsByChain(chainId);
@@ -146,44 +148,63 @@ const CollectionBanner = ({ address }) => {
           >
           <Avatar src={info?.image} className={styless.avatar} size={160} />
         </div> */}
-        <div className={styless.bannerContent}>
-          <h1
-            style={{
-              color: '#FEA013',
-              fontSize: '32px',
-              float: 'left',
-              marginLeft: '13%',
-            }}
-          >
-            {/* <span className="icon">
-              <i className="fas fa-fire"></i>
-            </span>{" "} */}
-            Explore NFTs
-          </h1>
-          <div className="ml-auto">
-            <div className="tab-links">
-              <ul
-                className="rest flex"
-                style={{ display: 'inline-flex', margin: 0, padding: 0 }}
+        <div className={styless.bannerContentWrapper}>
+          <Row gutter={[16, 16]} align="middle" justify="space-between">
+            <Col>
+              <h1
+                style={{
+                  color: '#FEA013',
+                  fontSize: '32px',
+                }}
               >
-                {explores.tabs.map((tab, i) => (
-                  <li
-                    className={`item-link ${i === 0 ? 'current' : ''}`}
-                    data-tab={`tab-${tab.id}`}
-                    //  onClick={() => openTab(tab.id)}
-                    key={i}
-                  >
-                    <span className="explore-link">
+                Explore NFTs
+              </h1>
+            </Col>
+            <Col>
+              <Row gutter={[10, 10]}>
+                {explores.tabs.map((tab) => (
+                  <Col>
+                    <div
+                      className={clsx(styless.itemExplore, {
+                        [styless.currentActive]: tab.id === currentExplore,
+                      })}
+                      key={tab.id}
+                      onClick={() => setCurrentExplore(tab.id)}
+                    >
                       <Space>
                         {icons[tab.icon]}
                         {tab.title}
                       </Space>
-                    </span>
-                  </li>
+                    </div>
+                  </Col>
                 ))}
-              </ul>
-            </div>
-          </div>
+              </Row>
+              {/* <div className="tab-links">
+                <ul
+                  className="rest flex"
+                  style={{ display: 'inline-flex', margin: 0, padding: 0 }}
+                >
+                  {explores.tabs.map((tab, i) => (
+                    <li
+                      className={`item-link ${i === 0 ? 'current' : ''}`}
+                      data-tab={`tab-${tab.id}`}
+                      //  onClick={() => openTab(tab.id)}
+                      key={i}
+                    >
+                      <span className="explore-link">
+                        <Space>
+                          {icons[tab.icon]}
+                          {tab.title}
+                        </Space>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div> */}
+            </Col>
+          </Row>
+        </div>
+        <div className={styless.bannerContent}>
           {/* <div className={styless.bannerTitle}>{info?.name}</div> */}
           {/* <div className={styless.createdBy}>
           Created by <span>MetaMints</span>

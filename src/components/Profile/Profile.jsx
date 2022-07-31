@@ -258,7 +258,12 @@ function Profile() {
                     <div className={styles.textWrapper}>
                       <Text strong>Referral</Text>
                     </div>
-                    <Row align="middle" gutter={8} style={{ width: '100%' }}>
+                    <Row
+                      align="middle"
+                      gutter={8}
+                      style={{ width: '100%' }}
+                      wrap={false}
+                    >
                       <Col flex={1}>
                         <Form.Item
                           name={'ref'}

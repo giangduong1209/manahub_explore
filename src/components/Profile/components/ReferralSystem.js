@@ -14,7 +14,15 @@ const ReferralSystem = ({ toggleReferral }) => {
         <div className={styles.referralTitle}>Referral System</div>
         <Col span={24}>
           <div className={clsx(styles.addressBox, styles.box)}>
-            <Typography.Text strong>
+            <Typography.Text
+              strong
+              style={{
+                maxWidth: '100%',
+              }}
+              ellipsis={{
+                tooltip: '0x4C53029ef9c695B66F57fc1611121711B23C2F57',
+              }}
+            >
               0x4C53029ef9c695B66F57fc1611121711B23C2F57
             </Typography.Text>
             <span className={styles.iconCopy}>
