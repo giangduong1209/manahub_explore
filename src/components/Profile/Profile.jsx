@@ -51,7 +51,8 @@ function Profile() {
   const [changeAva, setChangeAva] = useState(false);
 
   const [isOpenReferral, setIsOpenReferral] = useState(false);
-  const domain = "http://localhost:8181";
+  // const domain = "http://localhost:8181";
+  const domain = "http://45.77.39.122:8181";
 
   const checkAuthen = async () => {
     const result =
@@ -121,7 +122,6 @@ function Profile() {
         background: bg,
         bio: values.bio,
       }
-
       const fetchAPI = await axios.post(domain + "/user/updateProfile", {
         data: data,
       });
