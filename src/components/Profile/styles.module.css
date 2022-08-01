@@ -375,6 +375,11 @@
   padding: 0 0 10px 0 !important;
 }
 
+.referralNode :global(.ant-tree-indent-unit::before) {
+  border-right: 2px solid #2d2d72;
+  bottom: -10px;
+}
+
 .nodeBox {
   border: 2px solid #2d2d72;
   padding: 0;
