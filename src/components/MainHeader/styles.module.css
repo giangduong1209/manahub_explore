@@ -472,8 +472,8 @@ a.menuLink,
     margin-left: 8px;
   }
   .walletInfo {
-    padding: 0 8px;
-    margin-left: -10px !important;
+    /* padding: 0 8px;
+    margin-left: -10px !important; */
   }
   .bottomHeader :global(.ant-menu-item span) {
     font-size: 14px;
@@ -490,7 +490,7 @@ a.menuLink,
     margin: 0 2px 0 0 !important;
   }
   .bottomHeader :global(.ant-menu-item span) {
-    font-size: 11px;
+    font-size: 10px;
   }
 }
 
@@ -531,4 +531,9 @@ a.menuLink,
 
 .icon1:hover {
   background: linear-gradient(180deg, #fea013 0%, #fea013 100%);
+}
+
+.walletInfoMobile {
+  align-self: self-end;
+  margin-bottom: 10px;
 }
