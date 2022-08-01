@@ -121,7 +121,7 @@ const ReferralSystem = ({ toggleReferral }) => {
             switcherIcon={null}
             className={styles.referralNode}
           >
-            {fakeRef?.map((ref, idx) => (
+            {arrRefs?.map((ref, idx) => (
               <TreeNode
                 selectable={false}
                 title={
@@ -130,7 +130,7 @@ const ReferralSystem = ({ toggleReferral }) => {
                       <Typography.Text strong>{ref.address}</Typography.Text>
                     </div>
                     <div className={styles.nodeRight}>
-                      Total System: {ref.bnb} BNB
+                      Total System: {ref.totalTreeSystem} BNB
                     </div>
                   </div>
                 }

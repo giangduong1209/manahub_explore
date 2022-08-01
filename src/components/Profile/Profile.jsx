@@ -17,6 +17,7 @@ import { useMoralis, useMoralisQuery } from 'react-moralis';
 import { useHistory } from 'react-router-dom';
 import ReferralSystem from './components/ReferralSystem';
 import styles from './styles.module.css';
+import axios from "axios";
 const layout = {
   labelCol: { span: 8 },
   wrapperCol: { span: 24 },
@@ -50,6 +51,7 @@ function Profile() {
   const [changeAva, setChangeAva] = useState(false);
 
   const [isOpenReferral, setIsOpenReferral] = useState(false);
+  const domain = "http://localhost:8181";
 
   const checkAuthen = async () => {
     const result =
@@ -90,13 +92,13 @@ function Profile() {
       } else {
         save = new users();
       }
-
+      let refs = [];
       if (values.ref) {
         const resultGetRefs =
           fetchProfile.find(
             (element) => element.address === values.ref.toLowerCase()
           ) || null;
-        let refs = [];
+
         if (resultGetRefs) {
           if (resultGetRefs.refs) {
             refs = JSON.parse(resultGetRefs.refs);
@@ -104,20 +106,26 @@ function Profile() {
         }
         if (values.ref !== account) {
           refs.push(values.ref);
-          save.set('refs', JSON.stringify(refs));
-          save.set('ref', values.ref);
+          // save.set('refs', JSON.stringify(refs));
+          // save.set('ref', values.ref);
         }
       }
+      const data = {
+        refs: JSON.stringify(refs),
+        ref: values.ref,
+        address: account,
+        name: values.name,
+        email: values.email,
+        phone: values.phone,
+        avatar: values.image,
+        background: bg,
+        bio: values.bio,
+      }
 
-      save.set('address', account);
-      save.set('name', values.name);
-      save.set('email', values.email);
-      save.set('phone', values.phone);
-      save.set('avatar', image);
-      save.set('background', bg);
-      save.set('bio', values.bio);
-
-      save.save().then(() => {
+      const fetchAPI = await axios.post(domain + "/user/updateProfile", {
+        data: data,
+      });
+      if (fetchAPI) {
         let secondsToGo = 2;
         const modal = Modal.success({
           title: 'Success!',
@@ -128,7 +136,28 @@ function Profile() {
         setTimeout(() => {
           modal.destroy();
         }, secondsToGo * 1000);
-      });
+      }
+
+      // save.set('address', account);
+      // save.set('name', values.name);
+      // save.set('email', values.email);
+      // save.set('phone', values.phone);
+      // save.set('avatar', image);
+      // save.set('background', bg);
+      // save.set('bio', values.bio);
+
+      // save.save().then(() => {
+      //   let secondsToGo = 2;
+      //   const modal = Modal.success({
+      //     title: 'Success!',
+      //     content: `Save success`,
+      //   });
+      //   // props.getAuthenticate({ authenticated: false });
+      //   history.push('/my-collection');
+      //   setTimeout(() => {
+      //     modal.destroy();
+      //   }, secondsToGo * 1000);
+      // });
     } else {
       let secondsToGo = 2;
       const modal = Modal.error({
