@@ -18,6 +18,8 @@ import { useHistory } from 'react-router-dom';
 import ReferralSystem from './components/ReferralSystem';
 import styles from './styles.module.css';
 import axios from "axios";
+import { async } from '@firebase/util';
+
 const layout = {
   labelCol: { span: 8 },
   wrapperCol: { span: 24 },
@@ -49,10 +51,10 @@ function Profile() {
   const [bg, setBg] = useState('');
   const [loading, setLoading] = useState(false);
   const [changeAva, setChangeAva] = useState(false);
-
+  const [rewards, setRewards] = useState(0);
   const [isOpenReferral, setIsOpenReferral] = useState(false);
-  // const domain = "http://localhost:8181";
-  const domain = "http://45.77.39.122:8181";
+  const domain = "http://localhost:8181";
+  // const domain = "http://45.77.39.122:8181";
 
   const checkAuthen = async () => {
     const result =
@@ -62,6 +64,7 @@ function Profile() {
       if (result.ref) {
         setrefDisabled(true);
       }
+      setRewards(result.rewards);
       form.setFieldsValue({
         ref: result.ref,
         name: result.name,
@@ -106,14 +109,12 @@ function Profile() {
           }
         }
         if (values.ref !== account) {
-          refs.push(values.ref);
-          // save.set('refs', JSON.stringify(refs));
-          // save.set('ref', values.ref);
+          refs.push(values.ref.toLowerCase());
         }
       }
       const data = {
         refs: JSON.stringify(refs),
-        ref: values.ref,
+        ref: values.ref.toLowerCase(),
         address: account,
         name: values.name,
         email: values.email,
@@ -193,6 +194,13 @@ function Profile() {
   };
 
   const toggleReferral = () => setIsOpenReferral((v) => !v);
+
+  async function claim() {
+    const fetchAPI = await axios.post(domain + "/w3/claim", {
+      address: account,
+    });
+    console.log(fetchAPI);
+  }
   return (
     <>
       <div>
@@ -319,6 +327,29 @@ function Profile() {
                         ></Button>
                       </Col>
                     </Row>
+                  </div>
+                  <div className={styles.select}>
+                    <div className={styles.textWrapper}>
+                      <Text strong>Rewards</Text>
+                    </div>
+                    <Form.Item
+                      name={'rewards'}
+                      rules={[{ required: true }]}
+                      style={{ width: '100%', marginTop: '20px' }}
+                    >
+                      <span>{rewards} BNB </span>
+                      <Button
+                        onClick={claim}
+                        icon={<SiteMapIcon style={{ color: '#fff' }} />}
+                        type="primary"
+                        style={{
+                          marginTop: '-4px',
+                          background: '#FEA013',
+                          borderRadius: 8,
+                          border: 'none',
+                        }}
+                      >Claim</Button>
+                    </Form.Item>
                   </div>
                   <div className={styles.select}>
                     <div className={styles.textWrapper}>
