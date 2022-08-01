@@ -18,7 +18,6 @@ const Web3 = require("web3");
 const EthereumTx = require("ethereumjs-tx").Transaction;
 
 const rpcURL = "https://data-seed-prebsc-1-s1.binance.org:8545/";
-// const rpcURL = "https://speedy-nodes-nyc.moralis.io/dbf52adceda2e067e631dfb1/bsc/mainnet";
 const web3 = new Web3(rpcURL);
 
 const { Option } = Select;
