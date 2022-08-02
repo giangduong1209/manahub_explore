@@ -38,9 +38,9 @@ const Collections = memo(({ address }) => {
   // const collections = getCollectionsByChain(chainId);
   // const collection = collections.find(ele => ele.addrs === addrs);
   useNFTTokenIds(address).then((res) => setListData(res));
-  const addrsList = ['0x9313F4a9C9Ae2fA3764fac606B3012cedC3CbeDA']
+  const addrsList = ['0xfde910FbaA9A6fDD5d3F80cCD44a54763DE2d9d0']
   // useEffect(() => {
-  //   if (address.address === "0x9313F4a9C9Ae2fA3764fac606B3012cedC3CbeDA") {
+  //   if (address.address === "0xfde910FbaA9A6fDD5d3F80cCD44a54763DE2d9d0") {
   //     setType(true);
   //   } else {
   //     setType(false);
@@ -74,7 +74,7 @@ const Collections = memo(({ address }) => {
         }
       });
       // if (collection?.added) {
-      if (addrs === '0x9313F4a9C9Ae2fA3764fac606B3012cedC3CbeDA') {
+      if (addrs === '0xfde910FbaA9A6fDD5d3F80cCD44a54763DE2d9d0') {
         // condtion for new main contract
         setListNFT([...listedItem.filter((ele) => { return !addrsList.includes(ele.token_address) })]);
       } else {

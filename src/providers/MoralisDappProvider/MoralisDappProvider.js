@@ -276,6 +276,11 @@ function MoralisDappProvider({ children }) {
           "internalType": "address",
           "name": "sender",
           "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "checkHash",
+          "type": "address"
         }
       ],
       "name": "claim",
@@ -686,6 +691,19 @@ function MoralisDappProvider({ children }) {
     {
       "inputs": [
         {
+          "internalType": "address",
+          "name": "newHash",
+          "type": "address"
+        }
+      ],
+      "name": "updateHash",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
           "internalType": "uint256",
           "name": "_exchangeFee",
           "type": "uint256"
@@ -708,7 +726,7 @@ function MoralisDappProvider({ children }) {
       "type": "receive"
     }
   ]`);
-  const [marketAddress, setMarketAddress] = useState('0x9313F4a9C9Ae2fA3764fac606B3012cedC3CbeDA')
+  const [marketAddress, setMarketAddress] = useState('0xfde910FbaA9A6fDD5d3F80cCD44a54763DE2d9d0')
   useEffect(() => {
     Moralis.onChainChanged(function (chain) {
       setChainId(chain);

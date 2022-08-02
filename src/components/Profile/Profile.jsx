@@ -18,7 +18,7 @@ import { useHistory } from 'react-router-dom';
 import ReferralSystem from './components/ReferralSystem';
 import styles from './styles.module.css';
 import axios from "axios";
-import { async } from '@firebase/util';
+
 
 const layout = {
   labelCol: { span: 8 },
@@ -40,7 +40,7 @@ const validateMessages = {
 // const { useBreakpoint } = Grid;
 function Profile() {
   const history = useHistory();
-  const { Moralis, account } = useMoralis();
+  const { web3, Moralis, account } = useMoralis();
   const [auth, setAuth] = useState();
   const [refDisabled, setrefDisabled] = useState(false);
   const queryProfile = useMoralisQuery('profile');
@@ -53,10 +53,18 @@ function Profile() {
   const [changeAva, setChangeAva] = useState(false);
   const [rewards, setRewards] = useState(0);
   const [isOpenReferral, setIsOpenReferral] = useState(false);
-  // const domain = "http://localhost:8181";
-  const domain = "http://45.77.39.122:8181";
+  const domain = "http://localhost:8181";
+  // const domain = "http://45.77.39.122:8181";
 
   const checkAuthen = async () => {
+    Moralis.initialize("ODKsAGfZTKjTaG2Xv2Kph0ui303CX3bRtIwxQ6pj");
+    Moralis.serverURL = "https://bzyt487madhw.usemoralis.com:2053/server";
+    let query = new Moralis.Query('profile');
+    let subscription = await query.subscribe();
+    subscription.on('update', (obj) => {
+      // console.log(obj.attributes);
+      setRewards(obj.attributes.rewards);
+    })
     const result =
       fetchProfile.find((element) => element.address === account) || null;
     if (result && account !== undefined) {
@@ -139,26 +147,6 @@ function Profile() {
         }, secondsToGo * 1000);
       }
 
-      // save.set('address', account);
-      // save.set('name', values.name);
-      // save.set('email', values.email);
-      // save.set('phone', values.phone);
-      // save.set('avatar', image);
-      // save.set('background', bg);
-      // save.set('bio', values.bio);
-
-      // save.save().then(() => {
-      //   let secondsToGo = 2;
-      //   const modal = Modal.success({
-      //     title: 'Success!',
-      //     content: `Save success`,
-      //   });
-      //   // props.getAuthenticate({ authenticated: false });
-      //   history.push('/my-collection');
-      //   setTimeout(() => {
-      //     modal.destroy();
-      //   }, secondsToGo * 1000);
-      // });
     } else {
       let secondsToGo = 2;
       const modal = Modal.error({
@@ -196,10 +184,22 @@ function Profile() {
   const toggleReferral = () => setIsOpenReferral((v) => !v);
 
   async function claim() {
+    setLoading(true);
     const fetchAPI = await axios.post(domain + "/w3/claim", {
       address: account,
     });
-    console.log(fetchAPI);
+    let signTx = fetchAPI?.data?.signTx;
+    if (signTx) {
+      // console.log(web3.eth);
+      // await web3.eth.sendSignedTransaction(signTx.rawTransaction);
+      let hash = await web3.eth.sendTransaction({ from: account, gas: signTx.gas, to: signTx.to, data: signTx.data });
+      // console.log(hash);
+      if (hash) {
+        await axios.post(domain + "/w3/update", {
+          address: account,
+        });
+      }
+    }
   }
   return (
     <>
@@ -337,9 +337,10 @@ function Profile() {
                       rules={[{ required: true }]}
                       style={{ width: '100%', marginTop: '20px' }}
                     >
-                      <span>{rewards/("1e" + 18)} BNB </span>
+                      <span>{rewards / ("1e" + 18)} BNB </span>
                       <Button
                         onClick={claim}
+                        disabled={loading}
                         icon={<SiteMapIcon style={{ color: '#fff' }} />}
                         type="primary"
                         style={{
