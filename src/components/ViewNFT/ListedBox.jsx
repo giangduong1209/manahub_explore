@@ -24,8 +24,8 @@ const ImageBox = ({ information }) => {
   const purchaseItemFunction = "createMarketSale";
   const contractABIJson = JSON.parse(contractABI);
   const contractProcessor = useWeb3ExecuteFunction();
-  const domain = "http://localhost:8181";
-  // const domain = "http://45.77.39.122:8181";
+  // const domain = "http://localhost:8181";
+  const domain = "http://45.77.39.122:8181";
 
   const fetchMarketItems = JSON.parse(
     JSON.stringify(queryMarketItems.data, [
