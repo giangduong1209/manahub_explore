@@ -323,16 +323,10 @@ function NFTCreate(props) {
                   <label>Collection</label>
                   <Select
                     style={{ width: '100%' }}
-                    defaultValue="METAPOLIS"
+                    defaultValue="Manahubs"
                     options={[
                       {
-                        value: 'METAPOLIS',
-                      },
-                      {
-                        value: 'ART',
-                      },
-                      {
-                        value: 'MUSIC',
+                        value: 'Manahubs',
                       },
                     ]}
                   />
