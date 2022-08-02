@@ -306,7 +306,7 @@ const RoutingMenu = ({ isOpen, visileSubMenu, setVisileSubMenu }) => {
               >
                 <Menu.Item key="explore">
                   <NavLink
-                    to="/collection/0xE46da8A41015Bc40917f68b648dDc5d6688EeBFE"
+                    to="/collection/0xfde910FbaA9A6fDD5d3F80cCD44a54763DE2d9d0"
                     className={styles.menuLink}
                   >
                     Explore

@@ -161,3 +161,12 @@
 .nftImage :global(.ant-upload.ant-upload-select-picture-card) {
   width: 100%;
 }
+
+.CreateWrapper {
+  max-width: 1200px;
+  margin: 30px auto !important;
+  padding: 20px 15px;
+  flex: 1;
+  background: #fff;
+  border-radius: 15px;
+}

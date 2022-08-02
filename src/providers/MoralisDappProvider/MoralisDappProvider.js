@@ -66,6 +66,25 @@ function MoralisDappProvider({ children }) {
       "anonymous": false,
       "inputs": [
         {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "getFrom",
+          "type": "address"
+        }
+      ],
+      "name": "Claim",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
           "indexed": true,
           "internalType": "uint256",
           "name": "itemId",
@@ -117,6 +136,12 @@ function MoralisDappProvider({ children }) {
         {
           "indexed": true,
           "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
           "name": "itemId",
           "type": "uint256"
         },
@@ -125,6 +150,12 @@ function MoralisDappProvider({ children }) {
           "internalType": "address",
           "name": "owner",
           "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "price",
+          "type": "uint256"
         }
       ],
       "name": "MarketItemSold",
@@ -154,6 +185,48 @@ function MoralisDappProvider({ children }) {
       ],
       "name": "Transfer",
       "type": "event"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "fallback"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "CollectionFees",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "OwnerCollections",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
     },
     {
       "inputs": [
@@ -190,6 +263,29 @@ function MoralisDappProvider({ children }) {
         }
       ],
       "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "checkHash",
+          "type": "address"
+        }
+      ],
+      "name": "claim",
+      "outputs": [],
+      "stateMutability": "payable",
       "type": "function"
     },
     {
@@ -316,6 +412,19 @@ function MoralisDappProvider({ children }) {
           "internalType": "address",
           "name": "",
           "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getBalance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
         }
       ],
       "stateMutability": "view",
@@ -455,7 +564,7 @@ function MoralisDappProvider({ children }) {
         },
         {
           "internalType": "bytes",
-          "name": "_data",
+          "name": "data",
           "type": "bytes"
         }
       ],
@@ -478,6 +587,29 @@ function MoralisDappProvider({ children }) {
         }
       ],
       "name": "setApprovalForAll",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "fee",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "addressCollect",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "ownerCollect",
+          "type": "address"
+        }
+      ],
+      "name": "setCollectionFee",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -559,6 +691,19 @@ function MoralisDappProvider({ children }) {
     {
       "inputs": [
         {
+          "internalType": "address",
+          "name": "newHash",
+          "type": "address"
+        }
+      ],
+      "name": "updateHash",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
           "internalType": "uint256",
           "name": "_exchangeFee",
           "type": "uint256"
@@ -568,9 +713,20 @@ function MoralisDappProvider({ children }) {
       "outputs": [],
       "stateMutability": "payable",
       "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "withdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
     }
   ]`);
-  const [marketAddress, setMarketAddress] = useState('0xE46da8A41015Bc40917f68b648dDc5d6688EeBFE')
+  const [marketAddress, setMarketAddress] = useState('0xfde910FbaA9A6fDD5d3F80cCD44a54763DE2d9d0')
   useEffect(() => {
     Moralis.onChainChanged(function (chain) {
       setChainId(chain);

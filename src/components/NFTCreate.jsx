@@ -2,13 +2,12 @@ import {
   Button,
   Col,
   Form,
+  Grid,
   Input,
   Modal,
   Row,
   Select,
-  Space,
   Typography,
-  Upload,
 } from 'antd';
 import { useEffect, useState } from 'react';
 import { useMoralis } from 'react-moralis';
@@ -18,9 +17,7 @@ import urlLoading from '../assets/images/loading.gif';
 import styles from './styles.module.css';
 import { useWeb3ExecuteFunction } from 'react-moralis';
 import { useMoralisDapp } from 'providers/MoralisDappProvider/MoralisDappProvider';
-import PhotoIcon from './Icons/PhotoIcon';
-
-const { Option } = Select;
+const { useBreakpoint } = Grid;
 
 function NFTCreate(props) {
   const contractProcessor = useWeb3ExecuteFunction();
@@ -30,6 +27,7 @@ function NFTCreate(props) {
   const { Moralis, account } = useMoralis();
   const [form] = Form.useForm();
   const history = useHistory();
+  const { md } = useBreakpoint();
 
   const [formInput, updateFormInput] = useState({ name: '', description: '' });
   const [fileType, setFileType] = useState();
@@ -295,245 +293,20 @@ function NFTCreate(props) {
   }
 
   return (
-    <div style={{ width: '100%', alignItems: 'center' }}>
-      <div className={styles.createForm}>
-        <div className={styles.formBore}>
-          <Form form={form} layout="vertical">
-            <Row gutter={32}>
-              <Col span={12}>
-                <Row>
-                  <Col span={24}>
-                    <Typography.Text strong style={{ fontSize: 24 }}>
-                      Create Works
-                    </Typography.Text>
-                  </Col>
-                  <Col span={24}>
-                    <Form.Item>
-                      <label>Work Name</label>
-                      <Input
-                        value={formInput.name}
-                        placeholder="Enter the name of the work"
-                        onChange={(e) => handleInputName(e.target.value)}
-                      />
-                      <div style={{ color: 'red' }}>
-                        {!formInput.name && formValid.nameErr
-                          ? 'Please input your asset name'
-                          : formInput.name && !nameValid
-                          ? 'English only'
-                          : ''}
-                      </div>
-                    </Form.Item>
-                  </Col>
-                  <Col span={24}>
-                    <Form.Item>
-                      <label>Collection</label>
-                      <Select showSearch optionFilterProp="children">
-                        <Option value="1">METAPOLIS</Option>
-                        <Option value="2">METAPOLIS 1</Option>
-                        <Option value="3">METAPOLIS 2</Option>
-                      </Select>
-                    </Form.Item>
-                  </Col>
-                  <Col span={24}>
-                    <Form.Item>
-                      <label>Work Description(Optional)</label>
-                      <Input.TextArea
-                        placeholder="Add description to the work"
-                        rows={5}
-                        value={formInput.description}
-                        onChange={(e) => handleInputDesc(e.target.value)}
-                        style={{ whiteSpace: 'pre-wrap' }}
-                      />
-                      <div style={{ color: 'red' }}>
-                        {!formInput.description && formValid.descriptionErr
-                          ? 'Please input your description'
-                          : formInput.description && !descValid
-                          ? 'English only'
-                          : ''}
-                      </div>
-                    </Form.Item>
-                  </Col>
-                  {/* Đổi form value cho phù hợp với data */}
-                  <Col span={24}>
-                    <Form.Item>
-                      <label>Unlockable(Optional)</label>
-                      <br />
-                      <Typography.Text type="secondary">
-                        The work is available to its owner only.
-                      </Typography.Text>
-                      <Input.TextArea
-                        placeholder="Add description to the work"
-                        rows={5}
-                        value={formInput.description}
-                        onChange={(e) => handleInputDesc(e.target.value)}
-                        style={{ whiteSpace: 'pre-wrap' }}
-                      />
-                      <div style={{ color: 'red' }}>
-                        {!formInput.description && formValid.descriptionErr
-                          ? 'Please input your description'
-                          : formInput.description && !descValid
-                          ? 'English only'
-                          : ''}
-                      </div>
-                    </Form.Item>
-                  </Col>
-                  <Col span={24}>
-                    <Form.Item>
-                      <label>Copyright(Optional)</label>
-                      <Input.TextArea
-                        placeholder="The creator has the copyright or use right to this work. You may not modify, copy, reproduce, transmit, or in anyway exploit any such content, without the authorization and consent of the creator. The creator reserve the right to take legal action against any infringement."
-                        rows={5}
-                        value={formInput.description}
-                        onChange={(e) => handleInputDesc(e.target.value)}
-                        style={{ whiteSpace: 'pre-wrap' }}
-                      />
-                      <div style={{ color: 'red' }}>
-                        {!formInput.description && formValid.descriptionErr
-                          ? 'Please input your description'
-                          : formInput.description && !descValid
-                          ? 'English only'
-                          : ''}
-                      </div>
-                    </Form.Item>
-                  </Col>
-                  <Col span={24}>
-                    <Button
-                      onClick={() => createNFT()}
-                      size="large"
-                      type="primary"
-                      htmlType="submit"
-                      className={styles.btnCreate}
-                      loading={visible ? true : false}
-                      disabled={
-                        !metadata && fileType && isValidType ? true : false
-                      }
-
-                      // style={{ width: "auto", borderRadius: "12px" }}
-                    >
-                      {visible ? 'Creating' : 'Create'}
-                    </Button>
-                  </Col>
-                </Row>
-              </Col>
-              <Col span={12}>
-                <Upload
-                  name="avatar"
-                  listType="picture-card"
-                  className={styles.nftImage}
-                  showUploadList={false}
-                >
-                  <div
-                    style={{
-                      marginTop: 8,
-                    }}
-                  >
-                    <Space direction="vertical">
-                      <PhotoIcon style={{ fontSize: 24, color: 'gray' }} />
-                      <Typography.Text type="secondary">
-                        Click Upload
-                      </Typography.Text>
-                    </Space>
-                  </div>
-                </Upload>
-                <div>
-                  <Typography.Text type="secondary">
-                    supports JPG,JPEG,PNG,GIF,SVG,MPEG,MPG,MPEG3,MP3,MP4 files
-                    no larger than 40M
-                  </Typography.Text>
-                </div>
-              </Col>
-              {/* <Col span={12}>
+    <div className={styles.CreateWrapper}>
+      <Form form={form} layout="vertical">
+        <Row gutter={32}>
+          <Col span={24} md={12}>
+            <Row>
+              <Typography.Title level={3} style={{ color: '#000' }}>
+                Create Works
+              </Typography.Title>
+              <Col span={24}>
                 <Form.Item>
-                  <label>Image</label>
-                  <Input
-                    allowClear
-                    type="file"
-                    onChange={onChangeImage}
-                    accept=".jpg,.jpeg,.mp4,.mp3,.png,.wav"
-                  />
-                  {
-                    !metadata && fileType && isValidType ? (
-                      <img
-                        alt=""
-                        src={urlLoading}
-                        style={{ margin: '10px 0 10px 0' }}
-                        width="45"
-                      />
-                    ) : metadata && mediaSrc && fileType?.includes('video') ? (
-                      <video
-                        width="350"
-                        controls
-                        style={{ margin: '10px 0 10px 0' }}
-                      >
-                        {' '}
-                        <source src={mediaSrc} type={fileType}></source>
-                      </video>
-                    ) : metadata && mediaSrc && fileType?.includes('audio') ? (
-                      <audio
-                        width="350"
-                        controls
-                        style={{ margin: '10px 0 10px 0' }}
-                      >
-                        {' '}
-                        <source src={mediaSrc} type={fileType}></source>
-                      </audio>
-                    ) : metadata && mediaSrc && fileType?.includes('image') ? (
-                      <img
-                        alt=""
-                        src={mediaSrc}
-                        style={{
-                          margin: '10px 0 10px 0',
-                          width: '210px',
-                          height: '210px',
-                        }}
-                        type={fileType}
-                        width="350"
-                      />
-                    ) : (
-                      ''
-                    )
-
-                    //          <audio className="rounded mt-4" style={{ margin: '10px 0 10px 0' }} width="350" controls>
-                    //          <source src={url} type={type}></source>
-                    //          </audio>
-                  }
-                  <div style={{ color: 'red' }}>
-                    {!fileName && formValid.fileErr
-                      ? 'Please upload your NFT file'
-                      : ''}
-                  </div>
-                  <div style={{ color: 'red' }}>
-                    {!isValidFileName
-                      ? 'Please remove the special character in the filename'
-                      : ''}
-                  </div>
-                  <div
-                    style={
-                      isValidType
-                        ? { color: 'black', fontSize: '12px' }
-                        : { color: 'red', fontSize: '12px' }
-                    }
-                  >
-                    File types supported: JPG, JPEG, PNG, MP4, MP3, WAV.
-                  </div>
-                  <div
-                    style={
-                      isValidType
-                        ? { color: 'black', fontSize: '12px' }
-                        : { color: 'red', fontSize: '12px' }
-                    }
-                  >
-                    Max file size : 50MB
-                  </div>
-                </Form.Item>
-              </Col> */}
-
-              {/* <Col span={12}>
-                <Form.Item>
-                  <label>Asset Name</label>
+                  <label>Work Name</label>
                   <Input
                     value={formInput.name}
-                    placeholder="Work name"
+                    placeholder="Enter the name of the work"
                     onChange={(e) => handleInputName(e.target.value)}
                   />
                   <div style={{ color: 'red' }}>
@@ -544,11 +317,196 @@ function NFTCreate(props) {
                       : ''}
                   </div>
                 </Form.Item>
-              </Col> */}
+              </Col>
+              <Col span={24}>
+                <Form.Item>
+                  <label>Collection</label>
+                  <Select
+                    style={{ width: '100%' }}
+                    defaultValue="Manahubs"
+                    options={[
+                      {
+                        value: 'Manahubs',
+                      },
+                    ]}
+                  />
+                </Form.Item>
+              </Col>
+              <Col span={24}>
+                <Form.Item>
+                  <label>Work Description(Optional)</label>
+                  <Input.TextArea
+                    placeholder="Add description to the work"
+                    rows={5}
+                    value={formInput.description}
+                    onChange={(e) => handleInputDesc(e.target.value)}
+                    style={{ 'white-space': 'pre-wrap' }}
+                  />
+                  <div style={{ color: 'red' }}>
+                    {!formInput.description && formValid.descriptionErr
+                      ? 'Please input your description'
+                      : formInput.description && !descValid
+                      ? 'English only'
+                      : ''}
+                  </div>
+                </Form.Item>
+              </Col>
+              <Col span={24}>
+                <Form.Item>
+                  <label>Unlockable(Optional)</label>
+                  <br />
+                  <Typography.Text type="secondary">
+                    The work is available to its owner only.
+                  </Typography.Text>
+                  <Input.TextArea
+                    placeholder="You can add links and text description."
+                    rows={5}
+                    style={{ 'white-space': 'pre-wrap' }}
+                  />
+                  <div style={{ color: 'red' }}>
+                    {!formInput.description && formValid.descriptionErr
+                      ? 'Please input your description'
+                      : formInput.description && !descValid
+                      ? 'English only'
+                      : ''}
+                  </div>
+                </Form.Item>
+              </Col>
+              <Col span={24}>
+                <Form.Item>
+                  <label>Copyright(Optional)</label>
+                  <Input.TextArea
+                    placeholder="The creator has the copyright or use right to this work. You may not modify, copy, reproduce, transmit, or in anyway exploit any such content, without the authorization and consent of the creator. The creator reserve the right to take legal action against any infringement. "
+                    rows={5}
+                    style={{ 'white-space': 'pre-wrap' }}
+                  />
+                  <div style={{ color: 'red' }}>
+                    {!formInput.description && formValid.descriptionErr
+                      ? 'Please input your description'
+                      : formInput.description && !descValid
+                      ? 'English only'
+                      : ''}
+                  </div>
+                </Form.Item>
+              </Col>
+              {md && (
+                <Col
+                  span={24}
+                  style={{ display: 'flex', justifyContent: 'center' }}
+                >
+                  <Button
+                    onClick={() => createNFT()}
+                    size="large"
+                    type="primary"
+                    htmlType="submit"
+                    className={styles.btnCreate}
+                    loading={visible ? true : false}
+                    disabled={
+                      !metadata && fileType && isValidType ? true : false
+                    }
+
+                    // style={{ width: "auto", borderRadius: "12px" }}
+                  >
+                    {visible ? 'Creating' : 'Create'}
+                  </Button>
+                </Col>
+              )}
             </Row>
-          </Form>
-        </div>
-      </div>
+          </Col>
+          <Col span={24} md={12} order={0}>
+            <Form.Item>
+              <label>Image</label>
+              <Input
+                allowClear
+                type="file"
+                onChange={onChangeImage}
+                accept=".jpg,.jpeg,.mp4,.mp3,.png,.wav"
+              />
+              {!metadata && fileType && isValidType ? (
+                <img
+                  alt=""
+                  src={urlLoading}
+                  style={{ margin: '10px 0 10px 0' }}
+                  width="45"
+                />
+              ) : metadata && mediaSrc && fileType?.includes('video') ? (
+                <video width="350" controls style={{ margin: '10px 0 10px 0' }}>
+                  {' '}
+                  <source src={mediaSrc} type={fileType}></source>
+                </video>
+              ) : metadata && mediaSrc && fileType?.includes('audio') ? (
+                <audio width="350" controls style={{ margin: '10px 0 10px 0' }}>
+                  {' '}
+                  <source src={mediaSrc} type={fileType}></source>
+                </audio>
+              ) : metadata && mediaSrc && fileType?.includes('image') ? (
+                <img
+                  alt=""
+                  src={mediaSrc}
+                  style={{
+                    margin: '10px 0 10px 0',
+                    width: '210px',
+                    height: '210px',
+                  }}
+                  type={fileType}
+                  width="350"
+                />
+              ) : (
+                ''
+              )}
+              <div style={{ color: 'red' }}>
+                {!fileName && formValid.fileErr
+                  ? 'Please upload your NFT file'
+                  : ''}
+              </div>
+              <div style={{ color: 'red' }}>
+                {!isValidFileName
+                  ? 'Please remove the special character in the filename'
+                  : ''}
+              </div>
+              <div
+                style={
+                  isValidType
+                    ? { color: 'black', fontSize: '12px' }
+                    : { color: 'red', fontSize: '12px' }
+                }
+              >
+                supports JPG,JPEG,PNG,GIF,SVG,MPEG,MPG,MPEG3,MP3,MP4 files no
+                larger than 40M
+              </div>
+              {/* <div
+                    style={
+                      isValidType
+                        ? { color: 'black', fontSize: '12px' }
+                        : { color: 'red', fontSize: '12px' }
+                    }
+                  >
+                    Max file size : 50MB
+                  </div> */}
+            </Form.Item>
+          </Col>
+          {!md && (
+            <Col
+              span={24}
+              style={{ display: 'flex', justifyContent: 'center' }}
+            >
+              <Button
+                onClick={() => createNFT()}
+                size="large"
+                type="primary"
+                htmlType="submit"
+                className={styles.btnCreate}
+                loading={visible ? true : false}
+                disabled={!metadata && fileType && isValidType ? true : false}
+
+                // style={{ width: "auto", borderRadius: "12px" }}
+              >
+                {visible ? 'Creating' : 'Create'}
+              </Button>
+            </Col>
+          )}
+        </Row>
+      </Form>
     </div>
   );
 }

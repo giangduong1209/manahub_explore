@@ -31,6 +31,8 @@ const MyCollections = memo((props) => {
   }
 
   const checkAuthen = async () => {
+    Moralis.initialize("ODKsAGfZTKjTaG2Xv2Kph0ui303CX3bRtIwxQ6pj");
+    Moralis.serverURL = "https://bzyt487madhw.usemoralis.com:2053/server";
     const users = Moralis.Object.extend("profile");
     const query = new Moralis.Query(users);
     query.equalTo("address", account);

@@ -21,24 +21,7 @@ const ViewNFT = () => {
   // });
   const queryListedItems = useMoralisQuery("ListedItem", q => q.descending('createdAt'));
   // const Web3Api = useMoralisWeb3Api();
-
-  // const fetchTokenIdOwners = async () => {
-  //   const options = {
-  //     address: contract,
-  //     token_id: id,
-  //   };
-  //   const tokenIdOwners = await Web3Api.token.getTokenIdOwners(options);
-  //   console.log(tokenIdOwners);
-  // };
-
-  // useEffect(() => {
-  //   const nft = NFTTokenIds?.result?.find(
-  //     (e) => e.token_address === contract && e.token_id === id
-  //   );
-  //   setNft(nft);
-  //   // fetchTokenIdOwners();
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [NFTTokenIds]);
+  
   const { data } = queryListedItems
   useEffect(() => {
     // console.log(data);
@@ -46,12 +29,12 @@ const ViewNFT = () => {
       data.forEach(el => {
         listedItem.push({...el.attributes})
     })
-    console.log(listedItem)
+    // console.log(listedItem)
     const nft = listedItem?.find(
       // eslint-disable-next-line array-callback-return
       (e) => e.token_address === contract && e.token_id === id
     );
-    console.log("nfts " + nft);
+    // console.log("nfts " + nft);
     setNft(nft);
     // fetchTokenIdOwners();
     // eslint-disable-next-line react-hooks/exhaustive-deps
