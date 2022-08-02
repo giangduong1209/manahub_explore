@@ -57,8 +57,6 @@ const CollectionCard = ({ item }) => {
   const [auc, setAuc] = useState("1");
   const [exchangeFee, setExchangeFee] = useState();
 
-
-
   const [formValid, setFormValid] = useState({
     priceErr: false,
     priceFormatErr: false,
@@ -104,53 +102,7 @@ const CollectionCard = ({ item }) => {
       if (item.image) {
         getItemType();
         setMediaSrc(item.image);
-        // setTimeout(() => {
-        //   if (addrsList.includes(item.token_address)) {
-        //     if (item.token_address === "0xa0dbbb69b4ae1002d62aab993baa644678d8cede") {
-        //       item.image = "https://airobots.s3.filebase.com/" + item.token_id + '.png';
-        //     }
-        //     if (item.token_address === "0xE46da8A41015Bc40917f68b648dDc5d6688EeBFE") {
-
-        //       item.image = "https://1988dragon.s3.filebase.com/" + item.token_id + '.jpeg';
-        //     }
-        //   }
-        //   setMediaSrc(item.image);
-        // }, 1000);
       }
-      //  else {
-      //   findExistNftMarket(item).then((existNft) => {
-      //     if (existNft) {
-      //       item.image = existNft.attributes.image;
-      //       getItemType();
-      //       setMediaSrc(item.image);
-      //     } else {
-      //       if (!arrNFTMarketAddress[item.token_id]) {
-      //         web3.eth.setProvider(Web3.givenProvider);
-      //         let marketAddessContract = new web3.eth.Contract(contractABIJson, marketAddress);
-      //         marketAddessContract.methods.tokenURI(item.token_id).call().then((url) => {
-      //           if (url.includes("https://ipfs.moralis.io:2053/ipfs/")) {
-      //             url = url.replace("https://ipfs.moralis.io:2053/ipfs/", "https://gateway.moralisipfs.com/ipfs/");
-      //           }
-      //           if (url.includes("https://gateway.moralisipfs.com/ipfs/")) {
-      //             fetch(url)
-      //               .then(response => response.json())
-      //               .then(data => {
-      //                 arrNFTMarketAddress[item.token_id] = data.image;
-      //                 item.image = data.image;
-      //                 item.name = data.name;
-      //                 console.log(data);
-      //                 setMediaSrc(item.image);
-      //                 getItemType().then(() => {
-      //                   addItemImageFromItem(item);
-      //                 });
-      //               })
-      //               .catch((err) => console.log("fetch type media error:", err));
-      //           }
-      //         });
-      //       }
-      //     }
-      //   })
-      // }
     }
 
   }, [Moralis, ItemImage, contractABIJson, marketAddress, item]);
@@ -242,7 +194,7 @@ const CollectionCard = ({ item }) => {
       deploy_contract
         .deploy(payload)
         .send(parameter, (err, transactionHash) => {
-          console.log("Transaction Hash :", transactionHash);
+          // console.log("Transaction Hash :", transactionHash);
         })
         .on("confirmation", () => { })
         .then((newContractInstance) => {
@@ -264,7 +216,7 @@ const CollectionCard = ({ item }) => {
   }
 
   async function approveAuction(address) {
-    console.log("Data nft", item);
+    // console.log("Data nft", item);
     authenticate().then(async () => {
       const ops = {
         contractAddress: item.token_address,
@@ -275,11 +227,11 @@ const CollectionCard = ({ item }) => {
           approved: true,
         },
       };
-      console.log("approve all >>>>>>>>>", ops);
+      // console.log("approve all >>>>>>>>>", ops);
       await contractProcessor.fetch({
         params: ops,
         onSuccess: () => {
-          console.log("Approval Received");
+          // console.log("Approval Received");
           // setLoading(false);
           // list(information, price);
           // setVisibility(false);
@@ -306,14 +258,14 @@ const CollectionCard = ({ item }) => {
         _time: time,
       },
     };
-    console.log("begin start", ops);
+    // console.log("begin start", ops);
     await contractProcessor.fetch({
       params: ops,
       onSuccess: () => {
         saveListedAuction(item, price * ("1e" + 18), addrs);
         setLoading(false);
         history.push("/");
-        console.log("success start");
+        // console.log("success start");
       },
       onError: (error) => {
         console.log(error);
@@ -333,7 +285,7 @@ const CollectionCard = ({ item }) => {
     await contractProcessor.fetch({
       params: ops,
       onSuccess: (value) => {
-        console.log(value);
+        // console.log(value);
         setExchangeFee(value);
       },
     });
@@ -377,11 +329,10 @@ const CollectionCard = ({ item }) => {
     };
 
 
-    console.log(">>>>>>", ops);
     await contractProcessor.fetch({
       params: ops,
       onSuccess: () => {
-        console.log("success");
+        // console.log("success");
         setLoading(false);
         saveListedNFT(item, p);
         setVisibility(false);
@@ -514,7 +465,7 @@ const CollectionCard = ({ item }) => {
   }
 
   function onChangeTimeAuction(value) {
-    console.log(value);
+    // console.log(value);
     setTime(value);
     setFormAuctionValid({ ...formValid, timeErr: false });
   }

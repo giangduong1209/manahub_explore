@@ -140,7 +140,7 @@ const ImageBox = ({ information }) => {
     if (check) {
       setCheckLike(false);
       check.destroy().then(() => {
-        console.log("Deleted");
+        // console.log("Deleted");
         // showLike(true);
       });
     } else {
@@ -171,7 +171,7 @@ const ImageBox = ({ information }) => {
     // console.log(result)
     return result;
   };
-  console.log({ information });
+  // console.log({ information });
 
   return (
     <div className={styless.cardcreatorbox}>

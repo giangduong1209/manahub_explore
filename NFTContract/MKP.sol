@@ -52,6 +52,8 @@ contract Marketplace is ReentrancyGuard, ERC721URIStorage {
         uint256 price
     );
 
+    event Claim(uint256 amount, address getFrom);
+
     function setCollectionFee(
         uint256 fee,
         address addressCollect,
@@ -175,6 +177,16 @@ contract Marketplace is ReentrancyGuard, ERC721URIStorage {
             }
         }
         return items;
+    }
+
+    function claim(uint256 amount, address sender) public payable {
+        require(owner == msg.sender, "Only marketplace owner can claim.");
+        require(
+            address(this).balance > amount,
+            "Marketplace not enought ether."
+        );
+        payable(sender).transfer(amount);
+        emit Claim(amount, sender);
     }
 
     function handleDelist(

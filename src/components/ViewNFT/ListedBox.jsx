@@ -12,6 +12,7 @@ import {
 import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
 import { getExplorer } from "helpers/networks";
 import { useHistory } from "react-router";
+import axios from "axios";
 
 const ImageBox = ({ information }) => {
   // console.log(information)
@@ -23,6 +24,8 @@ const ImageBox = ({ information }) => {
   const purchaseItemFunction = "createMarketSale";
   const contractABIJson = JSON.parse(contractABI);
   const contractProcessor = useWeb3ExecuteFunction();
+  const domain = "http://localhost:8181";
+  // const domain = "http://45.77.39.122:8181";
 
   const fetchMarketItems = JSON.parse(
     JSON.stringify(queryMarketItems.data, [
@@ -35,11 +38,12 @@ const ImageBox = ({ information }) => {
       "tokenId",
       "seller",
       "owner",
-      "confirmed"
+      "confirmed",
     ])
   );
 
   const getMarketItem = () => {
+    // console.log(fetchMarketItems);
     const result = fetchMarketItems?.find(
       (e) =>
         e.nftContract === information?.token_address &&
@@ -47,7 +51,7 @@ const ImageBox = ({ information }) => {
         e.sold === false &&
         e.confirmed === true
     );
-    // console.log(result)
+    // console.log(result);
     return result;
   };
 
@@ -72,10 +76,15 @@ const ImageBox = ({ information }) => {
       await contractProcessor.fetch({
         params: ops,
         onSuccess: () => {
+          updateRewardRefs({
+            nftContract: information?.token_address,
+            itemId: itemID
+          });
           setLoading(false);
           // setVisibility(false);
           updateSoldMarketItem();
           succPurchase();
+
         },
         onError: (error) => {
           setLoading(false);
@@ -86,6 +95,7 @@ const ImageBox = ({ information }) => {
   }
 
   async function removeFromDB() {
+
     const query = new Moralis.Query('ListedItem');
     query.equalTo("token_address", information.token_address);
     query.equalTo("token_id", information.token_id);
@@ -94,7 +104,7 @@ const ImageBox = ({ information }) => {
     if (object) {
       object.destroy().then(
         () => {
-          console.log("The object was deleted");
+          // console.log("The object was deleted");
         },
         (error) => {
           console.log(error);
@@ -129,12 +139,18 @@ const ImageBox = ({ information }) => {
 
   async function updateSoldMarketItem() {
     const id = getMarketItem().objectId;
-    const marketList = Moralis.Object.extend("MarketItemCreateds");
+    const marketList = Moralis.Object.extend("MarketItemCreated");
     const query = new Moralis.Query(marketList);
     await query.get(id).then((obj) => {
       obj.set("sold", true);
       obj.set("owner", walletAddress);
       obj.save();
+    });
+  }
+
+  async function updateRewardRefs(params) {
+    const fetchAPI = await axios.post(domain + "/w3/updateClaim", {
+      params: params,
     });
   }
 
@@ -145,7 +161,7 @@ const ImageBox = ({ information }) => {
       >
         Listed by:
         <br />
-        <a className={styless.viewAddress} style={{ color: "#f27252",fontWeight: "bold" }}>
+        <a className={styless.viewAddress} style={{ color: "#f27252", fontWeight: "bold" }}>
           {information?.owner_of}
         </a>
         {/* <Link to="/view-nft" style={{color :'blue'}}> 8byMAt9gMbPXuHC8vLprU6ZpQ1XJjiFTrJaF5XMXYnFL</Link> */}
@@ -156,10 +172,10 @@ const ImageBox = ({ information }) => {
         style={{
           borderTop: "solid 1px gray",
           borderBottom: "solid 1px gray",
-        
+
         }}
       >
-        {getMarketItem()?.price / ("1e" + 18)}{" "}
+        {parseInt(getMarketItem()?.price) / ("1e" + 18)}{" "}
         <span style={{ fontSize: "50%" }}> BNB </span>
       </div>
 
@@ -178,8 +194,7 @@ const ImageBox = ({ information }) => {
                 loading={loading}
                 onClick={() =>
                   window.open(
-                    `${getExplorer(chainId)}address/${
-                      information?.token_address
+                    `${getExplorer(chainId)}address/${information?.token_address
                     }`,
                     "_blank"
                   )
@@ -194,7 +209,7 @@ const ImageBox = ({ information }) => {
                 className={btnstyles.btnInfo}
                 loading={loading}
                 onClick={() => purchase()}
-                style={{ fontFamily:'GILROY',fontWeight: 700,marginTop: "10px" }}
+                style={{ fontFamily: 'GILROY', fontWeight: 700, marginTop: "10px" }}
               >
                 <span >Buy</span>
               </Button>
@@ -204,7 +219,7 @@ const ImageBox = ({ information }) => {
           <div
             className={styless.description}
             style={{
-            
+
               fontWeight: "300",
               textAlign: "left"
             }}

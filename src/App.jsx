@@ -219,7 +219,7 @@ const App = ({ isServerInfo }) => {
             </Route>
             <Route path="/">
               {/* <Home /> */}
-              <Redirect to="/collection/0xE46da8A41015Bc40917f68b648dDc5d6688EeBFE" />
+              <Redirect to="/collection/0x9313F4a9C9Ae2fA3764fac606B3012cedC3CbeDA" />
             </Route>
             <Route path="/ethereum-boilerplate">
               <Redirect to="/gamify" />
