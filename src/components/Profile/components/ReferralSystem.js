@@ -6,7 +6,61 @@ import styles from '../styles.module.css';
 import { useMoralis, useMoralisQuery } from 'react-moralis';
 import { useEffect, useState } from 'react';
 import { async } from '@firebase/util';
-
+// Fake data to display
+const fakeRef = [
+  {
+    address: '0x4C53...3C2123',
+    totalTreeSystem: '####',
+    children: [
+      {
+        address: '0x4C53...3C2123123',
+        totalTreeSystem: '####',
+      },
+      {
+        address: '0x4C53...3C2123456',
+        totalTreeSystem: '####',
+        children: [
+          {
+            address: '0x4C53...3C211123',
+            totalTreeSystem: '####',
+            children: [
+              {
+                address: '0x4C53...3C4123',
+                totalTreeSystem: 'LAST',
+              },
+              {
+                address: '0x4C53...3C04456',
+                totalTreeSystem: 'LAST',
+              },
+            ],
+          },
+          {
+            address: '0x4C53...3C214456',
+            totalTreeSystem: '####',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    address: '0x4C53...3C232456',
+    totalTreeSystem: '####',
+  },
+  {
+    address: '0x4C53...3C2789',
+    totalTreeSystem: '####',
+    children: [
+      {
+        address: '0x4C53...3C2141123',
+        totalTreeSystem: '####',
+      },
+      {
+        address: '0x4C53...3C8283456',
+        totalTreeSystem: '####',
+      },
+    ],
+  },
+];
 const { TreeNode } = Tree;
 
 const ReferralSystem = ({ toggleReferral }) => {
@@ -15,6 +69,7 @@ const ReferralSystem = ({ toggleReferral }) => {
   const [totalSystem, setTotalSystem] = useState(0);
   const { Moralis, account } = useMoralis();
   const Profile = Moralis.Object.extend('profile');
+  const [nodes, setNodes] = useState(fakeRef);
 
   async function getRef(address) {
     const queryInfo = new Moralis.Query(Profile);
@@ -40,43 +95,33 @@ const ReferralSystem = ({ toggleReferral }) => {
     getRef(account);
   }
 
-  // Fake data to display
-  const fakeRef = [
-    {
-      address: '0x4C53...3C2123',
-      totalTreeSystem: '####',
-      children: [
-        {
-          address: '0x4C53...3C2123123',
-          totalTreeSystem: '####',
-        },
-        {
-          address: '0x4C53...3C2123456',
-          totalTreeSystem: '####',
-        },
-      ],
-    },
-    {
-      address: '0x4C53...3C2456',
-      totalTreeSystem: '####',
-    },
-    {
-      address: '0x4C53...3C2789',
-      totalTreeSystem: '####',
-      children: [
-        {
-          address: '0x4C53...3C2141123',
-          totalTreeSystem: '####',
-        },
-        {
-          address: '0x4C53...3C8283456',
-          totalTreeSystem: '####',
-        },
-      ],
-    },
-  ];
+  const addNodeRef = (address) => {
+    console.log('add nod here', address);
+  };
 
-  console.log({ arrRefs });
+  const renderNode = (ref) =>
+    ref?.children?.map((_ref) => (
+      <TreeNode
+        selectable={false}
+        key={_ref.address}
+        title={
+          <div
+            className={clsx(styles.box, styles.nodeBox)}
+            onClick={() => addNodeRef(_ref.address)}
+          >
+            <div className={styles.nodeLeft}>
+              <Typography.Text strong>{_ref.address}</Typography.Text>
+            </div>
+            <div className={styles.nodeRight}>
+              Total System: {_ref.totalTreeSystem} BNB
+            </div>
+          </div>
+        }
+      >
+        {_ref?.children && renderNode(_ref)}
+      </TreeNode>
+    ));
+
   return (
     <Card className={styles.card}>
       <RightOutlined onClick={toggleReferral} className={styles.btnBack} />
@@ -131,43 +176,7 @@ const ReferralSystem = ({ toggleReferral }) => {
             switcherIcon={null}
             className={styles.referralNode}
           >
-            {fakeRef?.map((ref) => (
-              <TreeNode
-                selectable={false}
-                key={ref.address}
-                title={
-                  <div className={clsx(styles.box, styles.nodeBox)}>
-                    <div className={styles.nodeLeft}>
-                      <Typography.Text strong>{ref.address}</Typography.Text>
-                    </div>
-                    <div className={styles.nodeRight}>
-                      Total System: {ref.totalTreeSystem} BNB
-                    </div>
-                  </div>
-                }
-              >
-                {ref?.children
-                  ? ref?.children.map((_ref) => (
-                      <TreeNode
-                        selectable={false}
-                        key={_ref.address}
-                        title={
-                          <div className={clsx(styles.box, styles.nodeBox)}>
-                            <div className={styles.nodeLeft}>
-                              <Typography.Text strong>
-                                {_ref.address}
-                              </Typography.Text>
-                            </div>
-                            <div className={styles.nodeRight}>
-                              Total System: {_ref.totalTreeSystem} BNB
-                            </div>
-                          </div>
-                        }
-                      />
-                    ))
-                  : null}
-              </TreeNode>
-            ))}
+            {nodes?.map((ref) => renderNode(ref))}
           </Tree>
         </Col>
       </Row>
