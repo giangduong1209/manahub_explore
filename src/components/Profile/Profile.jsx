@@ -334,7 +334,6 @@ function Profile() {
                     </div>
                     <Form.Item
                       name={'rewards'}
-                      rules={[{ required: true }]}
                       style={{ width: '100%', marginTop: '20px' }}
                     >
                       <span>{rewards / ("1e" + 18)} BNB </span>
