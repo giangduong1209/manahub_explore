@@ -131,7 +131,7 @@ function Profile() {
         background: bg,
         bio: values.bio,
       }
-      const fetchAPI = await axios.post(domain + "/user/updateProfile", {
+      const fetchAPI = await axios.post(domain + "/user/updateProfile/", {
         data: data,
       });
       if (fetchAPI) {
@@ -185,7 +185,7 @@ function Profile() {
 
   async function claim() {
     setLoading(true);
-    const fetchAPI = await axios.post(domain + "/w3/claim", {
+    const fetchAPI = await axios.post(domain + "/w3/claim/", {
       address: account,
     });
     let signTx = fetchAPI?.data?.signTx;
