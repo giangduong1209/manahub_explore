@@ -12,7 +12,6 @@ import {
 import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
 import { getExplorer } from "helpers/networks";
 import { useHistory } from "react-router";
-import axios from "axios";
 
 const ImageBox = ({ information }) => {
   // console.log(information)
@@ -24,8 +23,6 @@ const ImageBox = ({ information }) => {
   const purchaseItemFunction = "createMarketSale";
   const contractABIJson = JSON.parse(contractABI);
   const contractProcessor = useWeb3ExecuteFunction();
-  // const domain = "http://localhost:8181";
-  const domain = "http://45.77.39.122:8181";
 
   const fetchMarketItems = JSON.parse(
     JSON.stringify(queryMarketItems.data, [
@@ -149,9 +146,7 @@ const ImageBox = ({ information }) => {
   }
 
   async function updateRewardRefs(params) {
-    const fetchAPI = await axios.post(domain + "/w3/updateClaim", {
-      params: params,
-    });
+    await Moralis.Cloud.run("updateRewards", {params: params});
   }
 
   return (

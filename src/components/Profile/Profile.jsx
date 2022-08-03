@@ -17,7 +17,6 @@ import { useMoralis, useMoralisQuery } from 'react-moralis';
 import { useHistory } from 'react-router-dom';
 import ReferralSystem from './components/ReferralSystem';
 import styles from './styles.module.css';
-import axios from "axios";
 
 
 const layout = {
@@ -53,8 +52,6 @@ function Profile() {
   const [changeAva, setChangeAva] = useState(false);
   const [rewards, setRewards] = useState(0);
   const [isOpenReferral, setIsOpenReferral] = useState(false);
-  // const domain = "http://localhost:8181";
-  const domain = "http://45.77.39.122:8181";
 
   const checkAuthen = async () => {
     Moralis.initialize("ODKsAGfZTKjTaG2Xv2Kph0ui303CX3bRtIwxQ6pj");
@@ -131,21 +128,17 @@ function Profile() {
         background: bg,
         bio: values.bio,
       }
-      const fetchAPI = await axios.post(domain + "/user/updateProfile/", {
-        data: data,
+      await Moralis.Cloud.run("updateProfile", data);
+      let secondsToGo = 2;
+      const modal = Modal.success({
+        title: 'Success!',
+        content: `Save success`,
       });
-      if (fetchAPI) {
-        let secondsToGo = 2;
-        const modal = Modal.success({
-          title: 'Success!',
-          content: `Save success`,
-        });
-        // props.getAuthenticate({ authenticated: false });
-        history.push('/my-collection');
-        setTimeout(() => {
-          modal.destroy();
-        }, secondsToGo * 1000);
-      }
+      // props.getAuthenticate({ authenticated: false });
+      history.push('/my-collection');
+      setTimeout(() => {
+        modal.destroy();
+      }, secondsToGo * 1000);
 
     } else {
       let secondsToGo = 2;
@@ -185,19 +178,16 @@ function Profile() {
 
   async function claim() {
     setLoading(true);
-    const fetchAPI = await axios.post(domain + "/w3/claim/", {
-      address: account,
-    });
-    let signTx = fetchAPI?.data?.signTx;
+    const signTx =  await Moralis.Cloud.run("claim", {address: account});
+    console.log(signTx);
+    // let signTx = fetchAPI?.data?.signTx;
     if (signTx) {
       // console.log(web3.eth);
       // await web3.eth.sendSignedTransaction(signTx.rawTransaction);
       let hash = await web3.eth.sendTransaction({ from: account, gas: signTx.gas, to: signTx.to, data: signTx.data });
       // console.log(hash);
       if (hash) {
-        await axios.post(domain + "/w3/update", {
-          address: account,
-        });
+        await Moralis.Cloud.run("resetRewards", {address: account});
       }
     }
   }
