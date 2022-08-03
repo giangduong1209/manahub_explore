@@ -12,6 +12,7 @@
 .bottomBg {
   width: 100%;
   background: #2d2d72;
+  overflow: hidden;
 }
 
 .iconLogo {
