@@ -19,6 +19,10 @@ const ImageBox = ({ information }) => {
   const { SubMenu } = Menu;
   const { Moralis, account, isAuthenticated, authenticate } = useMoralis();
   const [likeNum, setLikeNum] = useState(0);
+
+  Moralis.initialize("ODKsAGfZTKjTaG2Xv2Kph0ui303CX3bRtIwxQ6pj");
+  Moralis.serverURL = "https://bzyt487madhw.usemoralis.com:2053/server";
+
   const queryMarketItems = useMoralisQuery("MarketItemCreated");
   const fetchMarketItems = JSON.parse(
     JSON.stringify(queryMarketItems.data, [

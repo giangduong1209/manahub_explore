@@ -209,7 +209,7 @@ const CollectionCardOther = ({ item }) => {
                   <Space size={2}>
                     <span className="fz-12 opacity-7 mr-5">{item?.auction?"Highest bid:":"Highest bid:"}</span>
                     <BNBIcon />
-                    <span>{item?.price} BNB</span>
+                    <span>{getMarketItem(item)?.price / ("1e" + 18)} BNB</span>
                   </Space>
                 </span>
               </div>
