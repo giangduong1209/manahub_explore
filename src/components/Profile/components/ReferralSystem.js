@@ -26,16 +26,16 @@ const ReferralSystem = ({ toggleReferral }) => {
     await getRef(address, fakeRef);
     setNodes(fakeRef);
 
-   
+
     // console.log(nodes);
     const queryInfo = new Moralis.Query(Profile);
     queryInfo.equalTo("address", address);
     const info = await queryInfo.first();
     if (info?.attributes?.commission) {
-      setCommission(info.attributes.commission);
-      totalSystemRef = totalSystemRef + info.attributes.commission;
+      setCommission(info.attributes.commission / ("1e" + 18));
+      totalSystemRef = totalSystemRef + info.attributes.commission / ("1e" + 18);
     }
-    setTotalSystem(totalSystemRef);
+    setTotalSystem(totalSystemRef.toFixed(10));
   }
 
   async function getRef(address, array) {
@@ -48,7 +48,7 @@ const ReferralSystem = ({ toggleReferral }) => {
 
       let obj = {
         address: address,
-        totalTreeSystem: element.commission,
+        totalTreeSystem: element.commission / ("1e" + 18),
         children: []
       }
       let exist = false;
@@ -107,7 +107,7 @@ const ReferralSystem = ({ toggleReferral }) => {
               <Typography.Text strong>{_ref.address}</Typography.Text>
             </div>
             <div className={styles.nodeRight}>
-              Total System: {_ref.totalTreeSystem} BNB
+              Total System: {_ref.totalTreeSystem > 0 ? _ref.totalTreeSystem.toFixed(10) : _ref.totalTreeSystem} BNB
             </div>
           </div>
         }
@@ -158,7 +158,7 @@ const ReferralSystem = ({ toggleReferral }) => {
                 <span>Your Commission:</span>
               </Col>
               <Col span={12}>
-                <span>{commission} BNB</span>
+                <span>{commission.toFixed(10)} BNB</span>
               </Col>
             </Row>
           </div>
