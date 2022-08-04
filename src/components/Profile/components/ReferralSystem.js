@@ -14,29 +14,29 @@ const fakeRef = [
     children: [
       {
         address: "0x4C53...3C2123123",
-        totalTreeSystem: "####",
+        totalTreeSystem: "ERR####",
       },
       {
         address: "0x4C53...3C2123456",
-        totalTreeSystem: "####",
+        totalTreeSystem: "F1####",
         children: [
           {
             address: "0x4C53...3C211123",
-            totalTreeSystem: "####",
+            totalTreeSystem: "F2####",
             children: [
               {
                 address: "0x4C53...3C4123",
-                totalTreeSystem: "LAST",
+                totalTreeSystem: "F3LAST",
               },
               {
                 address: "0x4C53...3C04456",
-                totalTreeSystem: "LAST",
+                totalTreeSystem: "F3LAST",
               },
             ],
           },
           {
             address: "0x4C53...3C214456",
-            totalTreeSystem: "####",
+            totalTreeSystem: "F1####",
           },
         ],
       },
@@ -99,47 +99,28 @@ const ReferralSystem = ({ toggleReferral }) => {
     console.log("add nod here", address);
   };
 
-  const renderNode = (ref) => (
-    <TreeNode
-      selectable={false}
-      key={ref.address}
-      title={
-        <div
-          className={clsx(styles.box, styles.nodeBox)}
-          onClick={() => addNodeRef(ref.address)}
-        >
-          <div className={styles.nodeLeft}>
-            <Typography.Text strong>{ref.address}</Typography.Text>
-          </div>
-          <div className={styles.nodeRight}>
-            Total System: {ref.totalTreeSystem} BNB
-          </div>
-        </div>
-      }
-    >
-      {ref?.children?.map((_ref) => (
-        <TreeNode
-          selectable={false}
-          key={_ref.address}
-          title={
-            <div
-              className={clsx(styles.box, styles.nodeBox)}
-              onClick={() => addNodeRef(_ref.address)}
-            >
-              <div className={styles.nodeLeft}>
-                <Typography.Text strong>{_ref.address}</Typography.Text>
-              </div>
-              <div className={styles.nodeRight}>
-                Total System: {_ref.totalTreeSystem} BNB
-              </div>
+  const renderNode = (ref) =>
+    ref?.children?.map((_ref) => (
+      <TreeNode
+        selectable={false}
+        key={_ref.address}
+        title={
+          <div
+            className={clsx(styles.box, styles.nodeBox)}
+            onClick={() => addNodeRef(_ref.address)}
+          >
+            <div className={styles.nodeLeft}>
+              <Typography.Text strong>{_ref.address}</Typography.Text>
             </div>
-          }
-        >
-          {_ref?.children && renderNode(_ref)}
-        </TreeNode>
-      ))}
-    </TreeNode>
-  );
+            <div className={styles.nodeRight}>
+              Total System: {_ref.totalTreeSystem} BNB
+            </div>
+          </div>
+        }
+      >
+        {_ref?.children && renderNode(_ref)}
+      </TreeNode>
+    ));
 
   return (
     <Card className={styles.card}>
@@ -195,7 +176,27 @@ const ReferralSystem = ({ toggleReferral }) => {
             switcherIcon={null}
             className={styles.referralNode}
           >
-            {nodes?.map((ref) => renderNode(ref))}
+            {nodes?.map((ref) => (
+              <TreeNode
+                selectable={false}
+                key={ref.address}
+                title={
+                  <div
+                    className={clsx(styles.box, styles.nodeBox)}
+                    onClick={() => addNodeRef(ref.address)}
+                  >
+                    <div className={styles.nodeLeft}>
+                      <Typography.Text strong>{ref.address}</Typography.Text>
+                    </div>
+                    <div className={styles.nodeRight}>
+                      Total System: {ref.totalTreeSystem} BNB
+                    </div>
+                  </div>
+                }
+              >
+                {renderNode(ref)}
+              </TreeNode>
+            ))}
           </Tree>
         </Col>
       </Row>
