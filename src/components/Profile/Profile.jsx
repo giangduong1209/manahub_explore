@@ -60,7 +60,11 @@ function Profile() {
     let subscription = await query.subscribe();
     subscription.on('update', (obj) => {
       // console.log(obj.attributes);
-      setRewards(obj.attributes.rewards);
+      if(obj.attributes.rewards){
+        setRewards(obj.attributes.rewards);
+      }else{
+        setRewards(0);
+      }    
     })
     const result =
       fetchProfile.find((element) => element.address === account) || null;
@@ -69,7 +73,12 @@ function Profile() {
       if (result.ref) {
         setrefDisabled(true);
       }
-      setRewards(result.rewards);
+      if(result.rewards){
+        setRewards(result.rewards);
+      }else{
+        setRewards(0);
+      }
+     
       form.setFieldsValue({
         ref: result.ref,
         name: result.name,
