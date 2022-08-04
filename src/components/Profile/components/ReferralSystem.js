@@ -6,93 +6,87 @@ import styles from "../styles.module.css";
 import { useMoralis, useMoralisQuery } from "react-moralis";
 import { useEffect, useState } from "react";
 import { async } from "@firebase/util";
+// import { async } from "@firebase/util";
 // Fake data to display
-const fakeRef = [
-  {
-    address: "0x4C53...3C2123",
-    totalTreeSystem: "#FIRST",
-    children: [
-      {
-        address: "0x4C53...3C2123123",
-        totalTreeSystem: "ERR####",
-      },
-      {
-        address: "0x4C53...3C2123456",
-        totalTreeSystem: "F1####",
-        children: [
-          {
-            address: "0x4C53...3C211123",
-            totalTreeSystem: "F2####",
-            children: [
-              {
-                address: "0x4C53...3C4123",
-                totalTreeSystem: "F3LAST",
-              },
-              {
-                address: "0x4C53...3C04456",
-                totalTreeSystem: "F3LAST",
-              },
-            ],
-          },
-          {
-            address: "0x4C53...3C214456",
-            totalTreeSystem: "F1####",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    address: "0x4C53...3C232456",
-    totalTreeSystem: "#FIRST",
-  },
-  {
-    address: "0x4C53...3C2789",
-    totalTreeSystem: "#FIRST",
-    children: [
-      {
-        address: "0x4C53...3C2141123",
-        totalTreeSystem: "####",
-      },
-      {
-        address: "0x4C53...3C8283456",
-        totalTreeSystem: "####",
-      },
-    ],
-  },
+let fakeRef = [
 ];
+let totalSystemRef = 0;
 const { TreeNode } = Tree;
 
 const ReferralSystem = ({ toggleReferral }) => {
-  const [arrRefs, setArrRefs] = useState([]);
   const [commission, setCommission] = useState(0);
   const [totalSystem, setTotalSystem] = useState(0);
   const { Moralis, account } = useMoralis();
   const Profile = Moralis.Object.extend("profile");
   const [nodes, setNodes] = useState(fakeRef);
+  const [gotRefInfo, setGotRefInfo] = useState(false);
 
-  async function getRef(address) {
+  async function getRefInfo(address) {
+    totalSystemRef = 0;
+    await getRef(address, fakeRef);
+    setNodes(fakeRef);
+
+   
+    // console.log(nodes);
     const queryInfo = new Moralis.Query(Profile);
     queryInfo.equalTo("address", address);
     const info = await queryInfo.first();
-    if (info?.attributes?.totalRewardsTreeSystem) {
-      setTotalSystem(info.attributes.totalRewardsTreeSystem);
-    }
     if (info?.attributes?.commission) {
       setCommission(info.attributes.commission);
+      totalSystemRef = totalSystemRef + info.attributes.commission;
     }
+    setTotalSystem(totalSystemRef);
+  }
 
+  async function getRef(address, array) {
     const query = new Moralis.Query(Profile);
     query.equalTo("ref", address);
     const result = await query.find();
-    let arr = [];
-    result.forEach((element) => {
-      arr.push(element.attributes);
-    });
-    setArrRefs(arr);
+    for (let index = 0; index < result.length; index++) {
+      const element = result[index].attributes;
+      let address = element.address.substring(0, 4) + "..." + element.address.substring(element.address.length - 4, element.address.length);
+
+      let obj = {
+        address: address,
+        totalTreeSystem: element.commission,
+        children: []
+      }
+      let exist = false;
+      for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        if (element.address != obj.address) {
+          exist = true;
+        }
+      }
+      if (!exist) {
+        array.push(obj);
+      }
+      await getRef(element.address, obj.children);
+    }
+
+    // setNodes(...arr);
+    // console.log(nodes);
   }
-  if (arrRefs.length === 0) {
-    getRef(account);
+
+  if (!gotRefInfo) {
+    setGotRefInfo(true);
+    fakeRef = [];
+    getRefInfo(account);
+  }
+
+  function getTotalSystem(array) {
+    array.forEach(element => {
+      // console.log(element);
+      totalSystemRef = totalSystemRef + element.totalTreeSystem;
+      if (element.children.length > 0) {
+        getTotalSystem(element.children);
+      }
+    });
+  }
+
+  if (nodes.length > 0) {
+    totalSystemRef = 0;
+    getTotalSystem(nodes);
   }
 
   const addNodeRef = (address) => {
@@ -189,7 +183,7 @@ const ReferralSystem = ({ toggleReferral }) => {
                       <Typography.Text strong>{ref.address}</Typography.Text>
                     </div>
                     <div className={styles.nodeRight}>
-                      Total System: {ref.totalTreeSystem} BNB
+                      Commission: {ref.totalTreeSystem} BNB
                     </div>
                   </div>
                 }

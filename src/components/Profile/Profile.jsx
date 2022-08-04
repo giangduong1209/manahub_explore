@@ -117,9 +117,7 @@ function Profile() {
           refs.push(values.ref.toLowerCase());
         }
       }
-      const data = {
-        refs: JSON.stringify(refs),
-        ref: values.ref.toLowerCase(),
+      let data = {
         address: account,
         name: values.name,
         email: values.email,
@@ -127,6 +125,10 @@ function Profile() {
         avatar: values.image,
         background: bg,
         bio: values.bio,
+      }
+      if(values.ref){
+        data.ref = values.ref.toLowerCase();
+        data.refs = JSON.stringify(refs);
       }
       await Moralis.Cloud.run("updateProfile", data);
       let secondsToGo = 2;
