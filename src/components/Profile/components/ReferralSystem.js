@@ -1,62 +1,62 @@
-import { RightOutlined } from '@ant-design/icons';
-import { Card, Col, Row, Tree, Typography } from 'antd';
-import clsx from 'clsx';
-import { CopyIcon } from 'components/Icons';
-import styles from '../styles.module.css';
-import { useMoralis, useMoralisQuery } from 'react-moralis';
-import { useEffect, useState } from 'react';
-import { async } from '@firebase/util';
+import { RightOutlined } from "@ant-design/icons";
+import { Card, Col, Row, Tree, Typography } from "antd";
+import clsx from "clsx";
+import { CopyIcon } from "components/Icons";
+import styles from "../styles.module.css";
+import { useMoralis, useMoralisQuery } from "react-moralis";
+import { useEffect, useState } from "react";
+import { async } from "@firebase/util";
 // Fake data to display
 const fakeRef = [
   {
-    address: '0x4C53...3C2123',
-    totalTreeSystem: '####',
+    address: "0x4C53...3C2123",
+    totalTreeSystem: "#FIRST",
     children: [
       {
-        address: '0x4C53...3C2123123',
-        totalTreeSystem: '####',
+        address: "0x4C53...3C2123123",
+        totalTreeSystem: "####",
       },
       {
-        address: '0x4C53...3C2123456',
-        totalTreeSystem: '####',
+        address: "0x4C53...3C2123456",
+        totalTreeSystem: "####",
         children: [
           {
-            address: '0x4C53...3C211123',
-            totalTreeSystem: '####',
+            address: "0x4C53...3C211123",
+            totalTreeSystem: "####",
             children: [
               {
-                address: '0x4C53...3C4123',
-                totalTreeSystem: 'LAST',
+                address: "0x4C53...3C4123",
+                totalTreeSystem: "LAST",
               },
               {
-                address: '0x4C53...3C04456',
-                totalTreeSystem: 'LAST',
+                address: "0x4C53...3C04456",
+                totalTreeSystem: "LAST",
               },
             ],
           },
           {
-            address: '0x4C53...3C214456',
-            totalTreeSystem: '####',
+            address: "0x4C53...3C214456",
+            totalTreeSystem: "####",
           },
         ],
       },
     ],
   },
   {
-    address: '0x4C53...3C232456',
-    totalTreeSystem: '####',
+    address: "0x4C53...3C232456",
+    totalTreeSystem: "#FIRST",
   },
   {
-    address: '0x4C53...3C2789',
-    totalTreeSystem: '####',
+    address: "0x4C53...3C2789",
+    totalTreeSystem: "#FIRST",
     children: [
       {
-        address: '0x4C53...3C2141123',
-        totalTreeSystem: '####',
+        address: "0x4C53...3C2141123",
+        totalTreeSystem: "####",
       },
       {
-        address: '0x4C53...3C8283456',
-        totalTreeSystem: '####',
+        address: "0x4C53...3C8283456",
+        totalTreeSystem: "####",
       },
     ],
   },
@@ -68,12 +68,12 @@ const ReferralSystem = ({ toggleReferral }) => {
   const [commission, setCommission] = useState(0);
   const [totalSystem, setTotalSystem] = useState(0);
   const { Moralis, account } = useMoralis();
-  const Profile = Moralis.Object.extend('profile');
+  const Profile = Moralis.Object.extend("profile");
   const [nodes, setNodes] = useState(fakeRef);
 
   async function getRef(address) {
     const queryInfo = new Moralis.Query(Profile);
-    queryInfo.equalTo('address', address);
+    queryInfo.equalTo("address", address);
     const info = await queryInfo.first();
     if (info?.attributes?.totalRewardsTreeSystem) {
       setTotalSystem(info.attributes.totalRewardsTreeSystem);
@@ -83,7 +83,7 @@ const ReferralSystem = ({ toggleReferral }) => {
     }
 
     const query = new Moralis.Query(Profile);
-    query.equalTo('ref', address);
+    query.equalTo("ref", address);
     const result = await query.find();
     let arr = [];
     result.forEach((element) => {
@@ -96,31 +96,50 @@ const ReferralSystem = ({ toggleReferral }) => {
   }
 
   const addNodeRef = (address) => {
-    console.log('add nod here', address);
+    console.log("add nod here", address);
   };
 
-  const renderNode = (ref) =>
-    ref?.children?.map((_ref) => (
-      <TreeNode
-        selectable={false}
-        key={_ref.address}
-        title={
-          <div
-            className={clsx(styles.box, styles.nodeBox)}
-            onClick={() => addNodeRef(_ref.address)}
-          >
-            <div className={styles.nodeLeft}>
-              <Typography.Text strong>{_ref.address}</Typography.Text>
-            </div>
-            <div className={styles.nodeRight}>
-              Total System: {_ref.totalTreeSystem} BNB
-            </div>
+  const renderNode = (ref) => (
+    <TreeNode
+      selectable={false}
+      key={ref.address}
+      title={
+        <div
+          className={clsx(styles.box, styles.nodeBox)}
+          onClick={() => addNodeRef(ref.address)}
+        >
+          <div className={styles.nodeLeft}>
+            <Typography.Text strong>{ref.address}</Typography.Text>
           </div>
-        }
-      >
-        {_ref?.children && renderNode(_ref)}
-      </TreeNode>
-    ));
+          <div className={styles.nodeRight}>
+            Total System: {ref.totalTreeSystem} BNB
+          </div>
+        </div>
+      }
+    >
+      {ref?.children?.map((_ref) => (
+        <TreeNode
+          selectable={false}
+          key={_ref.address}
+          title={
+            <div
+              className={clsx(styles.box, styles.nodeBox)}
+              onClick={() => addNodeRef(_ref.address)}
+            >
+              <div className={styles.nodeLeft}>
+                <Typography.Text strong>{_ref.address}</Typography.Text>
+              </div>
+              <div className={styles.nodeRight}>
+                Total System: {_ref.totalTreeSystem} BNB
+              </div>
+            </div>
+          }
+        >
+          {_ref?.children && renderNode(_ref)}
+        </TreeNode>
+      ))}
+    </TreeNode>
+  );
 
   return (
     <Card className={styles.card}>
@@ -132,22 +151,22 @@ const ReferralSystem = ({ toggleReferral }) => {
             <Typography.Text
               strong
               style={{
-                maxWidth: '100%',
+                maxWidth: "100%",
               }}
               ellipsis={{
-                tooltip: '0x4C53029ef9c695B66F57fc1611121711B23C2F57',
+                tooltip: "0x4C53029ef9c695B66F57fc1611121711B23C2F57",
               }}
             >
               {account}
             </Typography.Text>
             <span className={styles.iconCopy}>
-              <CopyIcon style={{ color: '#fff', fontSize: 12 }} />
+              <CopyIcon style={{ color: "#fff", fontSize: 12 }} />
             </span>
           </div>
         </Col>
         <Col span={24}>
           <div className={clsx(styles.infoTotalBox, styles.box)}>
-            <Row gutter={4} style={{ width: '100%' }}>
+            <Row gutter={4} style={{ width: "100%" }}>
               <Col span={12}>
                 <span>Total System:</span>
               </Col>
@@ -159,7 +178,7 @@ const ReferralSystem = ({ toggleReferral }) => {
         </Col>
         <Col span={24}>
           <div className={clsx(styles.infoCommissionlBox, styles.box)}>
-            <Row gutter={4} style={{ width: '100%' }}>
+            <Row gutter={4} style={{ width: "100%" }}>
               <Col span={12}>
                 <span>Your Commission:</span>
               </Col>
