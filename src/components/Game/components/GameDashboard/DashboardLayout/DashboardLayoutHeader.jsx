@@ -7,7 +7,7 @@ import StackSvg from '../StackSvg';
 import { useMoralis, useMoralisWeb3Api } from 'react-moralis';
 const { useBreakpoint } = Grid;
 
-const DashboardLayoutHeader = ({data, setShow, extraCn, show }) => {
+const DashboardLayoutHeader = ({setShow, extraCn, show }) => {
   const { md } = useBreakpoint();
   return (
     <div className={clsx(styles.gameLayoutHeader, extraCn)}>

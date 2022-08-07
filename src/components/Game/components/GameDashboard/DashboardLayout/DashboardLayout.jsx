@@ -37,7 +37,7 @@ const DashboardLayout = ({ setShow, show }) => {
       setNFTs(arr);
     }
   };
-  console.log(NFTs);
+  // console.log(NFTs);
   if (NFTs.length === 0) {
     getNFTs();
   }

@@ -55,7 +55,6 @@ const GameDashboardContent = ({ setShow, show }) => {
   return (
     <div className={clsx(styles.gameDashboard)}>
       <DashboardLayoutHeader
-        data={account}
         setShow={setShow}
         show={show}
         extraCn={styles.gameDashboardHeaderMobile}
