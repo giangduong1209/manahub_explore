@@ -211,9 +211,9 @@ const RoutingMenu = ({ isOpen, visileSubMenu, setVisileSubMenu }) => {
     );
   };
 
-  if (isGamePath) {
-    return renderGameMenu();
-  }
+  // if (isGamePath) {
+  //   return renderGameMenu();
+  // }
 
   if (isDexPath) {
     return renderDexMenu();
@@ -315,6 +315,11 @@ const RoutingMenu = ({ isOpen, visileSubMenu, setVisileSubMenu }) => {
                 <Menu.Item key="my-collection">
                   <NavLink to="/my-collection" className={styles.menuLink}>
                     My Collections
+                  </NavLink>
+                </Menu.Item>
+                <Menu.Item key="staking">
+                  <NavLink to="/game/dasboard" className={styles.menuLink}>
+                    Staking
                   </NavLink>
                 </Menu.Item>
                 <Menu.Item key="transaction">

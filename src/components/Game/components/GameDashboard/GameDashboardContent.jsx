@@ -16,6 +16,7 @@ const GameDashboardContent = ({ setShow, show }) => {
     // let a = Math.imul
     // console.log(a)
   }
+  console.log(prop);
   return (
     <div className={clsx(styles.gameDashboard)}>
       <DashboardLayoutHeader
