@@ -29,9 +29,9 @@ const LayoutItem = ({ item, type, image }) => {
           Start Stacking
         </Button>
 
-        <Button className={styles.sellOnMpBtn} block>
+        {/* <Button className={styles.sellOnMpBtn} block>
           Sell on Marketplace
-        </Button>
+        </Button> */}
       </div>
     </div>
   );
