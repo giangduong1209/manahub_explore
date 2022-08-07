@@ -1,23 +1,24 @@
 import { Button, Grid } from 'antd';
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '../../../styles.module.css';
 
 import clsx from 'clsx';
 import StackSvg from '../StackSvg';
+import { useMoralis, useMoralisWeb3Api } from 'react-moralis';
 const { useBreakpoint } = Grid;
 
-const DashboardLayoutHeader = ({ setShow, extraCn, show }) => {
+const DashboardLayoutHeader = ({data, setShow, extraCn, show }) => {
   const { md } = useBreakpoint();
   return (
     <div className={clsx(styles.gameLayoutHeader, extraCn)}>
       <div className={styles.gameLayoutHeaderItem}>
-        <p>$POLIS Balance</p>
-        <div className={clsx('input-text')}>50000 POLIS</div>
+        <p>$MataHubs Balance</p>
+        <div className={clsx('input-text')}>0</div>
       </div>
 
       <div className={styles.gameLayoutHeaderItem}>
         <p>My Total NFTs</p>
-        <div className={clsx('input-text')}>135</div>
+        <div className={clsx('input-text')}>0</div>
       </div>
 
       {!md && (
@@ -28,10 +29,10 @@ const DashboardLayoutHeader = ({ setShow, extraCn, show }) => {
               ...(show
                 ? { color: '#FEA013', background: '#fff' }
                 : {
-                    color: '#fff',
-                    background:
-                      'linear-gradient(180deg, #FEA013 0%, #FEA013 100%)',
-                  }),
+                  color: '#fff',
+                  background:
+                    'linear-gradient(180deg, #FEA013 0%, #FEA013 100%)',
+                }),
               border: 'none',
               display: 'inline-flex',
               justifyContent: 'center',
