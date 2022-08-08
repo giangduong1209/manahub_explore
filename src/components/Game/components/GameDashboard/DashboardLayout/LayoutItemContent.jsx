@@ -15,14 +15,14 @@ const LayoutItemContent = ({ item, type, image }) => {
         <p className={styles.title}>{item.title}</p>
         <p className={styles.description}>{item.description}</p>
 
-        <div
+        {/* <div
           className={clsx("input-text")}
           style={{ marginBottom: 5, marginTop: "auto" }}
         >
           2
-        </div>
+        </div> */}
 
-        <Button className={styles.unstackingBtn} block>
+        <Button className={styles.unstackingBtn} style={{ marginBottom: 5, marginTop: "auto" }} block>
           Unstacking
         </Button>
       </div>
