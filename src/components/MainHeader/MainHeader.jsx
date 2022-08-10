@@ -275,8 +275,8 @@ function MainHeader() {
               </div>
               <span className={styles.textLink}>DEX</span>
             </Link>
-            {/* <Link
-              to="/game"
+            <Link
+              to="/game/dasboard"
               className={styles.subMenuMobileLink}
               onClick={handleClickSubMenu}
               ư
@@ -286,13 +286,13 @@ function MainHeader() {
                   [styles.logoActive]: routePage === "game",
                 })}
               >
-                <GameLogo
+                <DexLogo
                   onClick={() => setVisileSubMenu(true)}
                   className="icon-logo"
                 />
               </div>
-              <span className={styles.textLink}>Game</span>
-            </Link> */}
+              <span className={styles.textLink}>Staking</span>
+            </Link>
 
             {/* <Link to="/marketplace">
               <Space

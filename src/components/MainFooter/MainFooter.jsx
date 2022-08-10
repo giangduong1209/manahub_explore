@@ -24,7 +24,7 @@ import { MdMail } from 'react-icons/md';
 import { useLocation } from 'react-router-dom';
 import styles from './styles.module.css';
 import React, { useMemo } from 'react';
-import logoManahubs from "./ManaHub_logo_light.svg";
+import logoManahubs from "./logo_manahubs.svg";
 
 const { Title } = Typography;
 const { Footer } = Layout;
@@ -219,7 +219,7 @@ const MainFooter = () => {
       <div className={styles.container}>
         <Row className={styles.bottomFooter} justify="space-between">
           <Col>
-            <a href="https://metapolis.gg" rel="noopener noreferrer">
+            <a href="https://manahubs.com/home-nft-market" rel="noopener noreferrer">
               <img
                 src={logoManahubs}
                 alt="logo footer"
