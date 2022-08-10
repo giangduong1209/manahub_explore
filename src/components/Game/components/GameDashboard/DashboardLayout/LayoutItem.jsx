@@ -23,10 +23,10 @@ const LayoutItem = ({ item, type, image }) => {
 
         <Button
           style={{ marginBottom: 5,marginTop: "auto" }}
-          className={styles.startStackingBtn}
+          className={styles.startStakingBtn}
           block
         >
-          Start Stacking
+          Start Staking
         </Button>
 
         {/* <Button className={styles.sellOnMpBtn} block>

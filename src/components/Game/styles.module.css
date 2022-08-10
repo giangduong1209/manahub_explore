@@ -399,33 +399,33 @@
   -webkit-text-fill-color: transparent;
 }
 
-.layoutItem .unstackingBtn {
+.layoutItem .unStakingBtn {
   border: 1px solid #FEA013;
 }
 
-.layoutItem .unstackingBtn span {
+.layoutItem .unStakingBtn span {
   background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.layoutItem .unstackingBtn:hover {
+.layoutItem .unStakingBtn:hover {
   border: none;
   background: #FEA013;
 }
 
-.layoutItem .unstackingBtn:hover span {
+.layoutItem .unStakingBtn:hover span {
   background: linear-gradient(180deg, #fff 0%, #fff 100%);
   background-clip: text;
 }
 
-.layoutItem .startStackingBtn {
+.layoutItem .startStakingBtn {
   color: #36a920;
   border: solid 1px #36a920;
 }
 
-.layoutItem .startStackingBtn:hover {
+.layoutItem .startStakingBtn:hover {
   color: #fff;
   background-color: #36a920;
   border: none;

@@ -60,7 +60,7 @@ const GameDashboardContent = ({ setShow, show }) => {
         extraCn={styles.gameDashboardHeaderMobile}
       />
 
-      <div className={clsx(styles.gameDashboardTitle)}>Stacking</div>
+      <div className={clsx(styles.gameDashboardTitle)}>Staking</div>
 
       <div className={clsx(styles.gameDashboardContent)}>
         {
@@ -91,7 +91,7 @@ const GameDashboardContent = ({ setShow, show }) => {
         </div>
 
         <div>
-          <p className={styles.gameDashboardFooterTitle}>Daily NFTs Stacking</p>
+          <p className={styles.gameDashboardFooterTitle}>Daily NFTs Staking</p>
           <Button block disabled={total > 0} onClick={() => claim()}>Claim</Button>
         </div>
       </div>

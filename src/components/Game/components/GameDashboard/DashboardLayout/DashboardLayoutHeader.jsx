@@ -12,7 +12,7 @@ const DashboardLayoutHeader = ({setShow, extraCn, show }) => {
   return (
     <div className={clsx(styles.gameLayoutHeader, extraCn)}>
       <div className={styles.gameLayoutHeaderItem}>
-        <p>$MataHubs Balance</p>
+        <p>$MAH Balance</p>
         <div className={clsx('input-text')}>0</div>
       </div>
 

@@ -22,8 +22,8 @@ const LayoutItemContent = ({ item, type, image }) => {
           2
         </div> */}
 
-        <Button className={styles.unstackingBtn} style={{ marginBottom: 5, marginTop: "auto" }} block>
-          Unstacking
+        <Button className={styles.unStakingBtn} style={{ marginBottom: 5, marginTop: "auto" }} block>
+          UnStaking
         </Button>
       </div>
     </div>

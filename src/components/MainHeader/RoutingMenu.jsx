@@ -317,11 +317,11 @@ const RoutingMenu = ({ isOpen, visileSubMenu, setVisileSubMenu }) => {
                     My Collections
                   </NavLink>
                 </Menu.Item>
-                <Menu.Item key="staking">
+                {/* <Menu.Item key="staking">
                   <NavLink to="/game/dasboard" className={styles.menuLink}>
                     Staking
                   </NavLink>
-                </Menu.Item>
+                </Menu.Item> */}
                 <Menu.Item key="transaction">
                   <NavLink to="/transaction" className={styles.menuLink}>
                     Transactions

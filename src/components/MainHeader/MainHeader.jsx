@@ -8,8 +8,9 @@ import { HambugerBar } from "./IconHeader";
 import RoutingMenu from "./RoutingMenu";
 import styles from "./styles.module.css";
 import { Dot } from "./TopMenuItem";
-import logoManahubsDex from "./ManaHub_logo_dex_white.svg";
-import logoManahubsMKP from "./ManaHub_logo_mkp_white.svg";
+import logoManahubsStaking from "./Logo_Staking.svg";
+import logoManahubsDex from "./Logo_Dex.svg";
+import logoManahubsMKP from "./Logo_MKP.svg";
 import DexLogo from "components/Icons/DexLogo";
 // import GameLogo from "components/Icons/GameLogo";
 import MarketplaceLogo from "components/Icons/MarketplaceLogo";
@@ -110,7 +111,7 @@ function MainHeader() {
 
   useEffect(() => {
     const defaultChain = menuItems.find((item) => item.key === "0x61");
-  
+
     if (!chainId || !isAuthenticated || !account) {
       setSelected(defaultChain);
     } else {
@@ -197,15 +198,15 @@ function MainHeader() {
 
                   {(md || routePage === "game") && (
                     <div className={styles.topMenuIcon}>
-                      {/* <Link to="/game">
+                      <Link to="/game/dasboard">
                         <div className={styles.topMenuIcon}>
-                          <GameMenu />
+                          <img src={logoManahubsStaking} />
                         </div>
                       </Link>
 
                       {md && routePage === "game" && (
                         <Dot className={styles.topMenuIconDot} />
-                      )} */}
+                      )}
                     </div>
                   )}
                 </div>
