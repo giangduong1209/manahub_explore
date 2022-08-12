@@ -6,12 +6,12 @@
 
 .topBg {
   width: 100%;
-  background: linear-gradient(180deg, #fea013 0%, #fea013 100%);
+  background: linear-gradient(180deg, #2d2d72 0%, #2d2d72 100%);
 }
 
 .bottomBg {
   width: 100%;
-  background: #2d2d72;
+  background: #fea013;
   overflow: hidden;
 }
 
@@ -96,7 +96,7 @@
   transition: all 0.2s ease-out;
   max-width: 1200px;
   margin: 0 auto;
-  background: #2d2d72;
+  background: #fea013;
 }
 
 .bottomHeaderClose {
@@ -165,7 +165,7 @@
 
 :local .bottomMenu :global(.ant-menu-item-selected) {
   background-color: transparent !important;
-  background: -webkit-linear-gradient(#fea013, #fea013);
+  background: -webkit-linear-gradient(#2d2d72, #2d2d72);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -246,7 +246,7 @@ a.menuLink,
 }
 
 .subMenuMobile {
-  background: #2D2D72;
+  background: #2d2d72;
   padding: 8px;
   display: flex;
   flex-direction: column;

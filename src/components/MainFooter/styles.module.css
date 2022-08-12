@@ -52,7 +52,7 @@
   border-color: unset;
 }
 
-.form input[type="text"] {
+.form input[type='text'] {
   height: 42px !important;
 }
 
@@ -79,7 +79,7 @@
 
 .circle::before {
   position: absolute;
-  content: "";
+  content: '';
   border: 4px solid rgba(151, 175, 213, 0.3);
   border-radius: 50%;
   border-top-color: #fff;
@@ -103,7 +103,7 @@
 
 .circle::after {
   position: absolute;
-  content: "";
+  content: '';
   border: 4px solid rgba(151, 175, 213, 0.3);
   border-radius: 50%;
   top: 35px;
@@ -148,13 +148,13 @@
   background: #ffffff;
   border-radius: 10px;
   width: 136px;
-  border-color: #FEA013;
+  border-color: #fea013;
 }
 
 .exploreBtn:global(.ant-btn:hover),
 .exploreBtn:global(.ant-btn:focus) {
   color: #ffffff;
-  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
+  background: linear-gradient(180deg, #fea013 0%, #fea013 100%);
   border: none;
 }
 
@@ -168,7 +168,7 @@
 
 .exploreBtn span {
   font-weight: 700;
-  background: -webkit-linear-gradient(#FEA013, #FEA013);
+  background: -webkit-linear-gradient(#fea013, #fea013);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -200,7 +200,7 @@
 
 .container {
   padding: 50px 20px;
-  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
+  background: linear-gradient(180deg, #2d2d72 0%, #2d2d72 100%);
 }
 
 .menuWrapper {
@@ -221,7 +221,7 @@
 }
 
 .menuWrapper :global(a:hover) {
-  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
+  background: linear-gradient(180deg, #fea013 0%, #fea013 100%);
   color: #fff;
   border-radius: 10px;
 }
