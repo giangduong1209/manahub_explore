@@ -6,7 +6,7 @@
 
 .topBg {
   width: 100%;
-  background: linear-gradient(180deg, #2d2d72 0%, #2d2d72 100%);
+  background: linear-gradient(180deg, #0e0a35 0%, #0e0a35 100%);
 }
 
 .bottomBg {
@@ -43,6 +43,7 @@
 .topMenuIcon {
   display: flex;
   position: relative;
+  max-width: 200px;
 }
 
 .topMenuWrapper {
