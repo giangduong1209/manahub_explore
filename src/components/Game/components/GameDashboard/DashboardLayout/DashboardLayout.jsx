@@ -4,43 +4,56 @@ import styles from "../../../styles.module.css";
 import DashboardLayoutHeader from "./DashboardLayoutHeader";
 import LayoutItem from "./LayoutItem";
 import { properties } from "helpers/properties-full";
-import { useMoralis, useMoralisWeb3Api } from 'react-moralis';
+import { useMoralis } from 'react-moralis';
 import { useState } from "react";
+import Web3 from "web3";
+import abiNFTs from "../abi_nfts";
+import axios from "axios";
+let isRunning = false;
 
 const DashboardLayout = ({ setShow, show }) => {
-  const { Moralis, account } = useMoralis();
-  Moralis.start({ serverUrl: "https://bzyt487madhw.usemoralis.com:2053/server", appId: "ODKsAGfZTKjTaG2Xv2Kph0ui303CX3bRtIwxQ6pj" });
-  const Web3Api = useMoralisWeb3Api();
+  const web3Js = new Web3(Web3.givenProvider || 'https://data-seed-prebsc-1-s1.binance.org:8545/');
+  const { account } = useMoralis();
+
 
   const [NFTs, setNFTs] = useState([]);
-  const addr = "0xfde910FbaA9A6fDD5d3F80cCD44a54763DE2d9d0";
-
-  const prop = properties.slice(0, 10);
+  const addrNFT = "0x505D5fF937bB7E377Ed94b99A992db40A0276B67";
+  const smNFTs = new web3Js.eth.Contract(abiNFTs, addrNFT);
   let arr = [];
-  const getNFTs = async () => {
-    const options = {
-      chain: "bsc",
-      address: account,
-    };
-    const res = await Web3Api.account.getNFTs(options);
 
-    // console.log(res.result);
-    for (let index = 0; index < res.result.length; index++) {
-      const element = res.result[index];
-      // console.log(element);
-      if (element.token_address.toLowerCase() === addr.toLowerCase()) {
-        arr.push(element);
+  const getNFTs = async () => {
+    try {
+      if (account && smNFTs) {
+        let balance = await smNFTs.methods.balanceOf(account).call();
+        for (let i = 0; i < balance; i++) {
+          let tokenId = await smNFTs.methods.tokenOfOwnerByIndex(account, i).call();
+          let tokenURI = await smNFTs.methods.tokenURI(tokenId).call();
+          if (tokenURI.includes('ipfs://bafy')) {
+            tokenURI = tokenURI.replace('ipfs://', 'https://nftstorage.link/ipfs/');
+          }
+          const metadata = (await axios.get(tokenURI)).data;
+          // console.log(metadata);
+          if (metadata) {
+            let item = {
+              image: metadata.image.replace('ipfs://', 'https://nftstorage.link/ipfs/'),
+              description: metadata.description,
+              tokenId: tokenId,
+              name: metadata.name,
+            }
+            arr.push(item);
+          }
+
+        }
+        setNFTs(arr);
       }
+    } catch (error) {
+      console.log(error);
     }
-    // console.log(arr);
-    if (arr.length > 0) {
-      setNFTs(arr);
-    }
+
   };
-  // console.log(NFTs);
-  if (NFTs.length === 0) {
-    getNFTs();
-  }
+  getNFTs();
+
+
   return (
     <div
       className={clsx(styles.gameLayout, styles.gameDashboardLayout, {
@@ -58,98 +71,15 @@ const DashboardLayout = ({ setShow, show }) => {
             <LayoutItem
               item={{
                 title: e.name,
-                description: JSON.parse(e.metadata).description,
-                code: "#" + e.token_id,
-                price: e.price,
-                owner: {
-                  name: e.owner,
-                },
+                description: e.description,
+                code: "#" + e.tokenId,
+                tokenId: e.tokenId,
               }}
               type="sr"
-              image={JSON.parse(e.metadata).image}
+              image={e.image}
             />
           ))
         }
-        {/* <LayoutItem
-          item={{
-            title: "Lorem ipsum",
-            description:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ipsum lorem, sodales ut molestie non, pharetra ut velit. Etiam tincidunt quam purus, vitae venenatis sapien cursus vel. Nam mollis, turpis at luctus commodo, dui urna imperdiet ante, et finibus velit nunc fermentum diam. Suspendisse tincidunt tempor neque, vel cursus lectus maximus eu",
-            code: "#00010",
-            price: "2000",
-            owner: {
-              name: "Lorem ipsum",
-            },
-          }}
-          type="ssr"
-          image={"https://picsum.photos/700/300"}
-        />
-        <LayoutItem
-          item={{
-            title: "Lorem ipsum",
-            description: "Lorem ipsum ipsum ipsum",
-            code: "#00020",
-            price: "2000",
-            owner: {
-              name: "Lorem ipsum",
-            },
-          }}
-          type="sr"
-          image={"https://picsum.photos/700/300"}
-        />
-        <LayoutItem
-          item={{
-            title: "Lorem ipsum",
-            description: "Lorem ipsum ipsum ipsum",
-            code: "#00030",
-            price: "2000",
-            owner: {
-              name: "Lorem ipsum",
-            },
-          }}
-          type="r"
-          image={"https://picsum.photos/700/300"}
-        />
-        <LayoutItem
-          item={{
-            title: "Lorem ipsum",
-            description:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ipsum lorem, sodales ut molestie non, pharetra ut velit. Etiam tincidunt quam purus, vitae venenatis sapien cursus vel. Nam mollis, turpis at luctus commodo, dui urna imperdiet ante, et finibus velit nunc fermentum diam. Suspendisse tincidunt tempor neque, vel cursus lectus maximus eu",
-            code: "#000a0",
-            price: "2000",
-            owner: {
-              name: "Lorem ipsum",
-            },
-          }}
-          type="ssr"
-          image={"https://picsum.photos/700/300"}
-        />
-        <LayoutItem
-          item={{
-            title: "Lorem ipsum",
-            description: "Lorem ipsum ipsum ipsum",
-            code: "#0002c0",
-            price: "2000",
-            owner: {
-              name: "Lorem ipsum",
-            },
-          }}
-          type="sr"
-          image={"https://picsum.photos/700/300"}
-        />
-        <LayoutItem
-          item={{
-            title: "Lorem ipsum",
-            description: "Lorem ipsum ipsum ipsum",
-            code: "#000t0",
-            price: "2000",
-            owner: {
-              name: "Lorem ipsum",
-            },
-          }}
-          type="r"
-          image={"https://picsum.photos/700/300"}
-        /> */}
       </div>
     </div>
   );

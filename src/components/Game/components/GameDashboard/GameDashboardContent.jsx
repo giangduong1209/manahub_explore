@@ -5,52 +5,68 @@ import { Button } from "antd";
 
 import LayoutItemContent from "./DashboardLayout/LayoutItemContent";
 import DashboardLayoutHeader from "./DashboardLayout/DashboardLayoutHeader";
-import { properties } from "helpers/properties-full";
-import { useState } from "react";
-import { useMoralis, useMoralisWeb3Api } from 'react-moralis';
+import { useState, useEffect } from "react";
+import { useMoralis, useWeb3ExecuteFunction } from 'react-moralis';
+import abiStaking from "./abi_staking";
+import Web3 from "web3";
+let isRunning = false;
 
 const GameDashboardContent = ({ setShow, show }) => {
+  const [isDisable, setIsDisable] = useState(false);
   const { Moralis, account } = useMoralis();
   Moralis.start({ serverUrl: "https://bzyt487madhw.usemoralis.com:2053/server", appId: "ODKsAGfZTKjTaG2Xv2Kph0ui303CX3bRtIwxQ6pj" });
-  const Web3Api = useMoralisWeb3Api();
-
-  const prop = properties.slice(10, 17);
+  const web3Js = new Web3(Web3.givenProvider || 'https://data-seed-prebsc-1-s1.binance.org:8545/');
   const [total, setTotal] = useState(0);
-  const [totalMyNFTs, setTotalMyNFTs] = useState(0);
   const [NFTs, setNFTs] = useState([]);
-  const addr = "0xfde910FbaA9A6fDD5d3F80cCD44a54763DE2d9d0";
+  const addr = "0x505D5fF937bB7E377Ed94b99A992db40A0276B67";
+  const addrStaking = "0x1b22c2332DB992D1c8052C3B02D432Ca5D70dbC2";
+  const contractProcessor = useWeb3ExecuteFunction();
+  const smStaking = new web3Js.eth.Contract(abiStaking, addrStaking);
 
-  const claim = () => {
-    // setTotal(Math.round(2 * 7))
-    // let a = Math.imul
-    // console.log(a)
+  const claim = async () => {
+    setIsDisable(true);
+    console.log('claim');
+    const ops = {
+      contractAddress: addrStaking,
+      functionName: "claimRewards",
+      abi: abiStaking,
+      params: {
+      },
+    };
+    await contractProcessor.fetch({
+      params: ops,
+      onSuccess: () => {
+        setTotal(0);
+      }
+    });
   }
   let arr = [];
   const getNFTs = async () => {
-    const options = {
-      chain: "bsc",
-      address: account,
-    };
-    const res = await Web3Api.account.getNFTs(options);
-
-    // console.log(res.result);
-    for (let index = 0; index < res.result.length; index++) {
-      const element = res.result[index];
-      // console.log(element);
-      if (element.token_address.toLowerCase() === addr.toLowerCase()) {
-        arr.push(element);
-      }
-    }
-    // console.log(arr);
-    if (arr.length > 0) {
-      setTotalMyNFTs(NFTs.length);
-      setNFTs(arr);
-    }
+    const Staking = Moralis.Object.extend("Staking");
+    const query = new Moralis.Query(Staking);
+    query.equalTo("staker", account);
+    query.equalTo("addressNFT", addr);
+    query.equalTo("addressStaking", addrStaking);
+    query.equalTo("unstake", false);
+    const arrObj = await query.find();
+    setNFTs(arrObj);
   };
-  // console.log(NFTs);
-  if (NFTs.length === 0) {
-    getNFTs();
+
+  const getTotal = async () => {
+    const res = await smStaking.methods.userStakeInfo(account).call();
+    // console.log(res);
+    setTotal(res._availableRewards / 10 ** 18)
   }
+  // console.log(NFTs);
+  useEffect(() => {
+    if (account) {
+      getTotal();
+      getNFTs();
+    }
+  });
+
+
+
   // console.log(prop);
   return (
     <div className={clsx(styles.gameDashboard)}>
@@ -67,16 +83,13 @@ const GameDashboardContent = ({ setShow, show }) => {
           NFTs.map((e) => (
             <LayoutItemContent
               item={{
-                title: e.name,
-                description: JSON.parse(e.metadata).description,
-                code: "#" + e.token_id,
-                price: e.price,
-                owner: {
-                  name: e.owner,
-                },
+                title: e.attributes.name,
+                description: e.attributes.description,
+                code: "#" + e.attributes.tokenId,
+                tokenId: e.attributes.tokenId
               }}
-              type="sr"
-              image={JSON.parse(e.metadata).image}
+              type={e.attributes.type}
+              image={e.attributes.image}
             />
           ))
         }
@@ -86,13 +99,13 @@ const GameDashboardContent = ({ setShow, show }) => {
         <div>
           <p className={styles.gameDashboardFooterTitle}>Total Collectibles</p>
           <div className={clsx("input-text", styles.inputCollectible)}>
-            {total}
+            {total.toFixed(16)}
           </div>
         </div>
 
         <div>
           <p className={styles.gameDashboardFooterTitle}>Daily NFTs Staking</p>
-          <Button block disabled={total > 0} onClick={() => claim()}>Claim</Button>
+          <Button block disabled={isDisable} onClick={() => claim()}>Claim</Button>
         </div>
       </div>
     </div>
