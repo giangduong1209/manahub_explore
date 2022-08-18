@@ -12,10 +12,8 @@ import axios from "axios";
 let isRunning = false;
 
 const DashboardLayout = ({ setShow, show }) => {
-  const web3Js = new Web3(Web3.givenProvider || 'https://data-seed-prebsc-1-s1.binance.org:8545/');
+  const web3Js = new Web3(new Web3.providers.WebsocketProvider('wss://ws-nd-524-739-052.p2pify.com/9984e6c12c83e092549386bc36509a29'));
   const { account } = useMoralis();
-
-
   const [NFTs, setNFTs] = useState([]);
   const addrNFT = "0x70cbc0e9eb87035ad2fbb5eba433b9496195e991";
   const smNFTs = new web3Js.eth.Contract(abiNFTs, addrNFT);
@@ -29,13 +27,18 @@ const DashboardLayout = ({ setShow, show }) => {
           let tokenId = await smNFTs.methods.tokenOfOwnerByIndex(account, i).call();
           let tokenURI = await smNFTs.methods.tokenURI(tokenId).call();
           if (tokenURI.includes('ipfs://bafy')) {
-            tokenURI = tokenURI.replace('ipfs://', 'https://nftstorage.link/ipfs/');
+            tokenURI = tokenURI.replace('ipfs://', '');
+            let arrStr = tokenURI.split('/');
+            tokenURI = 'https://'+ arrStr[0]+'.ipfs.nftstorage.link/'+arrStr[1];
           }
           const metadata = (await axios.get(tokenURI)).data;
           // console.log(metadata);
           if (metadata) {
+            let linkImage = metadata.image.replace('ipfs://', '');
+            let arrStr = linkImage.split('/');
+            linkImage = 'https://'+ arrStr[0]+'.ipfs.nftstorage.link/'+arrStr[1];
             let item = {
-              image: metadata.image.replace('ipfs://', 'https://nftstorage.link/ipfs/'),
+              image: linkImage,
               description: metadata.description,
               tokenId: tokenId,
               name: metadata.name,
