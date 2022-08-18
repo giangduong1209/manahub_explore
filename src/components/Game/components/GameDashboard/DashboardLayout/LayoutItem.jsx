@@ -12,8 +12,8 @@ import { useMoralis, useWeb3ExecuteFunction } from 'react-moralis';
 
 const LayoutItem = ({ item, type, image }) => {
   const { Moralis, authenticate, account } = useMoralis();
-  const addrNFTs = "0x505D5fF937bB7E377Ed94b99A992db40A0276B67";
-  const addrStaking = "0x1b22c2332DB992D1c8052C3B02D432Ca5D70dbC2";
+  const addrNFTs = "0x70cbc0e9eb87035ad2fbb5eba433b9496195e991";
+  const addrStaking = "0xE2C7f1bE4d452d82b78989cBf60108c1E0f768bF";
   const contractProcessor = useWeb3ExecuteFunction();
   const [isDisable, setIsDisable] = useState(false);
   

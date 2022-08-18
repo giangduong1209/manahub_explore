@@ -17,7 +17,7 @@ const DashboardLayout = ({ setShow, show }) => {
 
 
   const [NFTs, setNFTs] = useState([]);
-  const addrNFT = "0x505D5fF937bB7E377Ed94b99A992db40A0276B67";
+  const addrNFT = "0x70cbc0e9eb87035ad2fbb5eba433b9496195e991";
   const smNFTs = new web3Js.eth.Contract(abiNFTs, addrNFT);
   let arr = [];
 

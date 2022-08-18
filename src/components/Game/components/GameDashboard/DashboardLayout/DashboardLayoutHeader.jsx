@@ -14,7 +14,7 @@ let isRunning = false;
 const DashboardLayoutHeader = ({ setShow, extraCn, show }) => {
   const web3Js = new Web3(Web3.givenProvider || 'https://data-seed-prebsc-1-s1.binance.org:8545/');
   const { Moralis, account } = useMoralis();
-  const addrNFT = "0x505D5fF937bB7E377Ed94b99A992db40A0276B67";
+  const addrNFT = "0x70cbc0e9eb87035ad2fbb5eba433b9496195e991";
   const { md } = useBreakpoint();
   const [total, setTotal] = useState(0);
   const [totalMyNFTs, setTotalMyNFTs] = useState(0);
