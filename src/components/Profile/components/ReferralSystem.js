@@ -77,6 +77,9 @@ const ReferralSystem = ({ toggleReferral }) => {
   function getTotalSystem(array) {
     array.forEach(element => {
       // console.log(element);
+      if (!element.totalTreeSystem) {
+        element.totalTreeSystem = 0;
+      }
       totalSystemRef = totalSystemRef + element.totalTreeSystem;
       if (element.children.length > 0) {
         getTotalSystem(element.children);
@@ -92,6 +95,9 @@ const ReferralSystem = ({ toggleReferral }) => {
   const addNodeRef = (address) => {
     console.log("add nod here", address);
   };
+  if (totalSystem === 'NA') {
+    totalSystem = 0;
+  }
 
   const renderNode = (ref) =>
     ref?.children?.map((_ref) => (
