@@ -281,11 +281,7 @@ const CollectionBanner = () => {
             </Col>
           </Row>
         </div>
-        <div className={styless.desc} style={{ fontFamily: "GILROY " }}>
-          Manahubs is a bridge to help artists and businesses access Blockchain through the issuance of NFT. Companies can also connect ads with artists more straightforwardly and closer.<br />
-          Manahubs also has a clear roadmap for building a fashion catwalk and a music stage based on virtual reality technology. Vietnamese artists and fans can meet and interact through VR glasses.<br />
-          Besides, we will directly advise on the strategic plan and orientation of Blockchain application for film activities; this is a high potential opportunity for film producers in Vietnam.
-        </div>
+        <div className={styless.desc} style={{ fontFamily: "GILROY " }}>In the world of 2022, everything in the world became chaotic, wars of epidemics, economic crises, and the collapse of the world's main market. The New World MANAHUBS was born with the aim of bringing together people from all over the world towards a new era of escaping poverty and restructuring the global financial system.</div>
       </div>
     </div>
   );
