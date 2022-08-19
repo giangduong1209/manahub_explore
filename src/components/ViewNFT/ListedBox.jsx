@@ -73,7 +73,8 @@ const ImageBox = ({ information }) => {
       await contractProcessor.fetch({
         params: ops,
         onSuccess: () => {
-          updateRewardRefs({
+          console.log('updateRewardRefs')
+          await updateRewardRefs({
             nftContract: information?.token_address,
             itemId: itemID
           });
@@ -146,7 +147,7 @@ const ImageBox = ({ information }) => {
   }
 
   async function updateRewardRefs(params) {
-    await Moralis.Cloud.run("updateRewards", {params: params});
+    await Moralis.Cloud.run("updateRewards", { params: params });
   }
 
   return (
