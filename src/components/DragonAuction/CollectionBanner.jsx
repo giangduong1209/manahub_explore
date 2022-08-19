@@ -216,7 +216,7 @@ const CollectionBanner = () => {
                   className={styless.number}
                   style={{ fontFamily: "GILROY " }}
                 >
-                  1988
+                  4999
                 </span>
                 <span
                   className={styless.attr}
