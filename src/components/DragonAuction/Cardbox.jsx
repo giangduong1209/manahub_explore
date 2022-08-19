@@ -1027,7 +1027,7 @@ const Cardbox = () => {
               textAlign: "center",
               margin: " 10px",
               color: " #ff9900",
-              border: "solid 1px #27aae1",
+              border: "solid 1px #0e0a35",
               borderRadius: "10px",
               fontSize: "medium"
             }}>-</Button>
@@ -1038,7 +1038,7 @@ const Cardbox = () => {
               textAlign: "center",
               margin: " 10px",
               color: " #ff9900",
-              border: "solid 1px #27aae1",
+              border: "solid 1px #0e0a35",
               borderRadius: "10px",
               fontSize: "medium"
             }}
@@ -1054,7 +1054,7 @@ const Cardbox = () => {
               textAlign: "center",
               margin: " 10px",
               color: " #ff9900",
-              border: "solid 1px #27aae1",
+              border: "solid 1px #0e0a35",
               borderRadius: "10px",
               fontSize: "medium"
             }}>+</Button>

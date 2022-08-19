@@ -1,4 +1,4 @@
-import { Avatar, Col, Row, Space, Menu, notification, Image } from "antd";
+import { Avatar, Col, Row, Space, Menu, notification } from "antd";
 import React from "react";
 import styless from "./Collections.module.css";
 import FloorPriceIcon from "../Collections/FloorPriceIcon";
@@ -77,7 +77,7 @@ const CollectionBanner = () => {
         className={styless.bg}
       // style={{ backgroundClip: `url(${DragonClip})` }}
       >
-        <Image width = '100%' src={ManahubsBanner} />
+        <img width = '100%' src={ManahubsBanner} />
         {/* <video muted autoPlay loop width='100%'> <source src={'https://ipfs.moralis.io:2053/ipfs/QmNXHTD2oWKC8m4AusReS1J48QEVFFPMucu9pZ9Jm8Co29'} type="video/mp4"></source></video> */}
         <Avatar src={ManahubsAvatar} className={styless.avatar} size={160} />
       </div>

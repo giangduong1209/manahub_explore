@@ -43,7 +43,7 @@ const CollectionBanner = ({ address }) => {
 
   function linkMintNFT(id) {
     if ( id===5 ) {
-      history.push("/dragon-auction");
+      history.push("/manahubs");
     }
   }
   return (

@@ -210,7 +210,7 @@ const App = ({ isServerInfo }) => {
             <Route path="/view-nft/:contract/:id">
               <ViewNFT/>
             </Route>
-            <Route path="/dragon-auction">
+            <Route path="/manahubs">
               <DragonBox/>
             </Route>
             <Route path="/game/:type">
