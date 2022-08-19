@@ -36,7 +36,7 @@ const CollectionCard = ({ item }) => {
       <div className={styless.content}>
         <Row justify="space-between">
           <div className={styless.title} style={{ fontFamily: "GILROY " }}>
-            1988 Dragon
+            Manahubs
           </div>
           {/* <div className={styless.icon} onClick={() => pressLike()}>
             {mainColor.isMode === "light" ? (

@@ -1013,7 +1013,7 @@ const Cardbox = () => {
       <div className={styless.content}>
         <div className={styless.title} style={{ fontFamily: "GILROY " }}>Magic Box</div>
         <div className={styless.byAuthor} style={{ fontFamily: "GILROY " }}>
-          by <span style={{ fontFamily: "GILROY " }}>1988 Dragon</span>
+          by <span style={{ fontFamily: "GILROY " }}>Manahubs</span>
         </div>
         <div className={styless.description} style={{ fontFamily: "GILROY " }}> </div>
         <form>

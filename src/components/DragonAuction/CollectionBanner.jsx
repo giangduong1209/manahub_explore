@@ -201,10 +201,10 @@ const CollectionBanner = () => {
         </div>
       </div>
       <div className={styless.bannerContent} style={{ fontFamily: "GILROY " }}>
-        <div className={styless.bannerTitle}>1988 Dragon</div>
+        <div className={styless.bannerTitle}>Manahubs</div>
 
         <div className={styless.createdBy}>
-          Created by <span>DragonTeam</span>
+          Created by <span>Manahubs Team</span>
         </div>
         <div className={styless.statics}>
           <Row gutter={{ xs: 12, sm: 32, xl: 64 }}>
@@ -280,8 +280,8 @@ const CollectionBanner = () => {
           </Row>
         </div>
         <div className={styless.desc} style={{ fontFamily: "GILROY " }}>
-          1988 Dragon is a bridge to help artists and businesses access Blockchain through the issuance of NFT. Companies can also connect ads with artists more straightforwardly and closer.<br />
-          1988 Dragon also has a clear roadmap for building a fashion catwalk and a music stage based on virtual reality technology. Vietnamese artists and fans can meet and interact through VR glasses.<br />
+          Manahubs is a bridge to help artists and businesses access Blockchain through the issuance of NFT. Companies can also connect ads with artists more straightforwardly and closer.<br />
+          Manahubs also has a clear roadmap for building a fashion catwalk and a music stage based on virtual reality technology. Vietnamese artists and fans can meet and interact through VR glasses.<br />
           Besides, we will directly advise on the strategic plan and orientation of Blockchain application for film activities; this is a high potential opportunity for film producers in Vietnam.
         </div>
       </div>
