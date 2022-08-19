@@ -1,0 +1,242 @@
+.notableSliderWrapper {
+    max-width: 1200px;
+    margin: 0 auto !important;
+    text-align: center;
+    padding: 0 15px;
+    border: #000000 solid 1px;
+    border-radius: 20px;
+    width: auto;
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+  
+  .notableItem {
+    display: inline-block;
+    /* width: 792px; */
+    width: 360px;
+    height: 370px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    border-radius: 20px;
+    background-image: url('/src/assets/images/mysbox-bg.jpg');
+    background-size: 360px 365px;
+    background-repeat: no-repeat;
+  }
+  
+  .notableInfo {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    width: 25%;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 20px 0;
+  }
+  
+  .notableSliderWrapper :global(.ant-typography) {
+    font-weight: 700;
+    font-size: 36px;
+    margin-bottom: 36px;
+    background: -webkit-linear-gradient(#0e0a35, #617ad3);
+    -webkit-background-clip: text;
+  }
+  
+  .notableInfo :global(.ant-card-meta) {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  .notableInfo :global(.ant-card-meta-detail) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .notableInfo :global(.ant-avatar) {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #fff;
+  }
+  
+  .notableInfo :global(.ant-card-meta-title) {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  
+  .notableInfo :global(.ant-card-meta-description) {
+    color: #fff;
+    font-size: 18px;
+  }
+  
+  .exploreBtn:global(.ant-btn) {
+    background: #ffffff;
+    border-radius: 10px;
+    width: 136px;
+    height: auto;
+    border-color: #0e0a35;
+    margin-bottom: 40px;
+  }
+  
+  .exploreBtn:global(.ant-btn:hover),
+  .exploreBtn:global(.ant-btn:focus) {
+    color: #ffffff;
+    background: linear-gradient(180deg, #0e0a35 0%, #0e0a35 100%);
+    border: none;
+  }
+  
+  .exploreBtn:global(.ant-btn:focus) span,
+  .exploreBtn:global(.ant-btn:hover) span {
+    background: -webkit-linear-gradient(#ffffff, #ffffff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* .exploreBtn:global(.ant-btn:hover),
+  .exploreBtn:global(.ant-btn:focus) {
+    background: #ffffff;
+    border-color: #e85443;
+  } */
+  
+  .exploreBtn span {
+    font-weight: 700;
+    background: -webkit-linear-gradient(#27aae1, #617ad3);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .mySwiper {
+    position: relative;
+  }
+  
+  .btnArrow {
+    position: absolute;
+    z-index: 100;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid #27aae1;
+    background: #fff;
+  }
+  
+  .btnArrow :global(.anticon) {
+    color: #27aae1;
+    font-size: 18px;
+  }
+  
+  .btnArrow:hover {
+    background: linear-gradient(180deg, #0e0a35 0%, #0e0a35 100%);
+    border: none;
+  }
+  
+  .btnArrow:hover :global(.anticon) {
+    color: #fff;
+  }
+  
+  .btnPrev {
+    left: 20%;
+    top: 50%;
+    transform: translate(0%, -50%);
+  }
+  
+  .btnNext {
+    right: 20%;
+    top: 50%;
+    transform: translate(0%, -50%);
+  }
+  
+  /* responsive */
+  @media screen and (max-width: 1199px) {
+    .notableInfo {
+      padding: 0 25px 0;
+    }
+  
+    .notableInfo :global(.ant-card-meta) {
+      margin-bottom: 25px;
+    }
+  
+    .exploreBtn:global(.ant-btn) {
+      margin-bottom: 25px;
+    }
+  
+    .notableInfo :global(.ant-avatar) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  
+  @media screen and (max-width: 1023px) {
+    .notableItem {
+      height: 450px;
+    }
+  
+    .notableInfo :global(.ant-card-meta) {
+      margin-bottom: 15px;
+    }
+  
+    .exploreBtn:global(.ant-btn) {
+      margin-bottom: 15px;
+    }
+  
+    .notableInfo {
+      padding: 0 15px 0;
+    }
+    .notableInfo :global(.ant-avatar) {
+      width: 20px;
+      height: 20px;
+    }
+    .notableInfo :global(.ant-card-meta-title) {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 4px !important;
+    }
+    .notableInfo :global(.ant-card-meta-description) {
+      color: #fff;
+      font-size: 14px;
+    }
+  }
+  
+  @media screen and (max-width: 991px) {
+    .notableItem {
+      height: 400px;
+    }
+    .notableInfo :global(.ant-avatar) {
+      width: 20px;
+      height: 20px;
+    }
+    .notableInfo :global(.ant-card-meta-title) {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 4px !important;
+    }
+    .notableInfo :global(.ant-card-meta-description) {
+      color: #fff;
+      font-size: 14px;
+    }
+  
+    .btnPrev {
+      left: 20px;
+      transform: translate(20px, -50%);
+    }
+  
+    .btnNext {
+      right: 20px;
+      transform: translate(-20px, -50%);
+    }
+  }
+  

@@ -18,6 +18,7 @@ import Collection from "components/Collection";
 import MyCollection from "components/MyCollection";
 import { useEffect, useCallback } from "react";
 import { useMoralis } from "react-moralis";
+import DragonBox from 'components/DragonAuction'
 // import Account from "components/Account/Account";
 import {
   BrowserRouter as Router,
@@ -209,7 +210,9 @@ const App = ({ isServerInfo }) => {
             <Route path="/view-nft/:contract/:id">
               <ViewNFT/>
             </Route>
-
+            <Route path="/manahubs">
+              <DragonBox/>
+            </Route>
             <Route path="/game/:type">
               <Game />
             </Route>

@@ -1,0 +1,18 @@
+.wrapper {
+    max-width: 100%;
+    width: auto;
+    /* margin: 40px auto; */
+    padding: 0 20px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    width: 100%;
+  }
+  
+  .wrapperInner {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+  }
