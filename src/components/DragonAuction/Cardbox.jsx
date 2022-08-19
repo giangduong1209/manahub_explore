@@ -2,7 +2,7 @@ import { Button, Modal } from "antd";
 import React from 'react';
 import styless from './Explores.module.css';
 // import imgFake from 'assets/images/img-explore.png';
-import MysteryBoxGif from 'assets/images/dragonbox.gif';
+import ManahubsBoxGif from 'assets/images/manahubs-box.gif';
 import btnstyles from './MysteryBox.module.css'
 import { useState } from "react";
 import {
@@ -1006,7 +1006,7 @@ const Cardbox = () => {
     <div className={styless.cardbox}>
       <div
         className={styless.image}
-        style={{ backgroundImage: `url(${MysteryBoxGif})` }}
+        style={{ backgroundImage: `url(${ManahubsBoxGif})` }}
       >
         {/* <Avatar src={item.image} className={styless.avatar} size={80} /> */}
       </div>
