@@ -1,5 +1,6 @@
 import { Avatar, Button, Col, Row, Space } from 'antd';
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import './nft.css';
 import styless from './Collections.module.css';
 // import FloorPriceIcon from './FloorPriceIcon';
@@ -33,12 +34,18 @@ const icons = {
 const CollectionBanner = ({ address }) => {
   const [explores, setExplores] = React.useState(exploreData);
   const [currentExplore, setCurrentExplore] = useState(1);
-
+  const history = useHistory();
   const { chainId } = useMoralis();
   // const NFTCollections = getCollectionsByChain(chainId);
   const info = networkCollections[chainId]?.find(
     (ele) => ele.addrs === address.addrs
   );
+
+  function linkMintNFT(id) {
+    if ( id===5 ) {
+      history.push("/dragon-auction");
+    }
+  }
   return (
     <div>
       <div>
@@ -169,7 +176,10 @@ const CollectionBanner = ({ address }) => {
                         [styless.currentActive]: tab.id === currentExplore,
                       })}
                       key={tab.id}
-                      onClick={() => setCurrentExplore(tab.id)}
+                      onClick={() => {
+                          setCurrentExplore(tab.id)
+                          linkMintNFT(tab.id);
+                        }}
                     >
                       <Space>
                         {icons[tab.icon]}

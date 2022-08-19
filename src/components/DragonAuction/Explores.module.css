@@ -1,0 +1,116 @@
+.wrapper {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.cardbox {
+  padding: 14px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  width: auto;
+  cursor: pointer;
+  transition: box-shadow 0.3s, border-color 0.3s;
+  /* border-image-source: linear-gradient(180deg, #f27252 0%, #e85443 100%); */
+  width: 500px;
+  /* height: 500px; */
+  margin: auto;
+  /* width: 50%; */
+  /* border: 3px solid green; */
+  padding: 10px;
+}
+
+.cardbox:hover {
+  border: 2px solid #27aae1;
+  box-shadow: 0 1px 2px -2px rgb(0 0 0 / 16%), 0 3px 6px 0 rgb(0 0 0 / 12%),
+    0 5px 12px 4px rgb(0 0 0 / 9%);
+}
+
+.image {
+  position: relative;
+  background: #adadad;
+  border-radius: 10px;
+  width: 100%;
+  height: 320px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.avatar:global(.ant-avatar) {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translate(-50%, 0px);
+  border: 2px solid white;
+}
+
+.content {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.byAuthor {
+  font-size: 16px;
+  /* font-weight: 700; */
+}
+
+.byAuthor span {
+  color: #27aae1;
+}
+
+.description {
+  font-size: 16px;
+  padding: 10px;
+}
+
+.pagination:global(.ant-pagination) :global(.ant-pagination-item) {
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to bottom, #f27252, #e85443) border-box;
+  border-radius: 50%;
+  border: 1px solid transparent;
+}
+
+.pagination:global(.ant-pagination) :global(.ant-pagination-item a) {
+  background: linear-gradient(180deg, #f27252 0%, #e85443 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 18px;
+}
+
+.pagination:global(.ant-pagination) :global(.ant-pagination-item:hover),
+.pagination:global(.ant-pagination) :global(.ant-pagination-item-active) {
+  background: linear-gradient(to bottom, #27aae1, #617ad3) border-box;
+}
+
+.pagination:global(.ant-pagination) :global(.ant-pagination-item:hover a),
+.pagination:global(.ant-pagination) :global(.ant-pagination-item-active a) {
+  background: linear-gradient(180deg, white 0%, white 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* responsive */
+@media screen and (max-width: 1500px) {
+  /* .cardbox {
+    width: auto;
+  } */
+}
+@media screen and (max-width: 500px) {
+ .cardbox {
+    width: auto;
+  }
+  .byAuthor {
+    font-size: 14px !important;
+    /* font-weight: 700; */
+  }
+}
