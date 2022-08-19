@@ -1,4 +1,4 @@
-import { Avatar, Col, Row, Space, Menu, notification } from "antd";
+import { Avatar, Col, Row, Space, Menu, notification, Image } from "antd";
 import React from "react";
 import styless from "./Collections.module.css";
 import FloorPriceIcon from "../Collections/FloorPriceIcon";
@@ -12,7 +12,8 @@ import {
 } from "react-icons/bs";
 import ShareLink from "react-facebook-share-link";
 import ShareLinkTwitter from "react-twitter-share-link";
-import DragonAva from 'assets/images/avatarDragon.jpg';
+import ManahubsAvatar from 'assets/images/manahubs_icon-01.png';
+import ManahubsBanner from 'assets/images/manahubs_cover.png';
 import { useMoralis, useMoralisWeb3Api } from "react-moralis";
 let totalVol = 0;
 let isGetingVol = true;
@@ -76,8 +77,9 @@ const CollectionBanner = () => {
         className={styless.bg}
       // style={{ backgroundClip: `url(${DragonClip})` }}
       >
-        <video muted autoPlay loop width='100%'> <source src={'https://ipfs.moralis.io:2053/ipfs/QmNXHTD2oWKC8m4AusReS1J48QEVFFPMucu9pZ9Jm8Co29'} type="video/mp4"></source></video>
-        <Avatar src={DragonAva} className={styless.avatar} size={160} />
+        <Image width = '100%' src={ManahubsBanner} />
+        {/* <video muted autoPlay loop width='100%'> <source src={'https://ipfs.moralis.io:2053/ipfs/QmNXHTD2oWKC8m4AusReS1J48QEVFFPMucu9pZ9Jm8Co29'} type="video/mp4"></source></video> */}
+        <Avatar src={ManahubsAvatar} className={styless.avatar} size={160} />
       </div>
       <div className={styless.endRow}>
         <div className={styless.socialIconsContainer}>
