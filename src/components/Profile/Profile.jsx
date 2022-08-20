@@ -13,10 +13,12 @@ import {
 import Text from 'antd/lib/typography/Text';
 import SiteMapIcon from 'components/Icons/SiteMapIcon';
 import { useEffect, useState } from 'react';
-import { useMoralis, useMoralisQuery } from 'react-moralis';
+import { useMoralis, useMoralisQuery, useWeb3ExecuteFunction } from 'react-moralis';
 import { useHistory } from 'react-router-dom';
 import ReferralSystem from './components/ReferralSystem';
 import styles from './styles.module.css';
+import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
+import Web3 from "web3";
 
 
 const layout = {
@@ -39,7 +41,7 @@ const validateMessages = {
 // const { useBreakpoint } = Grid;
 function Profile() {
   const history = useHistory();
-  const { web3, Moralis, account } = useMoralis();
+  const { Moralis, account, authenticate } = useMoralis();
   const [auth, setAuth] = useState();
   const [refDisabled, setrefDisabled] = useState(false);
   const queryProfile = useMoralisQuery('profile');
@@ -52,6 +54,10 @@ function Profile() {
   const [changeAva, setChangeAva] = useState(false);
   const [rewards, setRewards] = useState(0);
   const [isOpenReferral, setIsOpenReferral] = useState(false);
+  const { marketAddress, contractABI, walletAddress } = useMoralisDapp();
+  const contractABIJson = JSON.parse(contractABI);
+
+  const contractProcessor = useWeb3ExecuteFunction();
 
   const checkAuthen = async () => {
     Moralis.initialize("ODKsAGfZTKjTaG2Xv2Kph0ui303CX3bRtIwxQ6pj");
@@ -60,11 +66,11 @@ function Profile() {
     let subscription = await query.subscribe();
     subscription.on('update', (obj) => {
       // console.log(obj.attributes);
-      if(obj.attributes.rewards){
+      if (obj.attributes.rewards) {
         setRewards(obj.attributes.rewards);
-      }else{
+      } else {
         setRewards(0);
-      }    
+      }
     })
     const result =
       fetchProfile.find((element) => element.address === account) || null;
@@ -73,12 +79,12 @@ function Profile() {
       if (result.ref) {
         setrefDisabled(true);
       }
-      if(result.rewards){
+      if (result.rewards) {
         setRewards(result.rewards);
-      }else{
+      } else {
         setRewards(0);
       }
-     
+
       form.setFieldsValue({
         ref: result.ref,
         name: result.name,
@@ -135,11 +141,12 @@ function Profile() {
         background: bg,
         bio: values.bio,
       }
-      if(values.ref){
+      if (values.ref) {
         data.ref = values.ref.toLowerCase();
         data.refs = JSON.stringify(refs);
       }
-      await Moralis.Cloud.run("updateProfile", data);
+      await updateProfile(data);
+      // await Moralis.Cloud.run("updateProfile", data);
       let secondsToGo = 2;
       const modal = Modal.success({
         title: 'Success!',
@@ -188,20 +195,114 @@ function Profile() {
   const toggleReferral = () => setIsOpenReferral((v) => !v);
 
   async function claim() {
-    setLoading(true);
-    const signTx =  await Moralis.Cloud.run("claim", {address: account});
-    console.log(signTx);
-    // let signTx = fetchAPI?.data?.signTx;
-    if (signTx) {
-      // console.log(web3.eth);
-      // await web3.eth.sendSignedTransaction(signTx.rawTransaction);
-      let hash = await web3.eth.sendTransaction({ from: account, gas: signTx.gas, to: signTx.to, data: signTx.data });
-      // console.log(hash);
-      if (hash) {
-        await Moralis.Cloud.run("resetRewards", {address: account});
+    // setLoading(true);
+    const addressMKP = "0xfde910FbaA9A6fDD5d3F80cCD44a54763DE2d9d0";
+    const addressHash = "0x1BCC6246Ffc2EF70572Ba6a0f75F37F723Dfe771";
+
+    const addr = account;
+    const queryClaim = new Moralis.Query("Claim");
+    queryClaim.equalTo("getFrom", addr);
+    const arrClaim = await queryClaim.find();
+    let totalClaim = 0;
+    for (let index = 0; index < arrClaim.length; index++) {
+      const element = arrClaim[index].attributes;
+      totalClaim = totalClaim + parseInt(element.amount);
+    }
+
+    const query = new Moralis.Query("profile");
+    query.equalTo("address", addr);
+    let obj = await query.first({ useMasterKey: true });
+    if (obj) {
+      if (obj.attributes.rewards > 0) {
+        if ((obj.attributes.commission - totalClaim) == obj.attributes.rewards) {
+          authenticate({
+            onSuccess: async () => {
+              // setIsDisable(true);
+              const ops = {
+                contractAddress: addressMKP,
+                functionName: "claim",
+                abi: contractABIJson,
+                params: {
+                  amount: obj.attributes.rewards,
+                  sender: obj.attributes.address,
+                  checkHash: addressHash
+                },
+              };
+              await contractProcessor.fetch({
+                params: ops,
+                onSuccess: async () => {
+                  await resetRewards();
+                }
+              });
+            },
+            onError: () => {
+              console.log('err');
+            }
+          })
+        } else {
+          const query = new Moralis.Query("profile");
+          query.equalTo("address", addr);
+          let obj = await query.first({ useMasterKey: true });
+          if (obj) {
+            obj.set("rewards", 0);
+            obj.save(null, { useMasterKey: true });
+          }
+        }
       }
     }
   }
+
+  async function resetRewards() {
+    const addr = account;
+    const query = new Moralis.Query("profile");
+    query.equalTo("address", addr);
+    let obj = await query.first({ useMasterKey: true });
+    if (obj) {
+      obj.set("rewards", 0);
+      obj.save(null, { useMasterKey: true });
+    }
+  }
+
+  async function updateProfile(profile) {
+    // const profile = request.params;
+    const query = new Moralis.Query('profile');
+    query.equalTo("address", profile.address);
+    let obj = await query.first({ useMasterKey: true });
+    if (obj) {
+      await Object.keys(profile).forEach(function (key) {
+        obj.set(key, profile[key]);
+      });
+      updateRefs(JSON.parse(profile.refs), profile.address);
+      await obj.save(null, { useMasterKey: true });
+    } else {
+      const classMoralis = Moralis.Object.extend('profile');
+      const newClass = new classMoralis();
+      await Object.keys(profile).forEach(function (key) {
+        newClass.set(key, profile[key]);
+      });
+      newClass.save(null, { useMasterKey: true });
+    }
+  }
+
+  const updateRefs = async (refs, account) => {
+    const users = Moralis.Object.extend('profile');
+    const query = new Moralis.Query(users);
+    query.fullText("refs", account.toLowerCase());
+    let arrRefs = await query.find();
+    if (arrRefs.length > 0) {
+      arrRefs.forEach(element => {
+        let str = element.attributes.refs;
+        refs.push(account.toLowerCase());
+        let arr = JSON.stringify(refs);
+        arr = arr.replace('[', "");
+        arr = arr.replace(']', "");
+        str = str.replace('"' + account.toLowerCase() + '"', arr);
+        element.set("refs", str);
+        element.save(null, { useMasterKey: true });
+      });
+    }
+  }
+
   return (
     <>
       <div>

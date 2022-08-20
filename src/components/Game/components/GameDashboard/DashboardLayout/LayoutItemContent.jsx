@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import styles from "../../../styles.module.css";
 import { Button } from "antd";
-import Web3 from "web3";
 import abiStaking from "../abi_staking";
 import { useState } from "react";
 import { useMoralis, useWeb3ExecuteFunction } from 'react-moralis';

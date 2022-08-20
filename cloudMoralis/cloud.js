@@ -13,7 +13,7 @@ Moralis.Cloud.define("updateProfile", async (request) => {
         const classMoralis = Moralis.Object.extend('profile');
         const newClass = new classMoralis();
         await Object.keys(profile).forEach(function (key) {
-          newClass.set(key, profile[key]);
+            newClass.set(key, profile[key]);
         });
         newClass.save(null, { useMasterKey: true });
     }

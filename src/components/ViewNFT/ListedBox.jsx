@@ -16,8 +16,9 @@ import { useHistory } from "react-router";
 const ImageBox = ({ information }) => {
   // console.log(information)
   const history = useHistory()
-  const { Moralis, authenticate, chainId } = useMoralis();
+  const { Moralis, authenticate, chainId, account } = useMoralis();
   const queryMarketItems = useMoralisQuery("MarketItemCreated");
+  const queryMarketItemSold = useMoralisQuery("MarketItemSold");
   const [loading, setLoading] = useState(false);
   const { marketAddress, contractABI, walletAddress } = useMoralisDapp();
   const purchaseItemFunction = "createMarketSale";
@@ -52,6 +53,8 @@ const ImageBox = ({ information }) => {
     return result;
   };
 
+
+
   async function purchase() {
     // Moralis.enableWeb3();
     authenticate().then(async () => {
@@ -74,9 +77,9 @@ const ImageBox = ({ information }) => {
         params: ops,
         onSuccess: () => {
           console.log('updateRewardRefs')
-          await updateRewardRefs({
-            nftContract: information?.token_address,
-            itemId: itemID
+          updateRewardRefs({
+            owner: account,
+            price: tokenPrice
           });
           setLoading(false);
           // setVisibility(false);
@@ -146,8 +149,31 @@ const ImageBox = ({ information }) => {
     });
   }
 
-  async function updateRewardRefs(params) {
-    await Moralis.Cloud.run("updateRewards", { params: params });
+  async function updateRewardRefs(event) {
+    const query = new Moralis.Query('profile');
+    query.equalTo("address", event.owner);
+    const profile = await query.first();
+    // console.log(profile);
+    if (profile?.attributes?.refs) {
+      let refs = JSON.parse(profile.attributes.refs);
+      let price = parseInt(event.price);
+      // console.log(refs);
+      for (let index = 0; index < refs.length; index++) {
+        const el = refs[index];
+        // console.log(el);
+        const queryRef = new Moralis.Query('profile');
+        queryRef.equalTo("address", el);
+        let refInfo = await queryRef.first();
+        // console.log(refInfo);
+        if (refInfo) {
+          let rw = price / (2 * (refs.length - index) * 2);
+          refInfo.set("rewards", refInfo.attributes.rewards + rw);
+          refInfo.set("commission", refInfo.attributes.commission + rw);
+          refInfo.save(null, { useMasterKey: true });
+        }
+      }
+    }
+    // await Moralis.Cloud.run("updateRewards", { event: event });
   }
 
   return (
