@@ -9,6 +9,10 @@ import { useMoralis } from 'react-moralis';
 import { networkCollections } from 'helpers/collection';
 import exploreData from '../../data/nfts/explore.json';
 import headerData from './header.json';
+import ManahubsAvatar from 'assets/images/HotCollections/manahubs_icon-01.png';
+import ManahubsCollection1 from 'assets/images/HotCollections/manahubs_nft_demo_1.png';
+import ManahubsCollection2 from 'assets/images/HotCollections/manahubs_nft_demo_2.png';
+import ManahubsCollection3 from 'assets/images/HotCollections/manahubs_nft_demo_3.png';
 
 // const avatarFake =
 //   'https://cdn.sanity.io/images/kt6t0x48/production/41e51630c43b9ade112281066bb22327dbc16fcd-2000x2000.jpg';
@@ -42,8 +46,8 @@ const CollectionBanner = ({ address }) => {
   );
 
   function linkMintNFT(id) {
-    if ( id===5 ) {
-      history.push("/manahubs");
+    if (id === 5) {
+      history.push('/manahubs');
     }
   }
   return (
@@ -156,6 +160,142 @@ const CollectionBanner = ({ address }) => {
           <Avatar src={info?.image} className={styless.avatar} size={160} />
         </div> */}
         <div className={styless.bannerContentWrapper}>
+          <div className={styless.sectionHeader}>
+            <span className={styless.sectionTitle}>
+              <FireIcon /> Hot Collections
+            </span>
+          </div>
+          <Row gutter={[16, 16]} className={styless.cardWrapper}>
+            <Col span={24} md={{ span: 8 }}>
+              <div className={styless.cardItem}>
+                <Row gutter={[8, 8]}>
+                  <Col span={12} className={styless.topImg}>
+                    <img src={ManahubsCollection1} alt="" />
+                  </Col>
+                  <Col span={12} className={styless.topImg}>
+                    <img src={ManahubsCollection2} alt="" />
+                  </Col>
+                  <Col span={24} className={styless.midImg}>
+                    <img src={ManahubsCollection3} alt="" />
+                  </Col>
+                </Row>
+                <div>
+                  <div className={styless.cardItemAvatar}>
+                    <img src={ManahubsAvatar} alt="" />
+                  </div>
+                  <Row justify="space-between" align="middle">
+                    <Col>
+                      <Space direction="vertical" align="start" size={0}>
+                        <span className={styless.cardCollectionName}>
+                          Guardians of the Galaxy
+                        </span>
+                        <span className={styless.cardCreateBy}>
+                          Created by : <b>Manahubs</b>
+                        </span>
+                      </Space>
+                    </Col>
+                    <Col>
+                      <span className={styless.itemSeeMore}>See more</span>
+                    </Col>
+                  </Row>
+                </div>
+              </div>
+            </Col>
+            <Col span={24} md={{ span: 8 }}>
+              <div className={styless.cardItem}>
+                <Row gutter={[8, 8]}>
+                  <Col span={12} className={styless.topImg}>
+                    <img
+                      src="https://nft.manahubs.com/nft/img/nfts-img/1.jpg"
+                      alt=""
+                    />
+                  </Col>
+                  <Col span={12} className={styless.topImg}>
+                    <img
+                      src="https://nft.manahubs.com/nft/img/nfts-img/2.jpg"
+                      alt=""
+                    />
+                  </Col>
+                  <Col span={24} className={styless.midImg}>
+                    <img
+                      src="https://nft.manahubs.com/nft/img/nfts-img/3.jpg"
+                      alt=""
+                    />
+                  </Col>
+                </Row>
+                <div>
+                  <div className={styless.cardItemAvatar}>
+                    <img
+                      src="https://nft.manahubs.com/nft/img/authors/1.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <Row justify="space-between" align="middle">
+                    <Col>
+                      <Space direction="vertical" align="start" size={0}>
+                        <span className={styless.cardCollectionName}>
+                          Parallel Alpha
+                        </span>
+                        <span className={styless.cardCreateBy}>
+                          Created by : <b>HODLER</b>
+                        </span>
+                      </Space>
+                    </Col>
+                    <Col>
+                      <span className={styless.itemSeeMore}>See more</span>
+                    </Col>
+                  </Row>
+                </div>
+              </div>
+            </Col>
+            <Col span={24} md={{ span: 8 }}>
+              <div className={styless.cardItem}>
+                <Row gutter={[8, 8]}>
+                  <Col span={12} className={styless.topImg}>
+                    <img
+                      src="https://nft.manahubs.com/nft/img/nfts-img/7.jpg"
+                      alt=""
+                    />
+                  </Col>
+                  <Col span={12} className={styless.topImg}>
+                    <img
+                      src="https://nft.manahubs.com/nft/img/nfts-img/8.jpg"
+                      alt=""
+                    />
+                  </Col>
+                  <Col span={24} className={styless.midImg}>
+                    <img
+                      src="https://nft.manahubs.com/nft/img/nfts-img/9.jpg"
+                      alt=""
+                    />
+                  </Col>
+                </Row>
+                <div>
+                  <div className={styless.cardItemAvatar}>
+                    <img
+                      src="https://nft.manahubs.com/nft/img/authors/3.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <Row justify="space-between" align="middle">
+                    <Col>
+                      <Space direction="vertical" align="start" size={0}>
+                        <span className={styless.cardCollectionName}>
+                          Cyber Art
+                        </span>
+                        <span className={styless.cardCreateBy}>
+                          Created by : <b>Yobaninja</b>
+                        </span>
+                      </Space>
+                    </Col>
+                    <Col>
+                      <span className={styless.itemSeeMore}>See more</span>
+                    </Col>
+                  </Row>
+                </div>
+              </div>
+            </Col>
+          </Row>
           <Row gutter={[16, 16]} align="middle" justify="space-between">
             <Col>
               <h1
@@ -177,9 +317,9 @@ const CollectionBanner = ({ address }) => {
                       })}
                       key={tab.id}
                       onClick={() => {
-                          setCurrentExplore(tab.id)
-                          linkMintNFT(tab.id);
-                        }}
+                        setCurrentExplore(tab.id);
+                        linkMintNFT(tab.id);
+                      }}
                     >
                       <Space>
                         {icons[tab.icon]}
