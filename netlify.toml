@@ -1,0 +1,9 @@
+[build]
+  base = "/"
+  publish = "src/"
+  command  = "npm run build"
+  functions = "moralis-functions/"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
