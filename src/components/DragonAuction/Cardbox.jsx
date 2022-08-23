@@ -6,7 +6,7 @@ import ManahubsBoxGif from 'assets/images/manahubs-box.gif';
 import btnstyles from './MysteryBox.module.css'
 import { useState } from "react";
 import {
-	useMoralisQuery,
+	// useMoralisQuery,
   useMoralis,
   useMoralisWeb3Api,
   useWeb3ExecuteFunction
@@ -18,7 +18,7 @@ let system = {};
 
 const Cardbox = () => {
   const [amount, setAmount] = useState('');
-  const {fetchProfile} = useMoralisQuery("profile", (query) => query.first(), [], {autoFetch: false})
+//   const {fetchProfile} = useMoralisQuery("profile", (query) => query.first(), [], {autoFetch: false})
   
   const handleChange = event => {
     const result = event.target.value.replace(/\D/g, '');
@@ -792,12 +792,12 @@ const Cardbox = () => {
   async function updateRewardRefs(event) {
 	console.group("updateRewardRefs");
 	console.log("event", event);
-	const profiles = await fetchProfile();
-	console.log("profiles", profiles);
-	const profile = profiles.find(p => p.attributes.address === event.owner);
-    // const query = new Moralis.Query('profile');
-    // query.equalTo("address", event.owner);
-    // const profile = await query.first();
+	// const profiles = await fetchProfile();
+	// console.log("profiles", profiles);
+	// const profile = profiles.find(p => p.attributes.address === event.owner);
+    const query = new Moralis.Query('profile');
+    query.equalTo("address", event.owner);
+    const profile = await query.first();
     console.log('Profile',profile);
     if (profile?.attributes?.refs) {
       let refs = JSON.parse(profile.attributes.refs);
@@ -855,7 +855,6 @@ const Cardbox = () => {
               await contractProcessor.fetch({
                 params: ops,
                 onSuccess: () => {
-					console.log('updateRewardRefs')
 					updateRewardRefs({
 					  owner: account,
 					  price: tokenPrice

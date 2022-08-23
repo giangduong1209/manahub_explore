@@ -45,10 +45,8 @@ const CollectionBanner = ({ address }) => {
     (ele) => ele.addrs === address.addrs
   );
 
-  function linkMintNFT(id) {
-    if (id === 5) {
+  function linkMintNFT() {
       history.push('/manahubs');
-    }
   }
   return (
     <div>
@@ -195,7 +193,7 @@ const CollectionBanner = ({ address }) => {
                       </Space>
                     </Col>
                     <Col>
-                      <span className={styless.itemSeeMore}>See more</span>
+                      <span className={styless.itemSeeMore} onClick = {()=>linkMintNFT()}>See more</span>
                     </Col>
                   </Row>
                 </div>
@@ -318,7 +316,6 @@ const CollectionBanner = ({ address }) => {
                       key={tab.id}
                       onClick={() => {
                         setCurrentExplore(tab.id);
-                        linkMintNFT(tab.id);
                       }}
                     >
                       <Space>
