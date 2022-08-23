@@ -1,9 +1,0 @@
-[build]
-  base = "/"
-  publish = "src/"
-  command  = "yarn build"
-  functions = "moralis-functions/"
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
