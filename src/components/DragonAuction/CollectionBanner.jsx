@@ -216,7 +216,7 @@ const CollectionBanner = () => {
                   className={styless.number}
                   style={{ fontFamily: "GILROY " }}
                 >
-                  4999
+                  9999
                 </span>
                 <span
                   className={styless.attr}
@@ -251,7 +251,7 @@ const CollectionBanner = () => {
                 >
                   <Space>
                     <FloorPriceIcon className={styless.icon} />
-                    2
+                    0.15
                   </Space>
                 </span>
                 <span

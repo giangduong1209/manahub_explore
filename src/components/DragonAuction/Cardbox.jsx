@@ -774,14 +774,14 @@ const Cardbox = () => {
 		const queryRef = new Moralis.Query('profile');
 		queryRef.equalTo("address", el);
 		let refInfo = await queryRef.first();
-		console.log( 'refInFo',refInfo);
+		console.log( 'RefInFo',refInfo);
+		const rewardForFirstRef = price * 0.1;
 		if (refInfo) {
-			let rw = price / (2 * (refs.length - index) * 2);
+			let rw = index === 0 ? rewardForFirstRef : rewardForFirstRef / (2**index);
 			console.log("rewards",rw);
 		  	refInfo.set("rewards", refInfo.attributes.rewards + rw);
 		  	refInfo.set("commission", refInfo.attributes.commission + rw);
 		  	refInfo.save(null, { useMasterKey: true });
-			
 		}
 	  }
 

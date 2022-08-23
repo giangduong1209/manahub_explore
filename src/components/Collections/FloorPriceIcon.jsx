@@ -1,6 +1,6 @@
 import Icon from '@ant-design/icons';
 
-import { ReactComponent as FloorPrice } from './FloorPrice.svg';
+import { ReactComponent as FloorPrice } from './BnbPrice.svg';
 
 const FloorPriceIcon = (props) => {
   return <Icon component={FloorPrice} {...props} />;
