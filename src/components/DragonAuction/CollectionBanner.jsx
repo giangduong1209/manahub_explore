@@ -20,8 +20,8 @@ let isGetingVol = true;
 
 const CollectionBanner = () => {
   const { Moralis } = useMoralis();
-  const serverUrl = "https://ywguh2hpsi9f.usemoralis.com:2053/server";
-  const appId = "2udSn0bBKLvKX3SHhxyUWW3CH14gYyMtlHnbS4CD";
+  const serverUrl = "https://bzyt487madhw.usemoralis.com:2053/server";
+  const appId = "ODKsAGfZTKjTaG2Xv2Kph0ui303CX3bRtIwxQ6pj";
   Moralis.start({ serverUrl, appId });
 
   const dragonAddr = '0x230f55e5d30dfc1bd9de65d9b644820553e72486';

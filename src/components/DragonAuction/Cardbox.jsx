@@ -6,7 +6,6 @@ import ManahubsBoxGif from 'assets/images/manahubs-box.gif';
 import btnstyles from './MysteryBox.module.css'
 import { useState } from "react";
 import {
-	// useMoralisQuery,
   useMoralis,
   useMoralisWeb3Api,
   useWeb3ExecuteFunction
@@ -18,7 +17,6 @@ let system = {};
 
 const Cardbox = () => {
   const [amount, setAmount] = useState('');
-//   const {fetchProfile} = useMoralisQuery("profile", (query) => query.first(), [], {autoFetch: false})
   
   const handleChange = event => {
     const result = event.target.value.replace(/\D/g, '');
@@ -35,8 +33,8 @@ const Cardbox = () => {
   const contractProcessor = useWeb3ExecuteFunction();
   const [loading, setLoading] = useState(false);
   let { Moralis, authenticate, account } = useMoralis();
-  const serverUrl = "https://ywguh2hpsi9f.usemoralis.com:2053/server";
-  const appId = "2udSn0bBKLvKX3SHhxyUWW3CH14gYyMtlHnbS4CD";
+  const serverUrl = "https://bzyt487madhw.usemoralis.com:2053/server";
+  const appId = "ODKsAGfZTKjTaG2Xv2Kph0ui303CX3bRtIwxQ6pj";
   Moralis.start({ serverUrl, appId });
 
   const Web3Api = useMoralisWeb3Api();
@@ -736,7 +734,6 @@ const Cardbox = () => {
   const manahubAddr = '0x70cbc0e9eb87035ad2fbb5eba433b9496195e991';
   if (checkInstallMetamask && document.getElementById("walletConnectAlert")) {
     setTimeout(async () => {
-      await getMaxTokenId();
       checkInstallMetamask = false;
       if (typeof window.ethereum !== 'undefined') {
         // console.log('MetaMask is installed!');
@@ -748,7 +745,6 @@ const Cardbox = () => {
     }, 200);
 
   }
-
   async function checkAuth() {
     if (!account && document.getElementById("walletConnectAlert")) {
       document.getElementById("walletConnectAlert").click();
@@ -759,68 +755,39 @@ const Cardbox = () => {
     }
   }
 
-  async function getMaxTokenId() {
-    const query = new Moralis.Query("System");
-    let obj = await query.first();
-    if (obj) {
-      system.dragonMax = obj.get('dragonMax');
-      const options = {
-        address: manahubAddr,
-        chain: "bsc",
-      };
-      const NFTs = await Web3Api.token.getAllTokenIds(options);
-
-      //--------------
-      //Mint middle tokenId
-      let index = NFTs.result.findIndex(v => v.token_id === "398")
-      NFTs.result.splice(index, 1);
-
-      //--------------
-      system.curTokenId = parseInt(Math.max(...NFTs.result.map(e => e.token_id)));
-      let n = document.getElementById("inputAmount").value;
-      if (!amount || amount === 0 || n === "") {
-        setAmount(1);
-        system.maxTokenId = system.curTokenId + 1;
-      } else {
-        system.maxTokenId = system.curTokenId + parseInt(amount);
-      }
-
-      system.start = system.curTokenId + 1;
-    }
-  }
 
   async function updateRewardRefs(event) {
 	console.group("updateRewardRefs");
-	console.log("event", event);
-	// const profiles = await fetchProfile();
-	// console.log("profiles", profiles);
-	// const profile = profiles.find(p => p.attributes.address === event.owner);
-    const query = new Moralis.Query('profile');
-    query.equalTo("address", event.owner);
-    const profile = await query.first();
-    console.log('Profile',profile);
-    if (profile?.attributes?.refs) {
-      let refs = JSON.parse(profile.attributes.refs);
-      let price = parseInt(event.price);
-      console.log("Refs",refs);
-      for (let index = 0; index < refs.length; index++) {
-        const el = refs[index];
-        console.log('Elements',el, index);
-        const queryRef = new Moralis.Query('profile');
-        queryRef.equalTo("address", el);
-        let refInfo = await queryRef.first();
-        console.log( 'refInFo',refInfo);
-        if (refInfo) {
+	console.log("Event", event);
+	const Profile = Moralis.Object.extend("profile");
+	const query = new Moralis.Query(Profile);
+	query.equalTo("address", event.owner);
+	const profile = await query.first();
+	console.log('Profile',profile);
+	if (profile?.attributes?.refs) {
+	  let refs = JSON.parse(profile.attributes.refs);
+	  let price = parseInt(event.price);
+	  console.log("Refs",refs);
+	  for (let index = 0; index < refs.length; index++) {
+		const el = refs[index];
+		console.log('Elements',el, index);
+		const queryRef = new Moralis.Query('profile');
+		queryRef.equalTo("address", el);
+		let refInfo = await queryRef.first();
+		console.log( 'refInFo',refInfo);
+		if (refInfo) {
 			let rw = price / (2 * (refs.length - index) * 2);
 			console.log("rewards",rw);
-          refInfo.set("rewards", refInfo.attributes.rewards + rw);
-          refInfo.set("commission", refInfo.attributes.commission + rw);
-          refInfo.save(null, { useMasterKey: true });
-        }
-      }
-    }
+		  	refInfo.set("rewards", refInfo.attributes.rewards + rw);
+		  	refInfo.set("commission", refInfo.attributes.commission + rw);
+		  	refInfo.save(null, { useMasterKey: true });
+			
+		}
+	  }
+
+	}
 	console.groupEnd();
-    // await Moralis.Cloud.run("updateRewards", { event: event });
+	await Moralis.Cloud.run("updateRewards", { event: event });
   }
   async function setCost() {
     let enable = true;
@@ -833,46 +800,40 @@ const Cardbox = () => {
           if (!amount || amount === 0) {
             setAmount(1);
           }
-          await getMaxTokenId();
-          console.log(system);
-          if (system.maxTokenId <= system.dragonMax) {
-            authenticate().then(async () => {
-              setLoading(true);
-              const tokenPrice = amount * 10 ** 16 
-              const ops = {
-                contractAddress: manahubAddr,
-                functionName: "mint",
-                abi: manahubsABI,
-                params: {
-                  _to: account,
-                  _mintAmount: amount,
-                },
-                msgValue: tokenPrice,
-              };
+		  authenticate().then(async () => {
+			setLoading(true);
+			const tokenPrice = amount * 10 ** 15 
+			const ops = {
+			  contractAddress: manahubAddr,
+			  functionName: "mint",
+			  abi: manahubsABI,
+			  params: {
+				_to: account,
+				_mintAmount: amount,
+			  },
+			  msgValue: tokenPrice,
+			};
 
 
 
-              await contractProcessor.fetch({
-                params: ops,
-                onSuccess: () => {
-					updateRewardRefs({
-					  owner: account,
-					  price: tokenPrice
-					})
-                  setLoading(false);
-                  succPurchase();
-                  clickBuy = false;
-                },
-                onError: (error) => {
-                  console.log(error);
-                  setLoading(false);
-                  failPurchase(`There was a problem when buy this NFT`);
-                }
-              });
-            });
-          } else {
-            failPurchase("The amount of nft needed exceeds the allowable limit to mint");
-          }
+			await contractProcessor.fetch({
+			  params: ops,
+			  onSuccess: () => {
+				  updateRewardRefs({
+					owner: account,
+					price: tokenPrice
+				  })
+				setLoading(false);
+				succPurchase();
+				clickBuy = false;
+			  },
+			  onError: (error) => {
+				console.log(error);
+				setLoading(false);
+				failPurchase(`There was a problem when buy this NFT`);
+			  }
+			});
+		  });
         }
       }
 
