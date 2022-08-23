@@ -47,7 +47,7 @@ const ReferralSystem = ({ toggleReferral }) => {
 
       let obj = {
         address: address,
-        totalTreeSystem: element.commission / ("1e" + 18),
+        totalTreeSystem: element.commission / ("1e" + 15),
         children: []
       }
       let exist = false;
