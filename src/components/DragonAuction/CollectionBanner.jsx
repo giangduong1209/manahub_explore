@@ -20,11 +20,11 @@ let isGetingVol = true;
 
 const CollectionBanner = () => {
   const { Moralis } = useMoralis();
-  const serverUrl = "https://ywguh2hpsi9f.usemoralis.com:2053/server";
-  const appId = "2udSn0bBKLvKX3SHhxyUWW3CH14gYyMtlHnbS4CD";
+  const serverUrl = "https://bzyt487madhw.usemoralis.com:2053/server";
+  const appId = "ODKsAGfZTKjTaG2Xv2Kph0ui303CX3bRtIwxQ6pj";
   Moralis.start({ serverUrl, appId });
 
-  const dragonAddr = '0x230f55e5d30dfc1bd9de65d9b644820553e72486';
+  const manahubAddr = '0x70cbc0e9eb87035ad2fbb5eba433b9496195e991';
   const Web3Api = useMoralisWeb3Api();
 
   const { SubMenu } = Menu;
@@ -44,18 +44,9 @@ const CollectionBanner = () => {
   async function getVolumeTrade() {
 
     const options = {
-      address: dragonAddr,
+      address: manahubAddr,
       chain: "bsc",
     };
-    const nftOwners = await Web3Api.token.getNFTOwners(options);
-    // console.log(nftOwners);
-    let arrOwners = [];
-    nftOwners.result.forEach((owner) => {
-      if (!arrOwners.includes(owner.owner_of)) {
-        arrOwners.push(owner.owner_of);
-      }
-      document.getElementById("owners").innerHTML = arrOwners.length;
-    });
 
 
     const nftTransfers = await Web3Api.token.getContractNFTTransfers(options);
@@ -216,7 +207,7 @@ const CollectionBanner = () => {
                   className={styless.number}
                   style={{ fontFamily: "GILROY " }}
                 >
-                  4999
+                  9999
                 </span>
                 <span
                   className={styless.attr}
@@ -239,7 +230,7 @@ const CollectionBanner = () => {
                   className={styless.attr}
                   style={{ fontFamily: "GILROY " }}
                 >
-                  Owners
+                  Owner
                 </span>
               </Space>
             </Col>
@@ -251,7 +242,7 @@ const CollectionBanner = () => {
                 >
                   <Space>
                     <FloorPriceIcon className={styless.icon} />
-                    2
+                    0.15
                   </Space>
                 </span>
                 <span

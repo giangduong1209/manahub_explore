@@ -17,7 +17,6 @@ const ReferralSystem = ({ toggleReferral }) => {
   const [commission, setCommission] = useState(0);
   const [totalSystem, setTotalSystem] = useState(0);
   const { Moralis, account } = useMoralis();
-  const Profile = Moralis.Object.extend("profile");
   const [nodes, setNodes] = useState(fakeRef);
   const [gotRefInfo, setGotRefInfo] = useState(false);
 
@@ -28,18 +27,18 @@ const ReferralSystem = ({ toggleReferral }) => {
 
 
     // console.log(nodes);
-    const queryInfo = new Moralis.Query(Profile);
+    const queryInfo = new Moralis.Query('profile');
     queryInfo.equalTo("address", address);
     const info = await queryInfo.first();
     if (info?.attributes?.commission) {
-      setCommission(info.attributes.commission / ("1e" + 18));
-      totalSystemRef = totalSystemRef + info.attributes.commission / ("1e" + 18);
+      setCommission(info.attributes.commission / ("1e" + 15));
+      totalSystemRef = totalSystemRef + info.attributes.commission / ("1e" + 15);
     }
     setTotalSystem(totalSystemRef.toFixed(10));
   }
 
   async function getRef(address, array) {
-    const query = new Moralis.Query(Profile);
+    const query = new Moralis.Query('profile');
     query.equalTo("ref", address);
     const result = await query.find();
     for (let index = 0; index < result.length; index++) {
@@ -48,7 +47,7 @@ const ReferralSystem = ({ toggleReferral }) => {
 
       let obj = {
         address: address,
-        totalTreeSystem: element.commission / ("1e" + 18),
+        totalTreeSystem: element.commission / ("1e" + 15),
         children: []
       }
       let exist = false;
