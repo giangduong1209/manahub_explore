@@ -23,6 +23,8 @@ const Cardbox = () => {
 	if(Date.now() >= deadline) {
 		flag = true
 	}
+    // Hide countdown temporarily
+    flag = true;
     const [isNFTSale, setIsNFTSale] = useState(flag);
     const [format, setFormat] = useState(
         "D [days] H [hours] m [minutes] s [seconds]"
