@@ -817,7 +817,7 @@ const Cardbox = () => {
                     }
                     authenticate().then(async () => {
                         setLoading(true);
-                        const tokenPrice = amount * 10 * 10 ** 16;
+                        const tokenPrice = amount * 15 * 10 ** 16;
                         const ops = {
                             contractAddress: manahubAddr,
                             functionName: "mint",
