@@ -15,7 +15,7 @@ import { UserIcon } from '../MainHeader/IconHeader';
 const { useBreakpoint } = Grid;
 const gamePaths = [
   '/game/buy-properties',
-  '/game/dasboard',
+  '/game/dashboard',
   '/game/rewards',
   '/game/leaderboard',
 ];
@@ -86,8 +86,8 @@ const RoutingMenu = ({ isOpen, visileSubMenu, setVisileSubMenu }) => {
                       Buy Properties
                     </Link>
                   </Menu.Item>
-                  <Menu.Item key="dasboard">
-                    <Link to="/game/dasboard" className={styles.menuLink}>
+                  <Menu.Item key="dashboard">
+                    <Link to="/game/dashboard" className={styles.menuLink}>
                       Dashboard
                     </Link>
                   </Menu.Item>
@@ -318,7 +318,7 @@ const RoutingMenu = ({ isOpen, visileSubMenu, setVisileSubMenu }) => {
                   </NavLink>
                 </Menu.Item>
                 {/* <Menu.Item key="staking">
-                  <NavLink to="/game/dasboard" className={styles.menuLink}>
+                  <NavLink to="/game/dashboard" className={styles.menuLink}>
                     Staking
                   </NavLink>
                 </Menu.Item> */}

@@ -13,7 +13,7 @@ const Game = () => {
       case 'buy-properties':
         return <BuyProperties />;
 
-      case 'dasboard':
+      case 'dashboard':
         return <GameDashboard />;
 
       case 'rewards':
