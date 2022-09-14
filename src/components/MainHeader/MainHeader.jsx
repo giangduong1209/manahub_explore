@@ -73,7 +73,7 @@ const menuItems = [
   },
   {
     key: "0x61",
-    value: "Smart Chain Testnet",
+    value: "BSC Testnet",
     icon: <BSCLogo />,
   },
   {
