@@ -198,7 +198,7 @@ function MainHeader() {
 
                   {(md || routePage === "game") && (
                     <div className={styles.topMenuIcon}>
-                      <Link to="/game/dasboard">
+                      <Link to="/game/dashboard">
                         <div className={styles.topMenuIcon}>
                           <img src={logoManahubsStaking} />
                         </div>
@@ -276,7 +276,7 @@ function MainHeader() {
               <span className={styles.textLink}>DEX</span>
             </Link>
             <Link
-              to="/game/dasboard"
+              to="/game/dashboard"
               className={styles.subMenuMobileLink}
               onClick={handleClickSubMenu}
               ư

@@ -272,7 +272,7 @@ const CollectionBanner = () => {
             </Col>
           </Row>
         </div>
-        <div className={styless.desc} style={{ fontFamily: "GILROY " }}>In the world of 2022, everything in the world became chaotic, wars of epidemics, economic crises, and the collapse of the world's main market. The New World MANAHUBS was born with the aim of bringing together people from all over the world towards a new era of escaping poverty and restructuring the global financial system.</div>
+        <div className={styless.desc} style={{ fontFamily: "GILROY " }}>In the world of 2022, everything in the world became chaotic, wars of epidemics, economic crises, and the collapse of the world's financial market. The New World MANAHUBS was born with the aim of bringing together people from all over the world towards a new era of escaping poverty and restructuring the global financial system.</div>
       </div>
     </div>
   );
