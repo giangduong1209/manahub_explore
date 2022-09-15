@@ -764,6 +764,11 @@
     height: 62px;
   }
 
+  .gameDashboardFooter.show{
+    margin-top: 220px;
+    transform: translateY(0);
+  }
+
   .gameDashboardFooter > *:first-child .gameDashboardFooterTitle {
     font-weight: normal;
   }
