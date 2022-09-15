@@ -40,12 +40,12 @@ const DashboardLayoutHeader = ({ setShow, extraCn, show }) => {
     <div className={clsx(styles.gameLayoutHeader, extraCn)}>
       <div className={styles.gameLayoutHeaderItem}>
         <p>$USD Balance</p>
-        <div className={clsx('input-text')}>{total}</div>
+        <div className={clsx('input-text')}></div>
       </div>
 
       <div className={styles.gameLayoutHeaderItem}>
         <p>My Total NFTs</p>
-        <div className={clsx('input-text')}>{totalMyNFTs}</div>
+        <div className={clsx('input-text')}></div>
       </div>
 
       {!md && (
