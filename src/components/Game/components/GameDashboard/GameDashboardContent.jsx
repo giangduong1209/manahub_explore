@@ -95,7 +95,9 @@ const GameDashboardContent = ({ setShow, show }) => {
         }
       </div>
 
-      <div className={clsx(styles.gameDashboardFooter)}>
+      <div className={clsx(styles.gameDashboardFooter,{
+        [styles.show]: show,
+      })}>
         <div>
           <p className={styles.gameDashboardFooterTitle}>Total Collectibles</p>
           <div className={clsx("input-text", styles.inputCollectible)}>
