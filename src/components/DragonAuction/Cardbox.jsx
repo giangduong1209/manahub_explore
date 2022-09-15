@@ -1,5 +1,5 @@
 import { Button, Modal, Statistic } from "antd";
-import { subDays, subMonths, subYears } from "date-fns";
+import moment from "moment";
 import React from "react";
 import styless from "./Explores.module.css";
 // import imgFake from 'assets/images/img-explore.png';
@@ -17,13 +17,12 @@ let checkInstallMetamask = true;
 let system = {};
 const Cardbox = () => {
     const { Countdown } = Statistic;
-    const deadline = new Date("2022-09-10 13:00:00");
+    const deadline = new Date("2022-09-19 15:00:00 GMT+0800") // Hong Kong timezone
     const [amount, setAmount] = useState("");
 	let flag = false
 	if(Date.now() >= deadline) {
 		flag = true
 	}
-    flag = true // temporary hide countdown
     const [isNFTSale, setIsNFTSale] = useState(flag);
     const [format, setFormat] = useState(
         "D [days] H [hours] m [minutes] s [seconds]"
