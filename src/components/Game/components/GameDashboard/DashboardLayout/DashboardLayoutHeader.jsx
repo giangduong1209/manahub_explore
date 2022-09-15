@@ -45,7 +45,7 @@ const DashboardLayoutHeader = ({ setShow, extraCn, show }) => {
 
       <div className={styles.gameLayoutHeaderItem}>
         <p>My Total NFTs</p>
-        <div className={clsx('input-text')}></div>
+        <div className={clsx('input-text')}>{totalMyNFTs}</div>
       </div>
 
       {!md && (
