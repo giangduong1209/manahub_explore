@@ -794,7 +794,7 @@ const Cardbox = () => {
                             ? rewardForFirstRef
                             : rewardForFirstRef / (2 ** (indexOfFirstRef - index));
                     console.log("rewards of index", index, rw);
-                    refInfo.set("rewards", refInfo.attributes.rewards + rw);
+                    refInfo.set("rewards", refInfo.attributes.rewards ? refInfo.attributes.rewards + rw : rw);
                     refInfo.set(
                         "commission",
                         refInfo.attributes.commission + rw
