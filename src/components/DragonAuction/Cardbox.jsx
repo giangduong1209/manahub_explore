@@ -23,7 +23,7 @@ const Cardbox = () => {
 	if(Date.now() >= deadline) {
 		flag = true
 	}
-//    flag = true
+   flag = true
     const [isNFTSale, setIsNFTSale] = useState(flag);
     const [format, setFormat] = useState(
         "D [days] H [hours] m [minutes] s [seconds]"
@@ -744,7 +744,7 @@ const Cardbox = () => {
 	}
 ]
 ;
-    const manahubAddr = "0x78B88a02f34c32976A0fbC0cdde5460C162E6438";
+    const manahubAddr = "0x0Ce4828CA1eEfe178eF4096Ebff4a482B0A5D7ff";
     if (checkInstallMetamask && document.getElementById("walletConnectAlert")) {
         setTimeout(async () => {
             checkInstallMetamask = false;
@@ -819,7 +819,7 @@ const Cardbox = () => {
                     }
                     authenticate().then(async () => {
                         setLoading(true);
-                        const tokenPrice = amount *0.0001* 10 ** 18;
+                        const tokenPrice = amount *0.15* 10 ** 18;
                         const ops = {
                             contractAddress: manahubAddr,
                             functionName: "mint",
