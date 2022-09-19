@@ -21,50 +21,59 @@ const ReferralSystem = ({ toggleReferral }) => {
   const [gotRefInfo, setGotRefInfo] = useState(false);
 
   async function getRefInfo(address) {
+    console.group("getRefInfo");
     totalSystemRef = 0;
     await getRef(address, fakeRef);
+    console.log("FakeRef", fakeRef);
     setNodes(fakeRef);
-
+    
 
     // console.log(nodes);
     const queryInfo = new Moralis.Query('profile');
     queryInfo.equalTo("address", address);
     const info = await queryInfo.first();
     if (info?.attributes?.commission) {
-      setCommission(info.attributes.commission / ("1e" + 15));
-      totalSystemRef = totalSystemRef + info.attributes.commission / ("1e" + 15);
+      setCommission(info.attributes.commission / ("1e" + 18));
+      totalSystemRef = totalSystemRef + info.attributes.commission / ("1e" + 18);
     }
     setTotalSystem(totalSystemRef.toFixed(10));
+    console.groupEnd();
   }
 
   async function getRef(address, array) {
+    console.group("getRef");
+    console.log("Address", address);
+    console.log("Input Array", array);
     const query = new Moralis.Query('profile');
     query.equalTo("ref", address);
     const result = await query.find();
+    console.log("result", result);
     for (let index = 0; index < result.length; index++) {
       const element = result[index].attributes;
-      let address = element.address.substring(0, 4) + "..." + element.address.substring(element.address.length - 4, element.address.length);
+      let addr = element.address.substring(0, 4) + "..." + element.address.substring(element.address.length - 4, element.address.length);
+      console.log("element at index", index, addr);
 
       let obj = {
-        address: address,
-        totalTreeSystem: element.commission / ("1e" + 15),
+        address: addr,
+        totalTreeSystem: element.commission / ("1e" + 18),
         children: []
       }
       let exist = false;
-      for (let index = 0; index < array.length; index++) {
-        const element = array[index];
-        if (element.address != obj.address) {
+      for (let j = 0; j < array.length; j++) {
+        const el = array[j];
+        if (el.address != addr) {
           exist = true;
         }
       }
       if (!exist) {
         array.push(obj);
       }
-      await getRef(element.address, obj.children);
+      await getRef(addr, obj.children);
     }
 
     // setNodes(...arr);
     // console.log(nodes);
+    console.groupEnd();
   }
 
   if (!gotRefInfo) {
@@ -112,7 +121,7 @@ const ReferralSystem = ({ toggleReferral }) => {
               <Typography.Text strong>{_ref.address}</Typography.Text>
             </div>
             <div className={styles.nodeRight}>
-              Total System: {_ref.totalTreeSystem > 0 ? _ref.totalTreeSystem.toFixed(10) : _ref.totalTreeSystem} BNB
+              Commission: {_ref.totalTreeSystem > 0 ? _ref.totalTreeSystem.toFixed(10) : _ref.totalTreeSystem} BNB
             </div>
           </div>
         }

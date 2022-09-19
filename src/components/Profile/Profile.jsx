@@ -272,7 +272,9 @@ function Profile() {
       await Object.keys(profile).forEach(function (key) {
         obj.set(key, profile[key]);
       });
-      updateRefs(JSON.parse(profile.refs), profile.address);
+      if(profile.refs){
+        updateRefs(JSON.parse(profile.refs), profile.address);
+      }
       await obj.save(null, { useMasterKey: true });
     } else {
       const classMoralis = Moralis.Object.extend('profile');
