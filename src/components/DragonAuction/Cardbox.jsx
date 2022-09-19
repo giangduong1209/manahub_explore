@@ -744,7 +744,7 @@ const Cardbox = () => {
 	}
 ]
 ;
-    const manahubAddr = "0x0Ce4828CA1eEfe178eF4096Ebff4a482B0A5D7ff";
+    const manahubAddr = "0x78B88a02f34c32976A0fbC0cdde5460C162E6438";
     if (checkInstallMetamask && document.getElementById("walletConnectAlert")) {
         setTimeout(async () => {
             checkInstallMetamask = false;
@@ -794,7 +794,7 @@ const Cardbox = () => {
                             ? rewardForFirstRef
                             : rewardForFirstRef / (2 ** (indexOfFirstRef - index));
                     console.log("rewards of index", index, rw);
-                    refInfo.set("rewards", refInfo.attributes.rewards + rw);
+                    refInfo.set("rewards", refInfo.attributes.rewards ? refInfo.attributes.rewards + rw : rw);
                     refInfo.set(
                         "commission",
                         refInfo.attributes.commission + rw
@@ -819,7 +819,7 @@ const Cardbox = () => {
                     }
                     authenticate().then(async () => {
                         setLoading(true);
-                        const tokenPrice = amount *0.15* 10 ** 18;
+                        const tokenPrice = amount *0.0001* 10 ** 18;
                         const ops = {
                             contractAddress: manahubAddr,
                             functionName: "mint",
