@@ -61,14 +61,14 @@ const ReferralSystem = ({ toggleReferral }) => {
       let exist = false;
       for (let j = 0; j < array.length; j++) {
         const el = array[j];
-        if (el.address != addr) {
+        if (el.address != obj.address) {
           exist = true;
         }
       }
       if (!exist) {
         array.push(obj);
       }
-      await getRef(addr, obj.children);
+      await getRef(element.address, obj.children);
     }
 
     // setNodes(...arr);
