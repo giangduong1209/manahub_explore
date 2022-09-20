@@ -41,18 +41,12 @@ const ReferralSystem = ({ toggleReferral }) => {
   }
 
   async function getRef(address, array) {
-    console.log("==========Start getRef function===============");
-    console.log("Address", address);
-    console.log("Input Array", array);
     const query = new Moralis.Query('profile');
     query.equalTo("ref", address);
     const result = await query.find();
-    console.log("Result", result);
-    console.log("Length", result.length);
     for (let index = 0; index < result.length; index++) {
       const element = result[index].attributes;
       let addr = element.address.substring(0, 4) + "..." + element.address.substring(element.address.length - 4, element.address.length);
-      console.log("element at index", index, addr);
 
       let obj = {
         address: addr,
@@ -60,24 +54,9 @@ const ReferralSystem = ({ toggleReferral }) => {
         children: []
       }
       console.log("Object created", obj);
-      let exist = false;
-      for (let j = 0; j < array.length; j++) {
-
-        const el = array[j];
-        
-        if (el.address != obj.address) {
-          exist = true;
-        }
-      }
-       
-      if (!exist) {
-        console.log("Pushing", obj);
-        console.log("Array before push", array);
         array.push(obj);
-        console.log("Array after push", array);
-      }
+      
       await getRef(element.address, obj.children);
-      console.log("Element after get all children at index", index, obj);
     } 
   }
 
