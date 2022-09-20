@@ -12,7 +12,7 @@ import { useMoralis, useWeb3ExecuteFunction } from 'react-moralis';
 
 const LayoutItem = ({ item, type, image }) => {
   const { Moralis, authenticate, account } = useMoralis();
-  const addrNFTs = "0x70cbc0e9eb87035ad2fbb5eba433b9496195e991";
+  const addrNFTs = "0x0Ce4828CA1eEfe178eF4096Ebff4a482B0A5D7ff";
   const addrStaking = "0xE2C7f1bE4d452d82b78989cBf60108c1E0f768bF";
   const contractProcessor = useWeb3ExecuteFunction();
   const [isDisable, setIsDisable] = useState(false);
@@ -96,7 +96,7 @@ const LayoutItem = ({ item, type, image }) => {
         <Button
           style={{ marginBottom: 5, marginTop: "auto" }}
           className={styles.startStakingBtn}
-          disabled={isDisable}
+          disabled
           onClick={() => stake()}
           block
         >
