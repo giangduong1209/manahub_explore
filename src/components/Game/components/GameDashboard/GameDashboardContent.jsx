@@ -7,8 +7,8 @@ import LayoutItemContent from "./DashboardLayout/LayoutItemContent";
 import DashboardLayoutHeader from "./DashboardLayout/DashboardLayoutHeader";
 import { useState, useEffect } from "react";
 import { useMoralis, useWeb3ExecuteFunction } from 'react-moralis';
-import abiStaking from "./abi_staking";
 import Web3 from "web3";
+import Constants from "constant";
 let isRunning = false;
 
 const GameDashboardContent = ({ setShow, show }) => {
@@ -18,8 +18,9 @@ const GameDashboardContent = ({ setShow, show }) => {
   const web3Js = new Web3(Web3.givenProvider || 'https://data-seed-prebsc-1-s1.binance.org:8545/');
   const [total, setTotal] = useState(0);
   const [NFTs, setNFTs] = useState([]);
-  const addr = "0x70cbc0e9eb87035ad2fbb5eba433b9496195e991";
-  const addrStaking = "0xE2C7f1bE4d452d82b78989cBf60108c1E0f768bF";
+  const NFTaddr = Constants.contracts.NFT_COLLECTION_ADDRESS;
+  const abiStaking = JSON.parse(Constants.contracts.STAKING_ABI);
+  const addrStaking = Constants.contracts.STAKING_ADDRESS;
   const contractProcessor = useWeb3ExecuteFunction();
   const smStaking = new web3Js.eth.Contract(abiStaking, addrStaking);
 
@@ -45,7 +46,7 @@ const GameDashboardContent = ({ setShow, show }) => {
     const Staking = Moralis.Object.extend("Staking");
     const query = new Moralis.Query(Staking);
     query.equalTo("staker", account);
-    query.equalTo("addressNFT", addr);
+    query.equalTo("addressNFT", NFTaddr);
     query.equalTo("addressStaking", addrStaking);
     query.equalTo("unstake", false);
     const arrObj = await query.find();

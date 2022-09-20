@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import StackSvg from '../StackSvg';
 import { useMoralis } from 'react-moralis';
 import Web3 from "web3";
-import abiNFTs from "../abi_nfts";
+import Constants from 'constant';
 
 const { useBreakpoint } = Grid;
 let isRunning = false;
@@ -14,7 +14,8 @@ let isRunning = false;
 const DashboardLayoutHeader = ({ setShow, extraCn, show }) => {
   const web3Js = new Web3(Web3.givenProvider || 'https://data-seed-prebsc-1-s1.binance.org:8545/');
   const { Moralis, account } = useMoralis();
-  const addrNFT = "0x70cbc0e9eb87035ad2fbb5eba433b9496195e991";
+  const addrNFT = Constants.contracts.NFT_COLLECTION_ADDRESS;
+  const abiNFTs = JSON.parse(Constants.contracts.NFT_COLLECTION_ABI);
   const { md } = useBreakpoint();
   const [total, setTotal] = useState(0);
   const [totalMyNFTs, setTotalMyNFTs] = useState(0);

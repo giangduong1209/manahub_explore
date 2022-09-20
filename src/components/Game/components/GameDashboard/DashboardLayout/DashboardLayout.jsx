@@ -3,19 +3,19 @@ import React from "react";
 import styles from "../../../styles.module.css";
 import DashboardLayoutHeader from "./DashboardLayoutHeader";
 import LayoutItem from "./LayoutItem";
-import { properties } from "helpers/properties-full";
 import { useMoralis } from 'react-moralis';
 import { useState } from "react";
 import Web3 from "web3";
-import abiNFTs from "../abi_nfts";
 import axios from "axios";
+import Constants from "constant";
 let isRunning = false;
 
 const DashboardLayout = ({ setShow, show }) => {
   const web3Js = new Web3(new Web3.providers.WebsocketProvider('wss://ws-nd-524-739-052.p2pify.com/9984e6c12c83e092549386bc36509a29'));
   const { account } = useMoralis();
   const [NFTs, setNFTs] = useState([]);
-  const addrNFT = "0x0Ce4828CA1eEfe178eF4096Ebff4a482B0A5D7ff";
+  const abiNFTs = JSON.parse(Constants.contracts.NFT_COLLECTION_ABI);
+  const addrNFT = Constants.contracts.NFT_COLLECTION_ADDRESS;
   const smNFTs = new web3Js.eth.Contract(abiNFTs, addrNFT);
   let arr = [];
 

@@ -1,5 +1,5 @@
 import { RightOutlined } from "@ant-design/icons";
-import { Card, Col, Row, Tree, Typography } from "antd";
+import { Card, Col, Row, Tree, Typography, Tooltip } from "antd";
 import clsx from "clsx";
 import { CopyIcon } from "components/Icons";
 import styles from "../styles.module.css";
@@ -19,12 +19,9 @@ const ReferralSystem = ({ toggleReferral }) => {
   const { Moralis, account } = useMoralis();
   const [nodes, setNodes] = useState(fakeRef);
   const [gotRefInfo, setGotRefInfo] = useState(false);
-
   async function getRefInfo(address) {
-    console.group("getRefInfo");
     totalSystemRef = 0;
     await getRef(address, fakeRef);
-    console.log("FakeRef", fakeRef);
     setNodes(fakeRef);
     
 
@@ -37,7 +34,6 @@ const ReferralSystem = ({ toggleReferral }) => {
       totalSystemRef = totalSystemRef + info.attributes.commission / ("1e" + 18);
     }
     setTotalSystem(totalSystemRef.toFixed(10));
-    console.groupEnd();
   }
 
   async function getRef(address, array) {
@@ -49,12 +45,12 @@ const ReferralSystem = ({ toggleReferral }) => {
       let addr = element.address.substring(0, 4) + "..." + element.address.substring(element.address.length - 4, element.address.length);
 
       let obj = {
-        address: addr,
+        address: element.address,
+        addressCompact: addr,
         totalTreeSystem: element.commission ? element.commission / ("1e" + 18) : 0,
         children: []
       }
-      console.log("Object created", obj);
-        array.push(obj);
+      array.push(obj);
       
       await getRef(element.address, obj.children);
     } 
@@ -84,13 +80,13 @@ const ReferralSystem = ({ toggleReferral }) => {
     getTotalSystem(nodes);
   }
 
-  const addNodeRef = (address) => {
-    console.log("add nod here", address);
-  };
   if (totalSystem === 'NA') {
     totalSystem = 0;
   }
 
+  const handleCopy = (text) => {
+    navigator.clipboard.writeText(text);
+  }
   const renderNode = (ref) =>
     ref?.children?.map((_ref) => (
       <TreeNode
@@ -99,11 +95,14 @@ const ReferralSystem = ({ toggleReferral }) => {
         title={
           <div
             className={clsx(styles.box, styles.nodeBox)}
-            onClick={() => addNodeRef(_ref.address)}
+            onClick={() => handleCopy(_ref.address)}
           >
-            <div className={styles.nodeLeft}>
-              <Typography.Text strong>{_ref.address}</Typography.Text>
-            </div>
+          
+            <Tooltip title="Copied" trigger="click" placement="left">
+              <div className={styles.nodeLeft}>
+                <Typography.Text strong>{_ref.addressCompact}</Typography.Text>
+              </div>
+            </Tooltip>
             <div className={styles.nodeRight}>
               Commission: {_ref.totalTreeSystem > 0 ? _ref.totalTreeSystem.toFixed(10) : _ref.totalTreeSystem} BNB
             </div>
@@ -113,7 +112,6 @@ const ReferralSystem = ({ toggleReferral }) => {
         {_ref?.children && renderNode(_ref)}
       </TreeNode>
     ));
-
   return (
     <Card className={styles.card}>
       <RightOutlined onClick={toggleReferral} className={styles.btnBack} />
@@ -132,9 +130,11 @@ const ReferralSystem = ({ toggleReferral }) => {
             >
               {account}
             </Typography.Text>
+            <Tooltip title="Copied" trigger="click" placement="top"> 
             <span className={styles.iconCopy}>
-              <CopyIcon style={{ color: "#fff", fontSize: 12 }} />
+              <CopyIcon onClick = {() => handleCopy(account)} style={{ color: "#fff", fontSize: 12 }} />
             </span>
+            </Tooltip>
           </div>
         </Col>
         <Col span={24}>
@@ -175,11 +175,13 @@ const ReferralSystem = ({ toggleReferral }) => {
                 title={
                   <div
                     className={clsx(styles.box, styles.nodeBox)}
-                    onClick={() => addNodeRef(ref.address)}
+                    onClick={() => handleCopy(ref.address)}
                   >
-                    <div className={styles.nodeLeft}>
-                      <Typography.Text strong>{ref.address}</Typography.Text>
-                    </div>
+                  <Tooltip title="Copied" trigger="click" placement="left">
+                          <div className={styles.nodeLeft}>
+                            <Typography.Text strong>{ref.addressCompact}</Typography.Text>
+                          </div>
+                  </Tooltip>
                     <div className={styles.nodeRight}>
                       Commission: {ref.totalTreeSystem} BNB
                     </div>

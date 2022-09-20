@@ -3,17 +3,17 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import styles from "../../../styles.module.css";
 import { Button } from "antd";
-import Web3 from "web3";
-import abiStaking from "../abi_staking";
-import abiNFTs from "../abi_nfts";
 import { useState } from "react";
 import { useMoralis, useWeb3ExecuteFunction } from 'react-moralis';
+import Constants from "constant";
 
 
 const LayoutItem = ({ item, type, image }) => {
   const { Moralis, authenticate, account } = useMoralis();
-  const addrNFTs = "0x0Ce4828CA1eEfe178eF4096Ebff4a482B0A5D7ff";
-  const addrStaking = "0xE2C7f1bE4d452d82b78989cBf60108c1E0f768bF";
+  const addrNFTs = Constants.contracts.NFT_COLLECTION_ADDRESS;
+  const abiNFTs = JSON.parse(Constants.contracts.NFT_COLLECTION_ABI); 
+  const addrStaking = Constants.contracts.STAKING_ADDRESS;
+  const abiStaking = Constants.contracts.STAKING_ABI;
   const contractProcessor = useWeb3ExecuteFunction();
   const [isDisable, setIsDisable] = useState(false);
   
