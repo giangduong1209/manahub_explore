@@ -7,6 +7,7 @@ import {
   Form,
   Input,
   Modal,
+  Result,
   Row,
   Space,
 } from 'antd';
@@ -72,9 +73,8 @@ function Profile() {
         setRewards(0);
       }
     })
-    const result =
-      fetchProfile.find((element) => element.address === account) || null;
-    if (result && account !== undefined) {
+    const result = await fetchProfile.find((element) => element.address === account) || null;
+    if (result && account !== undefined && account !== null) {
       setAuth(true);
       if (result.ref) {
         setrefDisabled(true);
