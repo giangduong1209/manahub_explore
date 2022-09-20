@@ -1,4 +1,4 @@
-const abi = [
+export const nftCollectionABI = `[
 	{
 		"inputs": [
 			{
@@ -690,5 +690,6 @@ const abi = [
 		"stateMutability": "payable",
 		"type": "function"
 	}
-];
-export default abi
+]`
+
+export const nftCollectionAddress = '0x0Ce4828CA1eEfe178eF4096Ebff4a482B0A5D7ff'

@@ -1,4 +1,4 @@
-const abi = [
+export const stakingABI = `[
 	{
 		"inputs": [
 			{
@@ -245,5 +245,6 @@ const abi = [
 		"stateMutability": "payable",
 		"type": "receive"
 	}
-];
-export default abi
+]`
+
+export const stakingAddress = '0xE2C7f1bE4d452d82b78989cBf60108c1E0f768bF'
