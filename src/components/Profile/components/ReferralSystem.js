@@ -20,23 +20,26 @@ const ReferralSystem = ({ toggleReferral }) => {
   const [nodes, setNodes] = useState(fakeRef);
   const [gotRefInfo, setGotRefInfo] = useState(false);
   async function getRefInfo(address) {
-    totalSystemRef = 0;
-    await getRef(address, fakeRef);
-    setNodes(fakeRef);
+    if(address) {    
+      totalSystemRef = 0;
+      await getRef(address, fakeRef);
+      setNodes(fakeRef);
     
 
-    // console.log(nodes);
-    const queryInfo = new Moralis.Query('profile');
-    queryInfo.equalTo("address", address);
-    const info = await queryInfo.first();
-    if (info?.attributes?.commission) {
-      setCommission(info.attributes.commission / ("1e" + 18));
-      totalSystemRef = totalSystemRef + info.attributes.commission / ("1e" + 18);
+      // console.log(nodes);
+      const queryInfo = new Moralis.Query('profile');
+      queryInfo.equalTo("address", address);
+      const info = await queryInfo.first();
+      if (info?.attributes?.commission) {
+        setCommission(info.attributes.commission / ("1e" + 18));
+        totalSystemRef = totalSystemRef + info.attributes.commission / ("1e" + 18);
+      }
+      setTotalSystem(totalSystemRef.toFixed(10));
     }
-    setTotalSystem(totalSystemRef.toFixed(10));
   }
 
   async function getRef(address, array) {
+    console.log("Address",address);
     const query = new Moralis.Query('profile');
     query.equalTo("ref", address);
     const result = await query.find();

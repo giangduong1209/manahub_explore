@@ -75,24 +75,18 @@ const Cardbox = () => {
     }
 
     async function updateRewardRefs(event) {
-        console.group("updateRewardRefs");
-        console.log("Event", event);
         const Profile = Moralis.Object.extend("profile");
         const query = new Moralis.Query(Profile);
         query.equalTo("address", event.owner);
         const profile = await query.first();
-        console.log("Profile", profile);
         if (profile?.attributes?.refs) {
             let refs = JSON.parse(profile.attributes.refs);
             let price = parseInt(event.price);
-            console.log("Refs", refs);
             for (let index = 0; index < refs.length; index++) {
                 const el = refs[index];
-                console.log("Elements at index",index, el);
                 const queryRef = new Moralis.Query("profile");
                 queryRef.equalTo("address", el);
                 let refInfo = await queryRef.first();
-                console.log("RefInFo", refInfo);
                 const rewardForFirstRef = price * 0.1;
                 const indexOfFirstRef = refs.length - 1;
                 if (refInfo) {
@@ -100,7 +94,6 @@ const Cardbox = () => {
                         index === refs.length - 1
                             ? rewardForFirstRef
                             : rewardForFirstRef / (2 ** (indexOfFirstRef - index));
-                    console.log("rewards of index", index, rw);
                     refInfo.set("rewards", refInfo.attributes.rewards ? refInfo.attributes.rewards + rw : rw);
                     refInfo.set(
                         "commission",
@@ -110,8 +103,7 @@ const Cardbox = () => {
                 }
             }
         }
-        console.groupEnd();
-        await Moralis.Cloud.run("updateRewards", { event: event });
+        // await Moralis.Cloud.run("updateRewards", { event: event });
     }
     async function setCost() {
         let enable = true;
