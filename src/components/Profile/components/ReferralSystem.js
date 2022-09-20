@@ -41,13 +41,14 @@ const ReferralSystem = ({ toggleReferral }) => {
   }
 
   async function getRef(address, array) {
-    console.group("getRef");
+    console.log("==========Start getRef function===============");
     console.log("Address", address);
     console.log("Input Array", array);
     const query = new Moralis.Query('profile');
     query.equalTo("ref", address);
     const result = await query.find();
-    console.log("result", result);
+    console.log("Result", result);
+    console.log("Length", result.length);
     for (let index = 0; index < result.length; index++) {
       const element = result[index].attributes;
       let addr = element.address.substring(0, 4) + "..." + element.address.substring(element.address.length - 4, element.address.length);
@@ -55,25 +56,29 @@ const ReferralSystem = ({ toggleReferral }) => {
 
       let obj = {
         address: addr,
-        totalTreeSystem: element.commission / ("1e" + 18),
+        totalTreeSystem: element.commission ? element.commission / ("1e" + 18) : 0,
         children: []
       }
+      console.log("Object created", obj);
       let exist = false;
       for (let j = 0; j < array.length; j++) {
+
         const el = array[j];
+        
         if (el.address != obj.address) {
           exist = true;
         }
       }
+       
       if (!exist) {
+        console.log("Pushing", obj);
+        console.log("Array before push", array);
         array.push(obj);
+        console.log("Array after push", array);
       }
       await getRef(element.address, obj.children);
-    }
-
-    // setNodes(...arr);
-    // console.log(nodes);
-    console.groupEnd();
+      console.log("Element after get all children at index", index, obj);
+    } 
   }
 
   if (!gotRefInfo) {
