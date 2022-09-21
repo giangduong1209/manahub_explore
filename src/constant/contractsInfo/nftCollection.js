@@ -118,6 +118,25 @@ export const nftCollectionABI = `[
 		"inputs": [
 			{
 				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "addressMintedBalance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
 				"name": "to",
 				"type": "address"
 			},
@@ -234,6 +253,25 @@ export const nftCollectionABI = `[
 		"type": "function"
 	},
 	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_user",
+				"type": "address"
+			}
+		],
+		"name": "isWhitelisted",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"name": "maxMintAmount",
 		"outputs": [
@@ -262,11 +300,6 @@ export const nftCollectionABI = `[
 	{
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "_to",
-				"type": "address"
-			},
-			{
 				"internalType": "uint256",
 				"name": "_mintAmount",
 				"type": "uint256"
@@ -285,6 +318,32 @@ export const nftCollectionABI = `[
 				"internalType": "string",
 				"name": "",
 				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "nftPerAddressLimit",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "onlyWhitelisted",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
 			}
 		],
 		"stateMutability": "view",
@@ -349,23 +408,23 @@ export const nftCollectionABI = `[
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_user",
-				"type": "address"
-			}
-		],
-		"name": "removeWhitelistUser",
+		"inputs": [],
+		"name": "renounceOwnership",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
 		"inputs": [],
-		"name": "renounceOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
+		"name": "revealed",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -472,6 +531,32 @@ export const nftCollectionABI = `[
 			}
 		],
 		"name": "setCost",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_limit",
+				"type": "uint256"
+			}
+		],
+		"name": "setNftPerAddressLimit",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bool",
+				"name": "_state",
+				"type": "bool"
+			}
+		],
+		"name": "setOnlyWhitelisted",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -654,12 +739,12 @@ export const nftCollectionABI = `[
 	{
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "_user",
-				"type": "address"
+				"internalType": "address[]",
+				"name": "_users",
+				"type": "address[]"
 			}
 		],
-		"name": "whitelistUser",
+		"name": "whitelistUsers",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -667,17 +752,17 @@ export const nftCollectionABI = `[
 	{
 		"inputs": [
 			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "whitelistedAddresses",
+		"outputs": [
+			{
 				"internalType": "address",
 				"name": "",
 				"type": "address"
-			}
-		],
-		"name": "whitelisted",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
 			}
 		],
 		"stateMutability": "view",
@@ -692,4 +777,4 @@ export const nftCollectionABI = `[
 	}
 ]`
 
-export const nftCollectionAddress = '0x0Ce4828CA1eEfe178eF4096Ebff4a482B0A5D7ff'
+export const nftCollectionAddress = '0x1a6ff7801e41BC197177484340b6f479d6A2332D'

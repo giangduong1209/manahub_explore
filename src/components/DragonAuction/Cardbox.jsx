@@ -124,12 +124,11 @@ const Cardbox = () => {
                             functionName: "mint",
                             abi: manahubsABI,
                             params: {
-                                _to: account,
-                                _mintAmount: amount,
+                                _mintAmount: 1,
                             },
                             msgValue: tokenPrice,
                         };
-
+                        console.log("Options",ops);
                         await contractProcessor.fetch({
                             params: ops,
                             onSuccess: () => {
@@ -288,7 +287,7 @@ const Cardbox = () => {
                             loading={loading}
                             onClick={() => setCost()}
                             style={{ fontFamily: "GILROY " }}
-                            visible={isNFTSale}
+                            visible={isNFTSale ? 1 : 0}
                         >
                             BUY
                         </Button>
