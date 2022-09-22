@@ -1,6 +1,6 @@
-import { Card } from 'antd';
-import { Link } from 'react-router-dom';
-import styles from './styles.module.css';
+import { Card } from "antd";
+import { Link } from "react-router-dom";
+import styles from "./styles.module.css";
 
 const { Meta } = Card;
 
@@ -10,9 +10,9 @@ export const CategoryCard = ({ imgUrl, title }) => {
       <Card
         className={styles.cardbox}
         hoverable
-        style={{ width: '100%' }}
+        style={{ width: "100%" }}
         cover={
-          <img alt="" src={imgUrl} style={{ width: '100%', height: 140 }} />
+          <img alt="" src={imgUrl} style={{ width: "100%", height: 140 }} />
         }
       >
         <Meta title={title} />
