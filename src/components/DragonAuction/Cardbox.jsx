@@ -124,7 +124,7 @@ const Cardbox = () => {
                             functionName: "mint",
                             abi: manahubsABI,
                             params: {
-                                _mintAmount: 1,
+                                _mintAmount: amount,
                             },
                             msgValue: tokenPrice,
                         };
