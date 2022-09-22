@@ -18,7 +18,7 @@ import Collection from "components/Collection";
 import MyCollection from "components/MyCollection";
 import { useEffect, useCallback } from "react";
 import { useMoralis } from "react-moralis";
-import DragonBox from 'components/DragonAuction'
+import DragonBox from "components/DragonAuction";
 // import Account from "components/Account/Account";
 import {
   BrowserRouter as Router,
@@ -32,7 +32,7 @@ import Game from "components/Game";
 // import P2PTable from "components/P2PTable";
 import NFTCreate from "components/NFTCreate";
 import Profile from "components/Profile";
-import ViewNFT from 'components/ViewNFT';
+import ViewNFT from "components/ViewNFT";
 import ViewNFTAuction from "components/ViewNFTAuction";
 const { useBreakpoint } = Grid;
 
@@ -48,7 +48,7 @@ const App = ({ isServerInfo }) => {
   // const [inputValue, setInputValue] = useState('explore');
   useEffect(() => {
     const connectorId = window.localStorage.getItem("connectorId");
-     Moralis.enableWeb3();
+    Moralis.enableWeb3();
 
     if (isAuthenticated && !isWeb3Enabled && !isWeb3EnableLoading)
       enableWeb3({ provider: connectorId });
@@ -72,7 +72,8 @@ const App = ({ isServerInfo }) => {
 
         if (e.target.scrollTop >= footerOffset - rest - footer.offsetHeight) {
           filters.forEach((filter) => {
-            filter.style.bottom = (offsetTop-footerOffset + rest + footer.offsetHeight) + "px";
+            filter.style.bottom =
+              offsetTop - footerOffset + rest + footer.offsetHeight + "px";
           });
         } else {
           filters.forEach((filter) => {
@@ -154,7 +155,7 @@ const App = ({ isServerInfo }) => {
               </Tabs>
             </Route>
             <Route path="/dex">
-            <Tabs defaultActiveKey="1" style={{ alignItems: "center" }}>
+              <Tabs defaultActiveKey="1" style={{ alignItems: "center" }}>
                 <Tabs.TabPane tab={<span>Ethereum</span>} key="1">
                   <DEX chain="eth" />
                 </Tabs.TabPane>
@@ -164,7 +165,6 @@ const App = ({ isServerInfo }) => {
                 <Tabs.TabPane tab={<span>Polygon</span>} key="3">
                   <DEX chain="polygon" />
                 </Tabs.TabPane>
-              
               </Tabs>
             </Route>
             <Route path="/create-nft">
@@ -174,7 +174,7 @@ const App = ({ isServerInfo }) => {
               <Profile />
             </Route>
             <Route path="/view-auction/:contract/:id/:deployContract">
-              <ViewNFTAuction/>
+              <ViewNFTAuction />
             </Route>
             {/* <Route path="/nftMarket">
               <NFTTokenIds
@@ -208,10 +208,10 @@ const App = ({ isServerInfo }) => {
             </Route>
 
             <Route path="/view-nft/:contract/:id">
-              <ViewNFT/>
+              <ViewNFT />
             </Route>
             <Route path="/manahubs">
-              <DragonBox/>
+              <DragonBox />
             </Route>
             <Route path="/game/:type">
               <Game />
