@@ -164,7 +164,7 @@ const Cardbox = () => {
     }
     function next() {
         // getMaxTokenId();
-        let newAmount = amount + 1;
+        let newAmount = (amount === "" ? 0 : Number(amount)) + 1;
         let maxAmount = system.dragonMax - system.curTokenId;
 
         if (newAmount > maxAmount) {
