@@ -18,7 +18,7 @@ let checkInstallMetamask = true;
 let system = {};
 const Cardbox = () => {
     const { Countdown } = Statistic;
-    const deadline = new Date("2022-09-19T21:00:00+07:00") // Hong Kong timezone
+    const deadline = new Date("2022-09-30T07:00:00+07:00") // Hong Kong timezone
     const [amount, setAmount] = useState("");
 	let flag = false
 	if(Date.now() >= deadline) {
