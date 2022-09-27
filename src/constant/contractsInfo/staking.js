@@ -247,4 +247,4 @@ export const stakingABI = `[
 	}
 ]`
 
-export const stakingAddress = '0xE2C7f1bE4d452d82b78989cBf60108c1E0f768bF'
+export const stakingAddress = '0x8CfF2504d17134049b10182CCb18c60d45E0DED3'

@@ -33,19 +33,21 @@ const DashboardLayout = ({ setShow, show }) => {
           const metadata = (await axios.get(tokenURI)).data;
           // console.log(metadata);
           if (metadata) {
+            // ipfs://[CID]/1.png
             let linkImage = metadata.image.replace('ipfs://', '');
             let arrStr = linkImage.split('/');
-            linkImage = 'https://'+ arrStr[0]+'.ipfs.nftstorage.link/'+arrStr[1];
+            let nameImage = arrStr[1];
+            const imageUrl = Constants.GOOGLE_CLOUD_STORAGE_BUCKET + nameImage; 
             let item = {
-              image: linkImage,
+              image: imageUrl,
               description: metadata.description,
               tokenId: tokenId,
               name: metadata.name,
             }
             arr.push(item);
           }
-
         }
+        console.log(arr);
         setNFTs(arr);
       }
     } catch (error) {

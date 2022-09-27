@@ -50,8 +50,7 @@ const Cardbox = () => {
     const serverUrl = process.env.REACT_APP_MORALIS_SERVER_URL;
     const appId = process.env.REACT_APP_MORALIS_APPLICATION_ID;
     Moralis.start({ serverUrl, appId });
-    
-    const Web3Api = useMoralisWeb3Api();
+
     const nftCollectionABI = JSON.parse(Constants.contracts.NFT_COLLECTION_ABI);
     const nftCollectionAddr = Constants.contracts.NFT_COLLECTION_ADDRESS;
     if (checkInstallMetamask && document.getElementById("walletConnectAlert")) {

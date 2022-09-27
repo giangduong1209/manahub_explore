@@ -28,7 +28,7 @@ const Constants = {
     },
     NFT_PRICE: 0.15,
     LIMIT_REFERRAL_LEVEL: 6,
-
+    GOOGLE_CLOUD_STORAGE_BUCKET: "https://storage.googleapis.com/guardians_of_the_galaxy/",
 
 }
 

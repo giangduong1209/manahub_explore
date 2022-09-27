@@ -1,51 +1,27 @@
 import { Skeleton } from "antd";
 import React, { useState, useEffect, memo } from "react";
-import CollectionCard from "./CollectionCard";
 import CollectionCardOther from './CollectionCardOther'
 import styless from "./Collections.module.css";
 import CollectionBanner from "./CollectionBanner";
 import { useMoralisQuery, useMoralis, useWeb3ExecuteFunction } from "react-moralis";
 import { useNFTTokenIds } from "hooks/useNFTTokenIds";
-import { getCollectionsByChain } from "helpers/collection";
 import { useParams } from "react-router-dom";
 import { auctionABI } from "helpers/auction";
 
-// const fakeDataItem = {
-//   name: 'Name',
-//   description:
-//     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam orci congue diam tempor dui sed vitae. Urna, in metus, eu diam sit aliquet.',
-//   avatar: avatarFake,
-//   image: imgFake,
-// };
 
 const Collections = memo(({ address }) => {
   const { addrs } = useParams();
   const [listData, setListData] = useState([]);
-  // const [type, setType] = useState(false);
-  // setListData(useNFTBalances(address));
-  // const { data: list } = useNFTBalances(address);
   const { chainId } = useMoralis();
   const queryMarketItems = useMoralisQuery("MarketItemCreated");
   const queryListedItems = useMoralisQuery("ListedItem", q => q.descending('createdAt'));
   const [listNFT, setListNFT] = useState([]);
-  // const [originListNFT, setOriginListNFT] = useState([]);
   const [marketItems, setMarketItems] = useState([]);
 
-  //
   const contractProcessor = useWeb3ExecuteFunction();
   const contractAuctionABIJson = JSON.parse(auctionABI);
-
-  // const collections = getCollectionsByChain(chainId);
-  // const collection = collections.find(ele => ele.addrs === addrs);
   useNFTTokenIds(address).then((res) => setListData(res));
   const addrsList = ['0xfde910FbaA9A6fDD5d3F80cCD44a54763DE2d9d0']
-  // useEffect(() => {
-  //   if (address.address === "0xfde910FbaA9A6fDD5d3F80cCD44a54763DE2d9d0") {
-  //     setType(true);
-  //   } else {
-  //     setType(false);
-  //   }
-  // }, [address]);
 
   const { data: marketData } = queryMarketItems;
   useEffect(() => {

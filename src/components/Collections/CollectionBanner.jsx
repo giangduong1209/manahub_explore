@@ -6,7 +6,7 @@ import styless from './Collections.module.css';
 // import FloorPriceIcon from './FloorPriceIcon';
 // import { getCollectionsByChain } from "helpers/collection";
 import { useMoralis } from 'react-moralis';
-import { networkCollections } from 'helpers/collection';
+import { getCollectionsByChain } from 'helpers/collection';
 import exploreData from '../../data/nfts/explore.json';
 import headerData from './header.json';
 import ManahubsAvatar from 'assets/images/HotCollections/manahubs_icon-01.png';
@@ -40,13 +40,16 @@ const CollectionBanner = ({ address }) => {
   const [currentExplore, setCurrentExplore] = useState(1);
   const history = useHistory();
   const { chainId } = useMoralis();
-  // const NFTCollections = getCollectionsByChain(chainId);
-  const info = networkCollections[chainId]?.find(
-    (ele) => ele.addrs === address.addrs
-  );
+  const NFTCollections = getCollectionsByChain(chainId);
+  // const info = networkCollections[chainId]?.find(
+  //   (ele) => ele.addrs === address.addrs
+  // );
 
-  function linkMintNFT() {
-      history.push('/manahubs');
+
+  function linkMintNFT(index) {
+      if(index === 1){
+        history.push('/collection/'+index);
+      }
   }
   return (
     <div>
@@ -164,6 +167,7 @@ const CollectionBanner = ({ address }) => {
             </span>
           </div>
           <Row gutter={[16, 16]} className={styless.cardWrapper}>
+            
             <Col span={24} md={{ span: 8 }}>
               <div className={styless.cardItem}>
                 <Row gutter={[8, 8]}>

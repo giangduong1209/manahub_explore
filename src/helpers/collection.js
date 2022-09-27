@@ -1,6 +1,7 @@
 export const networkCollections = {
     "0x38" : [
       {
+        index: 1,
         image: "https://nftstorage.link/ipfs/bafkreihwtsrptgbgtawpjn2lhzbphkvmm2jpvqnq7wlbnkwafbcnmbutyu",
         banner: 'https://nftstorage.link/ipfs/bafybeihjtwqfljjugtgwq5egsopggvgxdkjytqzrbdxx36pxrxxvwhqexy',
         name: "Manahubs",
@@ -21,8 +22,9 @@ export const networkCollections = {
         }
       },
       {
+        index: 2,
         image: "",
-        banner: "https://nftstorage.link/ipfs/bafybeihjtwqfljjugtgwq5egsopggvgxdkjytqzrbdxx36pxrxxvwhqexy",
+        banner: "",
         name: "Parallel Alpha",
         addrs: "",
         imageCollections: [
@@ -41,6 +43,7 @@ export const networkCollections = {
         }
       },
       {
+        index: 3,
         image: "",
         banner: "",
         name: "Cyber Art",
