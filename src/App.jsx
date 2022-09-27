@@ -213,12 +213,8 @@ const App = ({ isServerInfo }) => {
             <Route path="/manahubs">
               <DragonBox />
             </Route>
-            <Route path="/game/:type">
+            <Route path="/staking">
               <Game />
-            </Route>
-
-            <Route path="/game">
-              <Redirect to="/game/buy-properties" />
             </Route>
             <Route path="/">
               {/* <Home /> */}

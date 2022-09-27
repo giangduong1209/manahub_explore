@@ -6,19 +6,54 @@ import { Button } from "antd";
 import { useState } from "react";
 import { useMoralis, useWeb3ExecuteFunction } from 'react-moralis';
 import Constants from "constant";
-
+import { checkWalletConnection } from "helpers/auth";
 
 const LayoutItem = ({ item, type, image }) => {
-  const { Moralis, authenticate, account } = useMoralis();
+  const { Moralis, authenticate, account, isAuthenticated } = useMoralis();
+  const serverURL = process.env.REACT_APP_MORALIS_SERVER_URL;
+  const appId = process.env.REACT_APP_MORALIS_APPLICATION_ID;
+  Moralis.initialize(appId);
+  Moralis.serverURL = serverURL;
   const addrNFTs = Constants.contracts.NFT_COLLECTION_ADDRESS;
   const abiNFTs = JSON.parse(Constants.contracts.NFT_COLLECTION_ABI); 
   const addrStaking = Constants.contracts.STAKING_ADDRESS;
   const abiStaking = Constants.contracts.STAKING_ABI;
+  const addrCollection = Constants.contracts.NFT_COLLECTION_ADDRESS;
+  const abiCollection = Constants.contracts.NFT_COLLECTION_ABI;
   const contractProcessor = useWeb3ExecuteFunction();
-  const [isDisable, setIsDisable] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   
+    const saveStakingInfo = async () => {
+    const Staking = Moralis.Object.extend("Staking");
+    const query = new Moralis.Query(Staking);
+    query.equalTo("tokenId", item.tokenId);
+    query.equalTo("staker", account);
+    query.equalTo("addressNFT", addrCollection);
+    query.equalTo("addressStaking", addrStaking);
+    const result = await query.first();
+    if (!result) {
+      const staking = new Staking()
+      staking.set("tokenId", item.tokenId);
+      staking.set("staker", account);
+      staking.set("addressNFT", addrCollection);
+      staking.set("addressStaking", addrStaking);
+      staking.set("image", image);
+      staking.set("type", type);
+      staking.set("unstake", false);
+      staking.set("name", item.name);
+      staking.set("description", item.description);
+      await staking.save();
+    }
+    else{
+      result.set("unstake", false);
+      await result.save();
+    }
+    console.log("Save success")
+    setIsLoading(false)
+  }
 
   async function staking() {
+    console.log("Staking nft on blockchain")
     const ops = {
       contractAddress: addrStaking,
       functionName: "stake",
@@ -29,53 +64,47 @@ const LayoutItem = ({ item, type, image }) => {
     };
     await contractProcessor.fetch({
       params: ops,
-      onSuccess: async() => {
-        const Staking = Moralis.Object.extend("Staking");
-        const staking = new Staking();
-        staking.set("tokenId", item.tokenId);
-        staking.set("staker", account);
-        staking.set("addressNFT", addrNFTs);
-        staking.set("addressStaking", addrStaking);
-        staking.set("image", image);
-        staking.set("type", type);
-        staking.set("unstake", false);
-        staking.set("name", item.name);
-        staking.set("description", item.description);
-        await staking.save();
+      onSuccess: async () => {
+        console.log("Staking success");
+        await saveStakingInfo(); 
         window.location.reload();
+      },
+      onError: (error) => {
+        setIsLoading(false)
+        console.log("Staking failed");
+        return new Promise((resolve, reject) => reject(error));
       }
     });
   }
 
-  async function approveAll() {
-    console.log(item);
-    authenticate({
-      onSuccess: async () => {
-        const ops = {
-          contractAddress: addrNFTs,
-          functionName: "setApprovalForAll",
-          abi: abiNFTs,
-          params: {
-            operator: addrStaking,
-            approved: true
-          },
-        };
-        await contractProcessor.fetch({
-          params: ops,
-          onSuccess: async () => {
-            await staking();
-          }
-        });
-      },
-      onError: () => {
-        console.log('err');
-      }
-    })
-  }
+   async function approveAll() {
+      console.log("Approve all on blockchain")
+      const ops = {
+        contractAddress: addrCollection,
+        functionName: "setApprovalForAll",
+        abi: abiCollection,
+        params: {
+          operator: addrStaking,
+          approved: true
+        },
+      };
+      await contractProcessor.fetch({
+        params: ops,
+        onSuccess: async () => {
+          console.log("Approve all success");
+          await staking();
+        },
+        onError: (error) => {
+          setIsLoading(false)
+          console.log("Approve all failed");
+          return new Promise((resolve, reject) => reject(error))
+        }
+      });
+  } 
 
-  async function stake() {
-    setIsDisable(true);
-    approveAll();
+  async function handleStakingClicked() {
+    setIsLoading(true);
+    await checkWalletConnection(isAuthenticated, authenticate, approveAll)
   }
   return (
     <div className={clsx([styles.layoutItem, styles[type]])}>
@@ -96,16 +125,12 @@ const LayoutItem = ({ item, type, image }) => {
         <Button
           style={{ marginBottom: 5, marginTop: "auto" }}
           className={styles.startStakingBtn}
-          disabled
-          onClick={() => stake()}
+          loading = {isLoading}
+          onClick={() => handleStakingClicked()}
           block
         >
           Start Staking
         </Button>
-
-        {/* <Button className={styles.sellOnMpBtn} block>
-          Sell on Marketplace
-        </Button> */}
       </div>
     </div>
   );

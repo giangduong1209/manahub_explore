@@ -6,52 +6,64 @@ import { Button } from "antd";
 import { useState } from "react";
 import { useMoralis, useWeb3ExecuteFunction } from 'react-moralis';
 import Constants from "constant";
+import { checkWalletConnection } from "helpers/auth";
 
 const LayoutItemContent = ({ item, type, image }) => {
-  const { Moralis, authenticate, account } = useMoralis();
-  const addrNFTs = Constants.contracts.NFT_COLLECTION_ADDRESS;
+  const { Moralis, authenticate, account, isAuthenticated } = useMoralis();
+  const serverURL = process.env.REACT_APP_MORALIS_SERVER_URL;
+  const appId = process.env.REACT_APP_MORALIS_APPLICATION_ID;
+  Moralis.initialize(appId);
+  Moralis.serverURL = serverURL;
+  const addrCollection = Constants.contracts.NFT_COLLECTION_ADDRESS;
 
   const addrStaking = Constants.contracts.STAKING_ADDRESS;
   const abiStaking = JSON.parse(Constants.contracts.STAKING_ABI);
-  const [isDisable, setIsDisable] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const contractProcessor = useWeb3ExecuteFunction();
-  async function unstake() {
-    authenticate({
-      onSuccess: async () => {
-        setIsDisable(true);
-        console.log(item);
-        const ops = {
-          contractAddress: addrStaking,
-          functionName: "unStake",
-          abi: abiStaking,
-          params: {
-            _tokenIds: [item.tokenId]
-          },
-        };
-        await contractProcessor.fetch({
-          params: ops,
-          onSuccess: async () => {
-            const Staking = Moralis.Object.extend("Staking");
-            const query = new Moralis.Query(Staking);
-            query.equalTo("tokenId", item.tokenId);
-            query.equalTo("staker", account);
-            query.equalTo("addressNFT", addrNFTs);
-            query.equalTo("addressStaking", addrStaking);
-            query.equalTo("unstake", false);
-            const obj = await query.first();
-            if (obj) {
-              obj.set("unstake", true);
-              await obj.save();
-              window.location.reload();
-            }
-          }
-        });
-      },
-      onError: () => {
-        console.log('err');
-      }
-    })
+    const saveUnStakingInfo = async () =>{
+    console.log("Save unstaking nft on DB") 
+    const Staking = Moralis.Object.extend("Staking");
+    const query = new Moralis.Query(Staking);
+    query.equalTo("tokenId", item.tokenId);
+    query.equalTo("staker", account);
+    query.equalTo("addressNFT", addrCollection);
+    query.equalTo("addressStaking", addrStaking);
+    const obj = await query.first();
+    if (obj) {
+      obj.set("unstake", true);
+      await obj.save();
+      setIsLoading(false);
+      window.location.reload();
+    }
+    setIsLoading(false)
+  }
+  const unstake = async () => {
+      console.log("Unstaking nft on blockchain")
+      const ops = {
+        contractAddress: addrStaking,
+        functionName: "unStake",
+        abi: abiStaking,
+        params: {
+          _tokenIds: [item.tokenId]
+        },
+      };
+      await contractProcessor.fetch({
+        params: ops,
+        onSuccess: async () => {
+          console.log("Unstake success");
+          await saveUnStakingInfo();
+        },
+        onError: (error) => {
+          setIsLoading(false)
+          console.log("Unstake failed");
+          return new Promise((resolve, reject) => reject(error));
+        },
+      });
+    }
+  async function handleUnStakeClicked() {
+    setIsLoading(true);
+    await checkWalletConnection(isAuthenticated, authenticate, unstake)
   }
   return (
     <div className={clsx([styles.layoutItem, styles[type]])}>
@@ -71,8 +83,8 @@ const LayoutItemContent = ({ item, type, image }) => {
         </div> */}
 
         <Button className={styles.unStakingBtn}
-          onClick={() => unstake()}
-          disabled={isDisable}
+          onClick={() => handleUnStakeClicked()}
+          disabled={isLoading}
           style={{ marginBottom: 5, marginTop: "auto" }} block>
           UnStaking
         </Button>

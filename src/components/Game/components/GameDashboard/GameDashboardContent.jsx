@@ -9,12 +9,14 @@ import { useState, useEffect } from "react";
 import { useMoralis, useWeb3ExecuteFunction } from 'react-moralis';
 import Web3 from "web3";
 import Constants from "constant";
-let isRunning = false;
 
 const GameDashboardContent = ({ setShow, show }) => {
-  const [isDisable, setIsDisable] = useState(false);
-  const { Moralis, account } = useMoralis();
-  Moralis.start({ serverUrl: "https://bzyt487madhw.usemoralis.com:2053/server", appId: "ODKsAGfZTKjTaG2Xv2Kph0ui303CX3bRtIwxQ6pj" });
+  const serverURL = process.env.REACT_APP_MORALIS_SERVER_URL;
+  const appId = process.env.REACT_APP_MORALIS_APPLICATION_ID;
+  const [isLoading, setIsLoading] = useState(false);
+  const { Moralis, account, isAuthenticated } = useMoralis();
+  Moralis.initialize(appId);
+  Moralis.serverURL = serverURL;
   const web3Js = new Web3(Web3.givenProvider || 'https://data-seed-prebsc-1-s1.binance.org:8545/');
   const [total, setTotal] = useState(0);
   const [NFTs, setNFTs] = useState([]);
@@ -25,7 +27,7 @@ const GameDashboardContent = ({ setShow, show }) => {
   const smStaking = new web3Js.eth.Contract(abiStaking, addrStaking);
 
   const claim = async () => {
-    setIsDisable(true);
+    setIsLoading(true);
     console.log('claim');
     const ops = {
       contractAddress: addrStaking,
@@ -37,7 +39,12 @@ const GameDashboardContent = ({ setShow, show }) => {
     await contractProcessor.fetch({
       params: ops,
       onSuccess: () => {
+        setIsLoading(false);
         setTotal(0);
+      },
+      onError: (error) => {
+        setIsLoading(false);
+        console.error(error)
       }
     });
   }
@@ -58,17 +65,23 @@ const GameDashboardContent = ({ setShow, show }) => {
     // console.log(res);
     setTotal(res._availableRewards / 10 ** 18)
   }
-  // console.log(NFTs);
+  
   useEffect(() => {
-    if (account) {
-      getTotal();
+    if (isAuthenticated && account) {
       getNFTs();
+    } else {
+      setNFTs([]);
     }
-  });
+  }, [account, isAuthenticated]);
+  useEffect(() => {
+    if(account && isAuthenticated) {
+      getTotal();
+    }else{
+      setTotal(0);
+    }
+  }, [account, isAuthenticated]);
 
 
-
-  // console.log(prop);
   return (
     <div className={clsx(styles.gameDashboard)}>
       <DashboardLayoutHeader
@@ -81,8 +94,9 @@ const GameDashboardContent = ({ setShow, show }) => {
 
       <div className={clsx(styles.gameDashboardContent)}>
         {
-          NFTs.map((e) => (
+          NFTs.map((e, index) => (
             <LayoutItemContent
+              key={index}
               item={{
                 title: e.attributes.name,
                 description: e.attributes.description,
@@ -100,15 +114,15 @@ const GameDashboardContent = ({ setShow, show }) => {
         [styles.show]: show,
       })}>
         <div>
-          <p className={styles.gameDashboardFooterTitle}>Total Collectibles</p>
+          <p className={styles.gameDashboardFooterTitle}>Total Rewards</p>
           <div className={clsx("input-text", styles.inputCollectible)}>
-            {total.toFixed(16)}
+            {total.toFixed(5)} {Constants.token.TOKEN_SYMBOL}
           </div>
         </div>
 
         <div>
           <p className={styles.gameDashboardFooterTitle}>Daily NFTs Staking</p>
-          <Button block disabled={isDisable} onClick={() => claim()}>Claim</Button>
+          <Button block disabled={(total <= 0)} loading = {isLoading} onClick={() => claim()}>Claim</Button>
         </div>
       </div>
     </div>

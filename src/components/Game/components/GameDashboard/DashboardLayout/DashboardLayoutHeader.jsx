@@ -9,18 +9,17 @@ import Web3 from "web3";
 import Constants from 'constant';
 
 const { useBreakpoint } = Grid;
-let isRunning = false;
 
 const DashboardLayoutHeader = ({ setShow, extraCn, show }) => {
   const web3Js = new Web3(Web3.givenProvider || 'https://data-seed-prebsc-1-s1.binance.org:8545/');
-  const { Moralis, account } = useMoralis();
-  const addrNFT = Constants.contracts.NFT_COLLECTION_ADDRESS;
-  const abiNFTs = JSON.parse(Constants.contracts.NFT_COLLECTION_ABI);
+  const { account, isAuthenticated } = useMoralis();
+  const addrCollection = Constants.contracts.NFT_COLLECTION_ADDRESS;
+  const abiCollection = JSON.parse(Constants.contracts.NFT_COLLECTION_ABI);
   const { md } = useBreakpoint();
   const [total, setTotal] = useState(0);
   const [totalMyNFTs, setTotalMyNFTs] = useState(0);
 
-  const smNFTs = new web3Js.eth.Contract(abiNFTs, addrNFT);
+  const smNFTs = new web3Js.eth.Contract(abiCollection, addrCollection);
 
   async function getNFTBalance() {
     let balance = await smNFTs.methods.totalSupply().call();
@@ -30,11 +29,18 @@ const DashboardLayoutHeader = ({ setShow, extraCn, show }) => {
     let balance = await smNFTs.methods.balanceOf(account).call();
     setTotalMyNFTs(balance);
   }
-  if (account) {
-    getNFTBalance();
-    getMyNft();
-  }
 
+  useEffect(() => {
+    if (isAuthenticated) {
+      if (account) {
+        getNFTBalance();
+        getMyNft();
+      }
+    } else {
+        setTotal(0);
+        setTotalMyNFTs(0);
+    }
+  }, [account, isAuthenticated]);
 
 
   return (
