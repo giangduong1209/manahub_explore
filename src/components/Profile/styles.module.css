@@ -242,90 +242,10 @@
   color: #fff;
 }
 
-@media screen and (max-width: 575px) {
-  .table :global(.ant-table-thead) {
-    display: none;
-  }
-
-  .table :global(.ant-table-cell) {
-    padding: 8px 0 8px 8px !important;
-  }
-
-  .table :global(.ant-card-meta-title) {
-    font-size: 14px;
-    margin-bottom: 5px !important;
-  }
-
-  .table :global(.ant-card-meta-description) {
-    font-size: 12px;
-  }
-
-  .table :global(.ant-tag) {
-    font-size: 10px;
-    padding: 2px 8px;
-    margin-right: 2px;
-  }
-
-  .table :global(.ant-tag.tag-Waiting),
-  .table :global(.ant-tag.tag-Confirmed) {
-    width: 80px;
-  }
-
-  .transactionWrapper {
-    margin: 20px auto !important;
-  }
-}
-
-@media only screen and (min-width: 350px) and (max-width: 400px) {
-  .table :global(.ant-table-cell) {
-    padding: 8px 0 8px 2px !important;
-  }
-  :global(.ant-card-meta-avatar) {
-    padding-right: 5px !important;
-  }
-
-  .card {
-    box-shadow: 0 0.5rem 1.2rem rgb(189 197 209 / 20%);
-    border: 1px solid #e7eaf3;
-    border-radius: 1rem;
-    width: calc(100% - 16px);
-    font-size: 16px;
-    font-weight: 500;
-  }
-
-  .label {
-    border: 1px solid #ccc;
-    display: inline-block;
-    padding: 6px 12px;
-    cursor: pointer;
-    width: auto;
-    font-size: 9px !important;
-  }
-}
-
-@media only screen and (min-width: 0px) and (max-width: 350px) {
-  .card {
-    box-shadow: 0 0.5rem 1.2rem rgb(189 197 209 / 20%);
-    border: 1px solid #e7eaf3;
-    border-radius: 1rem;
-    width: 270px !important;
-    font-size: 10px;
-    font-weight: 500;
-    padding: 10px !important;
-  }
-  .label {
-    border: 1px solid #ccc;
-    display: inline-block;
-    padding: 6px 3px;
-    cursor: pointer;
-    width: auto;
-    font-size: 8.5px !important;
-  }
-}
 /* Referral System */
 .box {
   padding: 10px;
-  height: 40px;
+  height: 42px;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -396,6 +316,7 @@
   background: #2d2d72;
   height: 100%;
   width: 100%;
+  padding-left: 7px;
   color: #fff;
 }
 
@@ -428,6 +349,100 @@
   justify-content: center;
   border-radius: 8px 0px;
   cursor: pointer;
+}
+@media screen and (max-width: 575px) {
+  .card {
+    width: calc(100% - 16px);
+  }
+  .table :global(.ant-table-thead) {
+    display: none;
+  }
+
+  .table :global(.ant-table-cell) {
+    padding: 8px 0 8px 8px !important;
+  }
+
+  .table :global(.ant-card-meta-title) {
+    font-size: 14px;
+    margin-bottom: 5px !important;
+  }
+
+  .table :global(.ant-card-meta-description) {
+    font-size: 12px;
+  }
+
+  .table :global(.ant-tag) {
+    font-size: 10px;
+    padding: 2px 8px;
+    margin-right: 2px;
+  }
+
+  .table :global(.ant-tag.tag-Waiting),
+  .table :global(.ant-tag.tag-Confirmed) {
+    width: 80px;
+  }
+
+  .transactionWrapper {
+    margin: 20px auto !important;
+  }
+  .box {
+    height: 44px;
+  }
+}
+
+@media only screen and (min-width: 370px) and (max-width: 400px) {
+  .table :global(.ant-table-cell) {
+    padding: 8px 0 8px 2px !important;
+  }
+  :global(.ant-card-meta-avatar) {
+    padding-right: 5px !important;
+  }
+
+  .card {
+    box-shadow: 0 0.5rem 1.2rem rgb(189 197 209 / 20%);
+    border: 1px solid #e7eaf3;
+    border-radius: 1rem;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .label {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    width: auto;
+    font-size: 9px !important;
+  }
+  .box {
+    height: 44px;
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 370px) {
+  .card {
+    box-shadow: 0 0.5rem 1.2rem rgb(189 197 209 / 20%);
+    border: 1px solid #e7eaf3;
+    border-radius: 1rem;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 10px !important;
+  }
+  .label {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 3px;
+    cursor: pointer;
+    width: auto;
+    font-size: 8.5px !important;
+  }
+  .box{
+    height: 45px;
+  }
+  
+  .nodeLeft{
+    padding: 2px;
+  }
 }
 
 @media screen and (max-width: 768px) {
