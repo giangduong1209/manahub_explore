@@ -27,6 +27,7 @@ const Constants = {
         MARKETPLACE_ADDRESS_HASH: "0x6aEB7b03bAAeEBaAB61D30a03753d5Eabef0E120",
     },
     NFT_PRICE: 0.15,
+    LIMIT_REFERRAL_LEVEL: 6,
 
 
 }
