@@ -7,9 +7,8 @@ import {
   Form,
   Input,
   Modal,
-  Result,
   Row,
-  Space,
+  Spin
 } from 'antd';
 import Text from 'antd/lib/typography/Text';
 import SiteMapIcon from 'components/Icons/SiteMapIcon';
@@ -19,8 +18,8 @@ import { useHistory } from 'react-router-dom';
 import ReferralSystem from './components/ReferralSystem';
 import styles from './styles.module.css';
 import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
-import Web3 from "web3";
-
+import constant from 'constant';
+import { checkWalletConnection } from "helpers/auth";
 
 const layout = {
   labelCol: { span: 8 },
@@ -42,7 +41,11 @@ const validateMessages = {
 // const { useBreakpoint } = Grid;
 function Profile() {
   const history = useHistory();
-  const { Moralis, account, authenticate } = useMoralis();
+  const { Moralis, account, authenticate, isAuthenticated } = useMoralis();
+  const serverURL = process.env.REACT_APP_MORALIS_SERVER_URL;
+  const appId = process.env.REACT_APP_MORALIS_APPLICATION_ID;
+  Moralis.initialize(appId);
+  Moralis.serverURL = serverURL;
   const [auth, setAuth] = useState();
   const [refDisabled, setrefDisabled] = useState(false);
   const queryProfile = useMoralisQuery('profile');
@@ -51,71 +54,89 @@ function Profile() {
   const [form] = Form.useForm();
   const [image, setImage] = useState('');
   const [bg, setBg] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [changeAva, setChangeAva] = useState(false);
+  const [isUpdateLoading, setIsUpdateLoading] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
+  const [isAvatarLoading, setIsAvatarLoading] = useState(false);
+  const [isBgLoading, setIsBgLoading] = useState(false);
+  const [loadingClaim, setLoadingClaim] = useState(false);
   const [rewards, setRewards] = useState(0);
   const [isOpenReferral, setIsOpenReferral] = useState(false);
-  const { marketAddress, contractABI, walletAddress } = useMoralisDapp();
+  const { contractABI } = useMoralisDapp();
   const contractABIJson = JSON.parse(contractABI);
 
   const contractProcessor = useWeb3ExecuteFunction();
 
-  const checkAuthen = async () => {
-    Moralis.initialize("ODKsAGfZTKjTaG2Xv2Kph0ui303CX3bRtIwxQ6pj");
-    Moralis.serverURL = "https://bzyt487madhw.usemoralis.com:2053/server";
-    let query = new Moralis.Query('profile');
-    let subscription = await query.subscribe();
-    subscription.on('update', (obj) => {
-      // console.log(obj.attributes);
-      if (obj.attributes.rewards) {
-        setRewards(obj.attributes.rewards);
-      } else {
-        setRewards(0);
-      }
-    })
-    const result = await fetchProfile.find((element) => element.address === account) || null;
-    if (result && account !== undefined && account !== null) {
-      setAuth(true);
-      if (result.ref) {
-        setrefDisabled(true);
-      }
-      if (result.rewards) {
-        setRewards(result.rewards);
-      } else {
-        setRewards(0);
-      }
+    const checkAuthen = async () => {
+    if(isAuthenticated && account) {
+      const Profile = Moralis.Object.extend("profile");
+      const query = new Moralis.Query(Profile);
+      query.equalTo("address", account); 
+      const result = await query.first();
+      if (result) {
+          setAuth(true);
+          if(result.attributes.ref){
+            setrefDisabled(true);
+          }
+          if(result.attributes.rewards){
+            setRewards(result.attributes.rewards);
+          } else {
+            setRewards(0);
+          }
+          setIsDisabled(false)
+          form.setFieldsValue({
+            ref: result.attributes.ref,
+            name: result.attributes.name,
+            email: result.attributes.email,
+            phone: result.attributes.phone,
+            bio: result.attributes.bio,
+          });
+          setBg(result.attributes.background);
+          setImage(result.attributes.avatar);
+        }
+        else{
+          setAuth(false);
+          setRewards(0);
+          setrefDisabled(false);
+          setIsDisabled(false)
+          form.setFieldsValue({
+            ref: "",
+            name: "",
+            email: "",
+            phone: "",
+            bio: "",
+          });
+          setBg("");
+          setImage("");
 
-      form.setFieldsValue({
-        ref: result.ref,
-        name: result.name,
-        email: result.email,
-        phone: result.phone,
-        bio: result.bio,
-      });
-      setBg(result.background);
-      setImage(result.avatar);
-    } else {
+        }
+  } else {
       setAuth(false);
+      setrefDisabled(true);
+      setRewards(0);
+      setIsDisabled(true);
+      form.setFieldsValue({
+        ref: "",
+        name: "",
+        email: "",
+        phone: "",
+        bio: "",
+      });
+      setBg("");
+      setImage("");
     }
   };
   useEffect(() => {
-    if (!changeAva) {
       checkAuthen();
-    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  });
+  }, [isAuthenticated, account]);
 
   const onFinish = async (values) => {
-    if (account) {
+    setIsUpdateLoading(true);
+    if (account && isAuthenticated) {
       const users = Moralis.Object.extend('profile');
       const query = new Moralis.Query(users);
-      let save;
-      if (auth) {
-        query.equalTo('address', account);
-        save = await query.first();
-      } else {
-        save = new users();
-      }
+      query.equalTo('address', account);
+      const result = await query.first();
       let refs = [];
       if (values.ref) {
         const resultGetRefs =
@@ -123,10 +144,8 @@ function Profile() {
             (element) => element.address === values.ref.toLowerCase()
           ) || null;
 
-        if (resultGetRefs) {
-          if (resultGetRefs.refs) {
-            refs = JSON.parse(resultGetRefs.refs);
-          }
+        if (resultGetRefs && resultGetRefs.refs) {    
+          refs = JSON.parse(resultGetRefs.refs);
         }
         if (values.ref !== account) {
           refs.push(values.ref.toLowerCase());
@@ -137,7 +156,7 @@ function Profile() {
         name: values.name,
         email: values.email,
         phone: values.phone,
-        avatar: values.image,
+        avatar: image,
         background: bg,
         bio: values.bio,
       }
@@ -168,21 +187,24 @@ function Profile() {
         modal.destroy();
       }, secondsToGo * 1000);
     }
+    setIsUpdateLoading(false);
   };
-  const onChange = async (e) => {
-    setLoading(true);
-    setChangeAva(true);
+  const onChangeAvatar = async (e) => {
+    setIsUpdateLoading(true);
+    setIsAvatarLoading(true);
     const image = await uploadImageData(e);
     setImage(image);
-    setLoading(false);
+    setIsUpdateLoading(false);
+    setIsAvatarLoading(false);
   };
 
   const onChangeBackground = async (e) => {
-    setChangeAva(true);
-    setLoading(true);
+    setIsUpdateLoading(true);
+    setIsBgLoading(true);
     const bg = await uploadImageData(e);
     setBg(bg);
-    setLoading(false);
+    setIsUpdateLoading(false);
+    setIsBgLoading(false);
   };
 
   const uploadImageData = async (e) => {
@@ -193,12 +215,33 @@ function Profile() {
   };
 
   const toggleReferral = () => setIsOpenReferral((v) => !v);
-
-  async function claim() {
-    // setLoading(true);
-    const addressMKP = "0xfde910FbaA9A6fDD5d3F80cCD44a54763DE2d9d0";
-    const addressHash = "0x1BCC6246Ffc2EF70572Ba6a0f75F37F723Dfe771";
-
+  const claim = async (obj) => {
+    console.log("Claim on blockchain");
+    const addressMKP = constant.contracts.MARKETPLACE_ADDRESS;
+    const addressHash = constant.marketplace.MARKETPLACE_ADDRESS_HASH;
+      const ops = {
+        contractAddress: addressMKP,
+        functionName: "claim",
+        abi: contractABIJson,
+        params: {
+          amount: obj.attributes.rewards,
+          sender: obj.attributes.address,
+          checkHash: addressHash
+        },
+      };
+      await contractProcessor.fetch({params: ops, 
+        onSuccess: async () => {
+          console.log("Claim success");
+          await resetRewards();
+        },
+        onError: (error) => {
+          console.log("Claim failed");
+          console.error(error); 
+        }
+      });
+  }
+  async function handleClaimClink() {
+    setLoadingClaim(true);
     const addr = account;
     const queryClaim = new Moralis.Query("Claim");
     queryClaim.equalTo("getFrom", addr);
@@ -215,43 +258,22 @@ function Profile() {
     if (obj) {
       if (obj.attributes.rewards > 0) {
         if ((obj.attributes.commission - totalClaim) == obj.attributes.rewards) {
-          authenticate({
-            onSuccess: async () => {
-              // setIsDisable(true);
-              const ops = {
-                contractAddress: addressMKP,
-                functionName: "claim",
-                abi: contractABIJson,
-                params: {
-                  amount: obj.attributes.rewards,
-                  sender: obj.attributes.address,
-                  checkHash: addressHash
-                },
-              };
-              await contractProcessor.fetch({
-                params: ops,
-                onSuccess: async () => {
-                  await resetRewards();
-                }
-              });
-            },
-            onError: () => {
-              console.log('err');
-            }
-          })
+          await checkWalletConnection(isAuthenticated, authenticate, async () => {
+            await claim(obj);
+          }) 
         } else {
           const query = new Moralis.Query("profile");
           query.equalTo("address", addr);
           let obj = await query.first({ useMasterKey: true });
           if (obj) {
             obj.set("rewards", 0);
-            obj.save(null, { useMasterKey: true });
+            await obj.save(null, { useMasterKey: true });
           }
         }
       }
     }
+    setLoadingClaim(false);
   }
-
   async function resetRewards() {
     const addr = account;
     const query = new Moralis.Query("profile");
@@ -259,7 +281,7 @@ function Profile() {
     let obj = await query.first({ useMasterKey: true });
     if (obj) {
       obj.set("rewards", 0);
-      obj.save(null, { useMasterKey: true });
+      await obj.save(null, { useMasterKey: true });
     }
   }
 
@@ -334,11 +356,13 @@ function Profile() {
             className={styles.card}
             title={
               <div className={styles.header}>
+                <Spin spinning={isAvatarLoading}>
                 <Avatar
                   size={{ xs: 64, sm: 64, md: 64, lg: 64, xl: 80, xxl: 100 }}
                   // icon={<AntDesignOutlined />}
                   src={image}
                 />
+                </Spin>
                 <div className={styles.rowLabel}>
                   <Row>
                     <div
@@ -356,16 +380,17 @@ function Profile() {
                           &ensp;&emsp;Upload Avatar&emsp;&ensp;
                           <Input
                             type="file"
-                            onChange={onChange}
+                            onChange={onChangeAvatar}
                             bordered={false}
                             className={styles.btnAvatar}
                             style={{ display: 'none' }}
-                            disabled={loading}
+                            disabled={isUpdateLoading || isDisabled}
                           />
                         </label>
                       </Col>
                       &ensp;
                       <Col span={12} offset={0}>
+                      <Spin spinning={isBgLoading}>
                         <label className={styles.label}>
                           Upload Background
                           <Input
@@ -373,9 +398,10 @@ function Profile() {
                             onChange={onChangeBackground}
                             bordered={false}
                             style={{ display: 'none' }}
-                            disabled={loading}
+                            disabled={isUpdateLoading || isDisabled}
                           />
                         </label>
+                        </Spin>
                       </Col>
                     </div>{' '}
                   </Row>{' '}
@@ -440,10 +466,11 @@ function Profile() {
                       name={'rewards'}
                       style={{ width: '100%', marginTop: '20px' }}
                     >
+                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: "5px"}}>
                       <span>{rewards / ("1e" + 18)} BNB </span>
                       <Button
                         onClick={claim}
-                        disabled={loading}
+                        disabled={isUpdateLoading}
                         icon={<SiteMapIcon style={{ color: '#fff' }} />}
                         type="primary"
                         style={{
@@ -453,6 +480,7 @@ function Profile() {
                           border: 'none',
                         }}
                       >Claim</Button>
+                    </div>
                     </Form.Item>
                   </div>
                   <div className={styles.select}>
@@ -505,11 +533,11 @@ function Profile() {
                       size="large"
                       htmlType="submit"
                       className={`${styles.button} ${styles.btnUpdate}`}
-                      loading={loading}
+                      loading={isUpdateLoading}
                       style={{
                         marginTop: '25px',
                       }}
-                      disabled={loading}
+                      disabled={loadingClaim || isDisabled}
                     >
                       Update
                     </Button>
