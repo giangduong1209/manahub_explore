@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React from "react";
+import React, {useEffect} from "react";
 import styles from "../../../styles.module.css";
 import DashboardLayoutHeader from "./DashboardLayoutHeader";
 import LayoutItem from "./LayoutItem";
@@ -8,15 +8,14 @@ import { useState } from "react";
 import Web3 from "web3";
 import axios from "axios";
 import Constants from "constant";
-let isRunning = false;
 
 const DashboardLayout = ({ setShow, show }) => {
   const web3Js = new Web3(new Web3.providers.WebsocketProvider('wss://ws-nd-524-739-052.p2pify.com/9984e6c12c83e092549386bc36509a29'));
-  const { account } = useMoralis();
+  const { account, isAuthenticated } = useMoralis();
   const [NFTs, setNFTs] = useState([]);
-  const abiNFTs = JSON.parse(Constants.contracts.NFT_COLLECTION_ABI);
-  const addrNFT = Constants.contracts.NFT_COLLECTION_ADDRESS;
-  const smNFTs = new web3Js.eth.Contract(abiNFTs, addrNFT);
+  const abiCollection = JSON.parse(Constants.contracts.NFT_COLLECTION_ABI);
+  const addrCollection = Constants.contracts.NFT_COLLECTION_ADDRESS;
+  const smNFTs = new web3Js.eth.Contract(abiCollection, addrCollection);
   let arr = [];
 
   const getNFTs = async () => {
@@ -54,8 +53,15 @@ const DashboardLayout = ({ setShow, show }) => {
     }
 
   };
-  getNFTs();
-
+  useEffect(() => {
+    if (isAuthenticated) {
+      if (account) {
+        getNFTs();
+      }
+    } else {
+      setNFTs([]);
+    }
+  }, [account, isAuthenticated]);
 
   return (
     <div
@@ -70,8 +76,9 @@ const DashboardLayout = ({ setShow, show }) => {
 
       <div className={clsx(styles.gameLayoutBody, styles.dasboardLayoutBody)}>
         {
-          NFTs.map((e) => (
+          NFTs.map((e,index) => (
             <LayoutItem
+              key={index}
               item={{
                 title: e.name,
                 description: e.description,
@@ -88,4 +95,4 @@ const DashboardLayout = ({ setShow, show }) => {
   );
 };
 
-export default DashboardLayout;
+export default React.memo(DashboardLayout);

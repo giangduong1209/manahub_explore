@@ -147,7 +147,7 @@ function MainHeader() {
   };
 
   const routePage = useMemo(() => {
-    if (pathname.includes("game")) return "game";
+    if (pathname.includes("staking")) return "staking";
     if (pathname.includes("dex")) return "dex";
     return "marketplace";
   }, [pathname]);
@@ -196,15 +196,15 @@ function MainHeader() {
                     </div>
                   )}
 
-                  {(md || routePage === "game") && (
+                  {(md || routePage === "staking") && (
                     <div className={styles.topMenuIcon}>
-                      <Link to="/game/dashboard">
+                      <Link to="/staking">
                         <div className={styles.topMenuIcon}>
                           <img src={logoManahubsStaking} />
                         </div>
                       </Link>
 
-                      {md && routePage === "game" && (
+                      {md && routePage === "staking" && (
                         <Dot className={styles.topMenuIconDot} />
                       )}
                     </div>
