@@ -76,8 +76,9 @@ const DashboardLayout = ({ setShow, show }) => {
 
       <div className={clsx(styles.gameLayoutBody, styles.dasboardLayoutBody)}>
         {
-          NFTs.map((e) => (
+          NFTs.map((e,index) => (
             <LayoutItem
+              key={index}
               item={{
                 title: e.name,
                 description: e.description,
