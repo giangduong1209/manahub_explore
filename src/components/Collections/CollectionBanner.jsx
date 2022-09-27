@@ -1,23 +1,12 @@
-import { Avatar, Button, Col, Row, Space } from 'antd';
-import React, { useState } from 'react';
+import {Col, Row, Space } from 'antd';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './nft.css';
 import styless from './Collections.module.css';
-// import FloorPriceIcon from './FloorPriceIcon';
-// import { getCollectionsByChain } from "helpers/collection";
 import { useMoralis } from 'react-moralis';
-import { networkCollections } from 'helpers/collection';
+import { getCollectionsByChain } from 'helpers/collection';
 import exploreData from '../../data/nfts/explore.json';
 import headerData from './header.json';
-import ManahubsAvatar from 'assets/images/HotCollections/manahubs_icon-01.png';
-import ManahubsCollection1 from 'assets/images/HotCollections/manahubs_nft_demo_1.png';
-import ManahubsCollection2 from 'assets/images/HotCollections/manahubs_nft_demo_2.png';
-import ManahubsCollection3 from 'assets/images/HotCollections/manahubs_nft_demo_3.png';
-
-// const avatarFake =
-//   'https://cdn.sanity.io/images/kt6t0x48/production/41e51630c43b9ade112281066bb22327dbc16fcd-2000x2000.jpg';
-// const imgFake =
-//   'https://cdn.sanity.io/images/kt6t0x48/production/edd4104b305b8275532dda27e6ccb8657108f3e2-1920x768.jpg';
 import {
   FireIcon,
   GemIcon,
@@ -40,14 +29,18 @@ const CollectionBanner = ({ address }) => {
   const [currentExplore, setCurrentExplore] = useState(1);
   const history = useHistory();
   const { chainId } = useMoralis();
-  // const NFTCollections = getCollectionsByChain(chainId);
-  const info = networkCollections[chainId]?.find(
-    (ele) => ele.addrs === address.addrs
-  );
-
-  function linkMintNFT() {
-      history.push('/manahubs');
+  console.log(chainId)
+  const [collections, setCollections] = useState([]);
+  
+  function linkMintNFT(index) {
+    if(index === 1){
+      history.push('/mint/'+index);
+    }
   }
+  useEffect(() => {
+    const NFTCollections = getCollectionsByChain("0x38");
+    setCollections(NFTCollections);
+  }, [chainId])
   return (
     <div>
       <div>
@@ -151,12 +144,6 @@ const CollectionBanner = ({ address }) => {
         </div>
       </div>
       <div>
-        {/* <div
-          className={styless.bg}
-          style={{ backgroundImage: `url(${info?.banner})` }}
-          >
-          <Avatar src={info?.image} className={styless.avatar} size={160} />
-        </div> */}
         <div className={styless.bannerContentWrapper}>
           <div className={styless.sectionHeader}>
             <span className={styless.sectionTitle}>
@@ -164,135 +151,44 @@ const CollectionBanner = ({ address }) => {
             </span>
           </div>
           <Row gutter={[16, 16]} className={styless.cardWrapper}>
-            <Col span={24} md={{ span: 8 }}>
-              <div className={styless.cardItem}>
-                <Row gutter={[8, 8]}>
-                  <Col span={12} className={styless.topImg}>
-                    <img src={ManahubsCollection1} alt="" />
-                  </Col>
-                  <Col span={12} className={styless.topImg}>
-                    <img src={ManahubsCollection2} alt="" />
-                  </Col>
-                  <Col span={24} className={styless.midImg}>
-                    <img src={ManahubsCollection3} alt="" />
-                  </Col>
-                </Row>
-                <div>
-                  <div className={styless.cardItemAvatar}>
-                    <img src={ManahubsAvatar} alt="" />
-                  </div>
-                  <Row justify="space-between" align="middle">
-                    <Col>
-                      <Space direction="vertical" align="start" size={0}>
-                        <span className={styless.cardCollectionName}>
-                          Guardians of the Galaxy
-                        </span>
-                        <span className={styless.cardCreateBy}>
-                          Created by : <b>Manahubs</b>
-                        </span>
-                      </Space>
+            {collections && collections.map((item, index) => (
+              <Col span={24} md={{ span: 8 }} key = {index}>
+                <div className={styless.cardItem}>
+                  <Row gutter={[8, 8]}>
+                    <Col span={12} className={styless.topImg}>
+                      <img src={item.imageCollections.img_0} alt="" />
                     </Col>
-                    <Col>
-                      <span className={styless.itemSeeMore} onClick = {()=>linkMintNFT()}>See more</span>
+                    <Col span={12} className={styless.topImg}>
+                      <img src={item.imageCollections.img_1} alt="" />
+                    </Col>
+                    <Col span={24} className={styless.midImg}>
+                      <img src={item.imageCollections.img_2} alt="" />
                     </Col>
                   </Row>
-                </div>
-              </div>
-            </Col>
-            <Col span={24} md={{ span: 8 }}>
-              <div className={styless.cardItem}>
-                <Row gutter={[8, 8]}>
-                  <Col span={12} className={styless.topImg}>
-                    <img
-                      src="https://nft.manahubs.com/nft/img/nfts-img/1.jpg"
-                      alt=""
-                    />
-                  </Col>
-                  <Col span={12} className={styless.topImg}>
-                    <img
-                      src="https://nft.manahubs.com/nft/img/nfts-img/2.jpg"
-                      alt=""
-                    />
-                  </Col>
-                  <Col span={24} className={styless.midImg}>
-                    <img
-                      src="https://nft.manahubs.com/nft/img/nfts-img/3.jpg"
-                      alt=""
-                    />
-                  </Col>
-                </Row>
-                <div>
-                  <div className={styless.cardItemAvatar}>
-                    <img
-                      src="https://nft.manahubs.com/nft/img/authors/1.jpg"
-                      alt=""
-                    />
+                  <div>
+                    <div className={styless.cardItemAvatar}>
+                      <img src={item.image} alt="" />
+                    </div>
+                    <Row justify="space-between" align="middle">
+                      <Col>
+                        <Space direction="vertical" align="start" size={0}>
+                          <span className={styless.cardCollectionName}>
+                            {item.name}
+                          </span>
+                          <span className={styless.cardCreateBy}>
+                            Created by : <b>{item.createdBy}</b>
+                          </span>
+                        </Space>
+                      </Col>
+                      <Col>
+                        <span className={styless.itemSeeMore} onClick = {()=>linkMintNFT(item.index)}>See more</span>
+                      </Col>
+                    </Row>
                   </div>
-                  <Row justify="space-between" align="middle">
-                    <Col>
-                      <Space direction="vertical" align="start" size={0}>
-                        <span className={styless.cardCollectionName}>
-                          Parallel Alpha
-                        </span>
-                        <span className={styless.cardCreateBy}>
-                          Created by : <b>HODLER</b>
-                        </span>
-                      </Space>
-                    </Col>
-                    <Col>
-                      <span className={styless.itemSeeMore}>See more</span>
-                    </Col>
-                  </Row>
                 </div>
-              </div>
-            </Col>
-            <Col span={24} md={{ span: 8 }}>
-              <div className={styless.cardItem}>
-                <Row gutter={[8, 8]}>
-                  <Col span={12} className={styless.topImg}>
-                    <img
-                      src="https://nft.manahubs.com/nft/img/nfts-img/7.jpg"
-                      alt=""
-                    />
-                  </Col>
-                  <Col span={12} className={styless.topImg}>
-                    <img
-                      src="https://nft.manahubs.com/nft/img/nfts-img/8.jpg"
-                      alt=""
-                    />
-                  </Col>
-                  <Col span={24} className={styless.midImg}>
-                    <img
-                      src="https://nft.manahubs.com/nft/img/nfts-img/9.jpg"
-                      alt=""
-                    />
-                  </Col>
-                </Row>
-                <div>
-                  <div className={styless.cardItemAvatar}>
-                    <img
-                      src="https://nft.manahubs.com/nft/img/authors/3.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <Row justify="space-between" align="middle">
-                    <Col>
-                      <Space direction="vertical" align="start" size={0}>
-                        <span className={styless.cardCollectionName}>
-                          Cyber Art
-                        </span>
-                        <span className={styless.cardCreateBy}>
-                          Created by : <b>Yobaninja</b>
-                        </span>
-                      </Space>
-                    </Col>
-                    <Col>
-                      <span className={styless.itemSeeMore}>See more</span>
-                    </Col>
-                  </Row>
-                </div>
-              </div>
-            </Col>
+              </Col>
+
+            ))}
           </Row>
           <Row gutter={[16, 16]} align="middle" justify="space-between">
             <Col>

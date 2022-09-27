@@ -197,27 +197,16 @@ const App = ({ isServerInfo }) => {
             <Route path="/my-collection">
               <MyCollection />
             </Route>
-            {/* <Route path="/contract">
-              <Contract />
-            </Route> */}
-            <Route path="/dex">
-              <Game />
-            </Route>
-            <Route path="/dex/:type">
-              <Game />
-            </Route>
-
             <Route path="/view-nft/:contract/:id">
               <ViewNFT />
             </Route>
-            <Route path="/manahubs">
+            <Route path="/mint/:index">
               <DragonBox />
             </Route>
             <Route path="/staking">
               <Game />
             </Route>
             <Route path="/">
-              {/* <Home /> */}
               <Redirect to="/collection/0xfde910FbaA9A6fDD5d3F80cCD44a54763DE2d9d0" />
             </Route>
             <Route path="/ethereum-boilerplate">

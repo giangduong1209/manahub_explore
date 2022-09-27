@@ -128,7 +128,6 @@ const LayoutItem = ({ item, type, image }) => {
           loading = {isLoading}
           onClick={() => handleStakingClicked()}
           block
-          disabled
         >
           Start Staking
         </Button>
