@@ -1,5 +1,4 @@
 import { Button, Modal, Statistic } from "antd";
-import moment from "moment";
 import React from "react";
 import styless from "./Explores.module.css";
 // import imgFake from 'assets/images/img-explore.png';
@@ -12,6 +11,8 @@ import {
     useWeb3ExecuteFunction,
 } from "react-moralis";
 import Constants from "constant";
+import { getCollectionByAddress } from "helpers/collection";
+import { checkWalletConnection } from "helpers/auth";
 
 let clickBuy = false;
 let checkInstallMetamask = true;
@@ -44,14 +45,14 @@ const Cardbox = () => {
 
     const contractProcessor = useWeb3ExecuteFunction();
     const [loading, setLoading] = useState(false);
-    let { Moralis, authenticate, account } = useMoralis();
-    const serverUrl = "https://bzyt487madhw.usemoralis.com:2053/server";
-    const appId = "ODKsAGfZTKjTaG2Xv2Kph0ui303CX3bRtIwxQ6pj";
+    let { Moralis, authenticate, account, isAuthenticated } = useMoralis();
+    const serverUrl = process.env.REACT_APP_MORALIS_SERVER_URL;
+    const appId = process.env.REACT_APP_MORALIS_APPLICATION_ID;
     Moralis.start({ serverUrl, appId });
     
     const Web3Api = useMoralisWeb3Api();
-    const manahubsABI = JSON.parse(Constants.contracts.NFT_COLLECTION_ABI);
-    const manahubAddr = Constants.contracts.NFT_COLLECTION_ADDRESS;
+    const nftCollectionABI = JSON.parse(Constants.contracts.NFT_COLLECTION_ABI);
+    const nftCollectionAddr = Constants.contracts.NFT_COLLECTION_ADDRESS;
     if (checkInstallMetamask && document.getElementById("walletConnectAlert")) {
         setTimeout(async () => {
             checkInstallMetamask = false;
@@ -105,7 +106,40 @@ const Cardbox = () => {
         }
         // await Moralis.Cloud.run("updateRewards", { event: event });
     }
-    async function setCost() {
+    async function mint () {
+        setLoading(true);
+        const tokenPrice = amount *Constants.NFT_PRICE* 10 ** 18;
+        const ops = {
+            contractAddress: nftCollectionAddr,
+            functionName: "mint",
+            abi: nftCollectionABI,
+            params: {
+                _mintAmount: amount,
+            },
+            msgValue: tokenPrice,
+        };
+        console.log("Options",ops);
+        await contractProcessor.fetch({
+            params: ops,
+            onSuccess: () => {
+                updateRewardRefs({
+                    owner: account,
+                    price: tokenPrice,
+                });
+                setLoading(false);
+                succPurchase();
+                clickBuy = false;
+            },
+            onError: (error) => {
+                console.log(error);
+                setLoading(false);
+                failPurchase(
+                    `There was a problem when buy this NFT`
+                );
+            },
+        }); 
+    }
+    async function handleMintClicked() {
         let enable = true;
         if (enable) {
             if (!account) {
@@ -116,39 +150,7 @@ const Cardbox = () => {
                     if (!amount || amount === 0) {
                         setAmount(1);
                     }
-                    authenticate().then(async () => {
-                        setLoading(true);
-                        const tokenPrice = amount *Constants.NFT_PRICE* 10 ** 18;
-                        const ops = {
-                            contractAddress: manahubAddr,
-                            functionName: "mint",
-                            abi: manahubsABI,
-                            params: {
-                                _mintAmount: amount,
-                            },
-                            msgValue: tokenPrice,
-                        };
-                        console.log("Options",ops);
-                        await contractProcessor.fetch({
-                            params: ops,
-                            onSuccess: () => {
-                                updateRewardRefs({
-                                    owner: account,
-                                    price: tokenPrice,
-                                });
-                                setLoading(false);
-                                succPurchase();
-                                clickBuy = false;
-                            },
-                            onError: (error) => {
-                                console.log(error);
-                                setLoading(false);
-                                failPurchase(
-                                    `There was a problem when buy this NFT`
-                                );
-                            },
-                        });
-                    });
+                    await checkWalletConnection(isAuthenticated,authenticate, mint)
                 }
             }
         }
@@ -285,7 +287,7 @@ const Cardbox = () => {
                         <Button
                             className={btnstyles.exploreBtn}
                             loading={loading}
-                            onClick={() => setCost()}
+                            onClick={() => handleMintClicked()}
                             style={{ fontFamily: "GILROY " }}
                             visible={isNFTSale ? 1 : 0}
                         >
