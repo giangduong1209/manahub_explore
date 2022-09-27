@@ -4,7 +4,7 @@ export const networkCollections = {
         index: 1,
         image: "https://nftstorage.link/ipfs/bafkreihwtsrptgbgtawpjn2lhzbphkvmm2jpvqnq7wlbnkwafbcnmbutyu",
         banner: 'https://nftstorage.link/ipfs/bafybeihjtwqfljjugtgwq5egsopggvgxdkjytqzrbdxx36pxrxxvwhqexy',
-        name: "Manahubs",
+        name: "Guardians of Galaxy",
         addrs: "0xfde910FbaA9A6fDD5d3F80cCD44a54763DE2d9d0",
         imageCollections: {
           img_0:"https://nftstorage.link/ipfs/bafybeihj2a7qbvn3kus6nqilabgobml3wpzv7557hycps2bn5mxmojxxj4",
