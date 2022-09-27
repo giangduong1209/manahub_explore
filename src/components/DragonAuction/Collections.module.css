@@ -165,7 +165,15 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+.bannerWrapper {
+  height: 500px;
+  width: 100%;
+}
+.bannerImg {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 .bgVideo {
   position: relative;
   height: 100%;

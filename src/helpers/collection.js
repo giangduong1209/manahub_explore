@@ -1,12 +1,65 @@
 export const networkCollections = {
     "0x38" : [
       {
-        image: "https://ipfs.moralis.io:2053/ipfs/QmNjFGYsGW38j3vmtUYsoTPANZ6nrSFp9a9bjfLyzkmKX1",
-        banner: 'https://ipfs.moralis.io:2053/ipfs/QmQCECGEZNpKRHCAPBUNvu6QosWJT7iSYMR4oNimHsjGNC',
+        image: "https://nftstorage.link/ipfs/bafkreihwtsrptgbgtawpjn2lhzbphkvmm2jpvqnq7wlbnkwafbcnmbutyu",
+        banner: 'https://nftstorage.link/ipfs/bafybeihjtwqfljjugtgwq5egsopggvgxdkjytqzrbdxx36pxrxxvwhqexy',
         name: "Manahubs",
         addrs: "0xfde910FbaA9A6fDD5d3F80cCD44a54763DE2d9d0",
-        added: true
-      }
+        imageCollections: [
+          "https://nftstorage.link/ipfs/bafybeihj2a7qbvn3kus6nqilabgobml3wpzv7557hycps2bn5mxmojxxj4",
+          "https://nftstorage.link/ipfs/bafybeif32hulsaeeilgjpoo7dniuvg4putidydfuesy2rtx5jcvyfvtdp4",
+          "https://nftstorage.link/ipfs/bafybeibarzc7y7sghdv32ecgkotdwkd2nj64im5vvzbglyd6f7x7kgvjhi"
+        ],
+        added: true,
+        createdBy: "Manahubs",
+        description: "In the world of 2022, everything in the world became chaotic, wars of epidemics, economic crises, and the collapse of the world's financial market. The New World MANAHUBS was born with the aim of bringing together people from all over the world towards a new era of escaping poverty and restructuring the global financial system.",
+        statistics: {
+          totalItems: "9999",
+          totalOwners: "250",
+          floorPrice: "0.15",
+          totalVolume: "37,5",
+        }
+      },
+      {
+        image: "",
+        banner: "https://nftstorage.link/ipfs/bafybeihjtwqfljjugtgwq5egsopggvgxdkjytqzrbdxx36pxrxxvwhqexy",
+        name: "Parallel Alpha",
+        addrs: "",
+        imageCollections: [
+          "",
+          "",
+          ""
+        ],
+        added: true,
+        createdBy: "HOLDER",
+        description: "",
+        statistics: {
+          totalItems: "",
+          totalOwners: "",
+          floorPrice: "",
+          totalVolume: "",
+        }
+      },
+      {
+        image: "",
+        banner: "",
+        name: "Cyber Art",
+        addrs: "",
+        imageCollections: [
+          "",
+          "",
+          ""
+        ],
+        added: true,
+        createdBy: "Yobaninja",
+        description: "",
+        statistics: {
+          totalItems: "",
+          totalOwners: "",
+          floorPrice: "",
+          totalVolume: "",
+        }
+      }      
     ],
     "0x89" : [
         {

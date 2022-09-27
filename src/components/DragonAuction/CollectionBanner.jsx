@@ -10,6 +10,7 @@ import {
   BsFacebook,
   BsTwitter,
 } from "react-icons/bs";
+import Constants from "constant";
 import ShareLink from "react-facebook-share-link";
 import ShareLinkTwitter from "react-twitter-share-link";
 import ManahubsAvatar from 'assets/images/manahubs_icon-01.png';
@@ -20,11 +21,11 @@ let isGetingVol = true;
 
 const CollectionBanner = () => {
   const { Moralis } = useMoralis();
-  const serverUrl = "https://bzyt487madhw.usemoralis.com:2053/server";
-  const appId = "ODKsAGfZTKjTaG2Xv2Kph0ui303CX3bRtIwxQ6pj";
+  const serverUrl = process.env.REACT_APP_MORALIS_SERVER_URL;
+  const appId = process.env.REACT_APP_MORALIS_APPLICATION_ID;
   Moralis.start({ serverUrl, appId });
 
-  const manahubAddr = '0x70cbc0e9eb87035ad2fbb5eba433b9496195e991';
+  const manahubAddr = Constants.contracts.NFT_COLLECTION_ADDRESS;
   const Web3Api = useMoralisWeb3Api();
 
   const { SubMenu } = Menu;
@@ -68,7 +69,9 @@ const CollectionBanner = () => {
         className={styless.bg}
       // style={{ backgroundClip: `url(${DragonClip})` }}
       >
-        <img width = '100%' src={ManahubsBanner} />
+        <div className = {styless.bannerWrapper}>
+          <img className={styless.bannerImg} src={ManahubsBanner} />
+        </div>
         {/* <video muted autoPlay loop width='100%'> <source src={'https://ipfs.moralis.io:2053/ipfs/QmNXHTD2oWKC8m4AusReS1J48QEVFFPMucu9pZ9Jm8Co29'} type="video/mp4"></source></video> */}
         <Avatar src={ManahubsAvatar} className={styless.avatar} size={160} />
       </div>

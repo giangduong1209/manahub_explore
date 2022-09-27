@@ -8,15 +8,12 @@ import { useMoralis, useNFTBalances } from "react-moralis";
 import { useHistory } from 'react-router-dom';
 import { useVerifyMetadata } from "hooks/useVerifyMetadata";
 import { requireWalletConnection } from 'helpers/auth';
-// const fakeDataItem = {
-//   name: 'Name',
-//   description:
-//     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam orci congue diam tempor dui sed vitae. Urna, in metus, eu diam sit aliquet.',
-//   avatar: avatarFake,
-//   image: imgFake,
-// };
+import Web3 from "web3";
+import axios from "axios";
+import Constants from 'constant';
 
 const MyCollections = memo((props) => {
+  
   const { data: NFTBalances, isFetching } = useNFTBalances();
   const [user, setUser] = useState("Manahubs");
   const { Moralis, account, isAuthenticated } = useMoralis();
@@ -26,6 +23,8 @@ const MyCollections = memo((props) => {
   Moralis.serverURL = serverURL;
   const history = useHistory();
   const { verifyMetadata } = useVerifyMetadata();
+  
+
   function itemRender(current, type, originalElement) {
     if (type === 'prev') {
       return null;
