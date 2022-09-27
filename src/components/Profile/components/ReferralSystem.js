@@ -1,5 +1,5 @@
 import { RightOutlined } from "@ant-design/icons";
-import { Card, Col, Row, Tree, Typography, Tooltip } from "antd";
+import { Card, Col, Row, Tree, Typography, Tooltip, Grid } from "antd";
 import clsx from "clsx";
 import { CopyIcon } from "components/Icons";
 import styles from "../styles.module.css";
@@ -12,13 +12,15 @@ let fakeRef = [
 ];
 let totalSystemRef = 0;
 const { TreeNode } = Tree;
+const { useBreakpoint } = Grid;
 
 const ReferralSystem = ({ toggleReferral }) => {
+  const {xs} = useBreakpoint();
   const [commission, setCommission] = useState(0);
   const [totalSystem, setTotalSystem] = useState(0);
-  const { Moralis, account } = useMoralis();
+  const { Moralis, account, isAuthenticated } = useMoralis();
   const [nodes, setNodes] = useState(fakeRef);
-  const [gotRefInfo, setGotRefInfo] = useState(false);
+  const [currentAddress, setCurrentAddress] = useState(account);
   async function getRefInfo(address) {
     if(address) {    
       totalSystemRef = 0;
@@ -59,11 +61,6 @@ const ReferralSystem = ({ toggleReferral }) => {
     } 
   }
 
-  if (!gotRefInfo) {
-    setGotRefInfo(true);
-    fakeRef = [];
-    getRefInfo(account);
-  }
 
   function getTotalSystem(array) {
     array.forEach(element => {
@@ -77,16 +74,14 @@ const ReferralSystem = ({ toggleReferral }) => {
       }
     });
   }
-
-  if (nodes.length > 0) {
-    totalSystemRef = 0;
-    getTotalSystem(nodes);
+  const renderValue = (number) => {
+    if(number > 0) {
+      return xs ? number.toFixed(7) : number.toFixed(10)
+    }
+    else{
+      return number
+    }
   }
-
-  if (totalSystem === 'NA') {
-    totalSystem = 0;
-  }
-
   const handleCopy = (text) => {
     navigator.clipboard.writeText(text);
   }
@@ -107,7 +102,7 @@ const ReferralSystem = ({ toggleReferral }) => {
               </div>
             </Tooltip>
             <div className={styles.nodeRight}>
-              Commission: {_ref.totalTreeSystem > 0 ? _ref.totalTreeSystem.toFixed(10) : _ref.totalTreeSystem} BNB
+              Commission: {renderValue(_ref.totalTreeSystem)} BNB
             </div>
           </div>
         }
@@ -115,6 +110,26 @@ const ReferralSystem = ({ toggleReferral }) => {
         {_ref?.children && renderNode(_ref)}
       </TreeNode>
     ));
+  useEffect(() => {
+    if(account && isAuthenticated) {
+      setCurrentAddress(account);
+      if (nodes.length > 0) {
+        totalSystemRef = 0;
+        getTotalSystem(nodes);
+      }
+
+      if (totalSystem === 'NA') {
+        totalSystem = 0;
+      }
+      fakeRef = [];
+      getRefInfo(account);
+    }else{
+      setCurrentAddress("");
+      setTotalSystem(0);
+      setCommission(0);
+      setNodes([]);
+    }
+  }, [account, isAuthenticated])
   return (
     <Card className={styles.card}>
       <RightOutlined onClick={toggleReferral} className={styles.btnBack} />
@@ -128,10 +143,10 @@ const ReferralSystem = ({ toggleReferral }) => {
                 maxWidth: "100%",
               }}
               ellipsis={{
-                tooltip: account,
+                tooltip: currentAddress,
               }}
             >
-              {account}
+              {currentAddress}
             </Typography.Text>
             <Tooltip title="Copied" trigger="click" placement="top"> 
             <span className={styles.iconCopy}>
@@ -186,7 +201,7 @@ const ReferralSystem = ({ toggleReferral }) => {
                           </div>
                   </Tooltip>
                     <div className={styles.nodeRight}>
-                      Commission: {ref.totalTreeSystem} BNB
+                      Commission: {renderValue(ref.totalTreeSystem)} BNB
                     </div>
                   </div>
                 }

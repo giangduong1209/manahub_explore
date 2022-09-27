@@ -6,7 +6,8 @@ import CollectionCard from './CollectionCard';
 import styless from './MyCollections.module.css';
 import { useMoralis, useNFTBalances } from "react-moralis";
 import { useHistory } from 'react-router-dom';
-
+import { useVerifyMetadata } from "hooks/useVerifyMetadata";
+import { requireWalletConnection } from 'helpers/auth';
 // const fakeDataItem = {
 //   name: 'Name',
 //   description:
@@ -16,10 +17,15 @@ import { useHistory } from 'react-router-dom';
 // };
 
 const MyCollections = memo((props) => {
-  const { data: NFTBalances } = useNFTBalances();
+  const { data: NFTBalances, isFetching } = useNFTBalances();
   const [user, setUser] = useState("Manahubs");
-  const { Moralis, account } = useMoralis();
+  const { Moralis, account, isAuthenticated } = useMoralis();
+  const serverURL = process.env.REACT_APP_MORALIS_SERVER_URL;
+  const appId = process.env.REACT_APP_MORALIS_APPLICATION_ID;
+  Moralis.initialize(appId);
+  Moralis.serverURL = serverURL;
   const history = useHistory();
+  const { verifyMetadata } = useVerifyMetadata();
   function itemRender(current, type, originalElement) {
     if (type === 'prev') {
       return null;
@@ -29,29 +35,33 @@ const MyCollections = memo((props) => {
     }
     return originalElement;
   }
-
+  useEffect(() => {
+    if(isFetching === true) {
+      console.time("getNFTBalances");
+    }
+    else{
+      console.timeEnd("getNFTBalances");
+    }
+  }, [isFetching]);
   const checkAuthen = async () => {
-    Moralis.initialize("ODKsAGfZTKjTaG2Xv2Kph0ui303CX3bRtIwxQ6pj");
-    Moralis.serverURL = "https://bzyt487madhw.usemoralis.com:2053/server";
-    const users = Moralis.Object.extend("profile");
-    const query = new Moralis.Query(users);
-    query.equalTo("address", account);
-    const data = await query.first();
-    return data;
+    if(account && isAuthenticated){
+      const users = Moralis.Object.extend("profile");
+      const query = new Moralis.Query(users);
+      query.equalTo("address", account.toLowerCase());
+      const data = await query.first();
+      console.log(data)
+      if(data){
+        setUser(data.attributes);
+      }
+      else{ 
+        history.push("/profile")
+      }
+    }
   };
 
   useEffect(() => {
-    checkAuthen().then((res) => {
-      if (res) {
-        // setAuthenticate(true);
-        setUser(res.attributes);
-      } else {
-        // props.getAuthenticate({ authenticated: true });
-        history.push("/profile");
-      }
-    });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    checkAuthen()
+  }, [account, isAuthenticated]);
   return (
     <div
       style={{
@@ -76,14 +86,17 @@ const MyCollections = memo((props) => {
         <div className={styless.wrapper}>
           <div className={styless.wrapperInner}>
             { NFTBalances?.result &&
-              NFTBalances.result.map((data, index) => (
+              NFTBalances.result.map((data, index) => {
+                data = verifyMetadata(data);
+                return (
               <CollectionCard
+                key={index}
                 item={{
                   ...data,
                   name: data.metadata?.name
                 }}
               />
-            ))}
+            )})}
           </div>
         </div>
         <Row justify="center" style={{ marginTop: '24px' }}>
