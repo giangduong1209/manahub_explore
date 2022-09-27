@@ -3,9 +3,9 @@ import { Card, Col, Row, Tree, Typography, Tooltip, Grid } from "antd";
 import clsx from "clsx";
 import { CopyIcon } from "components/Icons";
 import styles from "../styles.module.css";
-import { useMoralis, useMoralisQuery } from "react-moralis";
+import { useMoralis } from "react-moralis";
 import { useEffect, useState } from "react";
-import { async } from "@firebase/util";
+import Constants from "constant";
 // import { async } from "@firebase/util";
 // Fake data to display
 let fakeRef = [
@@ -25,6 +25,9 @@ const ReferralSystem = ({ toggleReferral }) => {
     if(address) {    
       totalSystemRef = 0;
       await getRef(address, fakeRef);
+      console.log("Fake ref", fakeRef);
+      // limit fake ref to LIMIT_REFFERAL_NUMBER
+      
       setNodes(fakeRef);
     
 
@@ -36,12 +39,16 @@ const ReferralSystem = ({ toggleReferral }) => {
         setCommission(info.attributes.commission / ("1e" + 18));
         totalSystemRef = totalSystemRef + info.attributes.commission / ("1e" + 18);
       }
+      else{
+        setCommission(0);
+      }
       setTotalSystem(totalSystemRef.toFixed(10));
     }
   }
-
-  async function getRef(address, array) {
-    console.log("Address",address);
+  async function getRef(address, array, level = 1) {
+    if(level >= Constants.LIMIT_REFERRAL_LEVEL) {
+      return;
+    }
     const query = new Moralis.Query('profile');
     query.equalTo("ref", address);
     const result = await query.find();
@@ -57,11 +64,9 @@ const ReferralSystem = ({ toggleReferral }) => {
       }
       array.push(obj);
       
-      await getRef(element.address, obj.children);
+      await getRef(element.address, obj.children, level + 1);
     } 
   }
-
-
   function getTotalSystem(array) {
     array.forEach(element => {
       // console.log(element);
