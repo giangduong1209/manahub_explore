@@ -10,11 +10,11 @@ import axios from "axios";
 import Constants from "constant";
 
 const DashboardLayout = ({ setShow, show }) => {
-  const web3Js = new Web3(new Web3.providers.WebsocketProvider('wss://ws-nd-524-739-052.p2pify.com/9984e6c12c83e092549386bc36509a29'));
   const { account, isAuthenticated } = useMoralis();
-  const [NFTs, setNFTs] = useState([]);
   const abiCollection = JSON.parse(Constants.contracts.NFT_COLLECTION_ABI);
   const addrCollection = Constants.contracts.NFT_COLLECTION_ADDRESS;
+  const [NFTs, setNFTs] = useState([]);
+  const web3Js = new Web3(new Web3.providers.WebsocketProvider('wss://ws-nd-524-739-052.p2pify.com/9984e6c12c83e092549386bc36509a29'));
   const smNFTs = new web3Js.eth.Contract(abiCollection, addrCollection);
   let arr = [];
 
