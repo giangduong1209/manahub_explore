@@ -13,14 +13,17 @@ import {
 import Constants from "constant";
 import ShareLink from "react-facebook-share-link";
 import ShareLinkTwitter from "react-twitter-share-link";
-import ManahubsAvatar from 'assets/images/manahubs_icon-01.png';
-import ManahubsBanner from 'assets/images/manahubs_cover.png';
 import { useMoralis, useMoralisWeb3Api } from "react-moralis";
+import { getCollectionByIndex } from "helpers/collection";
+import { useParams } from "react-router";
+import{useState, useEffect} from "react";
 let totalVol = 0;
 let isGetingVol = true;
 
 const CollectionBanner = () => {
-  const { Moralis } = useMoralis();
+  const {index} = useParams();
+  const { Moralis, chainId } = useMoralis();
+  const [collection, setCollection] = useState({});
   const serverUrl = process.env.REACT_APP_MORALIS_SERVER_URL;
   const appId = process.env.REACT_APP_MORALIS_APPLICATION_ID;
   Moralis.start({ serverUrl, appId });
@@ -29,7 +32,14 @@ const CollectionBanner = () => {
   const Web3Api = useMoralisWeb3Api();
 
   const { SubMenu } = Menu;
+  useEffect(() => {
+    const NFTCollections =  getCollectionByIndex( index, chainId );
+    console.log(chainId,index);
+    setCollection(NFTCollections);
+    console.log(collection);
 
+  }, [chainId, index])
+  
   const openNotification = (placement) => {
     const args = {
       message: "Link Copied !",
@@ -37,32 +47,32 @@ const CollectionBanner = () => {
     };
     notification.success(args);
   };
-  if (isGetingVol) {
-    isGetingVol = false;
-    getVolumeTrade();
-  }
+  // if (isGetingVol) {
+  //   isGetingVol = false;
+  //   getVolumeTrade();
+  // }
 
-  async function getVolumeTrade() {
+  // async function getVolumeTrade() {
 
-    const options = {
-      address: manahubAddr,
-      chain: "bsc",
-    };
+  //   const options = {
+  //     address: manahubAddr,
+  //     chain: "bsc",
+  //   };
 
 
-    const nftTransfers = await Web3Api.token.getContractNFTTransfers(options);
+  //   const nftTransfers = await Web3Api.token.getContractNFTTransfers(options);
 
-    let arrNftTransfers = nftTransfers.result;
-    let countTransfers = 0;
+  //   let arrNftTransfers = nftTransfers.result;
+  //   let countTransfers = 0;
 
-    arrNftTransfers.forEach((tx) => {
-      if (parseInt(tx.value) > 10 ** 18) {
-        countTransfers++;
-        totalVol = 2 * countTransfers;
-        document.getElementById("volumTrade").innerHTML = totalVol + " BNB";
-      }
-    })
-  }
+  //   arrNftTransfers.forEach((tx) => {
+  //     if (parseInt(tx.value) > 10 ** 18) {
+  //       countTransfers++;
+  //       totalVol = 2 * countTransfers;
+  //       document.getElementById("volumTrade").innerHTML = totalVol + " BNB";
+  //     }
+  //   })
+  // }
   return (
     <div>
       <div
@@ -70,10 +80,10 @@ const CollectionBanner = () => {
       // style={{ backgroundClip: `url(${DragonClip})` }}
       >
         <div className = {styless.bannerWrapper}>
-          <img className={styless.bannerImg} src={ManahubsBanner} />
+          <img className={styless.bannerImg} src={collection?.banner}  />
         </div>
         {/* <video muted autoPlay loop width='100%'> <source src={'https://ipfs.moralis.io:2053/ipfs/QmNXHTD2oWKC8m4AusReS1J48QEVFFPMucu9pZ9Jm8Co29'} type="video/mp4"></source></video> */}
-        <Avatar src={ManahubsAvatar} className={styless.avatar} size={160} />
+        <Avatar src={collection?.image} className={styless.avatar} size={160} />
       </div>
       <div className={styless.endRow}>
         <div className={styless.socialIconsContainer}>
@@ -197,10 +207,10 @@ const CollectionBanner = () => {
         </div>
       </div>
       <div className={styless.bannerContent} style={{ fontFamily: "GILROY " }}>
-        <div className={styless.bannerTitle}>Manahubs</div>
+        <div className={styless.bannerTitle}>{collection?.name}</div>
 
         <div className={styless.createdBy}>
-          Created by <span>Manahubs Team</span>
+          Created by <span>{collection?.createdBy}</span>
         </div>
         <div className={styless.statics}>
           <Row gutter={{ xs: 12, sm: 32, xl: 64 }}>
@@ -210,7 +220,7 @@ const CollectionBanner = () => {
                   className={styless.number}
                   style={{ fontFamily: "GILROY " }}
                 >
-                  9999
+                  {collection?.statistics?.totalItems}
                 </span>
                 <span
                   className={styless.attr}
@@ -227,7 +237,7 @@ const CollectionBanner = () => {
                   className={styless.number}
                   style={{ fontFamily: "GILROY " }}
                 >
-                  250
+                  {collection?.statistics?.totalOwners}
                 </span>
                 <span
                   className={styless.attr}
@@ -245,7 +255,7 @@ const CollectionBanner = () => {
                 >
                   <Space>
                     <FloorPriceIcon className={styless.icon} />
-                    0.15
+                    {collection?.statistics?.floorPrice}
                   </Space>
                 </span>
                 <span
@@ -263,8 +273,7 @@ const CollectionBanner = () => {
                   className={styless.number}
                   style={{ fontFamily: "GILROY " }}
                 >
-                  <FloorPriceIcon className={styless.icon} />
-                  37,5
+                  {collection?.statistics?.totalVolume} BNB
                 </span>
                 <span
                   className={styless.attr}
@@ -276,7 +285,7 @@ const CollectionBanner = () => {
             </Col>
           </Row>
         </div>
-        <div className={styless.desc} style={{ fontFamily: "GILROY " }}>In the world of 2022, everything in the world became chaotic, wars of epidemics, economic crises, and the collapse of the world's financial market. The New World MANAHUBS was born with the aim of bringing together people from all over the world towards a new era of escaping poverty and restructuring the global financial system.</div>
+        <div className={styless.desc} style={{ fontFamily: "GILROY " }}>{collection?.description}</div>
       </div>
     </div>
   );

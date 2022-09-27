@@ -6,11 +6,11 @@ export const networkCollections = {
         banner: 'https://nftstorage.link/ipfs/bafybeihjtwqfljjugtgwq5egsopggvgxdkjytqzrbdxx36pxrxxvwhqexy',
         name: "Manahubs",
         addrs: "0xfde910FbaA9A6fDD5d3F80cCD44a54763DE2d9d0",
-        imageCollections: [
-          "https://nftstorage.link/ipfs/bafybeihj2a7qbvn3kus6nqilabgobml3wpzv7557hycps2bn5mxmojxxj4",
-          "https://nftstorage.link/ipfs/bafybeif32hulsaeeilgjpoo7dniuvg4putidydfuesy2rtx5jcvyfvtdp4",
-          "https://nftstorage.link/ipfs/bafybeibarzc7y7sghdv32ecgkotdwkd2nj64im5vvzbglyd6f7x7kgvjhi"
-        ],
+        imageCollections: {
+          img_0:"https://nftstorage.link/ipfs/bafybeihj2a7qbvn3kus6nqilabgobml3wpzv7557hycps2bn5mxmojxxj4",
+          img_1:"https://nftstorage.link/ipfs/bafybeif32hulsaeeilgjpoo7dniuvg4putidydfuesy2rtx5jcvyfvtdp4",
+          img_2:"https://nftstorage.link/ipfs/bafybeibarzc7y7sghdv32ecgkotdwkd2nj64im5vvzbglyd6f7x7kgvjhi"
+        },
         added: true,
         createdBy: "Manahubs",
         description: "In the world of 2022, everything in the world became chaotic, wars of epidemics, economic crises, and the collapse of the world's financial market. The New World MANAHUBS was born with the aim of bringing together people from all over the world towards a new era of escaping poverty and restructuring the global financial system.",
@@ -23,15 +23,15 @@ export const networkCollections = {
       },
       {
         index: 2,
-        image: "",
+        image: "https://nft.manahubs.com/nft/img/authors/1.jpg",
         banner: "",
         name: "Parallel Alpha",
         addrs: "",
-        imageCollections: [
-          "",
-          "",
-          ""
-        ],
+        imageCollections: {
+          img_0:"https://nft.manahubs.com/nft/img/nfts-img/1.jpg",
+          img_1:"https://nft.manahubs.com/nft/img/nfts-img/2.jpg",
+          img_2:"https://nft.manahubs.com/nft/img/nfts-img/3.jpg"
+        },
         added: true,
         createdBy: "HOLDER",
         description: "",
@@ -44,15 +44,15 @@ export const networkCollections = {
       },
       {
         index: 3,
-        image: "",
+        image: "https://nft.manahubs.com/nft/img/authors/3.jpg",
         banner: "",
         name: "Cyber Art",
         addrs: "",
-        imageCollections: [
-          "",
-          "",
-          ""
-        ],
+        imageCollections: {
+          img_0:"https://nft.manahubs.com/nft/img/nfts-img/7.jpg",
+          img_1:"https://nft.manahubs.com/nft/img/nfts-img/8.jpg",
+          img_2: "https://nft.manahubs.com/nft/img/nfts-img/9.jpg"
+        },
         added: true,
         createdBy: "Yobaninja",
         description: "",
@@ -159,4 +159,8 @@ export const networkCollections = {
         },
       ], 
 }
-export const getCollectionsByChain = (chain) => networkCollections[chain]; 
+export const getCollectionsByChain = (chain) => networkCollections[chain];
+export const getCollectionByIndex = (index, chainId) => {
+  const collections = networkCollections[chainId];
+  return collections ? collections.find((collection) => collection.index === parseInt(index)) : {};
+} 
