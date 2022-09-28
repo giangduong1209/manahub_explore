@@ -7,6 +7,7 @@ import { useMoralisQuery, useMoralis, useWeb3ExecuteFunction } from "react-moral
 import { useNFTTokenIds } from "hooks/useNFTTokenIds";
 import { useParams } from "react-router-dom";
 import { auctionABI } from "helpers/auction";
+import Constants from "constant";
 
 
 const Collections = memo(({ address }) => {
@@ -21,14 +22,14 @@ const Collections = memo(({ address }) => {
   const contractProcessor = useWeb3ExecuteFunction();
   const contractAuctionABIJson = JSON.parse(auctionABI);
   useNFTTokenIds(address).then((res) => setListData(res));
-  const addrsList = ['0xfde910FbaA9A6fDD5d3F80cCD44a54763DE2d9d0']
+  const addrsList = [Constants.contracts.MARKETPLACE_ADDRESS]
 
   const { data: marketData } = queryMarketItems;
   useEffect(() => {
     setMarketItems([...marketData]);
   }, [marketData]); // data
 
-  let { data } = queryListedItems //useMoralisQuery('ListedItem');
+  let { data } = queryListedItems
   useEffect(() => {
     if (data) {
       let listedItem = []
@@ -49,17 +50,13 @@ const Collections = memo(({ address }) => {
           // getTransaction();
         }
       });
-      // if (collection?.added) {
-      if (addrs === '0xfde910FbaA9A6fDD5d3F80cCD44a54763DE2d9d0') {
+      if (addrs === Constants.contracts.MARKETPLACE_ADDRESS) {
         // condtion for new main contract
         setListNFT([...listedItem.filter((ele) => { return !addrsList.includes(ele.token_address) })]);
       } else {
         let newArray = listedItem.filter((ele) => { return ele.token_address.toLowerCase() === addrs.toLowerCase() }).concat(listData);
         setListNFT([...newArray]);
       }
-      // }
-      // setListNFT([...listedItem]);
-      // setOriginListNFT([...listedItem]); // port later
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, marketItems, chainId, listData]);
@@ -83,15 +80,6 @@ const Collections = memo(({ address }) => {
   };
 
 
-  // function itemRender(current, type, originalElement) {
-  //   if (type === "prev") {
-  //     return null;
-  //   }
-  //   if (type === "next") {
-  //     return null;
-  //   }
-  //   return originalElement;
-  // }
   return (
     <>
       <CollectionBanner address={address} />
@@ -116,14 +104,6 @@ const Collections = memo(({ address }) => {
           </Skeleton>
         </div>
       </div>
-      {/* <Row justify="center" style={{ margin: "24px 0 40px" }}>
-        <Pagination
-          itemRender={itemRender}
-          className={styless.pagination}
-          defaultCurrent={1}
-          total={50}
-        />
-      </Row> */}
     </>
   );
 });

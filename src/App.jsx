@@ -1,4 +1,5 @@
 import { FireFilled, GiftFilled, TrophyFilled } from "@ant-design/icons";
+import Constants from "constant";
 import { Layout, Tabs, Grid } from "antd";
 import "antd/dist/antd.less";
 import DEX from "components/DEX";
@@ -207,7 +208,7 @@ const App = ({ isServerInfo }) => {
               <Game />
             </Route>
             <Route path="/">
-              <Redirect to="/collection/0xfde910FbaA9A6fDD5d3F80cCD44a54763DE2d9d0" />
+              <Redirect to={`/collection/${Constants.contracts.MARKETPLACE_ADDRESS}`} />
             </Route>
             <Route path="/ethereum-boilerplate">
               <Redirect to="/gamify" />

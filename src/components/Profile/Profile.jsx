@@ -218,7 +218,7 @@ function Profile() {
   const claim = async (obj) => {
     console.log("Claim on blockchain");
     const addressMKP = constant.contracts.MARKETPLACE_ADDRESS;
-    const addressHash = constant.marketplace.MARKETPLACE_ADDRESS_HASH;
+    const addressHash = process.env.MARKETPLACE_HASH;
       const ops = {
         contractAddress: addressMKP,
         functionName: "claim",

@@ -23,9 +23,6 @@ const Constants = {
         COLLECTIONS_SYMBOL: "MAH",
         COLLECTIONS_URI: "ipfs://QmcPccuccWbtewn7bwpxw3rhWuuT77NSXyg4ncYEGycYNg/"
     },
-    marketplace: {
-        MARKETPLACE_ADDRESS_HASH: "0x6aEB7b03bAAeEBaAB61D30a03753d5Eabef0E120",
-    },
     NFT_PRICE: 0.15,
     LIMIT_REFERRAL_LEVEL: 6,
     GOOGLE_CLOUD_STORAGE_BUCKET: "https://storage.googleapis.com/guardians_of_the_galaxy/",
