@@ -470,8 +470,9 @@ function Profile() {
                     <div style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: "5px"}}>
                       <span>{rewards / ("1e" + 18)} BNB </span>
                       <Button
-                        onClick={()=>handleClaimClink()}
-                        disabled={isUpdateLoading}
+                        onClick={handleClaimClink}
+                        loading={isUpdateLoading}
+                        disabled = {isDisabled}
                         icon={<SiteMapIcon style={{ color: '#fff' }} />}
                         type="primary"
                         style={{
