@@ -224,7 +224,7 @@ function Profile() {
         functionName: "claim",
         abi: contractABIJson,
         params: {
-          amount: obj.attributes.rewards,
+          amount: obj.attributes?.rewards ?? 0,
           sender: obj.attributes.address,
           checkHash: addressHash
         },
@@ -255,9 +255,10 @@ function Profile() {
     const query = new Moralis.Query("profile");
     query.equalTo("address", addr);
     let obj = await query.first({ useMasterKey: true });
+    console.log("obj", obj);
     if (obj) {
-      if (obj.attributes.rewards > 0) {
-        if ((obj.attributes.commission - totalClaim) == obj.attributes.rewards) {
+      if (obj.attributes?.rewards > 0) {
+        if ((obj.attributes.commission - totalClaim) == obj.attributes?.rewards) {
           await checkWalletConnection(isAuthenticated, authenticate, async () => {
             await claim(obj);
           }) 
@@ -469,7 +470,7 @@ function Profile() {
                     <div style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: "5px"}}>
                       <span>{rewards / ("1e" + 18)} BNB </span>
                       <Button
-                        onClick={claim}
+                        onClick={()=>handleClaimClink()}
                         disabled={isUpdateLoading}
                         icon={<SiteMapIcon style={{ color: '#fff' }} />}
                         type="primary"
