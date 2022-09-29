@@ -254,7 +254,6 @@ function Profile() {
     const query = new Moralis.Query("profile");
     query.equalTo("address", addr);
     let obj = await query.first({ useMasterKey: true });
-    console.log("obj", obj);
     if (obj) {
       if (obj.attributes?.rewards > 0) {
         if ((obj.attributes.commission - totalClaim) == obj.attributes?.rewards) {
@@ -282,7 +281,11 @@ function Profile() {
     if (obj) {
       obj.set("rewards", 0);
       await obj.save(null, { useMasterKey: true });
+      setRewards(0);
       successModal("Claim success", "Successfully claim rewards");
+    }
+    else{
+      failureModal("Claim failed", "This address is not exist");
     }
   }
 
