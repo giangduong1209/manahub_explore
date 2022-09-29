@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useMoralis, useWeb3ExecuteFunction } from 'react-moralis';
 import Constants from "constant";
 import { checkWalletConnection } from "helpers/auth";
+import { failureModal } from "helpers/modals";
 
 const LayoutItem = ({ item, type, image }) => {
   const { Moralis, authenticate, account, isAuthenticated } = useMoralis();
@@ -14,12 +15,10 @@ const LayoutItem = ({ item, type, image }) => {
   const appId = process.env.REACT_APP_MORALIS_APPLICATION_ID;
   Moralis.initialize(appId);
   Moralis.serverURL = serverURL;
-  const addrNFTs = Constants.contracts.NFT_COLLECTION_ADDRESS;
-  const abiNFTs = JSON.parse(Constants.contracts.NFT_COLLECTION_ABI); 
   const addrStaking = Constants.contracts.STAKING_ADDRESS;
-  const abiStaking = Constants.contracts.STAKING_ABI;
+  const abiStaking = JSON.parse(Constants.contracts.STAKING_ABI);
   const addrCollection = Constants.contracts.NFT_COLLECTION_ADDRESS;
-  const abiCollection = Constants.contracts.NFT_COLLECTION_ABI;
+  const abiCollection = JSON.parse(Constants.contracts.NFT_COLLECTION_ABI);
   const contractProcessor = useWeb3ExecuteFunction();
   const [isLoading, setIsLoading] = useState(false);
   
@@ -71,6 +70,7 @@ const LayoutItem = ({ item, type, image }) => {
       },
       onError: (error) => {
         setIsLoading(false)
+        failureModal("Staking failed", error.message);
         console.log("Staking failed");
         return new Promise((resolve, reject) => reject(error));
       }
@@ -96,6 +96,7 @@ const LayoutItem = ({ item, type, image }) => {
         },
         onError: (error) => {
           setIsLoading(false)
+          failureModal("Approve all failed", error.message);
           console.log("Approve all failed");
           return new Promise((resolve, reject) => reject(error))
         }
