@@ -256,7 +256,7 @@ function Profile() {
         functionName: "claim",
         abi: contractABIJson,
         params: {
-          amount: obj.attributes?.rewards ? obj.attributes.rewards.toString() : 0,
+          amount: amount.toString(),
           sender: obj.attributes.address,
           checkHash: addressHash
         },
