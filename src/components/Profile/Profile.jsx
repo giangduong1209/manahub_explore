@@ -45,6 +45,7 @@ function Profile() {
   const { Moralis, account, authenticate, isAuthenticated } = useMoralis();
   const serverURL = process.env.REACT_APP_MORALIS_SERVER_URL;
   const appId = process.env.REACT_APP_MORALIS_APPLICATION_ID;
+  const addressHash = process.env.REACT_APP_MARKETPLACE_HASH;
   Moralis.initialize(appId);
   Moralis.serverURL = serverURL;
   const [auth, setAuth] = useState();
@@ -62,7 +63,7 @@ function Profile() {
   const [loadingClaim, setLoadingClaim] = useState(false);
   const [rewards, setRewards] = useState(0);
   const [isOpenReferral, setIsOpenReferral] = useState(false);
-  const { contractABI } = useMoralisDapp();
+  const { contractABI, marketAddress } = useMoralisDapp();
   const contractABIJson = JSON.parse(contractABI);
 
   const contractProcessor = useWeb3ExecuteFunction();
@@ -216,11 +217,8 @@ function Profile() {
   const toggleReferral = () => setIsOpenReferral((v) => !v);
   const claim = async (obj) => {
     console.log("Claim on blockchain");
-    const addressMKP = constant.contracts.MARKETPLACE_ADDRESS;
-    const addressHash = process.env.MARKETPLACE_HASH;
-    console.log(addressHash)
       const ops = {
-        contractAddress: addressMKP,
+        contractAddress: marketAddress,
         functionName: "claim",
         abi: contractABIJson,
         params: {
