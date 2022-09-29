@@ -20,6 +20,7 @@ import styles from './styles.module.css';
 import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
 import constant from 'constant';
 import { checkWalletConnection } from "helpers/auth";
+import { failureModal, successModal } from 'helpers/modals';
 
 const layout = {
   labelCol: { span: 8 },
@@ -219,12 +220,13 @@ function Profile() {
     console.log("Claim on blockchain");
     const addressMKP = constant.contracts.MARKETPLACE_ADDRESS;
     const addressHash = process.env.MARKETPLACE_HASH;
+    console.log(addressHash)
       const ops = {
         contractAddress: addressMKP,
         functionName: "claim",
         abi: contractABIJson,
         params: {
-          amount: obj.attributes?.rewards ?? 0,
+          amount: obj.attributes?.rewards ? obj.attributes.rewards.toString() : 0,
           sender: obj.attributes.address,
           checkHash: addressHash
         },
@@ -236,6 +238,7 @@ function Profile() {
         },
         onError: (error) => {
           console.log("Claim failed");
+          failureModal("Claim failed", error.message);
           console.error(error); 
         }
       });
@@ -283,6 +286,7 @@ function Profile() {
     if (obj) {
       obj.set("rewards", 0);
       await obj.save(null, { useMasterKey: true });
+      successModal("Claim success", "Successfully claim rewards");
     }
   }
 
