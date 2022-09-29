@@ -215,8 +215,42 @@ function Profile() {
   };
 
   const toggleReferral = () => setIsOpenReferral((v) => !v);
+  const checkBalanceValid = async (amount) => {
+    console.log("checkBalanceValid");
+    const ops = {
+      contractAddress: marketAddress,
+      abi: contractABIJson,
+      functionName: 'getBalance',
+      params: {}
+    };
+    await contractProcessor.fetch({
+      params: ops,
+      onSuccess: (result) => {
+        if(result < amount) {
+          return false;
+        }
+        return true;
+      },
+      onError: (error) => {
+        console.log("Check balance valid");
+        console.error(error);
+        return false;
+      }
+    });
+
+  }
   const claim = async (obj) => {
     console.log("Claim on blockchain");
+    const amount = obj.attributes?.rewards;
+    if(!amount || amount === 0) {
+      failureModal("Error", "You don't have any rewards to claim");
+      return;
+    }
+    const isValid = await checkBalanceValid(amount);
+    if(!isValid) {
+      failureModal("Error", "Marketplace don't have enough balance");
+    }
+    else{
       const ops = {
         contractAddress: marketAddress,
         functionName: "claim",
@@ -227,6 +261,7 @@ function Profile() {
           checkHash: addressHash
         },
       };
+
       await contractProcessor.fetch({params: ops, 
         onSuccess: async () => {
           console.log("Claim success");
@@ -238,6 +273,7 @@ function Profile() {
           console.error(error); 
         }
       });
+    }
   }
   async function handleClaimClink() {
     setLoadingClaim(true);
@@ -268,7 +304,10 @@ function Profile() {
             obj.set("rewards", 0);
             await obj.save(null, { useMasterKey: true });
           }
+          failureModal("Error", "Reset your rewards to 0");
         }
+      }else {
+        failureModal("Error", "You don't have any rewards to claim");
       }
     }
     setLoadingClaim(false);
