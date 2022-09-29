@@ -8,6 +8,7 @@ import { useState } from "react";
 import Web3 from "web3";
 import axios from "axios";
 import Constants from "constant";
+import { failureModal } from "helpers/modals";
 
 const DashboardLayout = ({ setShow, show }) => {
   const { account, isAuthenticated } = useMoralis();
@@ -28,10 +29,11 @@ const DashboardLayout = ({ setShow, show }) => {
           if (tokenURI.includes('ipfs://bafy')) {
             tokenURI = tokenURI.replace('ipfs://', '');
             let arrStr = tokenURI.split('/');
-            tokenURI = 'https://'+ arrStr[0]+'.ipfs.nftstorage.link/'+arrStr[1];
+            tokenURI = `https://${arrStr[0]}.ipfs.${Constants.GATEWAY_HOSTNAME}/${arrStr[1]}`;
           }
+          console.log(tokenURI);
           const metadata = (await axios.get(tokenURI)).data;
-          // console.log(metadata);
+          console.log(metadata);
           if (metadata) {
             // ipfs://[CID]/1.png
             let linkImage = metadata.image.replace('ipfs://', '');
@@ -47,11 +49,11 @@ const DashboardLayout = ({ setShow, show }) => {
             arr.push(item);
           }
         }
-        console.log(arr);
         setNFTs(arr);
       }
     } catch (error) {
       console.log(error);
+      failureModal("Some thing went wrong", error.message);
     }
 
   };
