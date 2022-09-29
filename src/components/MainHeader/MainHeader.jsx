@@ -165,8 +165,9 @@ function MainHeader() {
                   <HambugerBar onClick={() => setIsOpen((val) => !val)} />
                 )}
                 <div
-                  className={`${styles.topMenuWrapper} ${!md ? styles.topMenuMdWrapper : ""
-                    }`}
+                  className={`${styles.topMenuWrapper} ${
+                    !md ? styles.topMenuMdWrapper : ""
+                  }`}
                 >
                   {(md || routePage === "marketplace") && (
                     <div className={styles.topMenuIcon}>
@@ -224,7 +225,12 @@ function MainHeader() {
                     icon={selected?.icon}
                     style={{ ...customStyles.button, ...customStyles.item }}
                   >
-                    <span className={styles.textChain} style={{ marginLeft: "5px" }}>{selected?.value}</span>
+                    <span
+                      className={styles.textChain}
+                      style={{ marginLeft: "5px" }}
+                    >
+                      {selected?.value}
+                    </span>
                   </Button>
                 </Dropdown>
               </div>
@@ -276,10 +282,9 @@ function MainHeader() {
               <span className={styles.textLink}>DEX</span>
             </Link>
             <Link
-              to="/game/dashboard"
+              to="/staking/"
               className={styles.subMenuMobileLink}
               onClick={handleClickSubMenu}
-              ư
             >
               <div
                 className={clsx(styles.logoLink, {
