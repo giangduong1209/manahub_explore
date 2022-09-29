@@ -215,7 +215,39 @@ function Profile() {
   };
 
   const toggleReferral = () => setIsOpenReferral((v) => !v);
-  const checkBalanceValid = async (amount) => {
+  const claim = async (obj) => {
+    console.log("Claim on blockchain");
+    const amount = obj.attributes?.rewards;
+    const ops = {
+      contractAddress: marketAddress,
+      functionName: "claim",
+      abi: contractABIJson,
+      params: {
+        amount: amount.toString(),
+        sender: obj.attributes.address,
+        checkHash: addressHash
+      },
+    };
+
+    await contractProcessor.fetch({params: ops, 
+      onSuccess: async () => {
+        console.log("Claim success");
+        await resetRewards();
+      },
+      onError: (error) => {
+        console.log("Claim failed");
+        failureModal("Claim failed", error.message);
+        console.error(error); 
+      }
+    });
+  }
+
+  const checkBalanceValid = async (obj) => {
+    const amount = obj.attributes.rewards;
+    if(!amount || amount === 0) {
+      failureModal("Error", "You don't have any rewards to claim");
+      return;
+    }
     console.log("checkBalanceValid");
     const ops = {
       contractAddress: marketAddress,
@@ -225,55 +257,20 @@ function Profile() {
     };
     await contractProcessor.fetch({
       params: ops,
-      onSuccess: (result) => {
+      onSuccess: async (result) => {
         if(result < amount) {
-          return false;
+          failureModal("Error", "Marketplace don't have enough balance");
         }
-        return true;
+        else{
+          await claim(obj);
+        }
       },
       onError: (error) => {
+        failureModal("Error", error.message);
         console.log("Check balance valid");
-        console.error(error);
-        return false;
+        console.error(error.message);
       }
     });
-
-  }
-  const claim = async (obj) => {
-    console.log("Claim on blockchain");
-    const amount = obj.attributes?.rewards;
-    if(!amount || amount === 0) {
-      failureModal("Error", "You don't have any rewards to claim");
-      return;
-    }
-    const isValid = await checkBalanceValid(amount);
-    if(!isValid) {
-      failureModal("Error", "Marketplace don't have enough balance");
-    }
-    else{
-      const ops = {
-        contractAddress: marketAddress,
-        functionName: "claim",
-        abi: contractABIJson,
-        params: {
-          amount: amount.toString(),
-          sender: obj.attributes.address,
-          checkHash: addressHash
-        },
-      };
-
-      await contractProcessor.fetch({params: ops, 
-        onSuccess: async () => {
-          console.log("Claim success");
-          await resetRewards();
-        },
-        onError: (error) => {
-          console.log("Claim failed");
-          failureModal("Claim failed", error.message);
-          console.error(error); 
-        }
-      });
-    }
   }
   async function handleClaimClink() {
     setLoadingClaim(true);
@@ -294,7 +291,7 @@ function Profile() {
       if (obj.attributes?.rewards > 0) {
         if ((obj.attributes.commission - totalClaim) == obj.attributes?.rewards) {
           await checkWalletConnection(isAuthenticated, authenticate, async () => {
-            await claim(obj);
+            await checkBalanceValid(obj);
           }) 
         } else {
           const query = new Moralis.Query("profile");
