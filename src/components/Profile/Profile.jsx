@@ -75,9 +75,7 @@ function Profile() {
       const result = await query.first();
       if (result) {
           setAuth(true);
-          if(result.attributes.ref){
-            setrefDisabled(true);
-          }
+          setrefDisabled(true);
           if(result.attributes.rewards){
             setRewards(result.attributes.rewards);
           } else {
