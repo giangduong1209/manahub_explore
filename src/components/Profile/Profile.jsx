@@ -471,7 +471,7 @@ function Profile() {
                       <span>{rewards / ("1e" + 18)} BNB </span>
                       <Button
                         onClick={handleClaimClink}
-                        loading={isUpdateLoading}
+                        loading={loadingClaim}
                         disabled = {isDisabled}
                         icon={<SiteMapIcon style={{ color: '#fff' }} />}
                         type="primary"
