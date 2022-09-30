@@ -17,7 +17,7 @@ export const networkCollections = {
         statistics: {
           totalItems: "9999",
           totalOwners: "250",
-          floorPrice: "0.15",
+          floorPrice: "0.5",
           totalVolume: "37,5",
         }
       },
