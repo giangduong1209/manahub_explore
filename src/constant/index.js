@@ -23,7 +23,7 @@ const Constants = {
         COLLECTIONS_SYMBOL: "MAH",
         COLLECTIONS_URI: "ipfs://QmcPccuccWbtewn7bwpxw3rhWuuT77NSXyg4ncYEGycYNg/"
     },
-    NFT_PRICE: 0.15,
+    NFT_PRICE: 0.5,
     LIMIT_REFERRAL_LEVEL: 6,
     GOOGLE_CLOUD_STORAGE_BUCKET: "https://storage.googleapis.com/guardians_of_the_galaxy/",
     GATEWAY_HOSTNAME: "cf-ipfs.com",
