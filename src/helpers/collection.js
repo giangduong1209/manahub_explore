@@ -15,10 +15,10 @@ export const networkCollections = {
         createdBy: "Manahubs",
         description: "In the world of 2022, everything in the world became chaotic, wars of epidemics, economic crises, and the collapse of the world's financial market. The New World MANAHUBS was born with the aim of bringing together people from all over the world towards a new era of escaping poverty and restructuring the global financial system.",
         statistics: {
-          totalItems: "9999",
-          totalOwners: "250",
+          totalItems: "9,999",
+          totalOwners: "367",
           floorPrice: "0.5",
-          totalVolume: "37,5",
+          totalVolume: "55,05",
         }
       },
       {
