@@ -511,7 +511,8 @@ function Profile() {
                       <Button
                         onClick={handleClaimClink}
                         loading={loadingClaim}
-                        disabled = {isDisabled}
+                        // disabled = {isDisabled}
+                        disabled
                         icon={<SiteMapIcon style={{ color: '#fff' }} />}
                         type="primary"
                         style={{
