@@ -101,7 +101,8 @@ const GameDashboardContent = ({ setShow, show }) => {
                 title: e.attributes.name,
                 description: e.attributes.description,
                 code: "#" + e.attributes.tokenId,
-                tokenId: e.attributes.tokenId
+                tokenId: e.attributes.tokenId,
+                stakeTime: e.attributes?.stakeTime ?? e.attributes.createdAt,
               }}
               type={e.attributes.type}
               image={e.attributes.image}

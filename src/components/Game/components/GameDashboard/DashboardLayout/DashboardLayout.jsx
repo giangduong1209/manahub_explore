@@ -31,9 +31,7 @@ const DashboardLayout = ({ setShow, show }) => {
             let arrStr = tokenURI.split('/');
             tokenURI = `https://${arrStr[0]}.ipfs.${Constants.GATEWAY_HOSTNAME}/${arrStr[1]}`;
           }
-          console.log(tokenURI);
           const metadata = (await axios.get(tokenURI)).data;
-          console.log(metadata);
           if (metadata) {
             // ipfs://[CID]/1.png
             let linkImage = metadata.image.replace('ipfs://', '');

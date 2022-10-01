@@ -444,6 +444,7 @@
 }
 
 .layoutItemRight {
+  justify-content: space-between;
   flex-grow: 1;
   margin-left: 10px;
   display: flex;
@@ -459,6 +460,10 @@
   font-weight: 700;
 }
 
+.description {
+  font-size: 18px;
+  padding: 10px 10px 10px 0px;
+}
 .gameDashboardTitle {
   font-weight: 700;
   font-size: 36px;

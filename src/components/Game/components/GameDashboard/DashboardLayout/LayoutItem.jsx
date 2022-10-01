@@ -39,11 +39,13 @@ const LayoutItem = ({ item, type, image }) => {
       staking.set("image", image);
       staking.set("type", type);
       staking.set("unstake", false);
-      staking.set("name", item.name);
+      staking.set("name", item.title);
+      staking.set("stakeTime", new Date());
       staking.set("description", item.description);
       await staking.save();
     }
     else{
+      result.set("stakeTime", new Date());
       result.set("unstake", false);
       await result.save();
     }
@@ -109,8 +111,8 @@ const LayoutItem = ({ item, type, image }) => {
   }
   return (
     <div className={clsx([styles.layoutItem, styles[type]])}>
-      <span className={styles.code}>{item.code}</span>
-      <span className={styles.type}>{item.code}</span>
+      {/* <span className={styles.code}>{item.code}</span>
+      <span className={styles.type}>{item.code}</span> */}
       <img alt="" src={image} />
 
       <div className={styles.layoutItemRight}>
