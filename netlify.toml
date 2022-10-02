@@ -1,0 +1,3 @@
+[dev]
+functions = "api/endpoints"
+functionsPort = 7000
