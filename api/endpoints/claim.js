@@ -2,7 +2,7 @@ var Moralis = require("moralis/node");
 var Web3 = require("web3");
 var abi = require('ethereumjs-abi');
 const constant = require("../constant");
-var web3Js = new Web3(new Web3.providers.HttpProvider('https://data-seed-prebsc-1-s1.binance.org:8545'))
+var web3Js = new Web3(new Web3.providers.HttpProvider('https://bsc-dataseed.binance.org/'))
 const wrapper = require('../helpers/wrapper');
 // recipient is the address that should be paid.
 // amount, in wei, specifies how much ether should be sent.
@@ -19,6 +19,7 @@ async function signPayment(address, amount, nonce, contractAddress) {
     return signature;
 }
 async function getBalance(address) {
+    console.log(address);
     const balance = await web3Js.eth.getBalance(address);
     return balance;
 }
@@ -52,7 +53,8 @@ const claimPaymentHandler = async (event, context) => {
                 console.log(`Rewards: ${rewards}`);
                 if((commission - totalClaim) == rewards){
                     const balance = await getBalance(marketplaceAddr);
-                    if(balance > rewards){
+                    console.log(`Balance: ${balance}`);
+                    if(balance >= rewards){
                         const nonce = await web3Js.eth.getTransactionCount(marketplaceAddr);
                         const signatureObj = await signPayment(address, rewards, nonce,  marketplaceAddr);
                         return {
