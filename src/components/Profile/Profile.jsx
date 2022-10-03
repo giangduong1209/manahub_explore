@@ -233,10 +233,9 @@ function Profile() {
       }
     })
     .catch((err) => {
-      console.error(err);
-      failureModal("Error",err.message);
-      throw new Error(err);
+      throw new Error(err)
     });
+    
   }
   const claim = async (amount,nonce, v,r,s) => {
     console.log("Claim on blockchain");
@@ -259,9 +258,7 @@ function Profile() {
         await resetRewards();
       },
       onError: (error) => {
-        console.log("Claim failed");
-        failureModal("Claim failed", error.message);
-        console.error(error); 
+        throw new Error(error);
       }
     });
   }
@@ -271,8 +268,10 @@ function Profile() {
     try{
       const result = await fetchSignature();
       console.log(result);
-      const {amount, nonce, v, r, s} = result.data; 
-      await claim(amount, nonce, v, r, s);
+      if(result.code === 200){
+        const {amount, nonce, v, r, s} = result.data;
+        await claim(amount, nonce, v, r, s);
+      }
     }catch(err){
       failureModal("Error", err.message);
     }
