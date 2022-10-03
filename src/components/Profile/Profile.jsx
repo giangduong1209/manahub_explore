@@ -267,7 +267,6 @@ function Profile() {
     setLoadingClaim(true);
     try{
       const result = await fetchSignature();
-      console.log(result);
       if(result.code === 200){
         const {amount, nonce, v, r, s} = result.data;
         await claim(amount, nonce, v, r, s);
