@@ -258,7 +258,7 @@ function Profile() {
         await resetRewards();
       },
       onError: (error) => {
-        throw new Error(error)
+        throw new Error(error.message);
       }
     });
   }
