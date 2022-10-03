@@ -226,6 +226,7 @@ function Profile() {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
+      return data;
     })
     .catch((err) => {
       console.error(err);
@@ -324,7 +325,7 @@ function Profile() {
         failureModal("Error", "You don't have any rewards to claim");
       }
     }
-    // await fetchSignature()
+    await fetchSignature()
     setLoadingClaim(false);
   }
   async function resetRewards() {
