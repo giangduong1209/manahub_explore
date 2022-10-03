@@ -1,4 +1,4 @@
-module.exports.marketplaceAddress = `0xef9026604B0188614b5896F164136d2FA24053E9`
+module.exports.marketplaceAddress = `0xAA1be935c4A7F19FEC515Cb8892E5A89102d2a59`
 module.exports.marketplaceABI = `[
 	{
 		"inputs": [],
