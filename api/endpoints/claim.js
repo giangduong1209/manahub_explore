@@ -38,12 +38,18 @@ exports.handler = async function(event, context) {
             const signatureObj = await signPayment(address, rewards, nonce,  marketplaceAddr);
             return {
                 statusCode: 200,
+                headers: {
+                    'Access-Control-Allow-Origin': '*'
+                },
                 body: JSON.stringify({signPayment: signatureObj})
             }
         }
         else{
             return {
                 statusCode: 200,
+                headers: {
+                    'Access-Control-Allow-Origin': '*'
+                },
                 body: JSON.stringify({error: "No rewards"})
             }
         }
@@ -51,6 +57,9 @@ exports.handler = async function(event, context) {
     }
     return {
         statusCode: 200,
+        headers: {
+            'Access-Control-Allow-Origin': '*'
+        },
         body: JSON.stringify({error: "Address not found"})
     }
 }

@@ -32,6 +32,13 @@ const Constants = {
             VALUE: 1,
             UNIT: "year" // day, month, year, hour, minute, second
         }
+    },
+    apiConfig: {
+        DOMAIN: "https://marketplace.manahubs.com/",
+        SUB_DOMAIN: ".netlify/functions/",
+        endpoints: {
+            CLAIM: "claim",
+        }
     }
 }
 
