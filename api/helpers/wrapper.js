@@ -1,14 +1,15 @@
 module.exports = async (statusCode, result) => {
-    console.log("Wrapper - statusCode: " + statusCode);
-    console.log("Wrapper - response: " + JSON.stringify(result,null,4));
-    return {
+    console.log("Wrapper - result: " + JSON.stringify(result, null, 4));
+    const response = {
         statusCode,
         headers: {
             'Access-Control-Allow-Origin': '*'
         },
-        body: {
+        body: JSON.stringify({
             code: statusCode,
-            data: JSON.stringify(result)
-        },
+            data: result
+        }),
     };
+    console.log("Wrapper - response: " + JSON.stringify(response,null,4));
+    return response;
 }

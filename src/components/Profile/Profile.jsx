@@ -292,6 +292,7 @@ function Profile() {
   }
   async function handleClaimClink() {
     setLoadingClaim(true);
+    /*
     const addr = account;
     const queryClaim = new Moralis.Query("Claim");
     queryClaim.equalTo("getFrom", addr);
@@ -325,6 +326,7 @@ function Profile() {
         failureModal("Error", "You don't have any rewards to claim");
       }
     }
+    */
     await fetchSignature()
     setLoadingClaim(false);
   }
