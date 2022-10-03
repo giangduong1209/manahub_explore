@@ -225,25 +225,26 @@ function Profile() {
     })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
-      return data;
+      return new Promise((resolve) => resolve(data));
     })
     .catch((err) => {
       console.error(err);
       failureModal("Error",err.message);
+      return new Promise((_, reject) => reject(err));
     });
   }
-  const claim = async (obj) => {
+  const claim = async (amount,nonce, v,r,s) => {
     console.log("Claim on blockchain");
-    const amount = obj.attributes?.rewards;
     const ops = {
       contractAddress: marketAddress,
       functionName: "claim",
       abi: contractABIJson,
       params: {
         amount: amount.toString(),
-        sender: obj.attributes.address,
-        checkHash: addressHash
+        nonce: nonce,
+        v: v,
+        r: r,
+        s: s
       },
     };
 
@@ -260,36 +261,36 @@ function Profile() {
     });
   }
 
-  const checkBalanceValid = async (obj) => {
-    const amount = obj.attributes.rewards;
-    if(!amount || amount === 0) {
-      failureModal("Error", "You don't have any rewards to claim");
-      return;
-    }
-    console.log("checkBalanceValid");
-    const ops = {
-      contractAddress: marketAddress,
-      abi: contractABIJson,
-      functionName: 'getBalance',
-      params: {}
-    };
-    await contractProcessor.fetch({
-      params: ops,
-      onSuccess: async (result) => {
-        if(result < amount) {
-          failureModal("Error", "Marketplace don't have enough balance");
-        }
-        else{
-          await claim(obj);
-        }
-      },
-      onError: (error) => {
-        failureModal("Error", error.message);
-        console.log("Check balance valid");
-        console.error(error.message);
-      }
-    });
-  }
+  // const checkBalanceValid = async (obj) => {
+  //   const amount = obj.attributes.rewards;
+  //   if(!amount || amount === 0) {
+  //     failureModal("Error", "You don't have any rewards to claim");
+  //     return;
+  //   }
+  //   console.log("checkBalanceValid");
+  //   const ops = {
+  //     contractAddress: marketAddress,
+  //     abi: contractABIJson,
+  //     functionName: 'getBalance',
+  //     params: {}
+  //   };
+  //   await contractProcessor.fetch({
+  //     params: ops,
+  //     onSuccess: async (result) => {
+  //       if(result < amount) {
+  //         failureModal("Error", "Marketplace don't have enough balance");
+  //       }
+  //       else{
+  //         await claim(obj);
+  //       }
+  //     },
+  //     onError: (error) => {
+  //       failureModal("Error", error.message);
+  //       console.log("Check balance valid");
+  //       console.error(error.message);
+  //     }
+  //   });
+  // }
   async function handleClaimClink() {
     setLoadingClaim(true);
     /*
@@ -327,7 +328,15 @@ function Profile() {
       }
     }
     */
-    await fetchSignature()
+    try{
+      const result = await fetchSignature();
+      console.log(result);
+      const {amount, nonce, v, r, s} = result.data; 
+      await claim(amount, nonce, v, r, s);
+    }catch(err){
+      failureModal("Error", err.message);
+      console.log(err);
+    }
     setLoadingClaim(false);
   }
   async function resetRewards() {

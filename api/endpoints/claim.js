@@ -18,6 +18,10 @@ async function signPayment(address, amount, nonce, contractAddress) {
     const signature = await web3Js.eth.accounts.sign(hash, privateKey);
     return signature;
 }
+async function getBalance(address) {
+    const balance = await web3Js.eth.getBalance(address);
+    return balance;
+}
 const claimPaymentHandler = async (event, context) => {
     try{
         console.log("event: " + JSON.stringify(event, null, 4));
@@ -27,24 +31,56 @@ const claimPaymentHandler = async (event, context) => {
         await Moralis.start({serverUrl, appId});
         const body = JSON.parse(event.body);
         const address = body.address.toLowerCase();
+        
+        const queryClaim = new Moralis.Query("Claim");
+        queryClaim.equalTo("getFrom", address);
+        const arrClaim = await queryClaim.find();
+        let totalClaim = 0;
+        for (let index = 0; index < arrClaim.length; index++) {
+        const element = arrClaim[index].attributes;
+            totalClaim = totalClaim + parseInt(element.amount);
+        }
         const profile = Moralis.Object.extend("profile");
         const query = new Moralis.Query(profile);
         query.equalTo("address", address);
-        const result = await query.first();
+        const result = await query.first({useMasterKey: true});
         if (result) {
             console.log(`Address ${address} is exist`);
             const rewards = result.attributes?.rewards
-            if(rewards){
+            const commission = result.attributes?.commission ?? 0;
+            if(rewards > 0){
                 console.log(`Rewards: ${rewards}`);
-                const nonce = await web3Js.eth.getTransactionCount(marketplaceAddr);
-                const signatureObj = await signPayment(address, rewards, nonce,  marketplaceAddr);
-                return signatureObj;
+                if((commission - totalClaim) == rewards){
+                    const balance = await getBalance(marketplaceAddr);
+                    if(balance > rewards){
+                        const nonce = await web3Js.eth.getTransactionCount(marketplaceAddr);
+                        const signatureObj = await signPayment(address, rewards, nonce,  marketplaceAddr);
+                        return {
+                            ...signatureObj,
+                            amount: rewards,
+                            nonce: nonce
+                        };
+                    }
+                    else{
+                        throw new Error("Marketplace don't have enough balance");
+                    }
+                }
+                else{
+                    const query = new Moralis.Query("profile");
+                    query.equalTo("address", address);
+                    let obj = await query.first({ useMasterKey: true });
+                    if (obj) {
+                        obj.set("rewards", 0);
+                        await obj.save(null, { useMasterKey: true });
+                    }
+                    throw new Error("Rewards is not enough");
+                }
             }
             else{
-                throw new Error("No rewards found");
+                throw new Error("Don have any rewards to claim");
             }
         }else{
-            throw new Error("No profile found");
+            throw new Error("Address is not found in the system");
         }
     }
     catch(error){
