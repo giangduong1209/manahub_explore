@@ -217,15 +217,16 @@ function Profile() {
   const toggleReferral = () => setIsOpenReferral((v) => !v);
   const fetchSignature = async () => {
     const {DOMAIN, SUB_DOMAIN, endpoints} = constant.apiConfig
-    await fetch(`${DOMAIN}${SUB_DOMAIN}${endpoints.CLAIM}`, {
+    return await fetch(`${DOMAIN}${SUB_DOMAIN}${endpoints.CLAIM}`, {
       method: 'POST',
       body: JSON.stringify({
         address: account,
       }),
     })
     .then((res) => res.json())
-    .then((data) => {
-      return new Promise((resolve) => resolve(data));
+    .then((response) => {
+      console.log(response);
+      return response;
     })
     .catch((err) => {
       console.error(err);
@@ -237,7 +238,7 @@ function Profile() {
     console.log("Claim on blockchain");
     const ops = {
       contractAddress: marketAddress,
-      functionName: "claim",
+      functionName: "claimRewards",
       abi: contractABIJson,
       params: {
         amount: amount.toString(),
@@ -261,73 +262,8 @@ function Profile() {
     });
   }
 
-  // const checkBalanceValid = async (obj) => {
-  //   const amount = obj.attributes.rewards;
-  //   if(!amount || amount === 0) {
-  //     failureModal("Error", "You don't have any rewards to claim");
-  //     return;
-  //   }
-  //   console.log("checkBalanceValid");
-  //   const ops = {
-  //     contractAddress: marketAddress,
-  //     abi: contractABIJson,
-  //     functionName: 'getBalance',
-  //     params: {}
-  //   };
-  //   await contractProcessor.fetch({
-  //     params: ops,
-  //     onSuccess: async (result) => {
-  //       if(result < amount) {
-  //         failureModal("Error", "Marketplace don't have enough balance");
-  //       }
-  //       else{
-  //         await claim(obj);
-  //       }
-  //     },
-  //     onError: (error) => {
-  //       failureModal("Error", error.message);
-  //       console.log("Check balance valid");
-  //       console.error(error.message);
-  //     }
-  //   });
-  // }
   async function handleClaimClink() {
     setLoadingClaim(true);
-    /*
-    const addr = account;
-    const queryClaim = new Moralis.Query("Claim");
-    queryClaim.equalTo("getFrom", addr);
-    const arrClaim = await queryClaim.find();
-    let totalClaim = 0;
-    for (let index = 0; index < arrClaim.length; index++) {
-      const element = arrClaim[index].attributes;
-      totalClaim = totalClaim + parseInt(element.amount);
-    }
-
-    const query = new Moralis.Query("profile");
-    query.equalTo("address", addr);
-    let obj = await query.first({ useMasterKey: true });
-    if (obj) {
-      if (obj.attributes?.rewards > 0) {
-        if ((obj.attributes.commission - totalClaim) == obj.attributes?.rewards) {
-          await checkWalletConnection(isAuthenticated, authenticate, async () => {
-            await checkBalanceValid(obj);
-          }) 
-        } else {
-          const query = new Moralis.Query("profile");
-          query.equalTo("address", addr);
-          let obj = await query.first({ useMasterKey: true });
-          if (obj) {
-            obj.set("rewards", 0);
-            await obj.save(null, { useMasterKey: true });
-          }
-          failureModal("Error", "Reset your rewards to 0");
-        }
-      }else {
-        failureModal("Error", "You don't have any rewards to claim");
-      }
-    }
-    */
     try{
       const result = await fetchSignature();
       console.log(result);

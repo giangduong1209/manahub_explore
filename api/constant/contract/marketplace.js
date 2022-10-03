@@ -1,4 +1,4 @@
-module.exports.marketplaceAddress = `0xEc2167CC62fCC36f0Cb335d30eCCD76d6Ec1dBDF`
+module.exports.marketplaceAddress = `0xef9026604B0188614b5896F164136d2FA24053E9`
 module.exports.marketplaceABI = `[
 	{
 		"inputs": [],
@@ -256,29 +256,6 @@ module.exports.marketplaceABI = `[
 			}
 		],
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "amount",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "sender",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "checkHash",
-				"type": "address"
-			}
-		],
-		"name": "claim",
-		"outputs": [],
-		"stateMutability": "payable",
 		"type": "function"
 	},
 	{
