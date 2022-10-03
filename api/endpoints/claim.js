@@ -19,7 +19,6 @@ async function signPayment(address, amount, nonce, contractAddress) {
     return signature;
 }
 async function getBalance(address) {
-    console.log(address);
     const balance = await web3Js.eth.getBalance(address);
     return balance;
 }
