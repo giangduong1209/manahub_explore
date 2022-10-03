@@ -215,6 +215,23 @@ function Profile() {
   };
 
   const toggleReferral = () => setIsOpenReferral((v) => !v);
+  const fetchSignature = async () => {
+    const {DOMAIN, SUB_DOMAIN, endpoints} = constant.apiConfig
+    await fetch(`${DOMAIN}${SUB_DOMAIN}${endpoints.CLAIM}`, {
+      method: 'POST',
+      body: JSON.stringify({
+        address: account,
+      }),
+    })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((err) => {
+      console.error(err);
+      failureModal("Error",err.message);
+    });
+  }
   const claim = async (obj) => {
     console.log("Claim on blockchain");
     const amount = obj.attributes?.rewards;
@@ -307,6 +324,7 @@ function Profile() {
         failureModal("Error", "You don't have any rewards to claim");
       }
     }
+    // await fetchSignature()
     setLoadingClaim(false);
   }
   async function resetRewards() {
