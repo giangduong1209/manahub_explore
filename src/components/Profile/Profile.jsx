@@ -258,7 +258,7 @@ function Profile() {
         await resetRewards();
       },
       onError: (error) => {
-        throw new Error(error);
+        throw new Error(error)
       }
     });
   }
@@ -273,7 +273,8 @@ function Profile() {
         await claim(amount, nonce, v, r, s);
       }
     }catch(err){
-      failureModal("Error", err.message);
+      console.log(err);
+      failureModal("Error", err?.message);
     }
     setLoadingClaim(false);
   }

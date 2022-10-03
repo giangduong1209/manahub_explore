@@ -54,7 +54,7 @@ const claimPaymentHandler = async (event, context) => {
                     const balance = await getBalance(marketplaceAddr);
                     console.log(`Balance: ${balance}`);
                     if(balance >= rewards){
-                        const nonce = await web3Js.eth.getTransactionCount(marketplaceAddr);
+                        const nonce = await web3Js.eth.getTransactionCount(address);
                         const signatureObj = await signPayment(address, rewards, nonce,  marketplaceAddr);
                         return {
                             ...signatureObj,
