@@ -225,13 +225,17 @@ function Profile() {
     })
     .then((res) => res.json())
     .then((response) => {
-      console.log(response);
-      return response;
+      if(response.code === 500){
+        throw new Error(response.data.error)
+      }
+      else{
+        return response;
+      }
     })
     .catch((err) => {
       console.error(err);
       failureModal("Error",err.message);
-      return new Promise((_, reject) => reject(err));
+      throw new Error(err);
     });
   }
   const claim = async (amount,nonce, v,r,s) => {
@@ -271,7 +275,6 @@ function Profile() {
       await claim(amount, nonce, v, r, s);
     }catch(err){
       failureModal("Error", err.message);
-      console.log(err);
     }
     setLoadingClaim(false);
   }
@@ -478,7 +481,7 @@ function Profile() {
                         onClick={handleClaimClink}
                         loading={loadingClaim}
                         // disabled = {isDisabled}
-                        disabled
+                        // disabled
                         icon={<SiteMapIcon style={{ color: '#fff' }} />}
                         type="primary"
                         style={{
