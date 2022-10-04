@@ -45,7 +45,6 @@ function Profile() {
   const { Moralis, account, authenticate, isAuthenticated } = useMoralis();
   const serverURL = process.env.REACT_APP_MORALIS_SERVER_URL;
   const appId = process.env.REACT_APP_MORALIS_APPLICATION_ID;
-  const addressHash = process.env.REACT_APP_MARKETPLACE_HASH;
   Moralis.initialize(appId);
   Moralis.serverURL = serverURL;
   const [auth, setAuth] = useState();
@@ -237,21 +236,18 @@ function Profile() {
     });
     
   }
-  const claim = async (amount,nonce, v,r,s) => {
+  const claim = async (amount,nonce,signature) => {
     console.log("Claim on blockchain");
     const ops = {
       contractAddress: marketAddress,
       functionName: "claimRewards",
       abi: contractABIJson,
       params: {
-        amount: amount.toString(),
-        nonce: nonce,
-        v: v,
-        r: r,
-        s: s
+        _amount: amount.toString(),
+        _nonce: nonce,
+        signature: signature
       },
     };
-
     await contractProcessor.fetch({params: ops, 
       onSuccess: async () => {
         console.log("Claim success");
@@ -268,11 +264,11 @@ function Profile() {
     try{
       const result = await fetchSignature();
       if(result.code === 200){
-        const {amount, nonce, v, r, s} = result.data;
-        await claim(amount, nonce, v, r, s);
+        const {amount, nonce, signature} = result.data;
+        await claim(amount, nonce, signature);
       }
     }catch(err){
-      console.log(err);
+      console.error(err);
       failureModal("Error", err?.message);
     }
     setLoadingClaim(false);

@@ -12,7 +12,7 @@ async function signPayment(address, amount, nonce, contractAddress) {
     const recipient = await web3Js.utils.toChecksumAddress(address)
     var hash = "0x" + abi.soliditySHA3(
         ["address", "uint256", "uint256", "address"],
-        [recipient, amount, nonce, contractAddress]
+        [recipient, web3Js.utils.toBN(amount), nonce, contractAddress]
     ).toString("hex");
     const privateKey = process.env.PRIVATE_KEY_OWNER;
     const signature = await web3Js.eth.accounts.sign(hash, privateKey);
@@ -24,7 +24,7 @@ async function getBalance(address) {
 }
 const claimPaymentHandler = async (event, context) => {
     try{
-        console.log("event: " + JSON.stringify(event, null, 4));
+        console.log("event body: " + event.body);
         const marketplaceAddr = constant.contracts.MARKETPLACE_ADDRESS;
         const serverUrl = process.env.REACT_APP_MORALIS_SERVER_URL;
         const appId = process.env.REACT_APP_MORALIS_APPLICATION_ID;
@@ -54,7 +54,7 @@ const claimPaymentHandler = async (event, context) => {
                     const balance = await getBalance(marketplaceAddr);
                     console.log(`Balance: ${balance}`);
                     if(balance >= rewards){
-                        const nonce = await web3Js.eth.getTransactionCount(address);
+                        let nonce = await web3Js.eth.getTransactionCount(marketplaceAddr);
                         const signatureObj = await signPayment(address, rewards, nonce,  marketplaceAddr);
                         return {
                             ...signatureObj,
@@ -95,7 +95,7 @@ exports.handler = async function(event, context) {
         const result = await claimPaymentHandler(event, context);
         return wrapper(200, result);
     } catch (error) {
-        console.log(error);
+        console.error(error);
         return wrapper(500, {error: error.message});
     }
 }
