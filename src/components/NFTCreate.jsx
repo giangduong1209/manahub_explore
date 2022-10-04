@@ -24,7 +24,11 @@ function NFTCreate(props) {
   const { marketAddress, contractABI } = useMoralisDapp();
   const contractABIJson = JSON.parse(contractABI);
   const createToken = 'createToken';
-  const { Moralis, account } = useMoralis();
+  const { Moralis, account, isAuthenticated } = useMoralis();
+  const serverURL = process.env.REACT_APP_MORALIS_SERVER_URL;
+  const appId = process.env.REACT_APP_MORALIS_APPLICATION_ID;
+  Moralis.initialize(appId);
+  Moralis.serverURL = serverURL;
   const [form] = Form.useForm();
   const history = useHistory();
   const { md } = useBreakpoint();
@@ -33,7 +37,6 @@ function NFTCreate(props) {
   const [fileType, setFileType] = useState();
   const [fileName, setFileName] = useState('');
   const [visible, setVisible] = useState(false);
-  const [metadata, setMetadata] = useState();
   const [formValid, setFormValid] = useState({
     nameErr: false,
     descriptionErr: false,
@@ -46,24 +49,23 @@ function NFTCreate(props) {
   const [isValidFileName, setValidFileName] = useState(true);
 
   const checkAuthen = async () => {
-    const users = Moralis.Object.extend('profile');
-    const query = new Moralis.Query(users);
-    query.equalTo('address', account);
-    const data = await query.first();
-    return data;
+    if(account && isAuthenticated){
+      const users = Moralis.Object.extend("profile");
+      const query = new Moralis.Query(users);
+      query.equalTo("address", account.toLowerCase());
+      const data = await query.first();
+      console.log(data)
+      if(data){
+        // setUser(data.attributes);
+      }
+      else{ 
+        history.push("/profile")
+      }
+    }
   };
-
-  // useEffect(() => {
-  //   checkAuthen().then((res) => {
-  //     if (res) {
-  //       // setAuthenticate(true);
-  //       //  setUser(res.attributes.name)
-  //     } else {
-  //       // props.getAuthenticate({ authenticated: true });
-  //       history.push('/profile');
-  //     }
-  //   });
-  // });
+  useEffect(() => {
+    checkAuthen()
+  }, [account, isAuthenticated]);
 
   function checkValidType(file) {
     let result = false;
@@ -99,17 +101,15 @@ function NFTCreate(props) {
   }
 
   const onChangeImage = async (e) => {
-    if (!nameValid || !descValid) return;
     let file = e.target.files[0];
+    if (file === undefined) return;
+    console.log("File Info", file)
     setIsValidType(true);
-    setMetadata(null);
     setFileName('');
     setMediaSrc('');
     setFileType('');
     setValidFileName(true);
-    setFormValid({ ...formValid, fileErr: false });
 
-    if (file === undefined) return;
 
     if (!checkValidType(file)) {
       setIsValidType(false);
@@ -124,9 +124,7 @@ function NFTCreate(props) {
 
     setFileName(file.name);
     setFileType(file.type);
-    const image = await uploadImageData(e);
-    const _metadata = await uploadMetaData(image);
-    setMetadata(_metadata);
+    await uploadImageData(e);
     setVisible(false);
   };
 
@@ -135,6 +133,7 @@ function NFTCreate(props) {
     const file = new Moralis.File(data.name, data);
     await file.saveIPFS();
     let fileUrl = file.ipfs();
+    console.log("fileUrl", fileUrl);
     setMediaSrc(fileUrl);
     return fileUrl;
   };
@@ -145,7 +144,7 @@ function NFTCreate(props) {
       description: formInput.description,
       image: imgUrl,
     };
-
+    console.log(metadata);
     const file = new Moralis.File('file.json', {
       base64: btoa(JSON.stringify(metadata)),
     });
@@ -237,7 +236,7 @@ function NFTCreate(props) {
     setDescValid(false);
   };
 
-  async function createNFT() {
+  async function createNFT(metadata) {
     if (isFormValid()) {
       if (!nameValid || !descValid) return;
       setVisible(true);
@@ -255,7 +254,7 @@ function NFTCreate(props) {
           setTimeout(() => {
             setVisible(false);
             successCreate();
-          }, 33000);
+          }, 20000);
         },
         onError: (error) => {
           updateFormInput({ ...formInput, name: '', description: '' });
@@ -267,7 +266,22 @@ function NFTCreate(props) {
       });
     }
   }
-
+  async function handleCreateClicked() {
+    if (!nameValid){
+      setFormValid({...formValid, nameErr: true})
+      return;
+    }
+    if (!descValid){
+      setFormValid({...formValid, descriptionErr: true})
+      return;
+    }
+    if (mediaSrc === '') {
+      setFormValid({ ...formValid, fileErr: true });
+      return;
+    }
+    const metadata = await uploadMetaData(mediaSrc);
+    await createNFT(metadata);
+  }
   function successCreate() {
     let secondsToGo = 5;
     const modal = Modal.success({
@@ -334,7 +348,7 @@ function NFTCreate(props) {
               </Col>
               <Col span={24}>
                 <Form.Item>
-                  <label>Work Description(Optional)</label>
+                  <label>Work Description</label>
                   <Input.TextArea
                     placeholder="Add description to the work"
                     rows={5}
@@ -363,13 +377,13 @@ function NFTCreate(props) {
                     rows={5}
                     style={{ 'whiteSpace': 'pre-wrap' }}
                   />
-                  <div style={{ color: 'red' }}>
-                    {!formInput.description && formValid.descriptionErr
+                  {/* <div style={{ color: 'red' }}>
+                    {!formInput.description
                       ? 'Please input your description'
                       : formInput.description && !descValid
                       ? 'English only'
                       : ''}
-                  </div>
+                  </div> */}
                 </Form.Item>
               </Col>
               <Col span={24}>
@@ -380,13 +394,13 @@ function NFTCreate(props) {
                     rows={5}
                     style={{ 'whiteSpace': 'pre-wrap' }}
                   />
-                  <div style={{ color: 'red' }}>
-                    {!formInput.description && formValid.descriptionErr
+                  {/* <div style={{ color: 'red' }}>
+                    {!formInput.description
                       ? 'Please input your description'
                       : formInput.description && !descValid
                       ? 'English only'
                       : ''}
-                  </div>
+                  </div> */}
                 </Form.Item>
               </Col>
               {md && (
@@ -395,14 +409,14 @@ function NFTCreate(props) {
                   style={{ display: 'flex', justifyContent: 'center' }}
                 >
                   <Button
-                    onClick={() => createNFT()}
+                    onClick={() => handleCreateClicked()}
                     size="large"
                     type="primary"
                     htmlType="submit"
                     className={styles.btnCreate}
                     loading={visible ? true : false}
                     disabled={
-                      !metadata && fileType && isValidType ? true : false
+                     !mediaSrc && fileType && isValidType ? true : false
                     }
 
                     // style={{ width: "auto", borderRadius: "12px" }}
@@ -422,24 +436,24 @@ function NFTCreate(props) {
                 onChange={onChangeImage}
                 accept=".jpg,.jpeg,.mp4,.mp3,.png,.wav"
               />
-              {!metadata && fileType && isValidType ? (
+              {fileType && isValidType && !mediaSrc ? (
                 <img
                   alt=""
                   src={urlLoading}
                   style={{ margin: '10px 0 10px 0' }}
                   width="45"
                 />
-              ) : metadata && mediaSrc && fileType?.includes('video') ? (
+              ) : mediaSrc && fileType?.includes('video') ? (
                 <video width="350" controls style={{ margin: '10px 0 10px 0' }}>
                   {' '}
                   <source src={mediaSrc} type={fileType}></source>
                 </video>
-              ) : metadata && mediaSrc && fileType?.includes('audio') ? (
+              ) : mediaSrc && fileType?.includes('audio') ? (
                 <audio width="350" controls style={{ margin: '10px 0 10px 0' }}>
                   {' '}
                   <source src={mediaSrc} type={fileType}></source>
                 </audio>
-              ) : metadata && mediaSrc && fileType?.includes('image') ? (
+              ) : mediaSrc && fileType?.includes('image') ? (
                 <img
                   alt=""
                   src={mediaSrc}
@@ -491,13 +505,13 @@ function NFTCreate(props) {
               style={{ display: 'flex', justifyContent: 'center' }}
             >
               <Button
-                onClick={() => createNFT()}
+                onClick={() => handleCreateClicked()}
                 size="large"
                 type="primary"
                 htmlType="submit"
                 className={styles.btnCreate}
                 loading={visible ? true : false}
-                disabled={!metadata && fileType && isValidType ? true : false}
+                disabled={!mediaSrc && fileType && isValidType ? true : false}
 
                 // style={{ width: "auto", borderRadius: "12px" }}
               >
