@@ -42,7 +42,8 @@ const Constants = {
     },
     pagination: {
         PAGE_SIZE: 10
-    }
+    },
+    ETHERSCAN_ENDPOINT: "https://api.etherscan.io/api",
 }
 
 export default Constants
