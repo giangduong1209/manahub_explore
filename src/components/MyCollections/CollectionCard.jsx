@@ -660,8 +660,8 @@ const CollectionCard = ({ item }) => {
                 // options={category}
                 onChange={handleChange}
               >
-                {categoryLs.map((e) => (
-                  <Option value={e}>{e}</Option>
+                {categoryLs.map((e, index) => (
+                  <Option key={index} value={e}>{e}</Option>
                 ))}
               </Select>
               <div style={{ color: "red" }}>
@@ -726,8 +726,8 @@ const CollectionCard = ({ item }) => {
                 // options={category}
                 onChange={handleChangeAuction}
               >
-                {categoryLs.map((e) => (
-                  <Option value={e}>{e}</Option>
+                {categoryLs.map((e,index) => (
+                  <Option key={index} value={e}>{e}</Option>
                 ))}
               </Select>
               <div style={{ color: "red", marginTop: "10px" }}>

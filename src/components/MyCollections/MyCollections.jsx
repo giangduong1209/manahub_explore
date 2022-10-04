@@ -23,8 +23,8 @@ const MyCollections = memo((props) => {
   Moralis.serverURL = serverURL;
   const history = useHistory();
   const { verifyMetadata } = useVerifyMetadata();
-  
-
+  const [nftCollections, setNftCollections] = useState([]);
+  const [totalNFTs, setTotalNFTs] = useState(0);
   function itemRender(current, type, originalElement) {
     if (type === 'prev') {
       return null;
@@ -35,13 +35,15 @@ const MyCollections = memo((props) => {
     return originalElement;
   }
   useEffect(() => {
-    if(isFetching === true) {
-      console.time("getNFTBalances");
-    }
-    else{
-      console.timeEnd("getNFTBalances");
+    if(!isFetching){
+      loadNFTCollections(1, Constants.pagination.PAGE_SIZE);
     }
   }, [isFetching]);
+  useEffect(() => {
+    const length = NFTBalances?.result?.length;
+    console.log("Length: ", length);
+    setTotalNFTs(length ?? 0);
+  },[NFTBalances]);
   const checkAuthen = async () => {
     if(account && isAuthenticated){
       const users = Moralis.Object.extend("profile");
@@ -58,8 +60,19 @@ const MyCollections = memo((props) => {
     }
   };
 
+  const loadNFTCollections = (page, pageSize)=>{
+    console.log(page, pageSize)
+    const skip = (page - 1) * pageSize;
+    const limit = pageSize;
+    const NFTs = NFTBalances ? NFTBalances.result : [];
+    if(NFTs){
+      const NFTsByPage = NFTs.slice(skip, skip + limit);
+      setNftCollections(NFTsByPage);
+    }
+  }
   useEffect(() => {
     checkAuthen()
+    loadNFTCollections(1, Constants.pagination.PAGE_SIZE);
   }, [account, isAuthenticated]);
   return (
     <div
@@ -84,17 +97,17 @@ const MyCollections = memo((props) => {
         </Row>
         <div className={styless.wrapper}>
           <div className={styless.wrapperInner}>
-            { NFTBalances?.result &&
-              NFTBalances.result.map((data, index) => {
+            { nftCollections &&
+              nftCollections.map((data, index) => {
                 data = verifyMetadata(data);
                 return (
-              <CollectionCard
-                key={index}
-                item={{
-                  ...data,
-                  name: data.metadata?.name
-                }}
-              />
+                  <CollectionCard
+                    key={index}
+                    item={{
+                      ...data,
+                      name: data.metadata?.name
+                    }}
+                  />
             )})}
           </div>
         </div>
@@ -103,7 +116,9 @@ const MyCollections = memo((props) => {
             itemRender={itemRender}
             className={styless.pagination}
             defaultCurrent={1}
-            total={50}
+            defaultPageSize={Constants.pagination.PAGE_SIZE}
+            onChange = {loadNFTCollections}
+            total={totalNFTs}
           />
         </Row>
       </div>
