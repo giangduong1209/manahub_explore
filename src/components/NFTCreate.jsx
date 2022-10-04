@@ -340,7 +340,7 @@ function NFTCreate(props) {
                     rows={5}
                     value={formInput.description}
                     onChange={(e) => handleInputDesc(e.target.value)}
-                    style={{ 'white-space': 'pre-wrap' }}
+                    style={{ 'whiteSpace': 'pre-wrap' }}
                   />
                   <div style={{ color: 'red' }}>
                     {!formInput.description && formValid.descriptionErr
@@ -361,7 +361,7 @@ function NFTCreate(props) {
                   <Input.TextArea
                     placeholder="You can add links and text description."
                     rows={5}
-                    style={{ 'white-space': 'pre-wrap' }}
+                    style={{ 'whiteSpace': 'pre-wrap' }}
                   />
                   <div style={{ color: 'red' }}>
                     {!formInput.description && formValid.descriptionErr
@@ -378,7 +378,7 @@ function NFTCreate(props) {
                   <Input.TextArea
                     placeholder="The creator has the copyright or use right to this work. You may not modify, copy, reproduce, transmit, or in anyway exploit any such content, without the authorization and consent of the creator. The creator reserve the right to take legal action against any infringement. "
                     rows={5}
-                    style={{ 'white-space': 'pre-wrap' }}
+                    style={{ 'whiteSpace': 'pre-wrap' }}
                   />
                   <div style={{ color: 'red' }}>
                     {!formInput.description && formValid.descriptionErr
