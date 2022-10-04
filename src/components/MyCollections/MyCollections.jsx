@@ -1,22 +1,18 @@
 import { Avatar, Pagination, Row, Space } from 'antd';
-// import avatarFake from 'assets/images/avatar-explore.png';
-// import imgFake from 'assets/images/img-explore.png';
+import { Alchemy, Network } from "alchemy-sdk";
 import React, {useEffect, useState, memo} from "react";
 import CollectionCard from './CollectionCard';
 import styless from './MyCollections.module.css';
-import { useMoralis, useNFTBalances } from "react-moralis";
+import { useMoralis } from "react-moralis";
+import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
 import { useHistory } from 'react-router-dom';
 import { useVerifyMetadata } from "hooks/useVerifyMetadata";
-import { requireWalletConnection } from 'helpers/auth';
-import Web3 from "web3";
-import axios from "axios";
 import Constants from 'constant';
 
 const MyCollections = memo((props) => {
-  
-  const { data: NFTBalances, isFetching } = useNFTBalances();
   const [user, setUser] = useState("Manahubs");
   const { Moralis, account, isAuthenticated } = useMoralis();
+  const {chainId} = useMoralisDapp();
   const serverURL = process.env.REACT_APP_MORALIS_SERVER_URL;
   const appId = process.env.REACT_APP_MORALIS_APPLICATION_ID;
   Moralis.initialize(appId);
@@ -25,6 +21,7 @@ const MyCollections = memo((props) => {
   const { verifyMetadata } = useVerifyMetadata();
   const [nftCollections, setNftCollections] = useState([]);
   const [totalNFTs, setTotalNFTs] = useState(0);
+  const [NFTs, setNFTs] = useState([]);
   function itemRender(current, type, originalElement) {
     if (type === 'prev') {
       return null;
@@ -34,23 +31,12 @@ const MyCollections = memo((props) => {
     }
     return originalElement;
   }
-  useEffect(() => {
-    if(!isFetching){
-      loadNFTCollections(1, Constants.pagination.PAGE_SIZE);
-    }
-  }, [isFetching]);
-  useEffect(() => {
-    const length = NFTBalances?.result?.length;
-    console.log("Length: ", length);
-    setTotalNFTs(length ?? 0);
-  },[NFTBalances]);
   const checkAuthen = async () => {
     if(account && isAuthenticated){
       const users = Moralis.Object.extend("profile");
       const query = new Moralis.Query(users);
       query.equalTo("address", account.toLowerCase());
       const data = await query.first();
-      console.log(data)
       if(data){
         setUser(data.attributes);
       }
@@ -60,16 +46,40 @@ const MyCollections = memo((props) => {
     }
   };
 
+  const loadAllNFTs = async () => {
+    const config = {
+      apiKey: process.env.REACT_APP_ALCHEMY_API_KEY,
+      network: Network.ETH_MAINNET
+    };
+    console.log("config",config);
+    const alchemy = new Alchemy(config);
+    console.log("account", account)
+    const nfts = await alchemy.nft.getNftsForOwner(account);
+    console.log(nfts)
+    setNFTs(nfts?.ownedNfts || []);
+  }
   const loadNFTCollections = (page, pageSize)=>{
     console.log(page, pageSize)
     const skip = (page - 1) * pageSize;
     const limit = pageSize;
-    const NFTs = NFTBalances ? NFTBalances.result : [];
     if(NFTs){
       const NFTsByPage = NFTs.slice(skip, skip + limit);
       setNftCollections(NFTsByPage);
     }
   }
+  useEffect(() => {
+    if(account){
+      loadAllNFTs();
+    }
+  }, [account]);
+  useEffect(() => {
+    if(NFTs){
+      setTotalNFTs(NFTs.length ?? 0);
+    }
+    else{
+      setTotalNFTs(0);
+    }
+  },[NFTs]);
   useEffect(() => {
     checkAuthen()
     loadNFTCollections(1, Constants.pagination.PAGE_SIZE);
