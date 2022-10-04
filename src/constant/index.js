@@ -39,6 +39,9 @@ const Constants = {
         endpoints: {
             CLAIM: "claim",
         }
+    },
+    pagination: {
+        PAGE_SIZE: 10
     }
 }
 
