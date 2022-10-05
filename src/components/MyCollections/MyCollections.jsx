@@ -36,7 +36,6 @@ const MyCollections = memo((props) => {
   }, [isFetching]);
   useEffect(() => {
     const length = NFTBalances?.result?.length;
-    console.log("Length: ", length);
     setTotalNFTs(length ?? 0);
   },[NFTBalances]);
   const checkAuthen = async () => {
@@ -45,7 +44,7 @@ const MyCollections = memo((props) => {
       const query = new Moralis.Query(users);
       query.equalTo("address", account.toLowerCase());
       const data = await query.first();
-      console.log(data)
+      console.log("User",data?.attributes)
       if(data){
         setUser(data.attributes);
       }
@@ -56,7 +55,6 @@ const MyCollections = memo((props) => {
   };
 
   const loadNFTCollections = (page, pageSize)=>{
-    console.log(page, pageSize)
     const skip = (page - 1) * pageSize;
     const limit = pageSize;
     const NFTs = NFTBalances ? NFTBalances.result : [];

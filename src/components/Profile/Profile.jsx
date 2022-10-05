@@ -19,7 +19,6 @@ import ReferralSystem from './components/ReferralSystem';
 import styles from './styles.module.css';
 import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
 import constant from 'constant';
-import { checkWalletConnection } from "helpers/auth";
 import { failureModal, successModal } from 'helpers/modals';
 
 const layout = {
@@ -132,24 +131,6 @@ function Profile() {
   const onFinish = async (values) => {
     setIsUpdateLoading(true);
     if (account && isAuthenticated) {
-      const users = Moralis.Object.extend('profile');
-      const query = new Moralis.Query(users);
-      query.equalTo('address', account);
-      const result = await query.first();
-      let refs = [];
-      if (values.ref) {
-        const resultGetRefs =
-          fetchProfile.find(
-            (element) => element.address === values.ref.toLowerCase()
-          ) || null;
-
-        if (resultGetRefs && resultGetRefs.refs) {    
-          refs = JSON.parse(resultGetRefs.refs);
-        }
-        if (values.ref !== account) {
-          refs.push(values.ref.toLowerCase());
-        }
-      }
       let data = {
         address: account,
         name: values.name,
@@ -159,32 +140,40 @@ function Profile() {
         background: bg,
         bio: values.bio,
       }
+      let refs = [];
       if (values.ref) {
-        data.ref = values.ref.toLowerCase();
+        const refAddr = values.ref.toLowerCase();
+        if(refAddr === account.toLowerCase()) {
+          failureModal("Error", "You can't use your own address as referrer");
+          setIsUpdateLoading(false);
+          return;
+        }
+        const resultGetRefs = fetchProfile.find((element) => element.address === refAddr) || null;
+        if(!resultGetRefs) {
+          failureModal("Error", "Referrer address is not found");
+          setIsUpdateLoading(false);
+          return;
+        }
+        if (resultGetRefs?.refs) {    
+          refs = JSON.parse(resultGetRefs.refs);
+        }
+        refs.push(refAddr);
+        data.ref = refAddr;
         data.refs = JSON.stringify(refs);
       }
       await updateProfile(data);
-      // await Moralis.Cloud.run("updateProfile", data);
       let secondsToGo = 2;
       const modal = Modal.success({
         title: 'Success!',
         content: `Save success`,
       });
-      // props.getAuthenticate({ authenticated: false });
       history.push('/my-collection');
       setTimeout(() => {
         modal.destroy();
       }, secondsToGo * 1000);
 
     } else {
-      let secondsToGo = 2;
-      const modal = Modal.error({
-        title: 'Error!',
-        content: `Please sign in wallet`,
-      });
-      setTimeout(() => {
-        modal.destroy();
-      }, secondsToGo * 1000);
+      failureModal("Error","Please sign in to wallet");
     }
     setIsUpdateLoading(false);
   };
@@ -298,9 +287,6 @@ function Profile() {
       await Object.keys(profile).forEach(function (key) {
         obj.set(key, profile[key]);
       });
-      if(profile.refs){
-        updateRefs(JSON.parse(profile.refs), profile.address);
-      }
       await obj.save(null, { useMasterKey: true });
     } else {
       const classMoralis = Moralis.Object.extend('profile');
@@ -312,6 +298,7 @@ function Profile() {
     }
   }
 
+  /* DO NOT needs
   const updateRefs = async (refs, account) => {
     const users = Moralis.Object.extend('profile');
     const query = new Moralis.Query(users);
@@ -330,6 +317,7 @@ function Profile() {
       });
     }
   }
+  */
 
   return (
     <>
