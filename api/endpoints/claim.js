@@ -67,14 +67,7 @@ const claimPaymentHandler = async (event, context) => {
                     }
                 }
                 else{
-                    const query = new Moralis.Query("profile");
-                    query.equalTo("address", address);
-                    let obj = await query.first({ useMasterKey: true });
-                    if (obj) {
-                        obj.set("rewards", 0);
-                        await obj.save(null, { useMasterKey: true });
-                    }
-                    throw new Error("Rewards is not enough");
+                    throw new Error("System issue: Reward amount is not correct. Please contact to us");
                 }
             }
             else{
