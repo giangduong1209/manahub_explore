@@ -67,7 +67,7 @@ const claimPaymentHandler = async (event, context) => {
                     }
                 }
                 else{
-                    throw new Error("System issue: Reward amount is not correct");
+                    throw new Error("System issue: Reward amount is not correct. Please contact to us");
                 }
             }
             else{
