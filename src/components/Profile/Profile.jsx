@@ -471,7 +471,7 @@ function Profile() {
                       style={{ width: '100%', marginTop: '20px' }}
                     >
                     <div style={{display: 'flex', alignItems: 'center', justifyContent: 'flex-start', gap: "5px"}}>
-                      <span>{rewards / ("1e" + 18)} BNB </span>
+                      <span>{(rewards&&rewards !== 0) ? (rewards/ ("1e" + 18)).toFixed(5) : 0} BNB </span>
                       <Button
                         onClick={handleClaimClink}
                         loading={loadingClaim}
