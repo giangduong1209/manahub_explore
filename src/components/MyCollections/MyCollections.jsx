@@ -114,6 +114,7 @@ const MyCollections = memo((props) => {
         <Row justify="center" style={{ marginTop: '24px' }}>
           <Pagination
             itemRender={itemRender}
+            hideOnSinglePage={true}
             className={styless.pagination}
             defaultCurrent={1}
             defaultPageSize={Constants.pagination.PAGE_SIZE}
