@@ -246,6 +246,12 @@ a.menuLink,
   color: #fff !important;
 }
 
+/* :global(.ant-menu-item) a.menuLink:hover,
+:global(.ant-menu-horizontal > .ant-menu-item) a.menuLink:hover,
+:global(.ant-menu-horizontal > .ant-menu-item-selected) a.menuLink:hover {
+  background-color: #2d2d72;
+} */
+
 .subMenuMobile {
   background: #2d2d72;
   padding: 8px;
@@ -328,7 +334,7 @@ a.menuLink,
 }
 
 .btnCreate:global(.ant-menu-item) {
-  border: 2px solid #fea013 !important;
+  border: 3px solid #2d2d72 !important;
   color: #fea013 !important;
   background: #fff;
   margin: 0 20px;
@@ -336,10 +342,16 @@ a.menuLink,
 
 .btnCreate:global(.ant-menu-item:hover) {
   border: 2px solid transparent !important;
+  background: #2d2d72 !important;
 }
 
 .btnCreate:global(.ant-menu-item) .menuLink {
-  color: #fea013 !important;
+  color: #2d2d72 !important;
+}
+
+.btnMenu:global(.ant-menu-item:hover) {
+  border: 2px solid #fff !important;
+  transition: none !important;
 }
 
 .dotTransaction {
