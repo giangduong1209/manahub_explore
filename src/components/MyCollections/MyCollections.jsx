@@ -1,15 +1,10 @@
 import { Avatar, Pagination, Row, Space } from 'antd';
-// import avatarFake from 'assets/images/avatar-explore.png';
-// import imgFake from 'assets/images/img-explore.png';
 import React, {useEffect, useState, memo} from "react";
 import CollectionCard from './CollectionCard';
 import styless from './MyCollections.module.css';
 import { useMoralis, useNFTBalances } from "react-moralis";
 import { useHistory } from 'react-router-dom';
 import { useVerifyMetadata } from "hooks/useVerifyMetadata";
-import { requireWalletConnection } from 'helpers/auth';
-import Web3 from "web3";
-import axios from "axios";
 import Constants from 'constant';
 
 const MyCollections = memo((props) => {

@@ -46,9 +46,9 @@ const ReferralSystem = ({ toggleReferral }) => {
     }
   }
   async function getRef(address, array, level = 1) {
-    if(level >= Constants.LIMIT_REFERRAL_LEVEL) {
-      return;
-    }
+    // if(level >= Constants.LIMIT_REFERRAL_LEVEL) {
+    //   return;
+    // }
     const query = new Moralis.Query('profile');
     query.equalTo("ref", address);
     const result = await query.find();
