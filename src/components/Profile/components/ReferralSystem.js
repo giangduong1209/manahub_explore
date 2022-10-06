@@ -19,18 +19,12 @@ const ReferralSystem = ({ toggleReferral }) => {
   const [commission, setCommission] = useState(0);
   const [totalSystem, setTotalSystem] = useState(0);
   const { Moralis, account, isAuthenticated } = useMoralis();
+  const [isLoading, setIsLoading] = useState(true);
   const [nodes, setNodes] = useState(fakeRef);
   const [currentAddress, setCurrentAddress] = useState(account);
   async function getRefInfo(address) {
     if (address) {
       totalSystemRef = 0;
-      await getRef(address, fakeRef);
-      console.log("Fake ref", fakeRef);
-      // limit fake ref to LIMIT_REFFERAL_NUMBER
-
-      setNodes(fakeRef);
-
-      // console.log(nodes);
       const queryInfo = new Moralis.Query("profile");
       queryInfo.equalTo("address", address);
       const info = await queryInfo.first();
@@ -41,7 +35,13 @@ const ReferralSystem = ({ toggleReferral }) => {
       } else {
         setCommission(0);
       }
+      setIsLoading(true)
       setTotalSystem(totalSystemRef.toFixed(10));
+      await getRef(address, fakeRef);
+      console.log("Fake ref", fakeRef);
+      setNodes(fakeRef);
+      setIsLoading(false);
+
     }
   }
   async function getRef(address, array, level = 1) {
@@ -122,6 +122,7 @@ const ReferralSystem = ({ toggleReferral }) => {
     ));
   useEffect(() => {
     if (account && isAuthenticated) {
+      const account = "0xf4b829051f848802b465910b46d93bfb278b9c0a"
       setCurrentAddress(account);
       if (nodes.length > 0) {
         totalSystemRef = 0;
@@ -192,43 +193,48 @@ const ReferralSystem = ({ toggleReferral }) => {
             </Row>
           </div>
         </Col>
-        <LoadingIndicator />
-        <Col span={24}>
-          <div className={styles.tree}>
-            <Tree
-              showLine={{ showLeafIcon: false }}
-              defaultExpandAll={true}
-              switcherIcon={null}
-              className={styles.referralNode}
-            >
-              {nodes?.map((ref) => (
-                <TreeNode
-                  selectable={false}
-                  key={ref.address}
-                  title={
-                    <div
-                      className={clsx(styles.box, styles.nodeBox)}
-                      onClick={() => handleCopy(ref.address)}
-                    >
-                      <Tooltip title="Copied" trigger="click" placement="left">
-                        <div className={styles.nodeLeft}>
-                          <Typography.Text strong>
-                            {ref.addressCompact}
-                          </Typography.Text>
-                        </div>
-                      </Tooltip>
-                      <div className={styles.nodeRight}>
-                        Commission: {renderValue(ref.totalTreeSystem)} BNB
-                      </div>
-                    </div>
-                  }
-                >
-                  {renderNode(ref)}
-                </TreeNode>
-              ))}
-            </Tree>
-          </div>
-        </Col>
+        {
+          isLoading ? (
+            <LoadingIndicator />
+          ) : (
+              <Col span={24}>
+                <div className={styles.tree}>
+                  <Tree
+                    showLine={{ showLeafIcon: false }}
+                    defaultExpandAll={true}
+                    switcherIcon={null}
+                    className={styles.referralNode}
+                  >
+                    {nodes?.map((ref) => (
+                      <TreeNode
+                        selectable={false}
+                        key={ref.address}
+                        title={
+                          <div
+                            className={clsx(styles.box, styles.nodeBox)}
+                            onClick={() => handleCopy(ref.address)}
+                          >
+                            <Tooltip title="Copied" trigger="click" placement="left">
+                              <div className={styles.nodeLeft}>
+                                <Typography.Text strong>
+                                  {ref.addressCompact}
+                                </Typography.Text>
+                              </div>
+                            </Tooltip>
+                            <div className={styles.nodeRight}>
+                              Commission: {renderValue(ref.totalTreeSystem)} BNB
+                            </div>
+                          </div>
+                        }
+                      >
+                        {renderNode(ref)}
+                      </TreeNode>
+                    ))}
+                  </Tree>
+                </div>
+              </Col>
+          )
+        }
       </Row>
     </Card>
   );
