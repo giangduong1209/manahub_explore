@@ -149,14 +149,14 @@ function Profile() {
         const query = new Moralis.Query(Profile);
         query.equalTo("address", refAddr);
         const resultGetRefs = await query.first();
-        console.log(resultGetRefs.attributes);
         if(!resultGetRefs) {
           failureModal("Error", "Referrer address is not found");
           setIsUpdateLoading(false);
           return;
         }
-        if (resultGetRefs?.refs) {    
-          refs = JSON.parse(resultGetRefs.refs);
+        
+        if (resultGetRefs?.attributes?.refs) {    
+          refs = JSON.parse(resultGetRefs.attributes.refs);
         }
         refs.push(refAddr);
         data.ref = refAddr;
