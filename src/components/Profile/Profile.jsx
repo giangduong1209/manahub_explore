@@ -160,7 +160,7 @@ function Profile() {
         }
         refs.push(refAddr);
         data.ref = refAddr;
-        data.refs = refs;
+        data.refs = JSON.stringify(refs);
       }
       await updateProfile(data);
       let secondsToGo = 2;
@@ -168,7 +168,7 @@ function Profile() {
         title: 'Success!',
         content: `Save success`,
       });
-      // history.push('/my-collection');
+      history.push('/my-collection');
       setTimeout(() => {
         modal.destroy();
       }, secondsToGo * 1000);
