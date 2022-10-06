@@ -122,7 +122,6 @@ const ReferralSystem = ({ toggleReferral }) => {
     ));
   useEffect(() => {
     if (account && isAuthenticated) {
-      const account = "0xf4b829051f848802b465910b46d93bfb278b9c0a"
       setCurrentAddress(account);
       if (nodes.length > 0) {
         totalSystemRef = 0;
