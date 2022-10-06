@@ -6,6 +6,7 @@ import styles from "../styles.module.css";
 import { useMoralis } from "react-moralis";
 import { useEffect, useState } from "react";
 import Constants from "constant";
+import LoadingIndicator from "components/LoadingIndicator/LoadingIndicator";
 // import { async } from "@firebase/util";
 // Fake data to display
 let fakeRef = [];
@@ -191,6 +192,7 @@ const ReferralSystem = ({ toggleReferral }) => {
             </Row>
           </div>
         </Col>
+        <LoadingIndicator />
         <Col span={24}>
           <div className={styles.tree}>
             <Tree
