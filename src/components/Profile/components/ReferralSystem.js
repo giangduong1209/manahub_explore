@@ -1,5 +1,5 @@
 import { RightOutlined } from "@ant-design/icons";
-import { Card, Col, Row, Tree, Typography, Tooltip, Grid } from "antd";
+import { Card, Col, Row, Tree, Typography, Tooltip, Grid, Spin } from "antd";
 import clsx from "clsx";
 import { CopyIcon } from "components/Icons";
 import styles from "../styles.module.css";
@@ -19,7 +19,7 @@ const ReferralSystem = ({ toggleReferral }) => {
   const [commission, setCommission] = useState(0);
   const [totalSystem, setTotalSystem] = useState(0);
   const { Moralis, account, isAuthenticated } = useMoralis();
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [nodes, setNodes] = useState(fakeRef);
   const [currentAddress, setCurrentAddress] = useState(account);
   async function getRefInfo(address) {
@@ -35,8 +35,7 @@ const ReferralSystem = ({ toggleReferral }) => {
       } else {
         setCommission(0);
       }
-      setIsLoading(true)
-      setTotalSystem(totalSystemRef.toFixed(10));
+      setIsLoading(true);
       await getRef(address, fakeRef);
       console.log("Fake ref", fakeRef);
       setNodes(fakeRef);
@@ -64,7 +63,7 @@ const ReferralSystem = ({ toggleReferral }) => {
       let obj = {
         address: element.address,
         addressCompact: addr,
-        totalTreeSystem: element.commission
+        commission: element.commission
           ? element.commission / ("1e" + 18)
           : 0,
         children: [],
@@ -77,10 +76,10 @@ const ReferralSystem = ({ toggleReferral }) => {
   function getTotalSystem(array) {
     array.forEach((element) => {
       // console.log(element);
-      if (!element.totalTreeSystem) {
-        element.totalTreeSystem = 0;
+      if (!element.commission) {
+        element.commission = 0;
       }
-      totalSystemRef = totalSystemRef + element.totalTreeSystem;
+      totalSystemRef = totalSystemRef + element.commission;
       if (element.children.length > 0) {
         getTotalSystem(element.children);
       }
@@ -112,7 +111,7 @@ const ReferralSystem = ({ toggleReferral }) => {
               </div>
             </Tooltip>
             <div className={styles.nodeRight}>
-              Commission: {renderValue(_ref.totalTreeSystem)} BNB
+              Commission: {renderValue(_ref.commission)} BNB
             </div>
           </div>
         }
@@ -123,14 +122,6 @@ const ReferralSystem = ({ toggleReferral }) => {
   useEffect(() => {
     if (account && isAuthenticated) {
       setCurrentAddress(account);
-      if (nodes.length > 0) {
-        totalSystemRef = 0;
-        getTotalSystem(nodes);
-      }
-
-      if (totalSystem === "NA") {
-        totalSystem = 0;
-      }
       fakeRef = [];
       getRefInfo(account);
     } else {
@@ -140,6 +131,12 @@ const ReferralSystem = ({ toggleReferral }) => {
       setNodes([]);
     }
   }, [account, isAuthenticated]);
+  useEffect(() => {
+    if(nodes.length > 0) {
+      getTotalSystem(nodes);
+      setTotalSystem(totalSystemRef.toFixed(10));
+    }
+  }, [nodes]);
   return (
     <Card className={styles.card}>
       <RightOutlined onClick={toggleReferral} className={styles.btnBack} />
@@ -169,6 +166,7 @@ const ReferralSystem = ({ toggleReferral }) => {
           </div>
         </Col>
         <Col span={24}>
+          <Spin spinning={isLoading}>
           <div className={clsx(styles.infoTotalBox, styles.box)}>
             <Row gutter={4} style={{ width: "100%" }}>
               <Col span={12}>
@@ -179,6 +177,7 @@ const ReferralSystem = ({ toggleReferral }) => {
               </Col>
             </Row>
           </div>
+          </Spin>
         </Col>
         <Col span={24}>
           <div className={clsx(styles.infoCommissionlBox, styles.box)}>
@@ -221,7 +220,7 @@ const ReferralSystem = ({ toggleReferral }) => {
                               </div>
                             </Tooltip>
                             <div className={styles.nodeRight}>
-                              Commission: {renderValue(ref.totalTreeSystem)} BNB
+                              Commission: {renderValue(ref.commission)} BNB
                             </div>
                           </div>
                         }
