@@ -269,7 +269,7 @@
 }
 
 .tree {
-  overflow: scroll;
+  overflow: auto;
 }
 
 .referralNode :global(.ant-tree-node-content-wrapper),
