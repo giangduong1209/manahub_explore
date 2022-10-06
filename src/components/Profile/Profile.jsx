@@ -48,9 +48,6 @@ function Profile() {
   Moralis.serverURL = serverURL;
   const [auth, setAuth] = useState();
   const [refDisabled, setrefDisabled] = useState(false);
-  const queryProfile = useMoralisQuery('profile');
-
-  const fetchProfile = JSON.parse(JSON.stringify(queryProfile.data));
   const [form] = Form.useForm();
   const [image, setImage] = useState('');
   const [bg, setBg] = useState('');
@@ -148,7 +145,11 @@ function Profile() {
           setIsUpdateLoading(false);
           return;
         }
-        const resultGetRefs = fetchProfile.find((element) => element.address === refAddr) || null;
+        const Profile = Moralis.Object.extend("profile");
+        const query = new Moralis.Query(Profile);
+        query.equalTo("address", refAddr);
+        const resultGetRefs = await query.first();
+        console.log(resultGetRefs.attributes);
         if(!resultGetRefs) {
           failureModal("Error", "Referrer address is not found");
           setIsUpdateLoading(false);
