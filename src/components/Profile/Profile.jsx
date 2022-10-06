@@ -149,18 +149,18 @@ function Profile() {
         const query = new Moralis.Query(Profile);
         query.equalTo("address", refAddr);
         const resultGetRefs = await query.first();
-        console.log(resultGetRefs.attributes);
         if(!resultGetRefs) {
           failureModal("Error", "Referrer address is not found");
           setIsUpdateLoading(false);
           return;
         }
-        if (resultGetRefs?.refs) {    
-          refs = JSON.parse(resultGetRefs.refs);
+        
+        if (resultGetRefs?.attributes?.refs) {    
+          refs = JSON.parse(resultGetRefs.attributes.refs);
         }
         refs.push(refAddr);
         data.ref = refAddr;
-        data.refs = JSON.stringify(refs);
+        data.refs = refs;
       }
       await updateProfile(data);
       let secondsToGo = 2;
@@ -168,7 +168,7 @@ function Profile() {
         title: 'Success!',
         content: `Save success`,
       });
-      history.push('/my-collection');
+      // history.push('/my-collection');
       setTimeout(() => {
         modal.destroy();
       }, secondsToGo * 1000);

@@ -86,6 +86,7 @@ const claimPaymentHandler = async (event, context) => {
 exports.handler = async function(event, context) {
     try {
         const result = await claimPaymentHandler(event, context);
+        console.log("result: " + JSON.stringify(result));
         return wrapper(200, result);
     } catch (error) {
         console.error(error);
