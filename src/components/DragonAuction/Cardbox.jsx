@@ -104,7 +104,6 @@ const Cardbox = () => {
                 }
             }
         }
-        // await Moralis.Cloud.run("updateRewards", { event: event });
     }
     async function mint () {
         setLoading(true);
