@@ -2,7 +2,7 @@
 
 📄 Clone project:
 ```sh
-git clone https://github.com/Metapolis21/polisEcoSystem-v2.git
+git clone https://github.com/Metapolis21/manahub_explore.git
 ```
 💿 Install all dependencies:
 ```sh
