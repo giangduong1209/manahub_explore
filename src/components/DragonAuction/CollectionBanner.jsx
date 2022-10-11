@@ -17,8 +17,6 @@ import { useMoralis, useMoralisWeb3Api } from "react-moralis";
 import { getCollectionByIndex } from "helpers/collection";
 import { useParams } from "react-router";
 import{useState, useEffect} from "react";
-let totalVol = 0;
-let isGetingVol = true;
 
 const CollectionBanner = () => {
   const {index} = useParams();
@@ -27,16 +25,16 @@ const CollectionBanner = () => {
   const serverUrl = process.env.REACT_APP_MORALIS_SERVER_URL;
   const appId = process.env.REACT_APP_MORALIS_APPLICATION_ID;
   Moralis.start({ serverUrl, appId });
+  const [ownerCount, setOwnerCount] = useState(0);
+  const [volumeTrade, setVolumeTrade] = useState(0);
+  
 
-  const manahubAddr = Constants.contracts.NFT_COLLECTION_ADDRESS;
   const Web3Api = useMoralisWeb3Api();
 
   const { SubMenu } = Menu;
   useEffect(() => {
     const NFTCollections =  getCollectionByIndex( index, chainId );
-    console.log(chainId,index);
     setCollection(NFTCollections);
-    console.log(collection);
 
   }, [chainId, index])
   
@@ -73,6 +71,43 @@ const CollectionBanner = () => {
   //     }
   //   })
   // }
+  const getOwnerCount = async () => {
+    const owners = [];
+    const options = {
+      address: Constants.contracts.NFT_COLLECTION_ADDRESS,
+      chain: "bsc"
+    }
+    const nftOwners = await Web3Api.token.getNFTOwners(options);
+    nftOwners.result && nftOwners.result.forEach((tx) => {
+      if(!owners.includes(tx.owner_of)){
+        owners.push(tx.owner_of);
+      }
+    })
+    setOwnerCount(owners.length);
+  }
+  
+  const getVolumeTrade = async () => {
+    let volume = 0;
+    const result = [];
+    const options = {
+      address: Constants.contracts.NFT_COLLECTION_ADDRESS,
+      chain: "bsc"
+    }
+    const nftTransfers = await Web3Api.token.getContractNFTTransfers(options);
+    let arrNftTransfers = nftTransfers.result;
+    arrNftTransfers.forEach((tx) => {
+      if (parseInt(tx.value) > 10 ** 18){
+        result.push(tx);
+        const value = parseInt(tx.value) / (10 ** 18);
+        volume += value;
+      }
+    })
+    setVolumeTrade(volume);
+  }
+  useEffect(() => {
+    getOwnerCount();
+    getVolumeTrade();  
+  },[])
   return (
     <div>
       <div
@@ -237,7 +272,9 @@ const CollectionBanner = () => {
                   className={styless.number}
                   style={{ fontFamily: "GILROY " }}
                 >
-                  {collection?.statistics?.totalOwners}
+                  {
+                    ownerCount ? ownerCount : collection?.statistics?.totalOwners
+                  }
                 </span>
                 <span
                   className={styless.attr}
@@ -273,7 +310,9 @@ const CollectionBanner = () => {
                   className={styless.number}
                   style={{ fontFamily: "GILROY " }}
                 >
-                  {collection?.statistics?.totalVolume} BNB
+                  {
+                    volumeTrade ? volumeTrade : collection?.statistics?.volumeTrade
+                  } BNB
                 </span>
                 <span
                   className={styless.attr}
