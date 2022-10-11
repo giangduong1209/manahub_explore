@@ -1,20 +1,25 @@
-import {Col, Row, Space } from 'antd';
-import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import './nft.css';
-import styless from './Collections.module.css';
-import { useMoralis } from 'react-moralis';
-import { getCollectionsByChain } from 'helpers/collection';
-import exploreData from '../../data/nfts/explore.json';
-import headerData from './header.json';
+import { Col, Row, Space } from "antd";
+import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import "./nft.css";
+import styless from "./Collections.module.css";
+import { useMoralis } from "react-moralis";
+import { getCollectionsByChain } from "helpers/collection";
+import exploreData from "../../data/nfts/explore.json";
+import headerData from "./header.json";
 import {
   FireIcon,
   GemIcon,
   BaseketBallIcon,
   FemaleIcon,
   PlaystationIcon,
-} from 'components/Icons';
-import clsx from 'clsx';
+} from "components/Icons";
+import clsx from "clsx";
+
+var Web3 = require("web3");
+var web3Js = new Web3(
+  new Web3.providers.HttpProvider("https://bsc-dataseed.binance.org/")
+);
 
 const icons = {
   fire: <FireIcon />,
@@ -29,22 +34,22 @@ const CollectionBanner = ({ address }) => {
   const [currentExplore, setCurrentExplore] = useState(1);
   const history = useHistory();
   const { chainId } = useMoralis();
-  console.log(chainId)
+  console.log(chainId);
   const [collections, setCollections] = useState([]);
-  
+
   function linkMintNFT(index) {
-    if(index === 1){
-      history.push('/mint/'+index);
+    if (index === 1) {
+      history.push("/mint/" + index);
     }
   }
   useEffect(() => {
     const NFTCollections = getCollectionsByChain("0x38");
     setCollections(NFTCollections);
-  }, [chainId])
+  }, [chainId]);
   return (
     <div>
       <div>
-        <div className="" style={{ display: 'flex', height: '250px' }}>
+        <div className="" style={{ display: "flex", height: "250px" }}>
           <div className="slide-vertical st1 mr-20">
             <div className="box">
               {headerData.st1.map((img, i) => (
@@ -151,51 +156,56 @@ const CollectionBanner = ({ address }) => {
             </span>
           </div>
           <Row gutter={[16, 16]} className={styless.cardWrapper}>
-            {collections && collections.map((item, index) => (
-              <Col span={24} md={{ span: 8 }} key = {index}>
-                <div className={styless.cardItem}>
-                  <Row gutter={[8, 8]}>
-                    <Col span={12} className={styless.topImg}>
-                      <img src={item.imageCollections.img_0} alt="" />
-                    </Col>
-                    <Col span={12} className={styless.topImg}>
-                      <img src={item.imageCollections.img_1} alt="" />
-                    </Col>
-                    <Col span={24} className={styless.midImg}>
-                      <img src={item.imageCollections.img_2} alt="" />
-                    </Col>
-                  </Row>
-                  <div>
-                    <div className={styless.cardItemAvatar}>
-                      <img src={item.image} alt="" />
-                    </div>
-                    <Row justify="space-between" align="middle">
-                      <Col>
-                        <Space direction="vertical" align="start" size={0}>
-                          <span className={styless.cardCollectionName}>
-                            {item.name}
-                          </span>
-                          <span className={styless.cardCreateBy}>
-                            Created by : <b>{item.createdBy}</b>
-                          </span>
-                        </Space>
+            {collections &&
+              collections.map((item, index) => (
+                <Col span={24} md={{ span: 8 }} key={index}>
+                  <div className={styless.cardItem}>
+                    <Row gutter={[8, 8]}>
+                      <Col span={12} className={styless.topImg}>
+                        <img src={item.imageCollections.img_0} alt="" />
                       </Col>
-                      <Col>
-                        <span className={styless.itemSeeMore} onClick = {()=>linkMintNFT(item.index)}>See more</span>
+                      <Col span={12} className={styless.topImg}>
+                        <img src={item.imageCollections.img_1} alt="" />
+                      </Col>
+                      <Col span={24} className={styless.midImg}>
+                        <img src={item.imageCollections.img_2} alt="" />
                       </Col>
                     </Row>
+                    <div>
+                      <div className={styless.cardItemAvatar}>
+                        <img src={item.image} alt="" />
+                      </div>
+                      <Row justify="space-between" align="middle">
+                        <Col>
+                          <Space direction="vertical" align="start" size={0}>
+                            <span className={styless.cardCollectionName}>
+                              {item.name}
+                            </span>
+                            <span className={styless.cardCreateBy}>
+                              Created by : <b>{item.createdBy}</b>
+                            </span>
+                          </Space>
+                        </Col>
+                        <Col>
+                          <span
+                            className={styless.itemSeeMore}
+                            onClick={() => linkMintNFT(item.index)}
+                          >
+                            See more
+                          </span>
+                        </Col>
+                      </Row>
+                    </div>
                   </div>
-                </div>
-              </Col>
-
-            ))}
+                </Col>
+              ))}
           </Row>
           <Row gutter={[16, 16]} align="middle" justify="space-between">
             <Col>
               <h1
                 style={{
-                  color: '#FEA013',
-                  fontSize: '32px',
+                  color: "#FEA013",
+                  fontSize: "32px",
                 }}
               >
                 Explore NFTs
