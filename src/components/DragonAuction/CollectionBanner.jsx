@@ -27,8 +27,10 @@ const CollectionBanner = () => {
   const serverUrl = process.env.REACT_APP_MORALIS_SERVER_URL;
   const appId = process.env.REACT_APP_MORALIS_APPLICATION_ID;
   Moralis.start({ serverUrl, appId });
+  const [ownerCount, setOwnerCount] = useState(0);
+  const [volumeTrade, setVolumeTrade] = useState(0);
+  
 
-  const manahubAddr = Constants.contracts.NFT_COLLECTION_ADDRESS;
   const Web3Api = useMoralisWeb3Api();
 
   const { SubMenu } = Menu;
@@ -73,6 +75,49 @@ const CollectionBanner = () => {
   //     }
   //   })
   // }
+  const getOwnerCount = async () => {
+    const owners = [];
+    const options = {
+      address: Constants.contracts.NFT_COLLECTION_ADDRESS,
+      chain: "bsc"
+    }
+    const nftOwners = await Web3Api.token.getNFTOwners(options);
+    console.log("NFTOwners",nftOwners.result);
+    nftOwners.result && nftOwners.result.forEach((tx) => {
+      if(!owners.includes(tx.owner_of)){
+        owners.push(tx.owner_of);
+      }
+    })
+    console.log("Owners",owners);
+    setOwnerCount(owners.length);
+  }
+  
+  const getVolumTrade = async () => {
+    let volume = 0;
+    const result = [];
+    const options = {
+      address: Constants.contracts.NFT_COLLECTION_ADDRESS,
+      chain: "bsc"
+    }
+    console.log("Options",options);
+    const nftTransfers = await Web3Api.token.getContractNFTTransfers(options);
+    console.log("NFTTransfers",nftTransfers.result);
+    let arrNftTransfers = nftTransfers.result;
+    arrNftTransfers.forEach((tx) => {
+      if (parseInt(tx.value) > 10 ** 18){
+        result.push(tx);
+        const value = parseInt(tx.value) / (10 ** 18);
+        volume += value;
+      }
+    })
+    console.log("Result",result);
+    console.log("volumeTrade",volume);
+    setVolumeTrade(volume);
+  }
+  useEffect(() => {
+    getOwnerCount();
+    getVolumTrade();  
+  },[])
   return (
     <div>
       <div
@@ -237,7 +282,9 @@ const CollectionBanner = () => {
                   className={styless.number}
                   style={{ fontFamily: "GILROY " }}
                 >
-                  {collection?.statistics?.totalOwners}
+                  {
+                    ownerCount ? ownerCount : collection?.statistics?.totalOwners
+                  }
                 </span>
                 <span
                   className={styless.attr}
@@ -273,7 +320,9 @@ const CollectionBanner = () => {
                   className={styless.number}
                   style={{ fontFamily: "GILROY " }}
                 >
-                  {collection?.statistics?.totalVolume} BNB
+                  {
+                    volumeTrade ? volumeTrade : collection?.statistics?.volumeTrade
+                  } BNB
                 </span>
                 <span
                   className={styless.attr}
