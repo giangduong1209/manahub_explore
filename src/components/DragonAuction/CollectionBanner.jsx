@@ -16,10 +16,21 @@ import ShareLinkTwitter from "react-twitter-share-link";
 import { useMoralis, useMoralisWeb3Api } from "react-moralis";
 import { getCollectionByIndex } from "helpers/collection";
 import { useParams } from "react-router";
-import{useState, useEffect} from "react";
+
+import { useState, useEffect } from "react";
+import { nftCollectionAddress } from "../../constant/contractsInfo/nftCollection";
+import { async } from "@firebase/util";
+var Web3 = require("web3");
+var web3Js = new Web3(
+  new Web3.providers.HttpProvider("https://bsc-dataseed.binance.org/")
+);
+
+let totalVol = 0;
+let isGetingVol = true;
+
 
 const CollectionBanner = () => {
-  const {index} = useParams();
+  const { index } = useParams();
   const { Moralis, chainId } = useMoralis();
   const [collection, setCollection] = useState({});
   const serverUrl = process.env.REACT_APP_MORALIS_SERVER_URL;
@@ -33,11 +44,17 @@ const CollectionBanner = () => {
 
   const { SubMenu } = Menu;
   useEffect(() => {
-    const NFTCollections =  getCollectionByIndex( index, chainId );
-    setCollection(NFTCollections);
 
-  }, [chainId, index])
-  
+    const NFTCollections = getCollectionByIndex(index, chainId);
+    console.log(chainId, index);
+    setCollection(NFTCollections);
+    console.log(collection);
+  }, [chainId, index]);
+
+    // const NFTCollections =  getCollectionByIndex( index, chainId );
+    // setCollection(NFTCollections);
+
+
   const openNotification = (placement) => {
     const args = {
       message: "Link Copied !",
@@ -45,6 +62,20 @@ const CollectionBanner = () => {
     };
     notification.success(args);
   };
+
+  console.log(web3Js);
+
+  // const getOwners = async (address) => {
+  //   const owners = await web3Js.eth.getTransactionCount(address);
+  //   console.log("owners", owners);
+  //   return owners;
+  // };
+
+  // useEffect(() => {
+  //   getOwners(nftCollectionAddress);
+  // }, []);
+  //console.log(getOwners(nftCollectionAddress));
+
   // if (isGetingVol) {
   //   isGetingVol = false;
   //   getVolumeTrade();
@@ -56,7 +87,6 @@ const CollectionBanner = () => {
   //     address: manahubAddr,
   //     chain: "bsc",
   //   };
-
 
   //   const nftTransfers = await Web3Api.token.getContractNFTTransfers(options);
 
@@ -112,10 +142,10 @@ const CollectionBanner = () => {
     <div>
       <div
         className={styless.bg}
-      // style={{ backgroundClip: `url(${DragonClip})` }}
+        // style={{ backgroundClip: `url(${DragonClip})` }}
       >
-        <div className = {styless.bannerWrapper}>
-          <img className={styless.bannerImg} src={collection?.banner}  />
+        <div className={styless.bannerWrapper}>
+          <img className={styless.bannerImg} src={collection?.banner} />
         </div>
         {/* <video muted autoPlay loop width='100%'> <source src={'https://ipfs.moralis.io:2053/ipfs/QmNXHTD2oWKC8m4AusReS1J48QEVFFPMucu9pZ9Jm8Co29'} type="video/mp4"></source></video> */}
         <Avatar src={collection?.image} className={styless.avatar} size={160} />
@@ -179,11 +209,13 @@ const CollectionBanner = () => {
                     >
                       <Menu.Item
                         key="1"
-                      // style={{ fontSize: "15px", textAlign: "center" }}
+                        // style={{ fontSize: "15px", textAlign: "center" }}
                       >
                         <CopyToClipboard
                           onCopy={openNotification}
-                          text={"https://marketplace.metamints.app/dragon-auction"}
+                          text={
+                            "https://marketplace.metamints.app/dragon-auction"
+                          }
                         >
                           <span>
                             {" "}
@@ -194,7 +226,7 @@ const CollectionBanner = () => {
                       </Menu.Item>
                       <Menu.Item
                         key="2"
-                      // style={{ fontSize: "15px", textAlign: "center" }}
+                        // style={{ fontSize: "15px", textAlign: "center" }}
                       >
                         <ShareLink link="https://marketplace.metamints.app/dragon-auction">
                           {(link) => (
@@ -208,7 +240,7 @@ const CollectionBanner = () => {
                       </Menu.Item>
                       <Menu.Item
                         key="3"
-                      //style={{ fontSize: "15px", textAlign: "center" }}
+                        //style={{ fontSize: "15px", textAlign: "center" }}
                       >
                         <ShareLinkTwitter link="https://marketplace.metamints.app/dragon-auction">
                           {(link) => (
@@ -272,9 +304,14 @@ const CollectionBanner = () => {
                   className={styless.number}
                   style={{ fontFamily: "GILROY " }}
                 >
-                  {
+
+                  {collection?.statistics?.totalOwners}
+
+                  {/* {console.log(nftCollectionAddress)} */}
+
+                  {/* {
                     ownerCount ? ownerCount : collection?.statistics?.totalOwners
-                  }
+                  } */}
                 </span>
                 <span
                   className={styless.attr}
@@ -324,7 +361,9 @@ const CollectionBanner = () => {
             </Col>
           </Row>
         </div>
-        <div className={styless.desc} style={{ fontFamily: "GILROY " }}>{collection?.description}</div>
+        <div className={styless.desc} style={{ fontFamily: "GILROY " }}>
+          {collection?.description}
+        </div>
       </div>
     </div>
   );
