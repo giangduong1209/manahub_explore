@@ -17,8 +17,6 @@ import { useMoralis, useMoralisWeb3Api } from "react-moralis";
 import { getCollectionByIndex } from "helpers/collection";
 import { useParams } from "react-router";
 import{useState, useEffect} from "react";
-let totalVol = 0;
-let isGetingVol = true;
 
 const CollectionBanner = () => {
   const {index} = useParams();
@@ -36,9 +34,7 @@ const CollectionBanner = () => {
   const { SubMenu } = Menu;
   useEffect(() => {
     const NFTCollections =  getCollectionByIndex( index, chainId );
-    console.log(chainId,index);
     setCollection(NFTCollections);
-    console.log(collection);
 
   }, [chainId, index])
   
@@ -82,26 +78,22 @@ const CollectionBanner = () => {
       chain: "bsc"
     }
     const nftOwners = await Web3Api.token.getNFTOwners(options);
-    console.log("NFTOwners",nftOwners.result);
     nftOwners.result && nftOwners.result.forEach((tx) => {
       if(!owners.includes(tx.owner_of)){
         owners.push(tx.owner_of);
       }
     })
-    console.log("Owners",owners);
     setOwnerCount(owners.length);
   }
   
-  const getVolumTrade = async () => {
+  const getVolumeTrade = async () => {
     let volume = 0;
     const result = [];
     const options = {
       address: Constants.contracts.NFT_COLLECTION_ADDRESS,
       chain: "bsc"
     }
-    console.log("Options",options);
     const nftTransfers = await Web3Api.token.getContractNFTTransfers(options);
-    console.log("NFTTransfers",nftTransfers.result);
     let arrNftTransfers = nftTransfers.result;
     arrNftTransfers.forEach((tx) => {
       if (parseInt(tx.value) > 10 ** 18){
@@ -110,13 +102,11 @@ const CollectionBanner = () => {
         volume += value;
       }
     })
-    console.log("Result",result);
-    console.log("volumeTrade",volume);
     setVolumeTrade(volume);
   }
   useEffect(() => {
     getOwnerCount();
-    getVolumTrade();  
+    getVolumeTrade();  
   },[])
   return (
     <div>
