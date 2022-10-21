@@ -1,17 +1,25 @@
-import { Button, Col, Divider, Row, Modal, Input, Spin, Select, Tabs, } from 'antd';
+import {
+  Button,
+  Col,
+  Divider,
+  Row,
+  Modal,
+  Input,
+  Spin,
+  Select,
+  Tabs,
+} from "antd";
 import React, { useState, useEffect } from "react";
-import styless from './MyCollections.module.css';
+import styless from "./MyCollections.module.css";
 import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
 // import { useVerifyMetadata } from "hooks/useVerifyMetadata";
 // import { useVerifyMetadata } from "hooks/useVerifyMetadata";
 import { useWeb3ExecuteFunction } from "react-moralis";
 import { getExplorer } from "helpers/networks";
 import { useMoralis } from "react-moralis";
-import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 import { auctionABI, auctionByteCode } from "helpers/auction";
 import moment from "moment";
-
-
 
 const Web3 = require("web3");
 // eslint-disable-next-line no-unused-vars
@@ -30,18 +38,17 @@ const categoryLs = [
   "Sport",
   "TradingCards",
   "Utility",
-  "VirtualWorlds"
+  "VirtualWorlds",
 ];
 // let arrNFTMarketAddress = {};
 
 const CollectionCard = ({ item }) => {
-
   const [visible, setVisibility] = useState(false);
   const [price, setPrice] = useState();
   const [time, setTime] = useState();
   const [priceAuc, setPriceAuc] = useState();
   const [category, setCategory] = useState([]);
-
+  const [nftToSend, setNftToSend] = useState(null);
   const [nftToSell, setNftToSell] = useState({});
   const { chainId, marketAddress, contractABI } = useMoralisDapp();
   const { Moralis, authenticate, account } = useMoralis();
@@ -71,7 +78,6 @@ const CollectionCard = ({ item }) => {
 
   const contractWeb3ABIJson = JSON.parse(auctionABI);
 
-
   useEffect(() => {
     // const findExistNftMarket = async (item) => {
     //   // const ListedItem = Moralis.Object.extend("ItemImages");
@@ -86,7 +92,10 @@ const CollectionCard = ({ item }) => {
       try {
         // console.log(item?.image);
         let url = item?.image;
-        if (item?.image.substring(8, 12) === "ipfs" && !url.includes("https://gateway.ipfs.io")) {
+        if (
+          item?.image.substring(8, 12) === "ipfs" &&
+          !url.includes("https://gateway.ipfs.io")
+        ) {
           url = item?.image.replace(/^.{28}/g, "https://gateway.ipfs.io");
         }
         let req = await fetch(url);
@@ -96,7 +105,6 @@ const CollectionCard = ({ item }) => {
       } catch (error) {
         console.log(error);
       }
-
     }
     if (item) {
       if (item.image) {
@@ -104,19 +112,18 @@ const CollectionCard = ({ item }) => {
         setMediaSrc(item.image);
       }
     }
-
   }, [Moralis, ItemImage, contractABIJson, marketAddress, item]);
 
   const handleSellClick = (item) => {
     // console.log(item)
     setNftToSell(item);
-    setVisibility(true)
-  }
+    setVisibility(true);
+  };
 
-  // const handleTransferClick = (item) => {
-  //   setNftToSend(item);
-  //   setVisibility(true);
-  // };
+  const handleTransferClick = (item) => {
+    setNftToSend(item);
+    setVisibility(true);
+  };
 
   // const handleChange = (e) => {
   //   setAmount(e.target.value);
@@ -135,10 +142,21 @@ const CollectionCard = ({ item }) => {
         const ops = {
           contractAddress: item.token_address,
           functionName: "setApprovalForAll",
-          abi: [{ "inputs": [{ "internalType": "address", "name": "operator", "type": "address" }, { "internalType": "bool", "name": "approved", "type": "bool" }], "name": "setApprovalForAll", "outputs": [], "stateMutability": "nonpayable", "type": "function" }],
+          abi: [
+            {
+              inputs: [
+                { internalType: "address", name: "operator", type: "address" },
+                { internalType: "bool", name: "approved", type: "bool" },
+              ],
+              name: "setApprovalForAll",
+              outputs: [],
+              stateMutability: "nonpayable",
+              type: "function",
+            },
+          ],
           params: {
             operator: marketAddress,
-            approved: true
+            approved: true,
           },
         };
         // console.log("approve all >>>>>>>>>", ops)
@@ -152,7 +170,7 @@ const CollectionCard = ({ item }) => {
             list(nftToSell, price);
           },
           onError: (error) => {
-            console.log(error)
+            console.log(error);
             setLoading(false);
             failApprove();
           },
@@ -162,12 +180,10 @@ const CollectionCard = ({ item }) => {
         setLoading(false);
         setVisibility(false);
         failApprove();
-      }
-    })
-
+      },
+    });
   }
   async function auction(item) {
-
     let minBid = priceAuc * ("1e" + 18);
     if (!isFormValidAuction()) return;
     try {
@@ -196,7 +212,7 @@ const CollectionCard = ({ item }) => {
         .send(parameter, (err, transactionHash) => {
           // console.log("Transaction Hash :", transactionHash);
         })
-        .on("confirmation", () => { })
+        .on("confirmation", () => {})
         .then((newContractInstance) => {
           console.log(
             "Deployed Contract Address : ",
@@ -204,7 +220,8 @@ const CollectionCard = ({ item }) => {
           );
           // approveAuction(newContractInstance.options.address)
           approveAuction(newContractInstance.options.address);
-        }).catch((err) => {
+        })
+        .catch((err) => {
           setLoading(false);
         });
       // if (!isFormValid()) return;
@@ -212,7 +229,6 @@ const CollectionCard = ({ item }) => {
     } catch (error) {
       setLoading(false);
     }
-
   }
 
   async function approveAuction(address) {
@@ -323,11 +339,10 @@ const CollectionCard = ({ item }) => {
       params: {
         nftContract: item.token_address,
         tokenId: item.token_id,
-        price: String(p)
+        price: String(p),
       },
       msgValue: exchangeFee,
     };
-
 
     await contractProcessor.fetch({
       params: ops,
@@ -344,8 +359,7 @@ const CollectionCard = ({ item }) => {
         failList();
       },
     });
-
-  }
+  };
 
   async function saveListedNFT(item, price) {
     const ListedItem = Moralis.Object.extend("ListedItem");
@@ -391,7 +405,7 @@ const CollectionCard = ({ item }) => {
     let secondsToGo = 2;
     const modal = Modal.success({
       title: "Success!",
-      content: `Your NFT was listed on the marketplace`
+      content: `Your NFT was listed on the marketplace`,
     });
     history.push("/");
     setTimeout(() => {
@@ -403,7 +417,7 @@ const CollectionCard = ({ item }) => {
     let secondsToGo = 5;
     const modal = Modal.error({
       title: "Error!",
-      content: `There was a problem listing your NFT`
+      content: `There was a problem listing your NFT`,
     });
     setTimeout(() => {
       modal.destroy();
@@ -521,7 +535,7 @@ const CollectionCard = ({ item }) => {
     <div className={styless.cardbox}>
       <div
         className={styless.image}
-      // style={{ backgroundImage: `url(${item.image})` }}
+        // style={{ backgroundImage: `url(${item.image})` }}
       >
         {mediaType.includes("video") ? (
           <video className={styless.image} width="350" controls>
@@ -549,15 +563,34 @@ const CollectionCard = ({ item }) => {
           <span className={styless.id}>ID No.</span>
           {/* <span className={styless.price}>0.125 ETH</span> */}
         </Row>
-        <Divider style={{ margin: '10px 0' }} />
+        <Divider style={{ margin: "10px 0" }} />
         <Row justify="space-between" gutter={16}>
-          <Col span={12}>
-            <Button className={`${styless.button} ${styless.btnInfo} btn-hover`} onClick={() => window.open(`${getExplorer(chainId)}address/${item.token_address}`, "_blank")}>
+          <Col span={9}>
+            <Button
+              className={`${styless.button} ${styless.btnInfo} btn-hover`}
+              onClick={() =>
+                window.open(
+                  `${getExplorer(chainId)}address/${item.token_address}`,
+                  "_blank"
+                )
+              }
+            >
               Trx Info
             </Button>
           </Col>
-          <Col span={12}>
-            <Button className={`${styless.button} ${styless.btnBuy}`} onClick={() => handleSellClick(item)}>
+          <Col span={9}>
+            <Button
+              className={`${styless.button} ${styless.btnInfo} btn-hover`}
+              onClick={() => handleTransferClick(item)}
+            >
+              Transfer
+            </Button>
+          </Col>
+          <Col span={9}>
+            <Button
+              className={`${styless.button} ${styless.btnBuy}`}
+              onClick={() => handleSellClick(item)}
+            >
               List
             </Button>
           </Col>
@@ -581,7 +614,7 @@ const CollectionCard = ({ item }) => {
             onClick={() => setVisibility(false)}
             className={styless.btnCancel}
             loading={loading ? true : false}
-          // disabled={loading ? true : false}
+            // disabled={loading ? true : false}
           >
             Cancel
           </Button>,
@@ -661,7 +694,9 @@ const CollectionCard = ({ item }) => {
                 onChange={handleChange}
               >
                 {categoryLs.map((e, index) => (
-                  <Option key={index} value={e}>{e}</Option>
+                  <Option key={index} value={e}>
+                    {e}
+                  </Option>
                 ))}
               </Select>
               <div style={{ color: "red" }}>
@@ -726,8 +761,10 @@ const CollectionCard = ({ item }) => {
                 // options={category}
                 onChange={handleChangeAuction}
               >
-                {categoryLs.map((e,index) => (
-                  <Option key={index} value={e}>{e}</Option>
+                {categoryLs.map((e, index) => (
+                  <Option key={index} value={e}>
+                    {e}
+                  </Option>
                 ))}
               </Select>
               <div style={{ color: "red", marginTop: "10px" }}>
