@@ -12,8 +12,7 @@ import {
 import React, { useState, useEffect } from "react";
 import styless from "./MyCollections.module.css";
 import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
-// import { useVerifyMetadata } from "hooks/useVerifyMetadata";
-// import { useVerifyMetadata } from "hooks/useVerifyMetadata";
+import AddressInput from "../AddressInput";
 import { useWeb3ExecuteFunction } from "react-moralis";
 import { getExplorer } from "helpers/networks";
 import { useMoralis } from "react-moralis";
@@ -43,7 +42,8 @@ const categoryLs = [
 // let arrNFTMarketAddress = {};
 
 const CollectionCard = ({ item }) => {
-  const [visible, setVisibility] = useState(false);
+  const [visibleListModal, setVisibilityListModal] = useState(false);
+  const [visibleTransferModal, setVisibilityTransferModal] = useState(false);
   const [price, setPrice] = useState();
   const [time, setTime] = useState();
   const [priceAuc, setPriceAuc] = useState();
@@ -57,13 +57,16 @@ const CollectionCard = ({ item }) => {
   const ItemImage = Moralis.Object.extend("ItemImages");
   const listItemFunction = "createMarketItem";
   const [loading, setLoading] = useState(false);
+  const [receiverToSend, setReceiver] = useState(null);
+  const [amountToSend, setAmount] = useState(null);
   const contractProcessor = useWeb3ExecuteFunction();
   const [mediaSrc, setMediaSrc] = useState("");
   const [mediaType, setMediaType] = useState("");
   const history = useHistory();
+  const [isPending, setIsPending] = useState(false);
   const [auc, setAuc] = useState("1");
   const [exchangeFee, setExchangeFee] = useState();
-
+  
   const [formValid, setFormValid] = useState({
     priceErr: false,
     priceFormatErr: false,
@@ -117,13 +120,37 @@ const CollectionCard = ({ item }) => {
   const handleSellClick = (item) => {
     // console.log(item)
     setNftToSell(item);
-    setVisibility(true);
+    setVisibilityListModal(true);
   };
 
-  const handleTransferClick = (item) => {
-    setNftToSend(item);
-    setVisibility(true);
+  const handleTransferClick = (nft) => {
+    setNftToSend(nft);
+    setVisibilityTransferModal(true);
   };
+  async function transfer(nft, amount, receiver) {
+    console.log(nft, amount, receiver);
+    const options = {
+      type: nft?.contract_type?.toLowerCase(),
+      tokenId: nft?.token_id,
+      receiver,
+      contractAddress: nft?.token_address,
+    };
+
+    if (options.type === "erc1155") {
+      options.amount = amount ?? nft.amount;
+    }
+
+    setIsPending(true);
+
+    try {
+      const tx = await Moralis.transfer(options);
+      console.log(tx);
+      setIsPending(false);
+    } catch (e) {
+      alert(e.message);
+      setIsPending(false);
+    }
+  }
 
   // const handleChange = (e) => {
   //   setAmount(e.target.value);
@@ -178,7 +205,7 @@ const CollectionCard = ({ item }) => {
       },
       onError: () => {
         setLoading(false);
-        setVisibility(false);
+        setVisibilityListModal(false);
         failApprove();
       },
     });
@@ -350,7 +377,7 @@ const CollectionCard = ({ item }) => {
         // console.log("success");
         setLoading(false);
         saveListedNFT(item, p);
-        setVisibility(false);
+        setVisibilityListModal(false);
         addItemImage();
         succList();
       },
@@ -604,14 +631,14 @@ const CollectionCard = ({ item }) => {
             <>{`Auction ${nftToSell?.name || "NFT"}`}</>
           )
         }
-        visible={visible}
-        onCancel={() => setVisibility(false)}
+        visible={visibleListModal}
+        onCancel={() => setVisibilityListModal(false)}
         // onOk={() => list(nftToSell, price)}
         // okText="Sell"
         footer={[
           <Button
             key="1"
-            onClick={() => setVisibility(false)}
+            onClick={() => setVisibilityListModal(false)}
             className={styless.btnCancel}
             loading={loading ? true : false}
             // disabled={loading ? true : false}
@@ -788,6 +815,22 @@ const CollectionCard = ({ item }) => {
             </Spin>
           </Tabs.TabPane>
         </Tabs>
+      </Modal>
+      <Modal
+        title={`Transfer ${nftToSend?.name || "NFT"}`}
+        visible={visibleTransferModal}
+        onCancel={() => setVisibilityTransferModal(false)}
+        onOk={() => transfer(nftToSend, amountToSend, receiverToSend)}
+        confirmLoading={isPending}
+        okText="Send"
+      >
+        <AddressInput autoFocus placeholder="Receiver" onChange={setReceiver} />
+        {nftToSend && nftToSend.contract_type === "erc1155" && (
+          <Input
+            placeholder="amount to send"
+            onChange={(e) => handleChange(e)}
+          />
+        )}
       </Modal>
     </div>
   );
