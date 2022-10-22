@@ -30,7 +30,7 @@ function NFTBalance() {
   const [visible, setVisibility] = useState(false);
   // const [receiverToSend, setReceiver] = useState(null);
   // const [amountToSend, setAmount] = useState(null);
-  // const [nftToSend, setNftToSend] = useState(null);
+  const [nftToSend, setNftToSend] = useState(null);
   const [price, setPrice] = useState();
   // const [isPending, setIsPending] = useState(false);
   const { verifyMetadata } = useVerifyMetadata();
@@ -69,10 +69,10 @@ function NFTBalance() {
     setVisibility(true)
   }
 
-  // const handleTransferClick = (nft) => {
-  //   setNftToSend(nft);
-  //   setVisibility(true);
-  // };
+  const handleTransferClick = (nft) => {
+    setNftToSend(nft);
+    setVisibility(true);
+  };
 
   // const handleChange = (e) => {
   //   setAmount(e.target.value);
