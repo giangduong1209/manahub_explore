@@ -565,7 +565,7 @@ const CollectionCard = ({ item }) => {
         </Row>
         <Divider style={{ margin: "10px 0" }} />
         <Row justify="space-between" gutter={16}>
-          <Col span={9}>
+          <Col span={8}>
             <Button
               className={`${styless.button} ${styless.btnInfo} btn-hover`}
               onClick={() =>
@@ -578,7 +578,7 @@ const CollectionCard = ({ item }) => {
               Trx Info
             </Button>
           </Col>
-          <Col span={9}>
+          <Col span={8}>
             <Button
               className={`${styless.button} ${styless.btnInfo} btn-hover`}
               onClick={() => handleTransferClick(item)}
@@ -586,7 +586,7 @@ const CollectionCard = ({ item }) => {
               Transfer
             </Button>
           </Col>
-          <Col span={9}>
+          <Col span={8}>
             <Button
               className={`${styless.button} ${styless.btnBuy}`}
               onClick={() => handleSellClick(item)}
