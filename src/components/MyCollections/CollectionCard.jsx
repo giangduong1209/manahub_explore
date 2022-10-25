@@ -19,6 +19,7 @@ import { useMoralis } from "react-moralis";
 import { useHistory } from "react-router-dom";
 import { auctionABI, auctionByteCode } from "helpers/auction";
 import moment from "moment";
+import Constants from "constant";
 
 const Web3 = require("web3");
 // eslint-disable-next-line no-unused-vars
@@ -66,7 +67,7 @@ const CollectionCard = ({ item }) => {
   const [isPending, setIsPending] = useState(false);
   const [auc, setAuc] = useState("1");
   const [exchangeFee, setExchangeFee] = useState();
-  
+
   const [formValid, setFormValid] = useState({
     priceErr: false,
     priceFormatErr: false,
@@ -165,6 +166,7 @@ const CollectionCard = ({ item }) => {
     if (!isFormValid()) return;
     setLoading(true);
     authenticate({
+      chainId: 56,
       onSuccess: async () => {
         const ops = {
           contractAddress: item.token_address,
@@ -260,7 +262,7 @@ const CollectionCard = ({ item }) => {
 
   async function approveAuction(address) {
     // console.log("Data nft", item);
-    authenticate().then(async () => {
+    authenticate({ chainId: 56 }).then(async () => {
       const ops = {
         contractAddress: item.token_address,
         functionName: "setApprovalForAll",

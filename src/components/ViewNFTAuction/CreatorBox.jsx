@@ -11,6 +11,7 @@ import { useMoralisQuery, useMoralis } from "react-moralis";
 import { getEllipsisTxt } from "helpers/formatters";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Helmet from "../Helmet";
+import Constants from "constant";
 
 const ImageBox = ({ information }) => {
   // console.log(information)
@@ -33,7 +34,7 @@ const ImageBox = ({ information }) => {
       "confirmed",
     ])
   );
-  
+
   const queryProfile = useMoralisQuery("profile");
   const fetchProfile = JSON.parse(
     JSON.stringify(queryProfile.data, [
@@ -102,6 +103,7 @@ const ImageBox = ({ information }) => {
       like(information);
     } else {
       authenticate({
+        chainId: 56,
         onSuccess: () => {
           like(information);
         },
@@ -214,9 +216,9 @@ const ImageBox = ({ information }) => {
         >
           &ensp;Creator
         </div>
-        <div className={styless.wrapperAvatar} style={{marginTop:'-20px'}}>
+        <div className={styless.wrapperAvatar} style={{ marginTop: "-20px" }}>
           <Row>
-          <Col span={4}>
+            <Col span={4}>
               <Avatar
                 src={getProfile()?.avatar}
                 className={styless.avatar}
@@ -226,19 +228,21 @@ const ImageBox = ({ information }) => {
             <Col span={20}>
               <div
                 className={styless.inforAvatar}
-                style={{ marginTop: "30px",marginLeft:'-30px' }}
+                style={{ marginTop: "30px", marginLeft: "-30px" }}
               >
                 {" "}
                 <span style={{ fontWeight: "bold" }}>
                   {/* {getProfile()?.name} */}METAPOLIS
-                  </span>
+                </span>
                 <br />
-                <span>{getEllipsisTxt(information?.auctionContract, 4) || ''}</span>
+                <span>
+                  {getEllipsisTxt(information?.auctionContract, 4) || ""}
+                </span>
               </div>
             </Col>
           </Row>
         </div>
-        <br/>
+        <br />
         <div
           className={styless.accountName}
           style={{
@@ -273,13 +277,18 @@ const ImageBox = ({ information }) => {
           <Row>
             <Col span={4}>
               <Avatar
-                src={'https://ipfs.moralis.io:2053/ipfs/QmNjFGYsGW38j3vmtUYsoTPANZ6nrSFp9a9bjfLyzkmKX1'}
+                src={
+                  "https://ipfs.moralis.io:2053/ipfs/QmNjFGYsGW38j3vmtUYsoTPANZ6nrSFp9a9bjfLyzkmKX1"
+                }
                 className={styless.avatarCollection}
                 size={60}
               />
             </Col>
             <Col span={20}>
-              <div className={styless.infoBottom} style={{marginLeft:'-30px' }}>
+              <div
+                className={styless.infoBottom}
+                style={{ marginLeft: "-30px" }}
+              >
                 <div className={styless.titleCollection}>
                   {/* {information?.name} */}
                   METAPOLIS

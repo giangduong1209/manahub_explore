@@ -21,11 +21,11 @@ import "./nft.css";
 import { useHistory } from "react-router";
 import { UserOutlined } from "@ant-design/icons";
 import { BNBIcon } from "components/Chains/Logos";
-
+import Constants from "constant";
 
 const CollectionCardOther = ({ item }) => {
   const history = useHistory();
- 
+
   const [nftToBuy, setNftToBuy] = useState(null);
   const { Moralis, chainId, authenticate } = useMoralis();
   const [visible, setVisibility] = useState(false);
@@ -75,6 +75,7 @@ const CollectionCardOther = ({ item }) => {
   async function purchase() {
     // Moralis.enableWeb3();
     authenticate({
+      chainId: 56,
       onSuccess: async () => {
         setLoading(true);
         const tokenDetails = getMarketItem(nftToBuy);
@@ -168,11 +169,11 @@ const CollectionCardOther = ({ item }) => {
             item?.auction
               ? `Auction`
               : getMarketItem(item)?.price > 0
-                ? `${getMarketItem(item)?.price / ("1e" + 18)} ${nativeName}`
-                : "Mint"
+              ? `${getMarketItem(item)?.price / ("1e" + 18)} ${nativeName}`
+              : "Mint"
           }
           style={item?.auction ? { display: "block" } : { display: "none" }}
-        // style={item?.auction ? { display: "block" } : { display: "none" } && getMarketItem(item)?.price > 0 ? { display: "block" } : { display: "none" }}
+          // style={item?.auction ? { display: "block" } : { display: "none" } && getMarketItem(item)?.price > 0 ? { display: "block" } : { display: "none" }}
         >
           <div className="img">
             <a href="#0">
@@ -207,7 +208,9 @@ const CollectionCardOther = ({ item }) => {
                   <img src="nft/img/eth1.svg" alt="" />
                 </span> */}
                   <Space size={2}>
-                    <span className="fz-12 opacity-7 mr-5">{item?.auction?"Highest bid:":"Highest bid:"}</span>
+                    <span className="fz-12 opacity-7 mr-5">
+                      {item?.auction ? "Highest bid:" : "Highest bid:"}
+                    </span>
                     <BNBIcon />
                     <span>{getMarketItem(item)?.price / ("1e" + 18)} BNB</span>
                   </Space>
@@ -222,7 +225,8 @@ const CollectionCardOther = ({ item }) => {
             </div> */}
               <div className="right ml-auto">
                 <div className="bid">
-                  <a href="#0" onClick={() => nftInfo(item)}>{item?.auction ? "Bid" : "Buy"}
+                  <a href="#0" onClick={() => nftInfo(item)}>
+                    {item?.auction ? "Bid" : "Buy"}
                   </a>
                 </div>
               </div>

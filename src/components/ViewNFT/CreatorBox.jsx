@@ -12,6 +12,7 @@ import { useMoralisQuery, useMoralis } from "react-moralis";
 import { getEllipsisTxt } from "helpers/formatters";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import HelmetMetaData from "../HelmetMetaData";
+import Constants from "constant";
 
 const ImageBox = ({ information }) => {
   // console.log(information)
@@ -106,6 +107,7 @@ const ImageBox = ({ information }) => {
       like(information);
     } else {
       authenticate({
+        chainId: 56,
         onSuccess: () => {
           like(information);
         },
@@ -193,7 +195,7 @@ const ImageBox = ({ information }) => {
         url="https://marketplace.metamints.app/view-nft/0x3d4f238adf678988824831382df24a73af992664/57"
       /> */}
       <div className={styless.content}>
-        <div className={styless.viewArea} >
+        <div className={styless.viewArea}>
           <Row>
             <Col span={20}></Col>
             {/* <div className={styless.view}>
@@ -210,9 +212,7 @@ const ImageBox = ({ information }) => {
               ) : (
                 <HeartOutlined style={{ fontSize: "20px" }} />
               )}
-              <span style={{fontSize: "20px" }}>
-                &ensp; {likeNum || 0}
-              </span>
+              <span style={{ fontSize: "20px" }}>&ensp; {likeNum || 0}</span>
             </div>
           </Row>
         </div>
@@ -220,13 +220,13 @@ const ImageBox = ({ information }) => {
           style={{
             fontWeight: "bold",
             textAlign: "left",
-            
+
             fontSize: "20px",
           }}
         >
           &ensp;Creator
         </div>
-        <div className={styless.wrapperAvatar} style={{marginTop:'-20px'}}>
+        <div className={styless.wrapperAvatar} style={{ marginTop: "-20px" }}>
           <Row>
             <Col span={4}>
               <Avatar
@@ -238,7 +238,7 @@ const ImageBox = ({ information }) => {
             <Col span={20}>
               <div
                 className={styless.inforAvatar}
-                style={{ marginTop: "30px",marginLeft:'-30px'}}
+                style={{ marginTop: "30px", marginLeft: "-30px" }}
               >
                 {" "}
                 <span style={{ fontWeight: "bold" }}>{getProfile()?.name}</span>
@@ -248,19 +248,18 @@ const ImageBox = ({ information }) => {
             </Col>
           </Row>
         </div>
-        <br/>
+        <br />
         <div
           className={styless.accountName}
           style={{
             // borderTop: "solid 1px gray",
             borderBottom: "solid 1px gray",
             marginBottom: "5px",
-   
           }}
         >
           {information?.metadata?.name}
         </div>
-        <div className={styless.accountTag} >
+        <div className={styless.accountTag}>
           <Row>
             <div className={styless.tag}>Collectible</div>
             <div className={styless.tag}>Painting</div>
@@ -271,7 +270,6 @@ const ImageBox = ({ information }) => {
         <div
           className={styless.description}
           style={{
-         
             fontWeight: "300",
             textAlign: "left",
             marginTop: "5px",
@@ -283,13 +281,18 @@ const ImageBox = ({ information }) => {
           <Row>
             <Col span={4}>
               <Avatar
-                src={'https://ipfs.moralis.io:2053/ipfs/QmYadFxBzqoDivZ56dxb6DrPNhVwSEkuwcRpKjo15xFUCf'}
+                src={
+                  "https://ipfs.moralis.io:2053/ipfs/QmYadFxBzqoDivZ56dxb6DrPNhVwSEkuwcRpKjo15xFUCf"
+                }
                 className={styless.avatarCollection}
                 size={60}
               />
             </Col>
             <Col span={20}>
-              <div className={styless.infoBottom} style={{marginLeft:'-30px' }}>
+              <div
+                className={styless.infoBottom}
+                style={{ marginLeft: "-30px" }}
+              >
                 <div className={styless.titleCollection}>
                   {/* {information?.name} */}
                   Manahubs
@@ -299,9 +302,7 @@ const ImageBox = ({ information }) => {
             </Col>
           </Row>
         </div>
-        <div className={styless.description} >
-          {" "}
-        </div>
+        <div className={styless.description}> </div>
         <Row>
           <Col span={4}>
             <div

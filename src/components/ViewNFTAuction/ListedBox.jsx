@@ -14,6 +14,7 @@ import { getExplorer } from "helpers/networks";
 import Countdown from "react-countdown";
 import { auctionABI } from "helpers/auction";
 import moment from "moment";
+import Constants from "constant";
 
 const ImageBox = ({ information }) => {
   console.log(information);
@@ -58,7 +59,7 @@ const ImageBox = ({ information }) => {
 
   async function purchase() {
     // Moralis.enableWeb3();
-    authenticate().then(async () => {
+    authenticate({ chainId: 56 }).then(async () => {
       setLoading(true);
       const tokenDetails = getMarketItem();
       const itemID = tokenDetails.itemId;
@@ -512,15 +513,12 @@ const ImageBox = ({ information }) => {
 
   return (
     <div className={styless.cardListedbox}>
-      <div
-        className={styless.description}
-        style={{fontWeight: "bold"}}
-      >
-        <span style={{fontWeight: "normal"}} >Listed by:</span> &ensp;
+      <div className={styless.description} style={{ fontWeight: "bold" }}>
+        <span style={{ fontWeight: "normal" }}>Listed by:</span> &ensp;
         <a className={styless.viewAddress} style={{ color: "#FEA013" }}>
           {information?.owner_of}
         </a>
-        &ensp;&ensp;<span style={{fontWeight: "normal"}}>End at:</span>  &ensp;
+        &ensp;&ensp;<span style={{ fontWeight: "normal" }}>End at:</span> &ensp;
         <Countdown date={moment.unix(timeEnded) || Date.now() + 5000} />
         <span>
           {/* Ended At:{" "}
@@ -639,8 +637,7 @@ const ImageBox = ({ information }) => {
                 )}
               </>
             ) : (
-              <>
-              </>
+              <></>
             )}
           </Col>
           {/* <Col span={12}>

@@ -7,15 +7,16 @@ import btnstyles from "./ViewNFT2.module.css";
 import {
   useMoralisQuery,
   useMoralis,
-  useWeb3ExecuteFunction
+  useWeb3ExecuteFunction,
 } from "react-moralis";
 import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
 import { getExplorer } from "helpers/networks";
 import { useHistory } from "react-router";
+import Constants from "constant";
 
 const ImageBox = ({ information }) => {
   // console.log(information)
-  const history = useHistory()
+  const history = useHistory();
   const { Moralis, authenticate, chainId, account } = useMoralis();
   const queryMarketItems = useMoralisQuery("MarketItemCreated");
   const queryMarketItemSold = useMoralisQuery("MarketItemSold");
@@ -53,11 +54,9 @@ const ImageBox = ({ information }) => {
     return result;
   };
 
-
-
   async function purchase() {
     // Moralis.enableWeb3();
-    authenticate().then(async () => {
+    authenticate({ chainId: 56 }).then(async () => {
       setLoading(true);
       const tokenDetails = getMarketItem();
       const itemID = tokenDetails.itemId;
@@ -68,36 +67,34 @@ const ImageBox = ({ information }) => {
         abi: contractABIJson,
         params: {
           nftContract: information?.token_address,
-          itemId: itemID
+          itemId: itemID,
         },
-        msgValue: tokenPrice
+        msgValue: tokenPrice,
       };
 
       await contractProcessor.fetch({
         params: ops,
         onSuccess: () => {
-          console.log('updateRewardRefs')
+          console.log("updateRewardRefs");
           updateRewardRefs({
             owner: account,
-            price: tokenPrice
+            price: tokenPrice,
           });
           setLoading(false);
           // setVisibility(false);
           updateSoldMarketItem();
           succPurchase();
-
         },
         onError: (error) => {
           setLoading(false);
           failPurchase();
-        }
+        },
       });
     });
   }
 
   async function removeFromDB() {
-
-    const query = new Moralis.Query('ListedItem');
+    const query = new Moralis.Query("ListedItem");
     query.equalTo("token_address", information.token_address);
     query.equalTo("token_id", information.token_id);
     // query.equalTo("itemId", information.itemId);
@@ -118,7 +115,7 @@ const ImageBox = ({ information }) => {
     let secondsToGo = 5;
     const modal = Modal.success({
       title: "Success!",
-      content: `You have purchased this NFT`
+      content: `You have purchased this NFT`,
     });
     removeFromDB();
     history.push(`/my-collection`);
@@ -131,7 +128,7 @@ const ImageBox = ({ information }) => {
     let secondsToGo = 5;
     const modal = Modal.error({
       title: "Error!",
-      content: `There was a problem when purchasing this NFT`
+      content: `There was a problem when purchasing this NFT`,
     });
     setTimeout(() => {
       modal.destroy();
@@ -150,7 +147,7 @@ const ImageBox = ({ information }) => {
   }
 
   async function updateRewardRefs(event) {
-    const query = new Moralis.Query('profile');
+    const query = new Moralis.Query("profile");
     query.equalTo("address", event.owner);
     const profile = await query.first();
     // console.log(profile);
@@ -161,7 +158,7 @@ const ImageBox = ({ information }) => {
       for (let index = 0; index < refs.length; index++) {
         const el = refs[index];
         // console.log(el);
-        const queryRef = new Moralis.Query('profile');
+        const queryRef = new Moralis.Query("profile");
         queryRef.equalTo("address", el);
         let refInfo = await queryRef.first();
         // console.log(refInfo);
@@ -178,12 +175,13 @@ const ImageBox = ({ information }) => {
 
   return (
     <div className={styless.cardListedbox}>
-      <div
-        className={styless.description}
-      >
+      <div className={styless.description}>
         Listed by:
         <br />
-        <a className={styless.viewAddress} style={{ color: "#f27252", fontWeight: "bold" }}>
+        <a
+          className={styless.viewAddress}
+          style={{ color: "#f27252", fontWeight: "bold" }}
+        >
           {information?.owner_of}
         </a>
         {/* <Link to="/view-nft" style={{color :'blue'}}> 8byMAt9gMbPXuHC8vLprU6ZpQ1XJjiFTrJaF5XMXYnFL</Link> */}
@@ -194,7 +192,6 @@ const ImageBox = ({ information }) => {
         style={{
           borderTop: "solid 1px gray",
           borderBottom: "solid 1px gray",
-
         }}
       >
         {parseInt(getMarketItem()?.price) / ("1e" + 18)}{" "}
@@ -216,14 +213,15 @@ const ImageBox = ({ information }) => {
                 loading={loading}
                 onClick={() =>
                   window.open(
-                    `${getExplorer(chainId)}address/${information?.token_address
+                    `${getExplorer(chainId)}address/${
+                      information?.token_address
                     }`,
                     "_blank"
                   )
                 }
-                style={{ marginTop: "10px", }}
+                style={{ marginTop: "10px" }}
               >
-                <span >Trx Info</span>
+                <span>Trx Info</span>
               </Button>
             </Col>
             <Col span={12}>
@@ -231,9 +229,13 @@ const ImageBox = ({ information }) => {
                 className={btnstyles.btnInfo}
                 loading={loading}
                 onClick={() => purchase()}
-                style={{ fontFamily: 'GILROY', fontWeight: 700, marginTop: "10px" }}
+                style={{
+                  fontFamily: "GILROY",
+                  fontWeight: 700,
+                  marginTop: "10px",
+                }}
               >
-                <span >Buy</span>
+                <span>Buy</span>
               </Button>
             </Col>
           </Row>
@@ -241,9 +243,8 @@ const ImageBox = ({ information }) => {
           <div
             className={styless.description}
             style={{
-
               fontWeight: "300",
-              textAlign: "left"
+              textAlign: "left",
             }}
           >
             <Alert
