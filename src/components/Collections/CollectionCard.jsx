@@ -9,6 +9,7 @@ import {
   useWeb3ExecuteFunction,
 } from "react-moralis";
 import { useHistory } from "react-router";
+import Constants from "constant";
 
 const CollectionCard = ({ item }) => {
   const history = useHistory();
@@ -55,6 +56,7 @@ const CollectionCard = ({ item }) => {
   async function purchase() {
     // Moralis.enableWeb3();
     authenticate({
+      chainId: 56,
       onSuccess: async () => {
         setLoading(true);
         const tokenDetails = getMarketItem(nftToBuy);
@@ -167,14 +169,20 @@ const CollectionCard = ({ item }) => {
           item?.auction
             ? `Auction`
             : getMarketItem(item)?.price > 0
-              ? `${getMarketItem(item)?.price / ("1e" + 18)} ${nativeName}`
-              : "Mint"
+            ? `${getMarketItem(item)?.price / ("1e" + 18)} ${nativeName}`
+            : "Mint"
         }
-        style={item?.auction ? { display: "block" } : { display: "none" } && getMarketItem(item)?.price > 0 ? { display: "block" } : { display: "none" }}
+        style={
+          item?.auction
+            ? { display: "block" }
+            : { display: "none" } && getMarketItem(item)?.price > 0
+            ? { display: "block" }
+            : { display: "none" }
+        }
       >
         <div
           className={styless.image}
-        // style={{ backgroundImage: `url(${item.image})` }}
+          // style={{ backgroundImage: `url(${item.image})` }}
         >
           {mediaType.includes("video") ? (
             <video
@@ -259,8 +267,9 @@ const CollectionCard = ({ item }) => {
             >
               <Badge.Ribbon
                 color="green"
-                text={`${getMarketItem(nftToBuy).price / ("1e" + 18)
-                  } ${nativeName}`}
+                text={`${
+                  getMarketItem(nftToBuy).price / ("1e" + 18)
+                } ${nativeName}`}
               >
                 <img
                   src={nftToBuy?.image}
