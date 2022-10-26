@@ -98,9 +98,12 @@ const CollectionCard = ({ item }) => {
         let url = item?.image;
         if (
           item?.image.substring(8, 12) === "ipfs" &&
-          !url.includes("https://gateway.ipfs.io")
+          !url.includes(`https://${Constants.GATEWAY_HOSTNAME}`)
         ) {
-          url = item?.image.replace(/^.{28}/g, "https://gateway.ipfs.io");
+          url = item?.image.replace(
+            /^.{28}/g,
+            `https://${Constants.GATEWAY_HOSTNAME}`
+          );
         }
         let req = await fetch(url);
         // console.log(await req.headers.get("content-type"));

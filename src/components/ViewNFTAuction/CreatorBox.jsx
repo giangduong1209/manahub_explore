@@ -277,9 +277,7 @@ const ImageBox = ({ information }) => {
           <Row>
             <Col span={4}>
               <Avatar
-                src={
-                  "https://ipfs.moralis.io:2053/ipfs/QmNjFGYsGW38j3vmtUYsoTPANZ6nrSFp9a9bjfLyzkmKX1"
-                }
+                src={`https://${Constants.GATEWAY_HOSTNAME}/ipfs/QmNjFGYsGW38j3vmtUYsoTPANZ6nrSFp9a9bjfLyzkmKX1`}
                 className={styless.avatarCollection}
                 size={60}
               />
