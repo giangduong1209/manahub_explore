@@ -110,7 +110,7 @@ function MainHeader() {
   const { isAuthenticated, account } = useMoralis();
 
   useEffect(() => {
-    const defaultChain = menuItems.find((item) => item.key === "0x61");
+    const defaultChain = menuItems.find((item) => item.key === "0x38");
 
     if (!chainId || !isAuthenticated || !account) {
       setSelected(defaultChain);
@@ -298,42 +298,6 @@ function MainHeader() {
               </div>
               <span className={styles.textLink}>Staking</span>
             </Link>
-
-            {/* <Link to="/marketplace">
-              <Space
-                onClick={handleClickSubMenu}
-                className={clsx({
-                  [styles.mainMenuActive]: routePage === "marketplace",
-                })}
-              >
-                <img src={marketPlaceLogo} alt="marketplace logo" />
-                <span>NFT Marketplace</span>
-              </Space>
-            </Link>
-
-            <Link to="/dex">
-              <Space
-                onClick={handleClickSubMenu}
-                className={clsx({
-                  [styles.mainMenuActive]: routePage === "dex",
-                })}
-              >
-                <img src={dexLogo} alt="dex logo" />
-                <span>DEX</span>
-              </Space>
-            </Link>
-
-            <Link to="/game">
-              <Space
-                onClick={handleClickSubMenu}
-                className={clsx({
-                  [styles.mainMenuActive]: routePage === "game",
-                })}
-              >
-                <img src={gameLogo} alt="game logo" />
-                <span>Game</span>
-              </Space>
-            </Link> */}
           </div>
         )}
       </Header>

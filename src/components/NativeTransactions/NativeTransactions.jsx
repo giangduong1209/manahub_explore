@@ -2,7 +2,7 @@ import { Grid, Table, Tag, Space, Modal, Button, Spin } from "antd";
 import "antd/dist/antd.css";
 // import TransactionFilterBox from 'components/TransactionFilterBox';
 // import TransactionRow from 'components/TransactionRow';
-import useNativeTransactions from "hooks/useNativeTransactions";
+// import useNativeTransactions from "hooks/useNativeTransactions";
 import { useMoralisDapp } from "providers/MoralisDappProvider/MoralisDappProvider";
 import React, { useEffect, useState } from "react";
 import { useMoralisQuery } from "react-moralis";
@@ -13,9 +13,11 @@ import styles from "./styles.module.css";
 import { useMoralis, useWeb3ExecuteFunction } from "react-moralis";
 // import srcBlankImg from 'assets/images/play.png';
 import { useHistory } from "react-router-dom";
-import Constants from "constant";
+import { useNativeTransactions } from "react-moralis";
 
 function NativeTransactions() {
+  const { getNativeTransations, data, chainId, error, isLoading, isFetching } =
+    useNativeTransactions();
   const { walletAddress, marketAddress, contractABI } = useMoralisDapp();
   const contractABIJson = JSON.parse(contractABI);
   const queryItemImages = useMoralisQuery("ItemImages");
@@ -23,13 +25,20 @@ function NativeTransactions() {
   const { Moralis, authenticate } = useMoralis();
   const history = useHistory();
 
-  useEffect(() => {}, [nativeTransactions]);
+  // useEffect(() => {}, [nativeTransactions]);
   const { useBreakpoint } = Grid;
   const { sm } = useBreakpoint();
   const contractProcessor = useWeb3ExecuteFunction();
   const [visible, setVisibility] = useState(false);
   const [recordDelist, setRecordDelist] = useState();
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (chainId) {
+      getNativeTransations({ params: chainId });
+    }
+    console.log("data", data);
+  }, [chainId]);
 
   const fetchItemImages = JSON.parse(
     JSON.stringify(queryItemImages.data, [
@@ -56,7 +65,6 @@ function NativeTransactions() {
         <Space size="middle">
           <img
             src={getImage(record.collection, record.item)}
-            // src='https://ipfs.moralis.io:2053/ipfs/QmP9WytWazHYu1BSSxHHSEpDqmt8v9iyYVjLRAB8gDCo1A'
             style={{ width: "40px", height: "40px", borderRadius: "4px" }}
             alt="info"
           />
@@ -370,16 +378,16 @@ function NativeTransactions() {
       a.updatedAt < b.updatedAt ? 1 : b.updatedAt < a.updatedAt ? -1 : 0
     );
 
-  const data = fetchMarketItems?.map((item, index) => ({
-    key: index,
-    date: moment(item.updatedAt).format("DD-MM-YYYY HH:mm"),
-    collection: item.nftContract,
-    item: item.tokenId,
-    tags: [item.seller, item.sold],
-    price: item.price / ("1e" + 18),
-    itemId: item.itemId,
-    action: item,
-  }));
+  // const data = fetchMarketItems?.map((item, index) => ({
+  //   key: index,
+  //   date: moment(item.updatedAt).format("DD-MM-YYYY HH:mm"),
+  //   collection: item.nftContract,
+  //   item: item.tokenId,
+  //   tags: [item.seller, item.sold],
+  //   price: item.price / ("1e" + 18),
+  //   itemId: item.itemId,
+  //   action: item,
+  // }));
 
   // function getType(addrs, id) {
   //   const img = fetchItemImages.find(
@@ -398,7 +406,7 @@ function NativeTransactions() {
           pagination={false}
           className={styles.table}
           columns={columns}
-          dataSource={data}
+          // dataSource={data}
           // dataSource={dataTest}
         />
       </div>
