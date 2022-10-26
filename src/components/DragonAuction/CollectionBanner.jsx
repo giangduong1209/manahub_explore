@@ -31,6 +31,7 @@ let isGetingVol = true;
 const CollectionBanner = () => {
   const { index } = useParams();
   const { Moralis, chainId } = useMoralis();
+  console.log("ChainId", chainId);
   const [collection, setCollection] = useState({});
   const serverUrl = process.env.REACT_APP_MORALIS_SERVER_URL;
   const appId = process.env.REACT_APP_MORALIS_APPLICATION_ID;
@@ -42,11 +43,12 @@ const CollectionBanner = () => {
 
   const { SubMenu } = Menu;
   useEffect(() => {
-    const NFTCollections = getCollectionByIndex(index, chainId);
+    const NFTCollections = chainId
+      ? getCollectionByIndex(index, chainId)
+      : getCollectionByIndex(index, "0x38");
     console.log(chainId, index);
     setCollection(NFTCollections);
-    console.log(collection);
-  }, [chainId, index]);
+  }, [chainId, index, collection]);
 
   // const NFTCollections =  getCollectionByIndex( index, chainId );
   // setCollection(NFTCollections);
