@@ -270,6 +270,7 @@
 
   .footerLogo {
     margin-bottom: 30px;
+    display: none;
   }
   .menuItems {
     flex-direction: column;
