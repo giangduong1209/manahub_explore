@@ -8,10 +8,10 @@ import {
   List,
   Row,
   Typography,
-} from 'antd';
-import FooterBg from 'assets/images/Footer/Footer.png';
+} from "antd";
+import FooterBg from "assets/images/Footer/Footer.png";
 // import polisLogo from 'assets/images/Metapolis_logo-03.png';
-import { AiOutlineMedium } from 'react-icons/ai';
+import { AiOutlineMedium } from "react-icons/ai";
 import {
   FaFacebook,
   FaPhone,
@@ -19,20 +19,20 @@ import {
   FaTwitter,
   FaYoutube,
   FaMapPin,
-} from 'react-icons/fa';
-import { MdMail } from 'react-icons/md';
-import { useLocation } from 'react-router-dom';
-import styles from './styles.module.css';
-import React, { useMemo } from 'react';
-import logoManahubs from './logo_manahubs.svg';
+} from "react-icons/fa";
+import { MdMail } from "react-icons/md";
+import { useLocation } from "react-router-dom";
+import styles from "./styles.module.css";
+import React, { useMemo } from "react";
+import logoManahubs from "./logo_manahubs.svg";
 
 const { Title } = Typography;
 const { Footer } = Layout;
 const { useBreakpoint } = Grid;
 
 const data = [
-  { icon: FaPhone, text: '+84 961793930' },
-  { icon: MdMail, text: 'contact@metapolis.gg' },
+  { icon: FaPhone, text: "+84 961793930" },
+  { icon: MdMail, text: "contact@metapolis.gg" },
   {
     icon: FaMapPin,
     text: `62 Tran Quang Khai, Tan Dinh, District 1,HCMC, Vietnam`,
@@ -44,7 +44,7 @@ const MainFooter = () => {
   const { lg, md, sm, xs } = useBreakpoint();
   const location = useLocation();
   const isHomePage = useMemo(
-    () => location.pathname === '/',
+    () => location.pathname === "/",
     [location.pathname]
   );
 
@@ -74,9 +74,9 @@ const MainFooter = () => {
                         <List.Item>
                           <Typography.Text className={styles.contactIcon}>
                             <item.icon />
-                          </Typography.Text>{' '}
+                          </Typography.Text>{" "}
                           <p>
-                            {item.text.substring(0, 29)} <br />{' '}
+                            {item.text.substring(0, 29)} <br />{" "}
                             {item.text.substring(29)}
                           </p>
                         </List.Item>
@@ -99,10 +99,10 @@ const MainFooter = () => {
                   className={styles.rightFooter}
                   style={{ marginTop: md || sm || xs ? 48 : 0 }}
                 >
-                  <Title level={2} style={{ color: 'white' }}>
+                  <Title level={2} style={{ color: "white" }}>
                     CONTACT US
                   </Title>
-                  <Typography.Text style={{ color: '#fff' }}>
+                  <Typography.Text style={{ color: "#fff" }}>
                     We are always open and we welcome any questions you have for
                     our teams. If you wish to get in touch, please fill out the
                     form below. Someone from our team will get back to you
@@ -130,7 +130,7 @@ const MainFooter = () => {
                       </Col>
                       <Col
                         span={24}
-                        style={{ display: 'flex', justifyContent: 'flex-end' }}
+                        style={{ display: "flex", justifyContent: "flex-end" }}
                       >
                         <Button
                           // onClick={() => history.push("/explore")}
@@ -152,10 +152,10 @@ const MainFooter = () => {
                   className={styles.rightFooter}
                   style={{ marginTop: md || sm || xs ? 48 : 0 }}
                 >
-                  <Title level={2} style={{ color: 'white' }}>
+                  <Title level={2} style={{ color: "white" }}>
                     CONTACT US
                   </Title>
-                  <Typography.Text style={{ color: '#fff' }}>
+                  <Typography.Text style={{ color: "#fff" }}>
                     We are always open and we welcome any questions you have for
                     our teams. If you wish to get in touch, please fill out the
                     form below. Someone from our team will get back to you
@@ -183,7 +183,7 @@ const MainFooter = () => {
                       </Col>
                       <Col
                         span={24}
-                        style={{ display: 'flex', justifyContent: 'flex-end' }}
+                        style={{ display: "flex", justifyContent: "flex-end" }}
                       >
                         <Button
                           // onClick={() => history.push("/explore")}
@@ -208,9 +208,9 @@ const MainFooter = () => {
                         <List.Item>
                           <Typography.Text className={styles.contactIcon}>
                             <item.icon />
-                          </Typography.Text>{' '}
+                          </Typography.Text>{" "}
                           <p>
-                            {item.text.substring(0, 29)} <br />{' '}
+                            {item.text.substring(0, 29)} <br />{" "}
                             {item.text.substring(29)}
                           </p>
                         </List.Item>
@@ -249,9 +249,9 @@ const MainFooter = () => {
               />
             </a>
           </Col>
-          <Col flex="auto">
-            <div className={styles.menuWrapper}>
-              {/* <div className={styles.menuItems}>
+          {/* <Col flex="auto"> */}
+          {/* <div className={styles.menuWrapper}> */}
+          {/* <div className={styles.menuItems}>
                 <NavLink to="/">NFT Marketplace</NavLink>
                 <NavLink to="/">DEX</NavLink>
                 <NavLink to="/">Game</NavLink>
@@ -273,7 +273,10 @@ const MainFooter = () => {
                   Whitepaper
                 </a>
               </div> */}
-            </div>
+          {/* </div> */}
+          {/* </Col> */}
+          <Col>
+            <div id="google_translate_element"></div>
           </Col>
         </Row>
       </div>
