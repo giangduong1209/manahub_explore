@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useMoralis } from "react-moralis";
 import { getEllipsisTxt } from "../../helpers/formatters";
 import { getExplorer } from "../../helpers/networks";
@@ -35,7 +35,7 @@ function ERC20Transfers() {
       dataIndex: "value",
       key: "value",
       render: (value, item) =>
-        parseFloat(Moralis.Units.FromWei(value, item.decimals).toFixed(6)),
+        parseFloat(Moralis.Units.FromWei(value, item.decimals)).toFixed(6),
     },
     {
       title: "Hash",
@@ -46,10 +46,8 @@ function ERC20Transfers() {
           href={`${getExplorer(chainId)}tx/${hash}`}
           target="_blank"
           rel="noreferrer"
-         
         >
-          <div  style={{color:'#FEA013'}}>View Transaction</div>
-          
+          <div style={{ color: "#FEA013" }}>View Transaction</div>
         </a>
       ),
     },
@@ -57,21 +55,27 @@ function ERC20Transfers() {
 
   let key = 0;
   return (
-    <div style={{ maxWidth: "1200px", padding: "15px", margin: "auto", textAlign: 'center' }}>
+    <div
+      style={{
+        maxWidth: "1200px",
+        padding: "15px",
+        margin: "auto",
+        textAlign: "center",
+      }}
+    >
       <h1 className={styles.title}>ERC20 Transactions</h1>
       <div className={styles.transactionWrapper}>
-
-      <Skeleton loading={!ERC20Transfers}>
-        <Table
-          className={styles.table}
-          dataSource={ERC20Transfers}
-          columns={columns}
-          rowKey={(record) => {
-            key++;
-            return `${record.transaction_hash}-${key}`;
-          }}
-        />
-      </Skeleton>
+        <Skeleton loading={!ERC20Transfers}>
+          <Table
+            className={styles.table}
+            dataSource={ERC20Transfers}
+            columns={columns}
+            rowKey={(record) => {
+              key++;
+              return `${record.transaction_hash}-${key}`;
+            }}
+          />
+        </Skeleton>
       </div>
     </div>
   );

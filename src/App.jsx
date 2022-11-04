@@ -49,7 +49,7 @@ const App = ({ isServerInfo }) => {
   // const [inputValue, setInputValue] = useState('explore');
   useEffect(() => {
     const connectorId = window.localStorage.getItem("connectorId");
-    Moralis.enableWeb3();
+    // Moralis.enableWeb3();
 
     if (isAuthenticated && !isWeb3Enabled && !isWeb3EnableLoading)
       enableWeb3({ provider: connectorId });
@@ -208,7 +208,9 @@ const App = ({ isServerInfo }) => {
               <Game />
             </Route>
             <Route path="/">
-              <Redirect to={`/collection/${Constants.contracts.MARKETPLACE_ADDRESS}`} />
+              <Redirect
+                to={`/collection/${Constants.contracts.MARKETPLACE_ADDRESS}`}
+              />
             </Route>
             <Route path="/ethereum-boilerplate">
               <Redirect to="/gamify" />
