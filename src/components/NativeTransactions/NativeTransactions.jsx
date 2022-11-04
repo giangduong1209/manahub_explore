@@ -1,4 +1,4 @@
-import { Grid, Table, Tag, Space, Modal, Button, Spin } from "antd";
+import { Grid, Table, Tag, Space, Modal, Button, Spin, Skeleton } from "antd";
 import "antd/dist/antd.css";
 // import TransactionFilterBox from 'components/TransactionFilterBox';
 // import TransactionRow from 'components/TransactionRow';
@@ -14,31 +14,38 @@ import { useMoralis, useWeb3ExecuteFunction } from "react-moralis";
 // import srcBlankImg from 'assets/images/play.png';
 import { useHistory } from "react-router-dom";
 import { useNativeTransactions } from "react-moralis";
-
+import { useNFTTransfers } from "react-moralis";
+import { getEllipsisTxt } from "helpers/formatters";
+import { getExplorer } from "helpers/networks";
+import { useChain } from "react-moralis";
 function NativeTransactions() {
-  const { getNativeTransations, data, chainId, error, isLoading, isFetching } =
-    useNativeTransactions();
+  // const { getNativeTransations, data, chainId, error, isLoading, isFetching } =
+  //   useNativeTransactions();
+  const { chainId } = useChain();
+  const { getNFTTransfers, data, error, isLoading, isFetching } =
+    useNFTTransfers();
+
+  const [nativeTransactions, setNativeTransactions] = useState([]);
+  const [NFTTransfers, setNFTTransfers] = useState();
   const { walletAddress, marketAddress, contractABI } = useMoralisDapp();
   const contractABIJson = JSON.parse(contractABI);
   const queryItemImages = useMoralisQuery("ItemImages");
-  const { nativeTransactions } = useNativeTransactions();
+  // const { nativeTransactions } = useNativeTransactions();
   const { Moralis, authenticate } = useMoralis();
   const history = useHistory();
 
-  // useEffect(() => {}, [nativeTransactions]);
+  useEffect(() => {
+    getNFTTransfers({ params: { chain: chainId } });
+  }, []);
+  console.log("useNFTTransfers", useNFTTransfers());
+  useEffect(() => (data ? setNFTTransfers(data?.result) : []), [data]);
+  console.log("Data", NFTTransfers);
   const { useBreakpoint } = Grid;
   const { sm } = useBreakpoint();
   const contractProcessor = useWeb3ExecuteFunction();
   const [visible, setVisibility] = useState(false);
   const [recordDelist, setRecordDelist] = useState();
   const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    if (chainId) {
-      getNativeTransations({ params: chainId });
-    }
-    console.log("data", data);
-  }, [chainId]);
 
   const fetchItemImages = JSON.parse(
     JSON.stringify(queryItemImages.data, [
@@ -49,97 +56,58 @@ function NativeTransactions() {
     ])
   );
 
+  console.log("fetchItemImages", fetchItemImages);
+
   const addrsList = [];
 
   const columns = [
     {
-      title: "Date",
-      dataIndex: "date",
-      key: "date",
-      width: !sm ? "60px" : "auto",
+      title: "Token",
+      dataIndex: "token_address",
+      key: "token_address",
+      render: (token) => getEllipsisTxt(token, 8),
     },
     {
-      title: "Item",
-      key: "item",
-      render: (text, record) => (
-        <Space size="middle">
-          <img
-            src={getImage(record.collection, record.item)}
-            style={{ width: "40px", height: "40px", borderRadius: "4px" }}
-            alt="info"
-          />
-          <span>#{record.item}</span>
-        </Space>
+      title: "Token Id",
+      dataIndex: "token_id",
+      key: "token_id",
+      render: (token) => token,
+    },
+    {
+      title: "From",
+      dataIndex: "from_address",
+      key: "from_address",
+      render: (from) => getEllipsisTxt(from, 8),
+    },
+    {
+      title: "To",
+      dataIndex: "to_address",
+      key: "to_address",
+      render: (to) => getEllipsisTxt(to, 8),
+    },
+    // {
+    //   title: "Value",
+    //   dataIndex: "value",
+    //   key: "value",
+    //   render: (value, item) => {
+    //     return parseFloat(Moralis.Units.FromWei(value, item.decimals)).toFixed(
+    //       6
+    //     );
+    //   },
+    // },
+    {
+      title: "Hash",
+      dataIndex: "transaction_hash",
+      key: "transaction_hash",
+      render: (hash) => (
+        <a
+          href={`${getExplorer(chainId)}tx/${hash}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <div style={{ color: "#FEA013" }}>View Transaction</div>
+        </a>
       ),
-    },
-    {
-      title: "Collection",
-      key: "collection",
-      render: (text, record) => (
-        <Space size="middle">
-          <span>{getName(record.collection, record.item)}</span>
-        </Space>
-      ),
-    },
-    {
-      title: "Transaction Status",
-      key: "tags",
-      dataIndex: "tags",
-      render: (tags, record) => (
-        <div className={styles.statusCol}>
-          <div>
-            {tags.map((tag) => {
-              let color = "geekblue";
-              let status = "Buy";
-              if (tag === false) {
-                color = "#444";
-                status = "Waiting";
-              } else if (tag === true) {
-                color = "green";
-                status = "Confirmed";
-              }
-              if (tag === walletAddress) {
-                status = "Sell";
-              }
-              return (
-                <Tag
-                  color={color}
-                  className={`custom-tag tag-${status}`}
-                  key={status}
-                >
-                  {status.toUpperCase()}
-                </Tag>
-              );
-            })}
-          </div>
-          <span className={styles.resPrice}>{record.price}</span>
-        </div>
-      ),
-    },
-    {
-      title: "Price",
-      key: "price",
-      dataIndex: "price",
-      render: (e) => (
-        <Space size="middle">
-          {/* <PolygonCurrency/> */}
-          <span style={{ fontSize: "14px", fontWeight: 700 }}>{e}</span>
-        </Space>
-      ),
-      responsive: ["md"],
-    },
-    {
-      render: (_, { tags }) => {
-        return tags.some((tag) => tag === walletAddress) ? (
-          <span
-            className={styles.btnDelete}
-            onClick={() => handleDelistClick(_)}
-          >
-            <DeleteOutlined />
-          </span>
-        ) : null;
-      },
-      width: "30px",
     },
   ];
 
@@ -397,68 +365,96 @@ function NativeTransactions() {
   // }
 
   // const dataTest = [{ tags: ['test', false], price: '1 ETH' }];
-
+  let key = 0;
   return (
-    <div style={{ display: "flex", position: "relative" }}>
-      {/* <TransactionFilterBox /> */}
+    // <div style={{ display: "flex", position: "relative" }}>
+    //   {/* <TransactionFilterBox /> */}
+    //   <div className={styles.transactionWrapper}>
+    //     <Table
+    //       pagination={false}
+    //       className={styles.table}
+    //       columns={columns}
+    //       // dataSource={NFTTransfers}
+    //       // dataSource={dataTest}
+    //     />
+    //   </div>
+    //   <Modal
+    //     title={`Delist`}
+    //     visible={visible}
+    //     onCancel={() => setVisibility(false)}
+    //     footer={[
+    //       <Button
+    //         key="1"
+    //         loading={loading}
+    //         className={styles.btnCancel}
+    //         onClick={() => setVisibility(false)}
+    //       >
+    //         Cancel
+    //       </Button>,
+    //       // <Button key="2" type="primary" onClick={() => approve()}>Approve</Button>,
+    //       <Button
+    //         key="3"
+    //         loading={loading}
+    //         className={styles.btnDelist}
+    //         type="primary"
+    //         onClick={() => approveAll()}
+    //       >
+    //         Delist
+    //       </Button>,
+    //     ]}
+    //   >
+    //     <Spin spinning={loading}>
+    //       <img
+    //         alt="Delist NFT"
+    //         src={
+    //           // visible ?
+    //           //   (
+    //           //     getType(recordDelist.collection, recordDelist.item)?.includes("image")
+    //           //     ?
+    //           //     getImage(recordDelist.collection, recordDelist.item)
+    //           //     :
+    //           //     srcBlankImg
+    //           //   )
+    //           //   :
+    //           getImage(recordDelist?.collection, recordDelist?.item)
+    //         }
+    //         style={{
+    //           width: "250px",
+    //           margin: "auto",
+    //           borderRadius: "10px",
+    //           marginBottom: "15px",
+    //         }}
+    //       />
+    //     </Spin>
+    //   </Modal>
+    // </div>
+    <div
+      style={{
+        maxWidth: "1200px",
+        padding: "15px",
+        margin: "auto",
+        textAlign: "center",
+      }}
+    >
+      <h1 className={styles.title}>NFT Transfer</h1>
       <div className={styles.transactionWrapper}>
-        <Table
-          pagination={false}
-          className={styles.table}
-          columns={columns}
-          // dataSource={data}
-          // dataSource={dataTest}
-        />
-      </div>
-      <Modal
-        title={`Delist`}
-        visible={visible}
-        onCancel={() => setVisibility(false)}
-        footer={[
-          <Button
-            key="1"
-            loading={loading}
-            className={styles.btnCancel}
-            onClick={() => setVisibility(false)}
-          >
-            Cancel
-          </Button>,
-          // <Button key="2" type="primary" onClick={() => approve()}>Approve</Button>,
-          <Button
-            key="3"
-            loading={loading}
-            className={styles.btnDelist}
-            type="primary"
-            onClick={() => approveAll()}
-          >
-            Delist
-          </Button>,
-        ]}
-      >
-        <Spin spinning={loading}>
-          <img
-            alt="Delist NFT"
-            src={
-              // visible ?
-              //   (
-              //     getType(recordDelist.collection, recordDelist.item)?.includes("image")
-              //     ?
-              //     getImage(recordDelist.collection, recordDelist.item)
-              //     :
-              //     srcBlankImg
-              //   )
-              //   :
-              getImage(recordDelist?.collection, recordDelist?.item)
-            }
-            style={{
-              width: "250px",
-              margin: "auto",
-              borderRadius: "10px",
-              marginBottom: "15px",
+        <Skeleton loading={!NFTTransfers}>
+          <Table
+            className={styles.table}
+            dataSource={NFTTransfers}
+            columns={columns}
+            rowKey={(record) => {
+              key++;
+              return `${record.transaction_hash}-${key}`;
+            }}
+            pagination={{
+              total: data?.total,
+              page_size: data?.page_size,
+              // onChange: handlePageChange,
             }}
           />
-        </Spin>
-      </Modal>
+        </Skeleton>
+      </div>
     </div>
   );
 }

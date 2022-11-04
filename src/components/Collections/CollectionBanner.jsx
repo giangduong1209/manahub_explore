@@ -34,7 +34,6 @@ const CollectionBanner = ({ address }) => {
   const [currentExplore, setCurrentExplore] = useState(1);
   const history = useHistory();
   const { chainId } = useMoralis();
-  console.log(chainId);
   const [collections, setCollections] = useState([]);
 
   function linkMintNFT(index) {
@@ -213,8 +212,8 @@ const CollectionBanner = ({ address }) => {
             </Col>
             <Col>
               <Row gutter={[10, 10]}>
-                {explores.tabs.map((tab) => (
-                  <Col>
+                {explores.tabs.map((tab, idx) => (
+                  <Col key={idx}>
                     <div
                       className={clsx(styless.itemExplore, {
                         [styless.currentActive]: tab.id === currentExplore,

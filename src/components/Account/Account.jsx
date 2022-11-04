@@ -9,10 +9,7 @@ import { getExplorer } from "helpers/networks";
 import Text from "antd/lib/typography/Text";
 import { connectors, connectorsMobile } from "./config";
 import styles from "./styles.module.css";
-import { useChain } from "react-moralis";
 import { WalletIcon } from "../MainHeader/IconHeader";
-import Constants from "../../constant/index";
-import { useEffect } from "react";
 
 const styles2 = {
   account: {
@@ -52,15 +49,8 @@ const styles2 = {
 function Account() {
   const { authenticate, isAuthenticated, account, chainId, logout } =
     useMoralis();
-  const { switchNetwork } = useChain();
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isAuthModalVisible, setIsAuthModalVisible] = useState(false);
-
-  useEffect(() => {
-    if (isAuthenticated && chainId !== "0x38") {
-      switchNetwork("0x38");
-    }
-  }, [chainId, isAuthenticated]);
 
   if (!isAuthenticated || !account) {
     return (

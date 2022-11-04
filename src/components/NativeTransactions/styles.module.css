@@ -41,16 +41,17 @@
   content: unset !important;
 }
 
-.table :global(.ant-table-tbody) {
+/* .table :global(.ant-table-tbody) {
   background: #fff;
-}
+} */
 
 .table :global(.ant-table-row) {
-  border-radius: 20px;
+  /* border-radius: 20px; */
 }
 
 .table :global(.ant-table-row:hover .ant-table-cell) {
   background: #fff;
+  border-radius: 0;
 }
 
 .table :global(.ant-table-cell > *) {
@@ -73,11 +74,11 @@
 
 .table :global(.ant-tag.tag-Buy),
 .table :global(.ant-tag.tag-Sell) {
-  background: -webkit-linear-gradient(#FEA013, #FEA013);
+  background: -webkit-linear-gradient(#fea013, #fea013);
   background-color: transparent !important;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border: 1px solid #FEA013;
+  border: 1px solid #fea013;
 }
 
 .table :global(.ant-tag.tag-Waiting) {
@@ -158,7 +159,7 @@
   cursor: pointer;
   position: absolute;
   padding: 5px;
-  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
+  background: linear-gradient(180deg, #fea013 0%, #fea013 100%);
   bottom: 0;
   right: 0;
   border-radius: 20px 0;
@@ -195,10 +196,9 @@
   width: auto;
   height: auto;
 
-  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
+  background: linear-gradient(180deg, #fea013 0%, #fea013 100%);
   color: white;
   border: none;
-  
 }
 
 :global(.ant-btn).btnDelist:hover {
@@ -214,17 +214,15 @@
   width: auto;
   height: auto;
   background: linear-gradient(white, white) padding-box,
-    linear-gradient(to bottom, #FEA013, #FEA013) border-box;
+    linear-gradient(to bottom, #fea013, #fea013) border-box;
   border: 1px solid transparent;
-  color: #FEA013;
-  
+  color: #fea013;
 }
 
 :global(.ant-btn).btnCancel:hover {
-  background: linear-gradient(180deg, #FEA013 0%, #FEA013 100%);
+  background: linear-gradient(180deg, #fea013 0%, #fea013 100%);
   color: white;
-  border-color:#FEA013;
-
+  border-color: #fea013;
 }
 
 @media screen and (max-width: 992px) {
